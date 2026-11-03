@@ -78,10 +78,13 @@ function DeepLearnConcept() {
 
         // Fetch student's DEEP SPEAK progress.
         const progressRef = doc(
-          db,
-          "deepSpeakProgress",
-          student.username
-        );
+  db,
+  "students",
+  student.username
+);
+
+const progressField =
+  categoryId === "workplace" ? "workspace" : categoryId;
 
         const progressSnap = await getDoc(progressRef);
 
