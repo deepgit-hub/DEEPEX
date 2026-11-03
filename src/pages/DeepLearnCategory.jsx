@@ -20,7 +20,9 @@ function DeepLearnCategory() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // Workplace uses "workspace" in Firestore.
+  // Leaderboard popup state
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
+
   const firebaseCategoryId =
     categoryId === "workplace" ? "workspace" : categoryId;
 
@@ -35,13 +37,13 @@ function DeepLearnCategory() {
   const categoryName =
     categoryNames[categoryId] || "DEEP LEARN";
 
+  // Fetch concepts and student progress
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         setError("");
 
-        // Get logged-in student.
         const student = JSON.parse(
           localStorage.getItem("student")
         );
@@ -50,7 +52,6 @@ function DeepLearnCategory() {
           throw new Error("Student login information not found.");
         }
 
-        // Fetch category concepts.
         const conceptsRef = collection(
           db,
           "deepLearn",
@@ -69,7 +70,6 @@ function DeepLearnCategory() {
 
         setConcepts(conceptsData);
 
-        // Fetch student's progress.
         const studentRef = doc(
           db,
           "students",
@@ -103,7 +103,7 @@ function DeepLearnCategory() {
     fetchData();
   }, [categoryId, firebaseCategoryId]);
 
-  // Calculate progress.
+  // Calculate progress
   const totalConcepts = concepts.length;
 
   const completedCount = concepts.filter((concept) =>
@@ -147,83 +147,53 @@ function DeepLearnCategory() {
         <div className="deep-category-badge">
           🎓 DEEPEX
         </div>
-<h1>{categoryName}</h1>
 
-{/* OVERALL PROGRESS */}
-<div className="deep-category-progress">
+        <h1>{categoryName}</h1>
 
-  <div className="deep-category-progress-header">
-    <h2>📈 Overall Progress</h2>
+        {/* OVERALL PROGRESS */}
+        <div className="deep-category-progress">
 
-    <span>{progressPercentage}%</span>
-  </div>
-
-  <div className="deep-category-progress-track">
-    <div
-      className="deep-category-progress-fill"
-      style={{ width: `${progressPercentage}%` }}
-    />
-  </div>
-
-  <div className="deep-category-progress-footer">
-
-    <p>
-      {completedCount} / {totalConcepts} Concepts Completed
-    </p>
-
-    <p>
-      🚀 Keep going! You've completed {completedCount} of {totalConcepts} concepts.
-    </p>
-
-  </div>
-
-</div>
-
-<p>
-  Explore the concepts below and improve your skills step by step.
-</p>
-
-        {/* PROGRESS BAR */}
-        <div className="deep-progress-container">
-
-          <div className="deep-progress-info">
-            <div>
-              <h3></h3>
-              <p>
-                
-              </p>
-            </div>
-
-            <span className="deep-progress-percentage">
-             
-            </span>
+          <div className="deep-category-progress-header">
+            <h2>📈 Overall Progress</h2>
+            <span>{progressPercentage}%</span>
           </div>
 
-          <div
-            className="deep-progress-track"
-            role="progressbar"
-            aria-valuenow={progressPercentage}
-            aria-valuemin="0"
-            aria-valuemax="100"
-            aria-label={`${categoryName} progress`}
-          >
+          <div className="deep-category-progress-track">
             <div
-              className="deep-progress-fill"
-              style={{
-                width: `${progressPercentage}%`,
-              }}
+              className="deep-category-progress-fill"
+              style={{ width: `${progressPercentage}%` }}
             />
           </div>
 
-          <p className="deep-progress-message">
-            {progressPercentage === 100
-              ? "🎉 Excellent! You've completed all concepts!"
-              : progressPercentage === 0
-              ? "Start learning and track your progress here!"
-              : "Keep going! You're making progress."}
-          </p>
+          <div className="deep-category-progress-footer">
 
+            <p>
+              {completedCount} / {totalConcepts} Concepts Completed
+            </p>
+
+            <div className="deep-progress-actions">
+
+              <p>
+                🚀 Keep going! You've completed {completedCount} of{" "}
+                {totalConcepts} concepts.
+              </p>
+
+              {/* LEADERBOARD BUTTON */}
+              <button
+                className="deep-leaderboard-btn"
+                onClick={() => setShowLeaderboard(true)}
+              >
+                🏆 LEADERBOARD
+              </button>
+
+            </div>
+
+          </div>
         </div>
+
+        <p>
+          Explore the concepts below and improve your skills step by step.
+        </p>
 
       </section>
 
@@ -231,14 +201,12 @@ function DeepLearnCategory() {
       <section className="deep-concepts-section">
 
         <div className="deep-concepts-section-header">
-
           <h2>Learning Concepts</h2>
 
           <p>
             Choose a concept to understand it with English and Tamil
             explanations, situations, mistakes, and better approaches.
           </p>
-
         </div>
 
         <div className="deep-concepts-list">
@@ -260,7 +228,6 @@ function DeepLearnCategory() {
                   )
                 }
               >
-
                 <div className="deep-concept-number">
                   Concept {concept.conceptId}
                 </div>
@@ -288,6 +255,105 @@ function DeepLearnCategory() {
         </div>
 
       </section>
+
+      {/* DEEP SPEAK LEADERBOARD POPUP */}
+      {showLeaderboard && (
+        <div
+          className="deep-leaderboard-overlay"
+          onClick={() => setShowLeaderboard(false)}
+        >
+          <div
+            className="deep-leaderboard-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+
+            <div className="deep-leaderboard-modal-header">
+
+              <div>
+                <h2>🏆 DEEP SPEAK LEADERBOARD</h2>
+                <p>Top 3 students in each category</p>
+              </div>
+
+              <button
+                className="deep-leaderboard-close"
+                onClick={() => setShowLeaderboard(false)}
+                aria-label="Close leaderboard"
+              >
+                ×
+              </button>
+
+            </div>
+
+            <div className="deep-leaderboard-categories">
+
+              {[
+                {
+                  id: "communication",
+                  name: "💬 Communication Skills",
+                },
+                {
+                  id: "interview",
+                  name: "🎤 Interview Skills",
+                },
+                {
+                  id: "workspace",
+                  name: "🏢 Workplace Skills",
+                },
+                {
+                  id: "professional",
+                  name: "💼 Professional Skills",
+                },
+                {
+                  id: "personal",
+                  name: "🌱 Personal Skills",
+                },
+              ].map((category) => (
+
+                <div
+                  className="deep-leaderboard-category"
+                  key={category.id}
+                >
+
+                  <h3>{category.name}</h3>
+
+                  <div className="deep-leaderboard-table-wrapper">
+
+                    <table className="deep-leaderboard-table">
+
+                      <thead>
+                        <tr>
+                          <th>Rank</th>
+                          <th>Student Name</th>
+                          <th>Completed Concepts</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td colSpan="3">
+                            Rankings will appear here once leaderboard
+                            data is connected.
+                          </td>
+                        </tr>
+                      </tbody>
+
+                    </table>
+
+                  </div>
+
+                </div>
+
+              ))}
+
+            </div>
+
+            <div className="deep-leaderboard-modal-footer">
+              <p>DEEPEX · Learn. Practice. Grow.</p>
+            </div>
+
+          </div>
+        </div>
+      )}
 
     </div>
   );
