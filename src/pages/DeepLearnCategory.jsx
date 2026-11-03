@@ -188,14 +188,14 @@ function DeepLearnCategory() {
 
           <div className="deep-progress-info">
             <div>
-              <h3>Your Learning Progress</h3>
+              <h3></h3>
               <p>
-                {completedCount} of {totalConcepts} concepts completed
+                
               </p>
             </div>
 
             <span className="deep-progress-percentage">
-              {progressPercentage}%
+             
             </span>
           </div>
 
