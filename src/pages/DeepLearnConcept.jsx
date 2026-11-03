@@ -365,33 +365,25 @@ function DeepLearnConcept() {
 
         </div>
 
+        
         {/* PROGRESS ACTION */}
-        <div className="deep-concept-action">
+<div className="deep-concept-action">
 
-          <button
-            className="deep-concept-complete-btn"
-            onClick={handleToggleRead}
-            disabled={progressLoading || saving}
-          >
-            {progressLoading
-              ? "Loading progress..."
-              : saving
-              ? "Updating..."
-              : isRead
-              ? "✓ Mark as Unread"
-              : "✓ Mark as Read"}
-          </button>
+  <button
+    className="deep-concept-complete-btn"
+    onClick={handleToggleRead}
+    disabled={progressLoading || saving}
+  >
+    {progressLoading
+      ? "Loading progress..."
+      : saving
+      ? "Updating..."
+      : isRead
+      ? "✓ Mark as Unread"
+      : "✓ Mark as Read"}
+  </button>
 
-          <button
-            className="deep-concept-back-btn"
-            onClick={() =>
-              navigate(`/deep-speak/${categoryId}`)
-            }
-          >
-            ← Back to Concepts
-          </button>
-
-        </div>
+</div>
 
       </section>
 
