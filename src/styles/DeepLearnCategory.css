@@ -113,3 +113,155 @@
     }
 
 }
+
+/* ==========================================
+   DEEP SPEAK OVERALL PROGRESS
+========================================== */
+
+.deep-category-progress {
+
+    background: white;
+
+    border: 1px solid #dbe3ef;
+
+    border-radius: 16px;
+
+    padding: 25px 30px;
+
+    margin: 30px 0;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* HEADER */
+
+.deep-category-progress-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+}
+
+.deep-category-progress-header h2 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    color: #0f172a;
+
+}
+
+.deep-category-progress-header span {
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    color: #2563eb;
+
+}
+
+
+/* TRACK */
+
+.deep-category-progress-track {
+
+    width: 100%;
+
+    height: 13px;
+
+    background: #e2e8f0;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+}
+
+.deep-category-progress-fill {
+
+    height: 100%;
+
+    background: #2563eb;
+
+    border-radius: 999px;
+
+    transition: width 0.5s ease;
+
+}
+
+
+/* FOOTER */
+
+.deep-category-progress-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 18px;
+
+}
+
+.deep-category-progress-footer p {
+
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 16px;
+
+}
+
+.deep-category-progress-footer p:last-child {
+
+    color: #2563eb;
+
+    font-weight: 600;
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .deep-category-progress {
+
+        padding: 20px;
+
+    }
+
+    .deep-category-progress-header h2 {
+
+        font-size: 20px;
+
+    }
+
+    .deep-category-progress-header span {
+
+        font-size: 22px;
+
+    }
+
+    .deep-category-progress-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
