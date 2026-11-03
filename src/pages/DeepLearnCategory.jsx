@@ -385,8 +385,8 @@ function DeepLearnCategory() {
                                 <td>
                                   {["🥇", "🥈", "🥉"][index]}
                                 </td>
-                                <b><td>{student.name}</td></b>
-                                <b><td>{student.completedCount}</td></b>
+                                <td><b>{student.name}</b></td>
+                                <td><b>{student.completedCount}</b></td>
                               </tr>
                             ))
                           )}
