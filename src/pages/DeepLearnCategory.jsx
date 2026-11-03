@@ -147,12 +147,41 @@ function DeepLearnCategory() {
         <div className="deep-category-badge">
           🎓 DEEPEX
         </div>
+<h1>{categoryName}</h1>
 
-        <h1>{categoryName}</h1>
+{/* OVERALL PROGRESS */}
+<div className="deep-category-progress">
 
-        <p>
-          Explore the concepts below and improve your skills step by step.
-        </p>
+  <div className="deep-category-progress-header">
+    <h2>📈 Overall Progress</h2>
+
+    <span>{progressPercentage}%</span>
+  </div>
+
+  <div className="deep-category-progress-track">
+    <div
+      className="deep-category-progress-fill"
+      style={{ width: `${progressPercentage}%` }}
+    />
+  </div>
+
+  <div className="deep-category-progress-footer">
+
+    <p>
+      {completedCount} / {totalConcepts} Concepts Completed
+    </p>
+
+    <p>
+      🚀 Keep going! You've completed {completedCount} of {totalConcepts} concepts.
+    </p>
+
+  </div>
+
+</div>
+
+<p>
+  Explore the concepts below and improve your skills step by step.
+</p>
 
         {/* PROGRESS BAR */}
         <div className="deep-progress-container">
