@@ -1,609 +1,258 @@
-/* ==========================================
-   DEEP LEARN CATEGORY PAGE
-========================================== */
-
-.deep-category-page {
-
-    min-height: 100vh;
-
-    background: #f8fafc;
-
-    padding: 50px 0;
-}
-
 
 /* ==========================================
-   HEADER
+   LEADERBOARD BUTTON
 ========================================== */
 
-.deep-category-header {
-
-    background: white;
-
-    border-radius: 20px;
-
-    padding: 45px 50px;
-
-    border: 1px solid #e2e8f0;
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-
-    margin-bottom: 60px;
+.deep-progress-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+    flex-wrap: wrap;
 }
 
-
-.deep-category-back-btn {
-
-    background: #173476;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 10px;
-
-    padding: 12px 22px;
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    margin-bottom: 30px;
-
-    box-shadow: 0 6px 15px rgba(23, 52, 118, 0.25);
-}
-
-
-.deep-category-back-btn:hover {
-
-    background: #21479c;
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 10px 22px rgba(23, 52, 118, 0.35);
-}
-
-
-.deep-category-badge {
-
-    display: inline-block;
-
-    background: #dbeafe;
-
-    color: #2563eb;
-
-    padding: 10px 22px;
-
-    border-radius: 999px;
-
-    font-size: 18px;
-
-    font-weight: 600;
-
-    margin-bottom: 20px;
-}
-
-
-.deep-category-header h1 {
-
-    font-size: 3.5rem;
-
-    font-weight: 800;
-
-    color: #0f172a;
-
-    line-height: 1.2;
-
-    margin-bottom: 15px;
-}
-
-
-.deep-category-header p {
-
+.deep-progress-actions p {
     margin: 0;
-
-    color: #64748b;
-
-    font-size: 22px;
-
-    line-height: 1.8;
-}
-
-
-/* ==========================================
-   SECTION HEADER
-========================================== */
-
-.deep-concepts-section {
-
-    margin-top: 30px;
-}
-
-
-.deep-concepts-section-header {
-
-    margin-bottom: 40px;
-
-    padding-left: 50px;
-}
-
-
-.deep-concepts-section-header h2 {
-
-    font-size: 3rem;
-
-    color: #0f172a;
-
-    margin-bottom: 12px;
-}
-
-
-.deep-concepts-section-header p {
-
-    color: #64748b;
-
-    font-size: 22px;
-
-    line-height: 1.8;
-
-    max-width: 900px;
-}
-
-
-/* ==========================================
-   CONCEPT GRID
-========================================== */
-
-.deep-concepts-list {
-
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 30px;
-
-    padding: 0 50px;
-}
-
-
-/* ==========================================
-   CONCEPT CARD
-========================================== */
-
-.deep-concept-card {
-
-    width: 100%;
-
-    min-height: 240px;
-
-    background: white;
-
-    border: 2px solid #e2e8f0;
-
-    border-radius: 18px;
-
-    padding: 35px;
-
-    text-align: left;
-
-    cursor: pointer;
-
-    font-family: inherit;
-
-    position: relative;
-
-    transition: 0.3s;
-
-}
-
-
-.deep-concept-card:hover {
-
-    transform: translateY(-6px);
-
-    border-color: #2563eb;
-
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-}
-
-
-/* ==========================================
-   NUMBER
-========================================== */
-
-.deep-concept-number {
-
-    display: inline-block;
-
-    background: #dbeafe;
-
     color: #2563eb;
-
-    padding: 7px 14px;
-
-    border-radius: 999px;
-
     font-size: 14px;
-
-    font-weight: 700;
-
-    margin-bottom: 18px;
-}
-
-
-/* ==========================================
-   TITLE
-========================================== */
-
-.deep-concept-card h3 {
-
-    margin: 0 0 15px;
-
-    font-size: 27px;
-
-    font-weight: 700;
-
-    color: #173476;
-}
-
-
-/* ==========================================
-   PREVIEW
-========================================== */
-
-.deep-concept-preview {
-
-    margin: 0 0 25px;
-
-    color: #475569;
-
-    font-size: 19px;
-
-    line-height: 1.8;
-
-    display: -webkit-box;
-
-    -webkit-line-clamp: 3;
-
-    -webkit-box-orient: vertical;
-
-    overflow: hidden;
-}
-
-
-/* ==========================================
-   LEARN BUTTON
-========================================== */
-
-.deep-concept-arrow {
-
-    display: inline-block;
-
-    color: #2563eb;
-
-    font-size: 17px;
-
-    font-weight: 700;
-
-    transition: 0.3s;
-}
-
-
-.deep-concept-card:hover .deep-concept-arrow {
-
-    transform: translateX(5px);
-}
-
-
-/* ==========================================
-   LOADING
-========================================== */
-
-.deep-category-loading {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #f8fafc;
-
-    color: #173476;
-}
-
-
-.deep-category-loading h2 {
-
-    font-size: 28px;
-}
-
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media (max-width: 992px) {
-
-    .deep-category-header {
-
-        padding: 40px;
-    }
-
-    .deep-category-header h1 {
-
-        font-size: 3rem;
-    }
-
-    .deep-category-header p {
-
-        font-size: 20px;
-    }
-
-    .deep-concepts-section-header h2 {
-
-        font-size: 2.5rem;
-    }
-
-    .deep-concept-card h3 {
-
-        font-size: 24px;
-    }
-
-}
-
-
-@media (max-width: 768px) {
-
-    .deep-category-page {
-
-        padding: 30px 15px;
-    }
-
-
-    .deep-category-header {
-
-        padding: 30px;
-
-        margin-bottom: 40px;
-    }
-
-
-    .deep-category-back-btn {
-
-        font-size: 15px;
-
-        padding: 11px 18px;
-
-        margin-bottom: 25px;
-    }
-
-
-    .deep-category-badge {
-
-        font-size: 16px;
-
-        padding: 8px 16px;
-    }
-
-
-    .deep-category-header h1 {
-
-        font-size: 2.3rem;
-    }
-
-
-    .deep-category-header p {
-
-        font-size: 18px;
-    }
-
-
-    .deep-concepts-section-header {
-
-        padding-left: 0;
-
-        margin-bottom: 25px;
-    }
-
-
-    .deep-concepts-section-header h2 {
-
-        font-size: 2rem;
-    }
-
-
-    .deep-concepts-section-header p {
-
-        font-size: 18px;
-    }
-
-
-    .deep-concepts-list {
-
-        grid-template-columns: 1fr;
-
-        padding: 0;
-
-        gap: 20px;
-    }
-
-
-    .deep-concept-card {
-
-        min-height: auto;
-
-        padding: 25px;
-    }
-
-
-    .deep-concept-card h3 {
-
-        font-size: 22px;
-    }
-
-
-    .deep-concept-preview {
-
-        font-size: 17px;
-    }
-
-}
-
-/* ==========================================
-   DEEP SPEAK OVERALL PROGRESS
-========================================== */
-
-.deep-category-progress {
-
-    background: white;
-
-    border: 1px solid #dbe3ef;
-
-    border-radius: 16px;
-
-    padding: 25px 30px;
-
-    margin: 30px 0;
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-
-}
-
-
-/* HEADER */
-
-.deep-category-progress-header {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-bottom: 18px;
-
-}
-
-.deep-category-progress-header h2 {
-
-    margin: 0;
-
-    font-size: 25px;
-
-    color: #0f172a;
-
-}
-
-.deep-category-progress-header span {
-
-    font-size: 25px;
-
-    font-weight: 800;
-
-    color: #2563eb;
-
-}
-
-
-/* TRACK */
-
-.deep-category-progress-track {
-
-    width: 100%;
-
-    height: 13px;
-
-    background: #e2e8f0;
-
-    border-radius: 999px;
-
-    overflow: hidden;
-
-}
-
-.deep-category-progress-fill {
-
-    height: 100%;
-
-    background: #2563eb;
-
-    border-radius: 999px;
-
-    transition: width 0.5s ease;
-
-}
-
-
-/* FOOTER */
-
-.deep-category-progress-footer {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-top: 18px;
-
-}
-
-.deep-category-progress-footer p {
-
-    margin: 0;
-
-    color: #475569;
-
-    font-size: 16px;
-
-}
-
-.deep-category-progress-footer p:last-child {
-
-    color: #2563eb;
-
     font-weight: 600;
+}
 
+.deep-leaderboard-btn {
+    position: relative;
+    background: linear-gradient(135deg, #173476, #315fca);
+    color: white;
+    border: 1px solid #6688ed;
+    border-radius: 10px;
+    padding: 13px 22px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+    box-shadow:
+        0 0 8px rgba(37, 99, 235, 0.55),
+        0 0 18px rgba(37, 99, 235, 0.35);
+    animation: leaderboardGlow 2s infinite alternate;
+    transition: transform 0.3s ease;
+}
+
+.deep-leaderboard-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+@keyframes leaderboardGlow {
+    from {
+        box-shadow:
+            0 0 6px rgba(37, 99, 235, 0.4),
+            0 0 12px rgba(37, 99, 235, 0.2);
+    }
+
+    to {
+        box-shadow:
+            0 0 12px rgba(37, 99, 235, 0.8),
+            0 0 25px rgba(37, 99, 235, 0.5);
+    }
 }
 
 
-/* RESPONSIVE */
+/* ==========================================
+   LEADERBOARD POPUP OVERLAY
+========================================== */
+
+.deep-leaderboard-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.deep-leaderboard-modal {
+    width: 100%;
+    max-width: 950px;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+    animation: leaderboardPopup 0.25s ease;
+}
+
+@keyframes leaderboardPopup {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* ==========================================
+   POPUP HEADER
+========================================== */
+
+.deep-leaderboard-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.deep-leaderboard-modal-header h2 {
+    color: #173476;
+    font-size: 25px;
+    margin: 0 0 8px;
+}
+
+.deep-leaderboard-modal-header p {
+    color: #64748b;
+    font-size: 15px;
+    margin: 0;
+}
+
+.deep-leaderboard-close {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #173476;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.deep-leaderboard-close:hover {
+    background: #cbd5e1;
+}
+
+
+/* ==========================================
+   CATEGORY SECTIONS
+========================================== */
+
+.deep-leaderboard-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.deep-leaderboard-category {
+    background: white;
+    border: 1px solid #dbe3ef;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.deep-leaderboard-category h3 {
+    color: #173476;
+    font-size: 19px;
+    margin: 0 0 16px;
+}
+
+
+/* ==========================================
+   LEADERBOARD TABLE
+========================================== */
+
+.deep-leaderboard-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.deep-leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.deep-leaderboard-table th {
+    background: #eff6ff;
+    color: #173476;
+    padding: 13px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.deep-leaderboard-table td {
+    padding: 14px 13px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+    font-size: 14px;
+}
+
+.deep-leaderboard-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.deep-leaderboard-modal-footer {
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 25px;
+    padding-top: 15px;
+}
+
+.deep-leaderboard-modal-footer p {
+    color: #64748b;
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
 
 @media (max-width: 768px) {
-
-    .deep-category-progress {
-
-        padding: 20px;
-
-    }
-
-    .deep-category-progress-header h2 {
-
-        font-size: 20px;
-
-    }
-
-    .deep-category-progress-header span {
-
-        font-size: 22px;
-
-    }
 
     .deep-category-progress-footer {
-
-        flex-direction: column;
-
         align-items: flex-start;
-
     }
 
+    .deep-progress-actions {
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .deep-leaderboard-btn {
+        width: 100%;
+    }
+
+    .deep-leaderboard-overlay {
+        padding: 10px;
+    }
+
+    .deep-leaderboard-modal {
+        padding: 20px 15px;
+        max-height: 92vh;
+    }
+
+    .deep-leaderboard-modal-header h2 {
+        font-size: 19px;
+    }
+
+    .deep-leaderboard-category {
+        padding: 14px;
+    }
+
+    .deep-leaderboard-category h3 {
+        font-size: 17px;
+    }
 }
