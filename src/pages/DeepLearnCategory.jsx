@@ -44,7 +44,7 @@ function DeepLearnCategory() {
     };
 
     fetchConcepts();
-  }, [categoryId]);
+  }, [firebaseCategoryId]);
 
   const categoryNames = {
     communication: "Communication Skills",
