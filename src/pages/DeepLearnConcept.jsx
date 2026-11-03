@@ -1,6 +1,13 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { doc, getDoc } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  setDoc,
+  arrayUnion,
+  arrayRemove,
+} from "firebase/firestore";
 import { db } from "../firebase";
 import "../styles/DeepLearnConcept.css";
 
@@ -12,39 +19,13 @@ function DeepLearnConcept() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    const fetchConcept = async () => {
-      try {
-        setLoading(true);
+  const [isRead, setIsRead] = useState(false);
+  const [progressLoading, setProgressLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
 
-        const conceptRef = doc(
-          db,
-          "deepLearn",
-          categoryId,
-          "concepts",
-          conceptId
-        );
-
-        const conceptSnap = await getDoc(conceptRef);
-
-        if (conceptSnap.exists()) {
-          setConcept({
-            id: conceptSnap.id,
-            ...conceptSnap.data(),
-          });
-        } else {
-          setError("Concept not found.");
-        }
-      } catch (err) {
-        console.error(err);
-        setError("Unable to load this concept.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchConcept();
-  }, [categoryId, conceptId]);
+  // Workplace route ID and Firestore document ID are different.
+  const firebaseCategoryId =
+    categoryId === "workplace" ? "workspace" : categoryId;
 
   const categoryNames = {
     communication: "Communication Skills",
@@ -54,8 +35,122 @@ function DeepLearnConcept() {
     personal: "Personal Skills",
   };
 
-  const categoryName =
-    categoryNames[categoryId] || "DEEP LEARN";
+  const categoryName = categoryNames[categoryId] || "DEEP LEARN";
+
+  // Fetch concept and student's progress.
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setProgressLoading(true);
+        setError("");
+
+        const student = JSON.parse(
+          localStorage.getItem("student")
+        );
+
+        if (!student?.username) {
+          throw new Error("Student login information not found.");
+        }
+
+        // Fetch concept content.
+        const conceptRef = doc(
+          db,
+          "deepLearn",
+          firebaseCategoryId,
+          "concepts",
+          conceptId
+        );
+
+        const conceptSnap = await getDoc(conceptRef);
+
+        if (!conceptSnap.exists()) {
+          setError("Concept not found.");
+          return;
+        }
+
+        const conceptData = {
+          id: conceptSnap.id,
+          ...conceptSnap.data(),
+        };
+
+        setConcept(conceptData);
+
+        // Fetch student's DEEP SPEAK progress.
+        const progressRef = doc(
+          db,
+          "deepSpeakProgress",
+          student.username
+        );
+
+        const progressSnap = await getDoc(progressRef);
+
+        if (progressSnap.exists()) {
+          const completedConcepts =
+            progressSnap.data()[categoryId] || [];
+
+          setIsRead(
+            completedConcepts.includes(
+              Number(conceptData.conceptId)
+            )
+          );
+        } else {
+          setIsRead(false);
+        }
+      } catch (err) {
+        console.error(err);
+        setError(err.message || "Unable to load this concept.");
+      } finally {
+        setLoading(false);
+        setProgressLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [categoryId, conceptId, firebaseCategoryId]);
+
+  // Mark as Read / Mark as Unread.
+  const handleToggleRead = async () => {
+    if (!concept || saving) return;
+
+    try {
+      setSaving(true);
+
+      const student = JSON.parse(
+        localStorage.getItem("student")
+      );
+
+      if (!student?.username) {
+        throw new Error("Student login information not found.");
+      }
+
+      const progressRef = doc(
+        db,
+        "deepSpeakProgress",
+        student.username
+      );
+
+      const currentConceptId = Number(concept.conceptId);
+
+      await setDoc(
+        progressRef,
+        {
+          [categoryId]: isRead
+            ? arrayRemove(currentConceptId)
+            : arrayUnion(currentConceptId),
+        },
+        { merge: true }
+      );
+
+      // Update the UI only after Firestore succeeds.
+      setIsRead(!isRead);
+    } catch (err) {
+      console.error("Progress update failed:", err);
+      alert("Unable to update your progress. Please try again.");
+    } finally {
+      setSaving(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -76,8 +171,7 @@ function DeepLearnConcept() {
   return (
     <div className="deep-concept-page">
 
-      {/* ================= HEADER ================= */}
-
+      {/* HEADER */}
       <section className="deep-concept-header">
 
         <button
@@ -99,168 +193,77 @@ function DeepLearnConcept() {
 
       </section>
 
-
-      {/* ================= CONTENT ================= */}
-
+      {/* CONTENT */}
       <section className="deep-concept-content">
 
         {/* UNDERSTAND */}
-
         <div className="deep-learning-section">
-
-          <h2>
-            🧠 Understand
-          </h2>
+          <h2>🧠 Understand</h2>
 
           <div className="deep-language-block">
-
-            <div className="deep-language-label">
-              English
-            </div>
-
-            <p>
-              {concept.understand?.english}
-            </p>
-
+            <div className="deep-language-label">English</div>
+            <p>{concept.understand?.english}</p>
           </div>
 
           <div className="deep-language-block">
-
-            <div className="deep-language-label">
-              தமிழ்
-            </div>
-
-            <p>
-              {concept.understand?.tamil}
-            </p>
-
+            <div className="deep-language-label">தமிழ்</div>
+            <p>{concept.understand?.tamil}</p>
           </div>
-
         </div>
-
 
         {/* SEE THE SITUATION */}
-
         <div className="deep-learning-section">
-
-          <h2>
-            🎭 See the Situation
-          </h2>
+          <h2>🎭 See the Situation</h2>
 
           <div className="deep-language-block">
-
-            <div className="deep-language-label">
-              English
-            </div>
-
-            <p>
-              {concept.seeTheSituation?.english}
-            </p>
-
+            <div className="deep-language-label">English</div>
+            <p>{concept.seeTheSituation?.english}</p>
           </div>
 
           <div className="deep-language-block">
-
-            <div className="deep-language-label">
-              தமிழ்
-            </div>
-
-            <p>
-              {concept.seeTheSituation?.tamil}
-            </p>
-
+            <div className="deep-language-label">தமிழ்</div>
+            <p>{concept.seeTheSituation?.tamil}</p>
           </div>
-
         </div>
-
 
         {/* COMMON MISTAKE */}
-
         <div className="deep-learning-section mistake-section">
-
-          <h2>
-            ⚠️ Common Mistake
-          </h2>
+          <h2>⚠️ Common Mistake</h2>
 
           <div className="deep-language-block">
-
-            <div className="deep-language-label">
-              English
-            </div>
-
-            <p>
-              {concept.commonMistake?.english}
-            </p>
-
+            <div className="deep-language-label">English</div>
+            <p>{concept.commonMistake?.english}</p>
           </div>
 
           <div className="deep-language-block">
-
-            <div className="deep-language-label">
-              தமிழ்
-            </div>
-
-            <p>
-              {concept.commonMistake?.tamil}
-            </p>
-
+            <div className="deep-language-label">தமிழ்</div>
+            <p>{concept.commonMistake?.tamil}</p>
           </div>
-
         </div>
-
 
         {/* BETTER APPROACH */}
-
         <div className="deep-learning-section better-section">
-
-          <h2>
-            ✅ Better Approach
-          </h2>
+          <h2>✅ Better Approach</h2>
 
           <div className="deep-language-block">
-
-            <div className="deep-language-label">
-              English
-            </div>
-
-            <p>
-              {concept.betterApproach?.english}
-            </p>
-
+            <div className="deep-language-label">English</div>
+            <p>{concept.betterApproach?.english}</p>
           </div>
 
           <div className="deep-language-block">
-
-            <div className="deep-language-label">
-              தமிழ்
-            </div>
-
-            <p>
-              {concept.betterApproach?.tamil}
-            </p>
-
+            <div className="deep-language-label">தமிழ்</div>
+            <p>{concept.betterApproach?.tamil}</p>
           </div>
-
         </div>
 
-
         {/* USEFUL EXPRESSIONS */}
-
         <div className="deep-learning-section">
-
-          <h2>
-            💬 Useful Expressions
-          </h2>
+          <h2>💬 Useful Expressions</h2>
 
           <div className="deep-expressions">
-
             {concept.usefulExpressions?.map(
               (expression, index) => (
-                <div
-                  className="deep-expression"
-                  key={index}
-                >
-
+                <div className="deep-expression" key={index}>
                   <p className="deep-expression-english">
                     {expression.english}
                   </p>
@@ -268,68 +271,56 @@ function DeepLearnConcept() {
                   <p className="deep-expression-tamil">
                     {expression.tamil}
                   </p>
-
                 </div>
               )
             )}
-
           </div>
-
         </div>
-
 
         {/* TRY YOURSELF */}
-
         <div className="deep-learning-section try-section">
-
-          <h2>
-            🚀 Try Yourself
-          </h2>
+          <h2>🚀 Try Yourself</h2>
 
           <div className="deep-language-block">
-
-            <div className="deep-language-label">
-              English
-            </div>
-
-            <p>
-              {concept.tryYourself?.english}
-            </p>
-
+            <div className="deep-language-label">English</div>
+            <p>{concept.tryYourself?.english}</p>
           </div>
 
           <div className="deep-language-block">
-
-            <div className="deep-language-label">
-              தமிழ்
-            </div>
-
-            <p>
-              {concept.tryYourself?.tamil}
-            </p>
-
+            <div className="deep-language-label">தமிழ்</div>
+            <p>{concept.tryYourself?.tamil}</p>
           </div>
-
         </div>
 
-
-        {/* ACTION */}
-
+        {/* PROGRESS ACTION */}
         <div className="deep-concept-action">
 
           <button
             className="deep-concept-complete-btn"
+            onClick={handleToggleRead}
+            disabled={progressLoading || saving}
+          >
+            {progressLoading
+              ? "Loading progress..."
+              : saving
+              ? "Updating..."
+              : isRead
+              ? "✓ Mark as Unread"
+              : "✓ Mark as Read"}
+          </button>
+
+          <button
+            className="deep-concept-back-btn"
             onClick={() =>
               navigate(`/deep-speak/${categoryId}`)
             }
           >
-            ✓ Back to Concepts
+            ← Back to Concepts
           </button>
 
         </div>
 
       </section>
-
     </div>
   );
 }
