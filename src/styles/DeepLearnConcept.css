@@ -454,3 +454,15 @@
     }
 
 }
+.deep-concept-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 30px auto;
+}
+
+.deep-concept-complete-btn {
+  display: block;
+  margin: 0 auto;
+}
