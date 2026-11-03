@@ -993,3 +993,206 @@ body{
 
     box-shadow: 0 10px 22px rgba(23, 52, 118, 0.35);
 }
+
+/* ==========================================
+   DEEP CODE LEADERBOARD BUTTON
+========================================== */
+
+.progress-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.deep-leaderboard-btn {
+  background: linear-gradient(135deg, #172554, #2563eb);
+  color: white;
+  border: 1px solid rgba(96, 165, 250, 0.6);
+  border-radius: 12px;
+  padding: 13px 24px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow:
+    0 0 10px rgba(37, 99, 235, 0.5),
+    0 0 22px rgba(37, 99, 235, 0.25);
+  transition: all 0.3s ease;
+  animation: leaderboardGlow 2s infinite alternate;
+}
+
+.deep-leaderboard-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 15px rgba(37, 99, 235, 0.8),
+    0 0 30px rgba(37, 99, 235, 0.5);
+}
+
+@keyframes leaderboardGlow {
+  from {
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+  }
+  to {
+    box-shadow:
+      0 0 16px rgba(37, 99, 235, 0.8),
+      0 0 28px rgba(37, 99, 235, 0.35);
+  }
+}
+
+/* ==========================================
+   LEADERBOARD POPUP
+========================================== */
+
+.deep-leaderboard-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.deep-leaderboard-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 850px;
+  max-height: 88vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.deep-leaderboard-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.deep-leaderboard-modal-header h2 {
+  color: #0f172a;
+  font-size: 25px;
+  margin-bottom: 7px;
+}
+
+.deep-leaderboard-modal-header p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.deep-leaderboard-close {
+  border: none;
+  background: #f1f5f9;
+  color: #0f172a;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 27px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.deep-leaderboard-close:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.deep-leaderboard-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.deep-leaderboard-category {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  background: #f8fafc;
+}
+
+.deep-leaderboard-category h3 {
+  color: #173476;
+  font-size: 19px;
+  margin-bottom: 14px;
+}
+
+.deep-leaderboard-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.deep-leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 400px;
+}
+
+.deep-leaderboard-table th {
+  background: #173476;
+  color: white;
+  padding: 12px;
+  font-size: 13px;
+}
+
+.deep-leaderboard-table td {
+  padding: 13px 12px;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+.deep-leaderboard-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.deep-leaderboard-table tbody tr:hover {
+  background: #eff6ff;
+}
+
+.deep-leaderboard-table td:first-child {
+  font-weight: 800;
+}
+
+.deep-leaderboard-modal-footer {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+  .progress-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deep-leaderboard-btn {
+    width: 100%;
+  }
+
+  .deep-leaderboard-modal {
+    padding: 20px;
+  }
+
+  .deep-leaderboard-modal-header h2 {
+    font-size: 20px;
+  }
+
+  .deep-leaderboard-category {
+    padding: 13px;
+  }
+}
