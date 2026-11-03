@@ -11,7 +11,8 @@ function DeepLearnCategory() {
   const [concepts, setConcepts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
+  const firebaseCategoryId =
+    categoryId === "workplace" ? "workspace" : categoryId;
   useEffect(() => {
     const fetchConcepts = async () => {
       try {
@@ -20,8 +21,8 @@ function DeepLearnCategory() {
         const conceptsRef = collection(
           db,
           "deepLearn",
-          categoryId,
-          "concepts"
+          firebaseCategoryId,
+          "concepts",
         );
 
         const snapshot = await getDocs(conceptsRef);
@@ -53,8 +54,7 @@ function DeepLearnCategory() {
     personal: "Personal Skills",
   };
 
-  const categoryName =
-    categoryNames[categoryId] || "DEEP LEARN";
+  const categoryName = categoryNames[categoryId] || "DEEP LEARN";
 
   if (loading) {
     return (
@@ -74,11 +74,9 @@ function DeepLearnCategory() {
 
   return (
     <div className="deep-category-page">
-
       {/* ================= HEADER ================= */}
 
       <section className="deep-category-header">
-
         <button
           className="deep-category-back-btn"
           onClick={() => navigate("/deep-speak")}
@@ -86,73 +84,49 @@ function DeepLearnCategory() {
           ← Back to DEEP LEARN
         </button>
 
-        <div className="deep-category-badge">
-          🎓 DEEPEX
-        </div>
+        <div className="deep-category-badge">🎓 DEEPEX</div>
 
         <h1>{categoryName}</h1>
 
-        <p>
-          Explore the concepts below and improve your skills step by step.
-        </p>
-
+        <p>Explore the concepts below and improve your skills step by step.</p>
       </section>
-
 
       {/* ================= CONCEPTS ================= */}
 
       <section className="deep-concepts-section">
-
         <div className="deep-concepts-section-header">
-
-          <h2>
-            Learning Concepts
-          </h2>
+          <h2>Learning Concepts</h2>
 
           <p>
             Choose a concept to understand it with English and Tamil
             explanations, situations, mistakes, and better approaches.
           </p>
-
         </div>
 
-
         <div className="deep-concepts-list">
-
           {concepts.map((concept) => (
             <button
               key={concept.id}
               className="deep-concept-card"
               onClick={() =>
-                navigate(
-                  `/deep-speak/${categoryId}/${concept.id}`
-                )
+                navigate(`/deep-speak/${categoryId}/${concept.id}`)
               }
             >
-
               <div className="deep-concept-number">
                 Concept {concept.conceptId}
               </div>
 
-              <h3>
-                {concept.title}
-              </h3>
+              <h3>{concept.title}</h3>
 
               <p className="deep-concept-preview">
                 {concept.understand?.english}
               </p>
 
-              <span className="deep-concept-arrow">
-                Learn →
-              </span>
-
+              <span className="deep-concept-arrow">Learn →</span>
             </button>
           ))}
-
         </div>
-
       </section>
-
     </div>
   );
 }
