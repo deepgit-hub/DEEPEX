@@ -17,10 +17,10 @@ function DeepLearnCategory() {
 
   const [concepts, setConcepts] = useState([]);
   const [completedConcepts, setCompletedConcepts] = useState([]);
+  const [leaderboards, setLeaderboards] = useState({});
   const [loading, setLoading] = useState(true);
+  const [leaderboardLoading, setLeaderboardLoading] = useState(false);
   const [error, setError] = useState("");
-
-  // Leaderboard popup state
   const [showLeaderboard, setShowLeaderboard] = useState(false);
 
   const firebaseCategoryId =
@@ -37,7 +37,15 @@ function DeepLearnCategory() {
   const categoryName =
     categoryNames[categoryId] || "DEEP LEARN";
 
-  // Fetch concepts and student progress
+  const leaderboardCategories = [
+    { id: "communication", name: "💬 Communication Skills" },
+    { id: "interview", name: "🎤 Interview Skills" },
+    { id: "workspace", name: "🏢 Workplace Skills" },
+    { id: "professional", name: "💼 Professional Skills" },
+    { id: "personal", name: "🌱 Personal Skills" },
+  ];
+
+  // Fetch concepts and current student progress
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -91,7 +99,6 @@ function DeepLearnCategory() {
           studentSnapshot.data()[progressField] || [];
 
         setCompletedConcepts(completed);
-
       } catch (err) {
         console.error("Error fetching category data:", err);
         setError(err.message || "Unable to load concepts.");
@@ -102,6 +109,58 @@ function DeepLearnCategory() {
 
     fetchData();
   }, [categoryId, firebaseCategoryId]);
+
+  // Fetch and calculate all five leaderboards
+  const fetchLeaderboards = async () => {
+    try {
+      setLeaderboardLoading(true);
+
+      const studentsSnapshot = await getDocs(
+        collection(db, "students")
+      );
+
+      const allStudents = studentsSnapshot.docs.map(
+        (document) => ({
+          username: document.id,
+          ...document.data(),
+        })
+      );
+
+      const results = {};
+
+      leaderboardCategories.forEach((category) => {
+        results[category.id] = allStudents
+          .map((student) => {
+            const completed =
+              student[category.id] || [];
+
+            return {
+              username: student.username,
+              name: student.name || student.username,
+              completedCount: completed.length,
+            };
+          })
+          .filter((student) => student.completedCount > 0)
+          .sort(
+            (a, b) =>
+              b.completedCount - a.completedCount ||
+              a.name.localeCompare(b.name)
+          )
+          .slice(0, 3);
+      });
+
+      setLeaderboards(results);
+    } catch (err) {
+      console.error("Error fetching leaderboards:", err);
+    } finally {
+      setLeaderboardLoading(false);
+    }
+  };
+
+  const handleLeaderboardOpen = async () => {
+    setShowLeaderboard(true);
+    await fetchLeaderboards();
+  };
 
   // Calculate progress
   const totalConcepts = concepts.length;
@@ -178,16 +237,14 @@ function DeepLearnCategory() {
                 {totalConcepts} concepts.
               </p>
 
-              {/* LEADERBOARD BUTTON */}
               <button
                 className="deep-leaderboard-btn"
-                onClick={() => setShowLeaderboard(true)}
+                onClick={handleLeaderboardOpen}
               >
                 🏆 LEADERBOARD
               </button>
 
             </div>
-
           </div>
         </div>
 
@@ -253,7 +310,6 @@ function DeepLearnCategory() {
           })}
 
         </div>
-
       </section>
 
       {/* DEEP SPEAK LEADERBOARD POPUP */}
@@ -286,64 +342,64 @@ function DeepLearnCategory() {
 
             <div className="deep-leaderboard-categories">
 
-              {[
-                {
-                  id: "communication",
-                  name: "💬 Communication Skills",
-                },
-                {
-                  id: "interview",
-                  name: "🎤 Interview Skills",
-                },
-                {
-                  id: "workspace",
-                  name: "🏢 Workplace Skills",
-                },
-                {
-                  id: "professional",
-                  name: "💼 Professional Skills",
-                },
-                {
-                  id: "personal",
-                  name: "🌱 Personal Skills",
-                },
-              ].map((category) => (
+              {leaderboardCategories.map((category) => {
+                const rankings = leaderboards[category.id] || [];
 
-                <div
-                  className="deep-leaderboard-category"
-                  key={category.id}
-                >
+                return (
+                  <div
+                    className="deep-leaderboard-category"
+                    key={category.id}
+                  >
 
-                  <h3>{category.name}</h3>
+                    <h3>{category.name}</h3>
 
-                  <div className="deep-leaderboard-table-wrapper">
+                    <div className="deep-leaderboard-table-wrapper">
 
-                    <table className="deep-leaderboard-table">
+                      <table className="deep-leaderboard-table">
 
-                      <thead>
-                        <tr>
-                          <th>Rank</th>
-                          <th>Student Name</th>
-                          <th>Completed Concepts</th>
-                        </tr>
-                      </thead>
+                        <thead>
+                          <tr>
+                            <th>Rank</th>
+                            <th>Student Name</th>
+                            <th>Completed Concepts</th>
+                          </tr>
+                        </thead>
 
-                      <tbody>
-                        <tr>
-                          <td colSpan="3">
-                            Rankings will appear here once leaderboard
-                            data is connected.
-                          </td>
-                        </tr>
-                      </tbody>
+                        <tbody>
 
-                    </table>
+                          {leaderboardLoading ? (
+                            <tr>
+                              <td colSpan="3">
+                                Loading rankings...
+                              </td>
+                            </tr>
+                          ) : rankings.length === 0 ? (
+                            <tr>
+                              <td colSpan="3">
+                                Students are learning in this category 🌱
+                              </td>
+                            </tr>
+                          ) : (
+                            rankings.map((student, index) => (
+                              <tr key={student.username}>
+                                <td>
+                                  {["🥇", "🥈", "🥉"][index]}
+                                </td>
+                                <td>{student.name}</td>
+                                <td>{student.completedCount}</td>
+                              </tr>
+                            ))
+                          )}
+
+                        </tbody>
+
+                      </table>
+
+                    </div>
 
                   </div>
-
-                </div>
-
-              ))}
+                );
+              })}
 
             </div>
 
