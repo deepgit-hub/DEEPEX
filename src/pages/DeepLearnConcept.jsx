@@ -8,6 +8,7 @@ import {
   arrayUnion,
   arrayRemove,
 } from "firebase/firestore";
+
 import { db } from "../firebase";
 import "../styles/DeepLearnConcept.css";
 
@@ -23,7 +24,10 @@ function DeepLearnConcept() {
   const [progressLoading, setProgressLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
-  // Workplace route ID and Firestore document ID are different.
+  // Map Workplace route ID to its Firestore field/document ID.
+  const progressField =
+    categoryId === "workplace" ? "workspace" : categoryId;
+
   const firebaseCategoryId =
     categoryId === "workplace" ? "workspace" : categoryId;
 
@@ -35,9 +39,10 @@ function DeepLearnConcept() {
     personal: "Personal Skills",
   };
 
-  const categoryName = categoryNames[categoryId] || "DEEP LEARN";
+  const categoryName =
+    categoryNames[categoryId] || "DEEP LEARN";
 
-  // Fetch concept and student's progress.
+  // Fetch concept and student progress.
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -50,10 +55,12 @@ function DeepLearnConcept() {
         );
 
         if (!student?.username) {
-          throw new Error("Student login information not found.");
+          throw new Error(
+            "Student login information not found."
+          );
         }
 
-        // Fetch concept content.
+        // Fetch concept from deepLearn collection.
         const conceptRef = doc(
           db,
           "deepLearn",
@@ -76,21 +83,18 @@ function DeepLearnConcept() {
 
         setConcept(conceptData);
 
-        // Fetch student's DEEP SPEAK progress.
-        const progressRef = doc(
-  db,
-  "students",
-  student.username
-);
+        // Fetch progress from existing student document.
+        const studentRef = doc(
+          db,
+          "students",
+          student.username
+        );
 
-const progressField =
-  categoryId === "workplace" ? "workspace" : categoryId;
+        const studentSnap = await getDoc(studentRef);
 
-        const progressSnap = await getDoc(progressRef);
-
-        if (progressSnap.exists()) {
+        if (studentSnap.exists()) {
           const completedConcepts =
-            progressSnap.data()[categoryId] || [];
+            studentSnap.data()[progressField] || [];
 
           setIsRead(
             completedConcepts.includes(
@@ -98,11 +102,14 @@ const progressField =
             )
           );
         } else {
-          setIsRead(false);
+          throw new Error("Student record not found.");
         }
+
       } catch (err) {
-        console.error(err);
-        setError(err.message || "Unable to load this concept.");
+        console.error("Error fetching concept:", err);
+        setError(
+          err.message || "Unable to load this concept."
+        );
       } finally {
         setLoading(false);
         setProgressLoading(false);
@@ -110,7 +117,7 @@ const progressField =
     };
 
     fetchData();
-  }, [categoryId, conceptId, firebaseCategoryId]);
+  }, [categoryId, conceptId, firebaseCategoryId, progressField]);
 
   // Mark as Read / Mark as Unread.
   const handleToggleRead = async () => {
@@ -124,37 +131,50 @@ const progressField =
       );
 
       if (!student?.username) {
-        throw new Error("Student login information not found.");
+        throw new Error(
+          "Student login information not found."
+        );
       }
 
-      const progressRef = doc(
+      // Update existing student document.
+      const studentRef = doc(
         db,
-        "deepSpeakProgress",
+        "students",
         student.username
       );
 
-      const currentConceptId = Number(concept.conceptId);
+      const currentConceptId = Number(
+        concept.conceptId
+      );
 
       await setDoc(
-        progressRef,
+        studentRef,
         {
-          [categoryId]: isRead
+          [progressField]: isRead
             ? arrayRemove(currentConceptId)
             : arrayUnion(currentConceptId),
         },
         { merge: true }
       );
 
-      // Update the UI only after Firestore succeeds.
+      // Update UI only after Firestore succeeds.
       setIsRead(!isRead);
+
     } catch (err) {
-      console.error("Progress update failed:", err);
-      alert("Unable to update your progress. Please try again.");
+      console.error(
+        "Progress update failed:",
+        err
+      );
+
+      alert(
+        "Unable to update your progress. Please try again."
+      );
     } finally {
       setSaving(false);
     }
   };
 
+  // Loading state.
   if (loading) {
     return (
       <div className="deep-concept-loading">
@@ -163,6 +183,7 @@ const progressField =
     );
   }
 
+  // Error state.
   if (error || !concept) {
     return (
       <div className="deep-concept-loading">
@@ -201,72 +222,110 @@ const progressField =
 
         {/* UNDERSTAND */}
         <div className="deep-learning-section">
+
           <h2>🧠 Understand</h2>
 
           <div className="deep-language-block">
-            <div className="deep-language-label">English</div>
+            <div className="deep-language-label">
+              English
+            </div>
+
             <p>{concept.understand?.english}</p>
           </div>
 
           <div className="deep-language-block">
-            <div className="deep-language-label">தமிழ்</div>
+            <div className="deep-language-label">
+              தமிழ்
+            </div>
+
             <p>{concept.understand?.tamil}</p>
           </div>
+
         </div>
 
         {/* SEE THE SITUATION */}
         <div className="deep-learning-section">
+
           <h2>🎭 See the Situation</h2>
 
           <div className="deep-language-block">
-            <div className="deep-language-label">English</div>
+            <div className="deep-language-label">
+              English
+            </div>
+
             <p>{concept.seeTheSituation?.english}</p>
           </div>
 
           <div className="deep-language-block">
-            <div className="deep-language-label">தமிழ்</div>
+            <div className="deep-language-label">
+              தமிழ்
+            </div>
+
             <p>{concept.seeTheSituation?.tamil}</p>
           </div>
+
         </div>
 
         {/* COMMON MISTAKE */}
         <div className="deep-learning-section mistake-section">
+
           <h2>⚠️ Common Mistake</h2>
 
           <div className="deep-language-block">
-            <div className="deep-language-label">English</div>
+            <div className="deep-language-label">
+              English
+            </div>
+
             <p>{concept.commonMistake?.english}</p>
           </div>
 
           <div className="deep-language-block">
-            <div className="deep-language-label">தமிழ்</div>
+            <div className="deep-language-label">
+              தமிழ்
+            </div>
+
             <p>{concept.commonMistake?.tamil}</p>
           </div>
+
         </div>
 
         {/* BETTER APPROACH */}
         <div className="deep-learning-section better-section">
+
           <h2>✅ Better Approach</h2>
 
           <div className="deep-language-block">
-            <div className="deep-language-label">English</div>
+            <div className="deep-language-label">
+              English
+            </div>
+
             <p>{concept.betterApproach?.english}</p>
           </div>
 
           <div className="deep-language-block">
-            <div className="deep-language-label">தமிழ்</div>
+            <div className="deep-language-label">
+              தமிழ்
+            </div>
+
             <p>{concept.betterApproach?.tamil}</p>
           </div>
+
         </div>
 
         {/* USEFUL EXPRESSIONS */}
         <div className="deep-learning-section">
+
           <h2>💬 Useful Expressions</h2>
 
           <div className="deep-expressions">
+
             {concept.usefulExpressions?.map(
               (expression, index) => (
-                <div className="deep-expression" key={index}>
+                <div
+                  className="deep-expression"
+                  key={index}
+                >
+
                   <p className="deep-expression-english">
                     {expression.english}
                   </p>
@@ -274,25 +333,36 @@ const progressField =
                   <p className="deep-expression-tamil">
                     {expression.tamil}
                   </p>
+
                 </div>
               )
             )}
+
           </div>
+
         </div>
 
         {/* TRY YOURSELF */}
         <div className="deep-learning-section try-section">
+
           <h2>🚀 Try Yourself</h2>
 
           <div className="deep-language-block">
-            <div className="deep-language-label">English</div>
+            <div className="deep-language-label">
+              English
+            </div>
+
             <p>{concept.tryYourself?.english}</p>
           </div>
 
           <div className="deep-language-block">
-            <div className="deep-language-label">தமிழ்</div>
+            <div className="deep-language-label">
+              தமிழ்
+            </div>
+
             <p>{concept.tryYourself?.tamil}</p>
           </div>
+
         </div>
 
         {/* PROGRESS ACTION */}
@@ -324,6 +394,7 @@ const progressField =
         </div>
 
       </section>
+
     </div>
   );
 }
