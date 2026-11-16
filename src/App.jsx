@@ -86,15 +86,13 @@ function App() {
 
 
       {/* ==========================================
-          DEEP CODE - ENTRY
-         ========================================== */}
+    DEEP CODE - ENTRY
+========================================== */}
 
 <Route
   path="/choose-language"
   element={<ChooseLanguage />}
 />
-
-{/* NEW LEARNING SELECTION PAGES */}
 
 <Route
   path="/learning-choice"
@@ -111,12 +109,10 @@ function App() {
   element={<Welcome />}
 />
 
-      
-
-      <Route
-        path="/languages"
-        element={<Languages />}
-      />
+<Route
+  path="/languages"
+  element={<Languages />}
+/>
 
 
       {/* ==========================================
