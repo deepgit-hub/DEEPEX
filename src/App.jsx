@@ -37,7 +37,7 @@ import QuestionDetails from "./pages/QuestionDetails";
 // ================================
 
 import LearningChoice from "./pages/LearningChoice";
-import WebDevelopment from "./pages/WebDevelopment";
+//import WebDevelopment from "./pages/WebDevelopment";
 
 function App() {
 
