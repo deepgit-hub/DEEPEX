@@ -111,10 +111,7 @@ function App() {
   element={<Welcome />}
 />
 
-      <Route
-        path="/welcome"
-        element={<Welcome />}
-      />
+      
 
       <Route
         path="/languages"
