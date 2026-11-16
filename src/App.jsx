@@ -36,6 +36,9 @@ import QuestionDetails from "./pages/QuestionDetails";
 // DEEP CODE WEB
 // ================================
 
+import LearningChoice from "./pages/LearningChoice";
+import WebDevelopment from "./pages/WebDevelopment";
+
 function App() {
 
   return (
