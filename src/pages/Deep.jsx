@@ -91,12 +91,12 @@ function Deep() {
 
             </div>
 
-            <button
-              onClick={() => navigate("/choose-language")}
-              className="deep-product-btn"
-            >
-              Start Coding →
-            </button>
+           <button
+  onClick={() => navigate("/learning-choice")}
+  className="deep-product-btn"
+>
+  Start Coding →
+</button>
 
           </div>
 
