@@ -1,0 +1,154 @@
+
+.learning-choice-page {
+  min-height: 100vh;
+  background: #f8fafc;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+}
+
+.learning-choice-container {
+  width: 100%;
+  max-width: 950px;
+
+  background: white;
+
+  padding: 50px;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.learning-choice-badge {
+  color: #173476;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.learning-choice-container h1 {
+  color: #173476;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.learning-choice-container > p {
+  color: #64748b;
+  font-size: 17px;
+  margin-bottom: 35px;
+}
+
+.learning-choice-options {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.learning-choice-card {
+  flex: 1;
+  min-width: 260px;
+  max-width: 370px;
+
+  border: 3px solid #e2e8f0;
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 30px 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+.learning-choice-card:hover {
+  transform: translateY(-6px);
+  border-color: #2563eb;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.learning-choice-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.learning-choice-card h2 {
+  color: #173476;
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.learning-choice-card p {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.learning-choice-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-bottom: 25px;
+}
+
+.learning-choice-tags span {
+  background: #eff6ff;
+  color: #173476;
+
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.learning-choice-card button {
+  width: 100%;
+
+  padding: 13px 18px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #173476;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.learning-choice-card button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .learning-choice-container {
+    padding: 30px 20px;
+  }
+
+  .learning-choice-container h1 {
+    font-size: 25px;
+  }
+
+  .learning-choice-card {
+    min-width: 100%;
+  }
+}
