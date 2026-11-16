@@ -1,0 +1,151 @@
+
+.web-development-page {
+  min-height: 100vh;
+  background: #f8fafc;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+}
+
+.web-development-container {
+  width: 100%;
+  max-width: 1100px;
+
+  background: white;
+  padding: 50px;
+
+  border-radius: 25px;
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.web-development-badge {
+  color: #173476;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.web-development-container h1 {
+  color: #173476;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.web-development-container > p {
+  color: #64748b;
+  font-size: 17px;
+  margin-bottom: 35px;
+}
+
+.web-development-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.web-development-card {
+  flex: 1;
+  min-width: 230px;
+  max-width: 310px;
+
+  padding: 30px 22px;
+
+  border: 3px solid #e2e8f0;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+.web-development-card:hover {
+  transform: translateY(-6px);
+  border-color: #2563eb;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.web-development-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.web-development-card h2 {
+  color: #173476;
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.web-development-card h3 {
+  color: #2563eb;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.web-development-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.web-development-card button {
+  width: 100%;
+  padding: 13px;
+
+  background: #173476;
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.web-development-card button:hover {
+  background: #2563eb;
+}
+
+.web-development-back {
+  margin-top: 30px;
+  padding: 12px 20px;
+
+  background: transparent;
+  color: #173476;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.web-development-back:hover {
+  background: #eff6ff;
+}
+
+@media (max-width: 600px) {
+  .web-development-container {
+    padding: 30px 20px;
+  }
+
+  .web-development-container h1 {
+    font-size: 25px;
+  }
+
+  .web-development-card {
+    min-width: 100%;
+  }
+}
