@@ -87,12 +87,29 @@ function App() {
 
       {/* ==========================================
           DEEP CODE - ENTRY
-      ========================================== */}
+         ========================================== */}
 
-      <Route
-        path="/choose-language"
-        element={<ChooseLanguage />}
-      />
+<Route
+  path="/choose-language"
+  element={<ChooseLanguage />}
+/>
+
+{/* NEW LEARNING SELECTION PAGES */}
+
+<Route
+  path="/learning-choice"
+  element={<LearningChoice />}
+/>
+
+<Route
+  path="/web-development"
+  element={<WebDevelopment />}
+/>
+
+<Route
+  path="/welcome"
+  element={<Welcome />}
+/>
 
       <Route
         path="/welcome"
