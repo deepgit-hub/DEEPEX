@@ -661,7 +661,744 @@ body {
       "Box-க்கு ஆரஞ்சு நிற பின்னணி வழங்கப்படுகிறது."
     ],
     output: "An orange DEEP CODE box positioned 20 pixels from the top and 30 pixels from the left inside a light gray container."
+  },
+
+[
+  {
+    id: 11,
+    title: "CSS Flexbox",
+    englishDefinition:
+      "CSS Flexbox is a one-dimensional layout system used to arrange elements in a row or column. It provides flexible control over alignment, spacing, and distribution of items.",
+    tamilDefinition:
+      "CSS Flexbox என்பது உறுப்புகளை ஒரு வரிசை அல்லது நெடுவரிசையில் அமைக்க பயன்படும் ஒரு பரிமாண layout முறையாகும். இது உறுப்புகளின் சீரமைப்பு, இடைவெளி மற்றும் பகிர்வை நெகிழ்வாக கட்டுப்படுத்துகிறது.",
+    realWorldUsage:
+      "Flexbox is commonly used to create navigation bars, align buttons, arrange cards, and center content on websites.",
+    realWorldUsageTamil:
+      "வலைத்தளங்களில் navigation bars உருவாக்கவும், buttons-ஐ சீரமைக்கவும், cards-ஐ வரிசைப்படுத்தவும், content-ஐ மையப்படுத்தவும் Flexbox பயன்படுகிறது.",
+    syntax: `.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}`,
+    syntaxExplanationEnglish: [
+      "display: flex enables Flexbox on a container.",
+      "flex-direction controls the direction of flex items.",
+      "justify-content aligns items along the main axis.",
+      "align-items aligns items along the cross axis.",
+      "gap creates space between flex items."
+    ],
+    syntaxExplanationTamil: [
+      "display: flex ஒரு container-ல் Flexbox முறையை செயல்படுத்துகிறது.",
+      "flex-direction உறுப்புகள் அமைக்கப்படும் திசையை கட்டுப்படுத்துகிறது.",
+      "justify-content main axis வழியாக உறுப்புகளை சீரமைக்கிறது.",
+      "align-items cross axis வழியாக உறுப்புகளை சீரமைக்கிறது.",
+      "gap உறுப்புகளுக்கு இடையில் இடைவெளியை உருவாக்குகிறது."
+    ],
+    exampleProgram: `<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Flexbox</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      height: 150px;
+      background-color: lightgray;
+    }
+
+    .item {
+      padding: 20px;
+      background-color: steelblue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">HTML</div>
+    <div class="item">CSS</div>
+    <div class="item">JavaScript</div>
+  </div>
+</body>
+</html>`,
+    programExplanationEnglish: [
+      "The container uses display: flex.",
+      "justify-content centers the items horizontally in the default row direction.",
+      "align-items centers the items vertically.",
+      "gap creates 15 pixels of space between the items.",
+      "Each item receives a blue background and white text."
+    ],
+    programExplanationTamil: [
+      "Container-ல் display: flex பயன்படுத்தப்படுகிறது.",
+      "இயல்பான row திசையில் justify-content உறுப்புகளை கிடைமட்டமாக மையப்படுத்துகிறது.",
+      "align-items உறுப்புகளை செங்குத்தாக மையப்படுத்துகிறது.",
+      "gap உறுப்புகளுக்கு இடையில் 15 pixels இடைவெளியை உருவாக்குகிறது.",
+      "ஒவ்வொரு உறுப்பிற்கும் நீல பின்னணி மற்றும் வெள்ளை எழுத்துகள் வழங்கப்படுகின்றன."
+    ],
+    output:
+      "Three blue boxes displaying HTML, CSS, and JavaScript arranged horizontally and centered inside a gray container."
+  },
+  {
+    id: 12,
+    title: "CSS Grid",
+    englishDefinition:
+      "CSS Grid is a two-dimensional layout system that allows developers to arrange elements into rows and columns.",
+    tamilDefinition:
+      "CSS Grid என்பது உறுப்புகளை வரிசைகள் மற்றும் நெடுவரிசைகளில் அமைக்க உதவும் இரு பரிமாண layout முறையாகும்.",
+    realWorldUsage:
+      "CSS Grid is used to build website layouts, image galleries, product grids, dashboards, and card collections.",
+    realWorldUsageTamil:
+      "Website layouts, image galleries, product grids, dashboards மற்றும் card collections உருவாக்க CSS Grid பயன்படுகிறது.",
+    syntax: `.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}`,
+    syntaxExplanationEnglish: [
+      "display: grid enables CSS Grid.",
+      "grid-template-columns defines the number and size of columns.",
+      "grid-template-rows defines row sizes.",
+      "gap creates spacing between grid items.",
+      "1fr represents one fraction of the available grid space."
+    ],
+    syntaxExplanationTamil: [
+      "display: grid CSS Grid முறையை செயல்படுத்துகிறது.",
+      "grid-template-columns நெடுவரிசைகளின் எண்ணிக்கை மற்றும் அளவை குறிப்பிடுகிறது.",
+      "grid-template-rows வரிசைகளின் அளவை குறிப்பிடுகிறது.",
+      "gap Grid உறுப்புகளுக்கு இடையில் இடைவெளியை உருவாக்குகிறது.",
+      "1fr என்பது கிடைக்கும் Grid இடத்தின் ஒரு பங்கைக் குறிக்கிறது."
+    ],
+    exampleProgram: `<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Grid</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .item {
+      background-color: teal;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">HTML</div>
+    <div class="item">CSS</div>
+    <div class="item">JavaScript</div>
+  </div>
+</body>
+</html>`,
+    programExplanationEnglish: [
+      "The container uses display: grid.",
+      "repeat(3, 1fr) creates three equal-width columns.",
+      "gap creates 10 pixels of spacing between grid items.",
+      "Each item receives a teal background and white text."
+    ],
+    programExplanationTamil: [
+      "Container-ல் display: grid பயன்படுத்தப்படுகிறது.",
+      "repeat(3, 1fr) மூன்று சம அகலமுள்ள நெடுவரிசைகளை உருவாக்குகிறது.",
+      "gap ஒவ்வொரு Grid உறுப்பிற்கும் இடையில் 10 pixels இடைவெளியை உருவாக்குகிறது.",
+      "ஒவ்வொரு உறுப்பிற்கும் teal பின்னணி மற்றும் வெள்ளை எழுத்துகள் வழங்கப்படுகின்றன."
+    ],
+    output:
+      "Three teal boxes displaying HTML, CSS, and JavaScript in three equal-width columns."
+  },
+  {
+    id: 13,
+    title: "CSS Pseudo-Classes",
+    englishDefinition:
+      "A CSS pseudo-class is a keyword added to a selector to style an element when it is in a particular state or matches a specific condition.",
+    tamilDefinition:
+      "CSS Pseudo-Class என்பது ஒரு HTML உறுப்பு குறிப்பிட்ட நிலையில் இருக்கும்போது அல்லது குறிப்பிட்ட நிபந்தனையை பூர்த்தி செய்யும்போது அதற்கு style வழங்க selector-உடன் சேர்க்கப்படும் keyword ஆகும்.",
+    realWorldUsage:
+      "Pseudo-classes are used to create hover effects, style visited links, highlight focused input fields, and improve form interactions.",
+    realWorldUsageTamil:
+      "Hover effects உருவாக்கவும், ஏற்கனவே பார்வையிட்ட links-ஐ வடிவமைக்கவும், focus செய்யப்பட்ட input fields-ஐ முன்னிலைப்படுத்தவும் Pseudo-Classes பயன்படுகின்றன.",
+    syntax: `button:hover {
+  background-color: blue;
+}
+
+input:focus {
+  border: 2px solid green;
+}`,
+    syntaxExplanationEnglish: [
+      ":hover applies styles when the pointer moves over an element.",
+      ":focus applies styles when an element receives focus.",
+      ":active applies styles while an element is being activated.",
+      ":first-child selects an element that is the first child of its parent.",
+      "Pseudo-classes begin with a single colon (:)."
+    ],
+    syntaxExplanationTamil: [
+      ":hover pointer ஒரு உறுப்பின் மேல் செல்லும்போது style வழங்குகிறது.",
+      ":focus ஒரு உறுப்பு focus பெறும்போது style வழங்குகிறது.",
+      ":active ஒரு உறுப்பு செயல்படுத்தப்படும் நேரத்தில் style வழங்குகிறது.",
+      ":first-child அதன் parent-ன் முதல் child உறுப்பை தேர்வு செய்கிறது.",
+      "Pseudo-Classes ஒரு colon (:) குறியுடன் தொடங்குகின்றன."
+    ],
+    exampleProgram: `<!DOCTYPE html>
+<html>
+<head>
+  <title>Pseudo Classes</title>
+  <style>
+    button {
+      background-color: gray;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    button:hover {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <button>Move Mouse Here</button>
+</body>
+</html>`,
+    programExplanationEnglish: [
+      "The button initially receives a gray background.",
+      "The button text is displayed in white.",
+      "The :hover pseudo-class detects when the pointer moves over the button.",
+      "The background changes to green while hovering."
+    ],
+    programExplanationTamil: [
+      "Button-க்கு ஆரம்பத்தில் சாம்பல் நிற பின்னணி வழங்கப்படுகிறது.",
+      "Button எழுத்துகள் வெள்ளை நிறத்தில் காட்டப்படுகின்றன.",
+      "Pointer button-ன் மேல் வரும்போது :hover pseudo-class அதை கண்டறிகிறது.",
+      "Hover செய்யும்போது பின்னணி பச்சை நிறமாக மாறுகிறது."
+    ],
+    output:
+      "A gray button that changes to green when the mouse pointer moves over it."
+  },
+  {
+    id: 14,
+    title: "CSS Pseudo-Elements",
+    englishDefinition:
+      "CSS pseudo-elements allow developers to style a specific part of an element or insert generated content without adding extra HTML elements.",
+    tamilDefinition:
+      "CSS Pseudo-Elements என்பது கூடுதல் HTML உறுப்புகளை உருவாக்காமல் ஒரு உறுப்பின் குறிப்பிட்ட பகுதியை வடிவமைக்க அல்லது புதிய content-ஐ உருவாக்க உதவுகின்றன.",
+    realWorldUsage:
+      "Pseudo-elements are used to style the first letter of paragraphs, add decorative icons, create separators, and highlight selected text.",
+    realWorldUsageTamil:
+      "Paragraph-ன் முதல் எழுத்தை வடிவமைக்கவும், அலங்கார icons சேர்க்கவும், separators உருவாக்கவும், தேர்ந்தெடுக்கப்பட்ட text-ஐ முன்னிலைப்படுத்தவும் Pseudo-Elements பயன்படுகின்றன.",
+    syntax: `p::first-letter {
+  color: red;
+  font-size: 30px;
+}
+
+p::before {
+  content: "Note: ";
+}`,
+    syntaxExplanationEnglish: [
+      "::before inserts generated content before an element's content.",
+      "::after inserts generated content after an element's content.",
+      "::first-letter styles the first letter of a text block.",
+      "::first-line styles the first formatted line of a block.",
+      "Pseudo-elements generally use two colons (::)."
+    ],
+    syntaxExplanationTamil: [
+      "::before ஒரு உறுப்பின் content-க்கு முன்பு புதிய content-ஐ உருவாக்குகிறது.",
+      "::after ஒரு உறுப்பின் content-க்கு பின்னால் புதிய content-ஐ உருவாக்குகிறது.",
+      "::first-letter text பகுதியின் முதல் எழுத்தை வடிவமைக்கிறது.",
+      "::first-line ஒரு block-ன் முதல் வடிவமைக்கப்பட்ட வரியை மாற்றுகிறது.",
+      "Pseudo-Elements பொதுவாக இரண்டு colons (::) பயன்படுத்துகின்றன."
+    ],
+    exampleProgram: `<!DOCTYPE html>
+<html>
+<head>
+  <title>Pseudo Elements</title>
+  <style>
+    p::first-letter {
+      color: red;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    p::after {
+      content: " - DEEP CODE";
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <p>Learn CSS</p>
+</body>
+</html>`,
+    programExplanationEnglish: [
+      "The ::first-letter pseudo-element targets the first letter of the paragraph.",
+      "The first letter becomes red, bold, and larger.",
+      "The ::after pseudo-element adds the text ' - DEEP CODE' after the paragraph content.",
+      "The generated text is displayed in blue."
+    ],
+    programExplanationTamil: [
+      "::first-letter pseudo-element paragraph-ன் முதல் எழுத்தை தேர்வு செய்கிறது.",
+      "முதல் எழுத்து சிவப்பு நிறமாகவும் தடிமனாகவும் பெரியதாகவும் மாறுகிறது.",
+      "::after pseudo-element paragraph content-க்கு பின்னால் ' - DEEP CODE' என்ற text-ஐ சேர்க்கிறது.",
+      "உருவாக்கப்பட்ட text நீல நிறத்தில் காட்டப்படுகிறது."
+    ],
+    output:
+      "The paragraph begins with a large, bold red L, followed by 'earn CSS - DEEP CODE' with the generated text in blue."
+  },
+  {
+    id: 15,
+    title: "CSS Combinators",
+    englishDefinition:
+      "CSS combinators describe relationships between selectors. They allow developers to select elements based on their relationship with other elements in the HTML document.",
+    tamilDefinition:
+      "CSS Combinators என்பது selectors-க்கு இடையிலான உறவுகளை குறிப்பிடுகின்றன. HTML ஆவணத்தில் மற்ற உறுப்புகளுடன் உள்ள தொடர்பின் அடிப்படையில் உறுப்புகளை தேர்வு செய்ய இவை உதவுகின்றன.",
+    realWorldUsage:
+      "Combinators are used to style nested menu items, child elements, related sections, and elements that immediately follow other elements.",
+    realWorldUsageTamil:
+      "Nested menu items, child elements, தொடர்புடைய பகுதிகள் மற்றும் மற்ற உறுப்புகளுக்கு உடனடியாக பின்னால் வரும் உறுப்புகளை வடிவமைக்க Combinators பயன்படுகின்றன.",
+    syntax: `/* Descendant */
+div p {
+  color: red;
+}
+
+/* Child */
+div > p {
+  color: blue;
+}
+
+/* Adjacent sibling */
+h1 + p {
+  color: green;
+}
+
+/* General sibling */
+h1 ~ p {
+  font-weight: bold;
+}`,
+    syntaxExplanationEnglish: [
+      "The descendant combinator (space) selects matching elements anywhere inside an ancestor.",
+      "The child combinator (>) selects direct children only.",
+      "The adjacent sibling combinator (+) selects the immediately following sibling.",
+      "The general sibling combinator (~) selects following siblings that share the same parent."
+    ],
+    syntaxExplanationTamil: [
+      "Descendant combinator (space) ஒரு ancestor-க்குள் எங்கிருந்தாலும் பொருந்தும் உறுப்புகளை தேர்வு செய்கிறது.",
+      "Child combinator (>) நேரடி child உறுப்புகளை மட்டும் தேர்வு செய்கிறது.",
+      "Adjacent sibling combinator (+) உடனடியாக அடுத்து வரும் sibling உறுப்பை தேர்வு செய்கிறது.",
+      "General sibling combinator (~) ஒரே parent-ஐ பகிரும் பின்னர் வரும் sibling உறுப்புகளை தேர்வு செய்கிறது."
+    ],
+    exampleProgram: `<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Combinators</title>
+  <style>
+    div > p {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p>This is a direct child.</p>
+    <section>
+      <p>This is a nested paragraph.</p>
+    </section>
+  </div>
+</body>
+</html>`,
+    programExplanationEnglish: [
+      "The div > p selector targets only paragraphs that are direct children of a div.",
+      "The first paragraph is a direct child of the div.",
+      "The second paragraph is inside a section, so it is not a direct child of the div.",
+      "Only the first paragraph becomes blue."
+    ],
+    programExplanationTamil: [
+      "div > p selector div-ன் நேரடி child ஆக இருக்கும் paragraph-களை மட்டும் தேர்வு செய்கிறது.",
+      "முதல் paragraph div-ன் நேரடி child ஆகும்.",
+      "இரண்டாவது paragraph section-க்குள் இருப்பதால் div-ன் நேரடி child அல்ல.",
+      "முதல் paragraph மட்டும் நீல நிறமாக மாறுகிறது."
+    ],
+    output:
+      "The first paragraph is blue, while the nested paragraph keeps its default text color."
+  },
+  {
+    id: 16,
+    title: "CSS Transitions and Transforms",
+    englishDefinition:
+      "CSS transitions create smooth changes between property values over a specified duration. CSS transforms change the appearance or position of an element by translating, rotating, scaling, or skewing it.",
+    tamilDefinition:
+      "CSS Transitions என்பது குறிப்பிட்ட நேரத்தில் ஒரு style value-இலிருந்து மற்றொரு value-க்கு மென்மையான மாற்றத்தை உருவாக்குகிறது. CSS Transforms என்பது உறுப்புகளை நகர்த்துதல், சுழற்றுதல், அளவை மாற்றுதல் அல்லது சாய்த்தல் மூலம் அவற்றின் தோற்றத்தை மாற்றுகிறது.",
+    realWorldUsage:
+      "Transitions and transforms are used for animated buttons, card hover effects, image zooming, and interactive website components.",
+    realWorldUsageTamil:
+      "Animated buttons, card hover effects, image zooming மற்றும் interactive website components உருவாக்க Transitions மற்றும் Transforms பயன்படுகின்றன.",
+    syntax: `.box {
+  transition: transform 0.5s ease;
+}
+
+.box:hover {
+  transform: scale(1.2) rotate(5deg);
+}`,
+    syntaxExplanationEnglish: [
+      "transition specifies which property changes smoothly and how long the change takes.",
+      "transition-duration controls the duration of the transition.",
+      "transform changes an element's visual appearance or position.",
+      "scale() increases or decreases an element's size.",
+      "rotate() rotates an element by a specified angle."
+    ],
+    syntaxExplanationTamil: [
+      "transition எந்த property மென்மையாக மாற வேண்டும் மற்றும் எவ்வளவு நேரம் எடுக்க வேண்டும் என்பதை குறிப்பிடுகிறது.",
+      "transition-duration மாற்றம் நடைபெறும் நேரத்தை கட்டுப்படுத்துகிறது.",
+      "transform ஒரு உறுப்பின் தோற்றம் அல்லது நிலையை மாற்றுகிறது.",
+      "scale() ஒரு உறுப்பின் அளவை பெரிதாக்க அல்லது சிறிதாக்குகிறது.",
+      "rotate() ஒரு உறுப்பை குறிப்பிட்ட கோணத்தில் சுழற்றுகிறது."
+    ],
+    exampleProgram: `<!DOCTYPE html>
+<html>
+<head>
+  <title>Transitions and Transforms</title>
+  <style>
+    .box {
+      width: 120px;
+      padding: 20px;
+      background-color: blue;
+      color: white;
+      transition: transform 0.5s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">Hover Me</div>
+</body>
+</html>`,
+    programExplanationEnglish: [
+      "The div is styled as a blue box.",
+      "The transition property sets a smooth 0.5-second transform transition.",
+      "When the pointer moves over the box, the :hover selector becomes active.",
+      "scale(1.2) increases the box's visual size by 20 percent."
+    ],
+    programExplanationTamil: [
+      "div ஒரு நீல நிற பெட்டியாக வடிவமைக்கப்படுகிறது.",
+      "transition property 0.5 வினாடி மென்மையான transform மாற்றத்தை அமைக்கிறது.",
+      "Pointer பெட்டியின் மேல் செல்லும்போது :hover selector செயல்படுகிறது.",
+      "scale(1.2) பெட்டியின் தோற்ற அளவை 20 சதவீதம் அதிகரிக்கிறது."
+    ],
+    output:
+      "A blue box that smoothly grows larger when the mouse pointer moves over it."
+  },
+  {
+    id: 17,
+    title: "CSS Animations",
+    englishDefinition:
+      "CSS animations allow elements to change styles over time using keyframes. They can run automatically without requiring user interaction.",
+    tamilDefinition:
+      "CSS Animations என்பது keyframes பயன்படுத்தி உறுப்புகளின் styles காலப்போக்கில் மாற அனுமதிக்கிறது. பயனர் எந்த interaction-மும் செய்யாமல் இவை தானாக இயங்க முடியும்.",
+    realWorldUsage:
+      "Animations are used for loading indicators, notifications, banners, attention effects, and visual feedback on websites.",
+    realWorldUsageTamil:
+      "Loading indicators, notifications, banners, கவனத்தை ஈர்க்கும் effects மற்றும் வலைத்தளங்களில் visual feedback வழங்க Animations பயன்படுகின்றன.",
+    syntax: `@keyframes moveBox {
+  from {
+    transform: translateX(0);
   }
+
+  to {
+    transform: translateX(100px);
+  }
+}
+
+.box {
+  animation: moveBox 2s infinite;
+}`,
+    syntaxExplanationEnglish: [
+      "@keyframes defines the stages of an animation.",
+      "from represents the starting state.",
+      "to represents the ending state.",
+      "animation-name specifies the keyframes animation.",
+      "animation-duration specifies how long one animation cycle takes.",
+      "animation-iteration-count specifies how many times the animation runs."
+    ],
+    syntaxExplanationTamil: [
+      "@keyframes ஒரு animation-ன் நிலைகளை வரையறுக்கிறது.",
+      "from என்பது animation தொடங்கும் நிலையை குறிக்கிறது.",
+      "to என்பது animation முடியும் நிலையை குறிக்கிறது.",
+      "animation-name எந்த keyframes animation பயன்படுத்தப்பட வேண்டும் என்பதை குறிப்பிடுகிறது.",
+      "animation-duration ஒரு animation cycle எவ்வளவு நேரம் எடுக்க வேண்டும் என்பதை குறிப்பிடுகிறது.",
+      "animation-iteration-count animation எத்தனை முறை இயங்க வேண்டும் என்பதை குறிப்பிடுகிறது."
+    ],
+    exampleProgram: `<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Animation</title>
+  <style>
+    @keyframes moveBox {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(150px);
+      }
+    }
+
+    .box {
+      width: 80px;
+      padding: 15px;
+      background-color: orange;
+      animation: moveBox 2s infinite alternate;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">Move</div>
+</body>
+</html>`,
+    programExplanationEnglish: [
+      "The @keyframes rule defines an animation named moveBox.",
+      "The animation starts at its original horizontal position.",
+      "It moves 150 pixels to the right.",
+      "The animation property runs the animation for two seconds.",
+      "infinite repeats the animation, and alternate reverses its direction on each cycle."
+    ],
+    programExplanationTamil: [
+      "@keyframes rule moveBox என்ற பெயரில் animation-ஐ வரையறுக்கிறது.",
+      "Animation அதன் ஆரம்ப கிடைமட்ட இடத்தில் தொடங்குகிறது.",
+      "அது வலதுபுறமாக 150 pixels நகர்கிறது.",
+      "animation property animation-ஐ இரண்டு வினாடிகள் இயக்குகிறது.",
+      "infinite animation-ஐ தொடர்ந்து மீண்டும் இயக்குகிறது; alternate ஒவ்வொரு cycle-லும் அதன் திசையை மாற்றுகிறது."
+    ],
+    output:
+      "An orange box repeatedly moves 150 pixels to the right and then returns to its starting position."
+  },
+  {
+    id: 18,
+    title: "CSS Responsive Design and Media Queries",
+    englishDefinition:
+      "Responsive design is an approach that makes websites adapt to different screen sizes and devices. CSS media queries apply styles based on device or viewport conditions.",
+    tamilDefinition:
+      "Responsive Design என்பது வெவ்வேறு திரை அளவுகள் மற்றும் சாதனங்களுக்கு ஏற்ப வலைத்தளங்கள் தங்களை மாற்றிக்கொள்ளும் வடிவமைப்பு முறையாகும். CSS Media Queries சாதனம் அல்லது viewport நிபந்தனைகளின் அடிப்படையில் styles-ஐ பயன்படுத்துகின்றன.",
+    realWorldUsage:
+      "Responsive design is used to make websites work well on mobile phones, tablets, laptops, and desktop computers.",
+    realWorldUsageTamil:
+      "Mobile phones, tablets, laptops மற்றும் desktop computers ஆகியவற்றில் வலைத்தளங்கள் சரியாக செயல்பட Responsive Design பயன்படுகிறது.",
+    syntax: `@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}`,
+    syntaxExplanationEnglish: [
+      "@media defines a media query.",
+      "max-width applies styles when the viewport width is at or below the specified value.",
+      "min-width applies styles when the viewport width is at or above the specified value.",
+      "Responsive styles can change layout, font sizes, spacing, and visibility."
+    ],
+    syntaxExplanationTamil: [
+      "@media என்பது media query-ஐ வரையறுக்கிறது.",
+      "max-width viewport அகலம் குறிப்பிடப்பட்ட அளவிற்கு சமமாகவோ அதற்கு குறைவாகவோ இருக்கும்போது styles-ஐ பயன்படுத்துகிறது.",
+      "min-width viewport அகலம் குறிப்பிடப்பட்ட அளவிற்கு சமமாகவோ அதற்கு அதிகமாகவோ இருக்கும்போது styles-ஐ பயன்படுத்துகிறது.",
+      "Responsive styles மூலம் layout, font sizes, spacing மற்றும் visibility ஆகியவற்றை மாற்றலாம்."
+    ],
+    exampleProgram: `<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Design</title>
+  <style>
+    .box {
+      background-color: blue;
+      color: white;
+      padding: 30px;
+      font-size: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .box {
+        background-color: green;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    Responsive Design
+  </div>
+</body>
+</html>`,
+    programExplanationEnglish: [
+      "The viewport meta tag helps the page use the device's actual viewport width.",
+      "The box initially has a blue background and 24-pixel text.",
+      "The media query checks whether the viewport width is 600 pixels or less.",
+      "When the condition matches, the background changes to green and the text size becomes 16 pixels."
+    ],
+    programExplanationTamil: [
+      "Viewport meta tag பக்கம் சாதனத்தின் உண்மையான viewport அகலத்தை பயன்படுத்த உதவுகிறது.",
+      "Box ஆரம்பத்தில் நீல பின்னணி மற்றும் 24-pixel எழுத்துகளைக் கொண்டுள்ளது.",
+      "Media query viewport அகலம் 600 pixels அல்லது அதற்கு குறைவாக உள்ளதா என சரிபார்க்கிறது.",
+      "நிபந்தனை பொருந்தும்போது பின்னணி பச்சை நிறமாகவும் எழுத்து அளவு 16 pixels ஆகவும் மாறுகிறது."
+    ],
+    output:
+      "The box appears blue with larger text on wider screens and green with smaller text when the viewport is 600 pixels wide or less."
+  },
+  {
+    id: 19,
+    title: "CSS Shadows and Gradients",
+    englishDefinition:
+      "CSS shadows create depth by adding shadow effects to elements or text. Gradients create smooth transitions between two or more colors.",
+    tamilDefinition:
+      "CSS Shadows என்பது உறுப்புகள் அல்லது எழுத்துகளுக்கு நிழல் விளைவுகளை வழங்கி ஆழமான தோற்றத்தை உருவாக்குகிறது. Gradients என்பது இரண்டு அல்லது அதற்கு மேற்பட்ட நிறங்களுக்கு இடையில் மென்மையான நிற மாற்றங்களை உருவாக்குகிறது.",
+    realWorldUsage:
+      "Shadows and gradients are used in modern cards, buttons, banners, backgrounds, and headings to improve visual appearance.",
+    realWorldUsageTamil:
+      "நவீன cards, buttons, banners, backgrounds மற்றும் headings ஆகியவற்றின் தோற்றத்தை மேம்படுத்த Shadows மற்றும் Gradients பயன்படுகின்றன.",
+    syntax: `.box {
+  box-shadow: 2px 4px 8px gray;
+}
+
+h1 {
+  text-shadow: 2px 2px 4px gray;
+}
+
+.banner {
+  background: linear-gradient(to right, blue, purple);
+}`,
+    syntaxExplanationEnglish: [
+      "box-shadow adds a shadow around an element's box.",
+      "text-shadow adds a shadow to text.",
+      "linear-gradient creates a gradient along a straight line.",
+      "radial-gradient creates a gradient spreading outward from a central point.",
+      "Gradient directions and color stops control the appearance of the gradient."
+    ],
+    syntaxExplanationTamil: [
+      "box-shadow ஒரு உறுப்பின் பெட்டியை சுற்றி நிழலை உருவாக்குகிறது.",
+      "text-shadow எழுத்துகளுக்கு நிழலை வழங்குகிறது.",
+      "linear-gradient ஒரு நேர்கோட்டு திசையில் நிற மாற்றத்தை உருவாக்குகிறது.",
+      "radial-gradient மையப்புள்ளியிலிருந்து வெளியே பரவும் நிற மாற்றத்தை உருவாக்குகிறது.",
+      "Gradient திசை மற்றும் color stops அதன் தோற்றத்தை கட்டுப்படுத்துகின்றன."
+    ],
+    exampleProgram: `<!DOCTYPE html>
+<html>
+<head>
+  <title>Shadows and Gradients</title>
+  <style>
+    .box {
+      width: 250px;
+      padding: 30px;
+      color: white;
+      background: linear-gradient(to right, blue, purple);
+      box-shadow: 3px 4px 10px gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    DEEP CODE
+  </div>
+</body>
+</html>`,
+    programExplanationEnglish: [
+      "The div receives a width of 250 pixels.",
+      "Padding creates internal spacing.",
+      "linear-gradient creates a background that changes from blue to purple.",
+      "box-shadow adds a gray shadow around the element.",
+      "The text is displayed in white."
+    ],
+    programExplanationTamil: [
+      "div உறுப்பிற்கு 250 pixels அகலம் வழங்கப்படுகிறது.",
+      "Padding உள்ளக இடைவெளியை உருவாக்குகிறது.",
+      "linear-gradient பின்னணியை நீல நிறத்திலிருந்து ஊதா நிறமாக மாற்றுகிறது.",
+      "box-shadow உறுப்பை சுற்றி சாம்பல் நிற நிழலை உருவாக்குகிறது.",
+      "எழுத்துகள் வெள்ளை நிறத்தில் காட்டப்படுகின்றன."
+    ],
+    output:
+      "A rectangular box with a blue-to-purple gradient background, white DEEP CODE text, and a gray shadow."
+  },
+  {
+    id: 20,
+    title: "CSS Variables and Best Practices",
+    englishDefinition:
+      "CSS variables, also called custom properties, store reusable values such as colors, spacing, and font sizes. They help developers maintain consistent styles and make websites easier to update.",
+    tamilDefinition:
+      "CSS Variables அல்லது Custom Properties என்பது colors, spacing மற்றும் font sizes போன்ற மீண்டும் பயன்படுத்தக்கூடிய values-ஐ சேமிக்க உதவுகின்றன. இவை ஒரே மாதிரியான வடிவமைப்பை பராமரிக்கவும் வலைத்தளங்களை எளிதாக புதுப்பிக்கவும் உதவுகின்றன.",
+    realWorldUsage:
+      "CSS variables are used in design systems, reusable themes, dark mode, and large websites where consistent colors and spacing are important.",
+    realWorldUsageTamil:
+      "Design systems, reusable themes, dark mode மற்றும் ஒரே மாதிரியான நிறங்கள் மற்றும் இடைவெளிகள் தேவைப்படும் பெரிய வலைத்தளங்களில் CSS Variables பயன்படுகின்றன.",
+    syntax: `:root {
+  --primary-color: blue;
+  --main-spacing: 20px;
+}
+
+.box {
+  background-color: var(--primary-color);
+  padding: var(--main-spacing);
+}`,
+    syntaxExplanationEnglish: [
+      "CSS custom properties are declared using names that begin with two hyphens (--).",
+      ":root is commonly used to declare global custom properties.",
+      "var() retrieves the value of a custom property.",
+      "Variables can be reused in multiple CSS rules.",
+      "Changing a variable value can update every rule that uses it."
+    ],
+    syntaxExplanationTamil: [
+      "CSS Custom Properties இரண்டு hyphens (--) உடன் தொடங்கும் பெயர்களைப் பயன்படுத்தி வரையறுக்கப்படுகின்றன.",
+      ":root பொதுவாக அனைத்து இடங்களிலும் பயன்படுத்தக்கூடிய variables-ஐ வரையறுக்க பயன்படுகிறது.",
+      "var() ஒரு custom property-ன் value-ஐ பெறுகிறது.",
+      "Variables-ஐ பல CSS rules-ல் மீண்டும் பயன்படுத்தலாம்.",
+      "ஒரு variable-ன் value-ஐ மாற்றினால் அதை பயன்படுத்தும் அனைத்து rules-லும் மாற்றம் ஏற்படும்."
+    ],
+    exampleProgram: `<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Variables</title>
+  <style>
+    :root {
+      --primary-color: blue;
+      --main-spacing: 20px;
+    }
+
+    .box {
+      background-color: var(--primary-color);
+      padding: var(--main-spacing);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    DEEP CODE
+  </div>
+</body>
+</html>`,
+    programExplanationEnglish: [
+      ":root declares two reusable CSS variables.",
+      "--primary-color stores the value blue.",
+      "--main-spacing stores the value 20 pixels.",
+      "var(--primary-color) applies the blue background.",
+      "var(--main-spacing) applies 20 pixels of padding.",
+      "The box displays white text."
+    ],
+    programExplanationTamil: [
+      ":root இரண்டு மீண்டும் பயன்படுத்தக்கூடிய CSS variables-ஐ வரையறுக்கிறது.",
+      "--primary-color நீல நிற value-ஐ சேமிக்கிறது.",
+      "--main-spacing 20 pixels value-ஐ சேமிக்கிறது.",
+      "var(--primary-color) நீல நிற பின்னணியை வழங்குகிறது.",
+      "var(--main-spacing) 20 pixels padding-ஐ வழங்குகிறது.",
+      "Box-ல் வெள்ளை நிற எழுத்துகள் காட்டப்படுகின்றன."
+    ],
+    output:
+      "A blue box with white DEEP CODE text and 20 pixels of internal padding."
+  }
+]
+
 ];
 
 export default topics;
