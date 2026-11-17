@@ -2453,6 +2453,222 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 13: Semantic HTML
+
+{
+  id: 1,
+  topicId: 13,
+  title: "Create a Header",
+  questionEnglish: "Create a webpage with a semantic header containing the website name 'DEEP CODE'.",
+  questionTamil: "'DEEP CODE' என்ற website பெயரைக் கொண்ட semantic header உடைய webpage உருவாக்கவும்.",
+  hintEnglish: "Use the <header> tag.",
+  hintTamil: "<header> tag பயன்படுத்தவும்.",
+  expectedOutput: "A webpage displaying DEEP CODE inside a header section.",
+  expectedOutputTamil: "Header பகுதியில் DEEP CODE காட்டப்படும் webpage.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <header>
+    <h1>DEEP CODE</h1>
+  </header>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 13,
+  title: "Create a Navigation Section",
+  questionEnglish: "Create a navigation section containing links to Home, Courses, About, and Contact.",
+  questionTamil: "Home, Courses, About மற்றும் Contact links கொண்ட navigation பகுதியை உருவாக்கவும்.",
+  hintEnglish: "Use the <nav> tag with anchor elements.",
+  hintTamil: "Anchor elements உடன் <nav> tag பயன்படுத்தவும்.",
+  expectedOutput: "A navigation section with four links.",
+  expectedOutputTamil: "நான்கு links கொண்ட navigation பகுதி.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 13,
+  title: "Create a Main Content Section",
+  questionEnglish: "Create a webpage with a main section containing a heading 'Welcome to Web Development' and a paragraph explaining HTML.",
+  questionTamil: "'Welcome to Web Development' என்ற heading மற்றும் HTML பற்றிய விளக்கம் கொண்ட main section உருவாக்கவும்.",
+  hintEnglish: "Use the <main> tag for the primary page content.",
+  hintTamil: "முக்கியமான page content-க்கு <main> tag பயன்படுத்தவும்.",
+  expectedOutput: "A main section with the requested heading and paragraph.",
+  expectedOutputTamil: "கேட்கப்பட்ட heading மற்றும் paragraph கொண்ட main பகுதி.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <main>
+    <h1>Welcome to Web Development</h1>
+    <p>HTML is used to structure web pages.</p>
+  </main>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 13,
+  title: "Create an Article",
+  questionEnglish: "Create an article about Cybersecurity containing a heading and two paragraphs.",
+  questionTamil: "Heading மற்றும் இரண்டு paragraphs கொண்ட Cybersecurity பற்றிய article உருவாக்கவும்.",
+  hintEnglish: "Use the <article> tag to represent self-contained content.",
+  hintTamil: "தனித்துவமாகப் பயன்படுத்தக்கூடிய content-க்கு <article> tag பயன்படுத்தவும்.",
+  expectedOutput: "A Cybersecurity article with a heading and two paragraphs.",
+  expectedOutputTamil: "Heading மற்றும் இரண்டு paragraphs கொண்ட Cybersecurity article.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <article>
+    <h2>Introduction to Cybersecurity</h2>
+    <p>Cybersecurity protects computers and networks.</p>
+    <p>It helps prevent unauthorized access and attacks.</p>
+  </article>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 13,
+  title: "Create an Aside Section",
+  questionEnglish: "Create a webpage with a main article about HTML and an aside section displaying 'Related Topics: CSS and JavaScript'.",
+  questionTamil: "HTML பற்றிய main article மற்றும் 'Related Topics: CSS and JavaScript' காட்டும் aside section கொண்ட webpage உருவாக்கவும்.",
+  hintEnglish: "Use the <aside> tag for related or supplementary content.",
+  hintTamil: "தொடர்புடைய அல்லது கூடுதல் தகவல்களுக்கு <aside> tag பயன்படுத்தவும்.",
+  expectedOutput: "An HTML article with a separate related topics section.",
+  expectedOutputTamil: "தனியான தொடர்புடைய தலைப்புகள் பகுதியைக் கொண்ட HTML article.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <main>
+    <article>
+      <h1>HTML</h1>
+      <p>HTML structures web pages.</p>
+    </article>
+
+    <aside>
+      <h3>Related Topics</h3>
+      <p>CSS and JavaScript</p>
+    </aside>
+  </main>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 13,
+  title: "Create a Footer",
+  questionEnglish: "Create a webpage footer displaying 'Copyright 2026 DEEP CODE'.",
+  questionTamil: "'Copyright 2026 DEEP CODE' என்று காட்டும் webpage footer உருவாக்கவும்.",
+  hintEnglish: "Use the <footer> tag.",
+  hintTamil: "<footer> tag பயன்படுத்தவும்.",
+  expectedOutput: "A footer displaying Copyright 2026 DEEP CODE.",
+  expectedOutputTamil: "Copyright 2026 DEEP CODE என்று காட்டும் footer.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <footer>
+    <p>Copyright 2026 DEEP CODE</p>
+  </footer>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 13,
+  title: "Create a Figure with a Caption",
+  questionEnglish: "Create a semantic figure containing an image named cybersecurity.jpg and a caption 'Cybersecurity Awareness'.",
+  questionTamil: "cybersecurity.jpg என்ற படத்தையும் 'Cybersecurity Awareness' என்ற caption-ஐயும் கொண்ட semantic figure உருவாக்கவும்.",
+  hintEnglish: "Use <figure>, <img>, and <figcaption>.",
+  hintTamil: "<figure>, <img> மற்றும் <figcaption> பயன்படுத்தவும்.",
+  expectedOutput: "A figure displaying the image with its caption.",
+  expectedOutputTamil: "படத்தையும் அதன் caption-ஐயும் காட்டும் figure.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <figure>
+    <img src="cybersecurity.jpg" alt="Cybersecurity awareness" width="300">
+    <figcaption>Cybersecurity Awareness</figcaption>
+  </figure>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 13,
+  title: "Create a Date and Time Section",
+  questionEnglish: "Create a blog article with the heading 'Latest Technology News'. Display the publication date using the <time> element.",
+  questionTamil: "'Latest Technology News' என்ற heading கொண்ட blog article உருவாக்கவும். வெளியிடப்பட்ட தேதியை <time> element பயன்படுத்திக் காட்டவும்.",
+  hintEnglish: "Use the datetime attribute inside the <time> tag.",
+  hintTamil: "<time> tag-க்குள் datetime attribute பயன்படுத்தவும்.",
+  expectedOutput: "A blog article showing its publication date.",
+  expectedOutputTamil: "வெளியிடப்பட்ட தேதியைக் காட்டும் blog article.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <article>
+    <h2>Latest Technology News</h2>
+    <p>
+      Published on:
+      <time datetime="2026-11-18">November 18, 2026</time>
+    </p>
+  </article>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 13,
+  title: "Build a Semantic Blog Page",
+  questionEnglish: "Build a complete blog webpage about Cybersecurity using header, nav, main, article, aside, and footer. Include suitable headings, paragraphs, and navigation links.",
+  questionTamil: "Header, nav, main, article, aside மற்றும் footer பயன்படுத்தி Cybersecurity பற்றிய முழுமையான blog webpage உருவாக்கவும். பொருத்தமான headings, paragraphs மற்றும் navigation links சேர்க்கவும்.",
+  hintEnglish: "Organize each part of the page according to its semantic purpose.",
+  hintTamil: "ஒவ்வொரு page பகுதியையும் அதன் semantic பயன்பாட்டிற்கு ஏற்ப ஒழுங்குபடுத்தவும்.",
+  expectedOutput: "A complete semantic blog page with all requested sections.",
+  expectedOutputTamil: "கேட்கப்பட்ட அனைத்து sections கொண்ட முழுமையான semantic blog page.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 13,
+  title: "Build a DEEP CODE Homepage",
+  questionEnglish: "Create a semantic homepage for DEEP CODE. Include a header with the platform name, navigation links, a main section describing the platform, an article about learning programming, an aside with popular courses, and a footer.",
+  questionTamil: "DEEP CODE-க்கான semantic homepage உருவாக்கவும். Platform பெயருடன் header, navigation links, platform-ஐ விளக்கும் main section, programming கற்றல் பற்றிய article, பிரபலமான courses கொண்ட aside மற்றும் footer சேர்க்கவும்.",
+  hintEnglish: "Use semantic HTML elements to structure the entire homepage.",
+  hintTamil: "முழு homepage-ஐ அமைக்க semantic HTML elements பயன்படுத்தவும்.",
+  expectedOutput: "A complete DEEP CODE homepage using semantic HTML elements.",
+  expectedOutputTamil: "Semantic HTML elements பயன்படுத்தி உருவாக்கப்பட்ட முழுமையான DEEP CODE homepage.",
+  challenge: true
+},
+
+
 
 
 
