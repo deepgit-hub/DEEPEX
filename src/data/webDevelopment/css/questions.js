@@ -4725,4 +4725,327 @@ button:hover {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 18,
+    title: "Create Your First Media Query",
+    questionEnglish: "Create a webpage with a heading. Use a media query to change the heading color to red when the viewport width is 600px or less.",
+    questionTamil: "ஒரு heading கொண்ட webpage உருவாக்கவும். Viewport width 600px அல்லது அதற்குக் குறைவாக இருக்கும்போது heading நிறத்தை சிவப்பாக மாற்ற media query பயன்படுத்தவும்.",
+    hintEnglish: "Use @media (max-width: 600px).",
+    hintTamil: "@media (max-width: 600px) பயன்படுத்தவும்.",
+    expectedOutput: "The heading turns red on viewport widths of 600px or less.",
+    expectedOutputTamil: "Viewport width 600px அல்லது அதற்குக் குறைவாக இருக்கும்போது heading சிவப்பாக மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+h1 {
+  color: blue;
+}
+@media (max-width: 600px) {
+  h1 {
+    color: red;
+  }
+}
+</style>
+</head>
+<body>
+<h1>Responsive Web Design</h1>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 18,
+    title: "Change Background on Small Screens",
+    questionEnglish: "Create a webpage with a lightblue background by default. Use a media query to change the background to lightyellow when the viewport width is 600px or less.",
+    questionTamil: "Default-ஆக lightblue background கொண்ட webpage உருவாக்கவும். Viewport width 600px அல்லது அதற்குக் குறைவாக இருக்கும்போது background lightyellow ஆக மாற media query பயன்படுத்தவும்.",
+    hintEnglish: "Use body inside @media (max-width: 600px).",
+    hintTamil: "@media (max-width: 600px)-க்குள் body selector பயன்படுத்தவும்.",
+    expectedOutput: "The page background changes to lightyellow on smaller screens.",
+    expectedOutputTamil: "சிறிய திரைகளில் பக்கத்தின் background lightyellow ஆக மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  background-color: lightblue;
+}
+@media (max-width: 600px) {
+  body {
+    background-color: lightyellow;
+  }
+}
+</style>
+</head>
+<body>
+<h1>Responsive Background</h1>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 18,
+    title: "Responsive Font Size",
+    questionEnglish: "Create a heading with a font size of 40px on larger screens. Use a media query to reduce the font size to 24px when the viewport width is 600px or less.",
+    questionTamil: "பெரிய திரைகளில் 40px font size கொண்ட heading உருவாக்கவும். Viewport width 600px அல்லது அதற்குக் குறைவாக இருக்கும்போது font size-ஐ 24px ஆகக் குறைக்க media query பயன்படுத்தவும்.",
+    hintEnglish: "Change font-size inside a max-width media query.",
+    hintTamil: "max-width media query-க்குள் font-size மாற்றவும்.",
+    expectedOutput: "The heading uses 40px on wider screens and 24px on smaller screens.",
+    expectedOutputTamil: "பெரிய திரைகளில் heading 40px ஆகவும் சிறிய திரைகளில் 24px ஆகவும் இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+h1 {
+  font-size: 40px;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+<body>
+<h1>Responsive Heading</h1>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 18,
+    title: "Hide an Element on Small Screens",
+    questionEnglish: "Create a sidebar with a heading and paragraph. Use a media query to hide the sidebar when the viewport width is 600px or less.",
+    questionTamil: "Heading மற்றும் paragraph கொண்ட sidebar உருவாக்கவும். Viewport width 600px அல்லது அதற்குக் குறைவாக இருக்கும்போது sidebar-ஐ மறைக்க media query பயன்படுத்தவும்.",
+    hintEnglish: "Use display: none inside the media query.",
+    hintTamil: "Media query-க்குள் display: none பயன்படுத்தவும்.",
+    expectedOutput: "The sidebar is visible on larger screens and hidden on smaller screens.",
+    expectedOutputTamil: "பெரிய திரைகளில் sidebar தெரியும்; சிறிய திரைகளில் மறைக்கப்படும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.sidebar {
+  width: 250px;
+  background-color: lightblue;
+  padding: 20px;
+}
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <h2>Sidebar</h2>
+  <p>Additional information</p>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 18,
+    title: "Responsive Two-Column Layout",
+    questionEnglish: "Create two content columns using CSS Grid. Use a media query to change the layout into one column when the viewport width is 600px or less.",
+    questionTamil: "CSS Grid பயன்படுத்தி இரண்டு content columns உருவாக்கவும். Viewport width 600px அல்லது அதற்குக் குறைவாக இருக்கும்போது layout-ஐ ஒரு column ஆக மாற்ற media query பயன்படுத்தவும்.",
+    hintEnglish: "Change grid-template-columns from repeat(2, 1fr) to 1fr.",
+    hintTamil: "grid-template-columns-ஐ repeat(2, 1fr)-இலிருந்து 1fr ஆக மாற்றவும்.",
+    expectedOutput: "The layout has two columns on larger screens and one column on smaller screens.",
+    expectedOutputTamil: "பெரிய திரைகளில் இரண்டு columns ஆகவும் சிறிய திரைகளில் ஒரு column ஆகவும் layout தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.box {
+  background-color: lightblue;
+  padding: 30px;
+}
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">First Column</div>
+  <div class="box">Second Column</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 18,
+    title: "Use Multiple Breakpoints",
+    questionEnglish: "Create a heading that is blue on large screens, green on medium screens between 601px and 900px, and red on screens 600px or less.",
+    questionTamil: "பெரிய திரைகளில் நீலமாகவும், 601px முதல் 900px வரையிலான medium screens-ல் பச்சையாகவும், 600px அல்லது அதற்குக் குறைவான திரைகளில் சிவப்பாகவும் இருக்கும் heading உருவாக்கவும்.",
+    hintEnglish: "Use two media queries with different min-width and max-width conditions.",
+    hintTamil: "வெவ்வேறு min-width மற்றும் max-width conditions கொண்ட இரண்டு media queries பயன்படுத்தவும்.",
+    expectedOutput: "The heading changes color according to the viewport width.",
+    expectedOutputTamil: "Viewport width-க்கு ஏற்ப heading நிறம் மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+h1 {
+  color: blue;
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  h1 {
+    color: green;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    color: red;
+  }
+}
+</style>
+</head>
+<body>
+<h1>Responsive Breakpoints</h1>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 18,
+    title: "Create a Responsive Navigation",
+    questionEnglish: "Create a navigation bar with three links arranged horizontally. Use a media query to arrange the links vertically when the viewport width is 600px or less.",
+    questionTamil: "மூன்று links கிடைமட்டமாக அமைந்த navigation bar உருவாக்கவும். Viewport width 600px அல்லது அதற்குக் குறைவாக இருக்கும்போது links செங்குத்தாக மாற media query பயன்படுத்தவும்.",
+    hintEnglish: "Use display: flex and change flex-direction to column inside the media query.",
+    hintTamil: "display: flex பயன்படுத்தி media query-க்குள் flex-direction-ஐ column ஆக மாற்றவும்.",
+    expectedOutput: "The navigation links are horizontal on larger screens and vertical on smaller screens.",
+    expectedOutputTamil: "பெரிய திரைகளில் navigation links கிடைமட்டமாகவும் சிறிய திரைகளில் செங்குத்தாகவும் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+nav {
+  display: flex;
+  gap: 20px;
+  background-color: darkblue;
+  padding: 15px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#courses">Courses</a>
+</nav>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 18,
+    title: "Mobile-First Responsive Design",
+    questionEnglish: "Create a course card container that uses one column by default. Add a media query with min-width: 768px to display two columns, and another with min-width: 1024px to display three columns.",
+    questionTamil: "Default-ஆக ஒரு column கொண்ட course card container உருவாக்கவும். min-width: 768px media query மூலம் இரண்டு columns ஆகவும், min-width: 1024px media query மூலம் மூன்று columns ஆகவும் மாற்றவும்.",
+    hintEnglish: "Start with the mobile layout and progressively add larger-screen breakpoints using min-width.",
+    hintTamil: "Mobile layout-ல் தொடங்கி min-width பயன்படுத்தி பெரிய திரைகளுக்கான breakpoints சேர்க்கவும்.",
+    expectedOutput: "The layout shows one column on small screens, two on medium screens, and three on large screens.",
+    expectedOutputTamil: "சிறிய திரைகளில் ஒரு column, நடுத்தர திரைகளில் இரண்டு columns மற்றும் பெரிய திரைகளில் மூன்று columns தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.card {
+  background-color: lightblue;
+  padding: 25px;
+}
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">HTML</div>
+  <div class="card">CSS</div>
+  <div class="card">JavaScript</div>
+  <div class="card">React</div>
+  <div class="card">Python</div>
+  <div class="card">Java</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 18,
+    title: "Challenge: Responsive Portfolio",
+    questionEnglish: "Create a personal portfolio with a navigation bar, profile section, skills section, and footer. Use media queries to adjust the font sizes, layout, and navigation for mobile, tablet, and desktop screens.",
+    questionTamil: "Navigation bar, profile section, skills section மற்றும் footer கொண்ட personal portfolio உருவாக்கவும். Mobile, tablet மற்றும் desktop திரைகளுக்கு ஏற்ப font sizes, layout மற்றும் navigation மாற்ற media queries பயன்படுத்தவும்.",
+    hintEnglish: "Use a mobile-first approach and add breakpoints using min-width.",
+    hintTamil: "Mobile-first முறையைப் பயன்படுத்தி min-width மூலம் breakpoints அமைக்கவும்.",
+    expectedOutput: "A portfolio that adapts its layout and typography to different screen sizes.",
+    expectedOutputTamil: "வெவ்வேறு திரை அளவுகளுக்கு ஏற்ப layout மற்றும் typography மாறும் portfolio தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 18,
+    title: "Challenge: DEEP CODE Responsive Website",
+    questionEnglish: "Create a responsive DEEP CODE website with a navigation bar, hero section, course cards, and footer. Make the navigation, course grid, and text sizes adapt to mobile, tablet, and desktop screens.",
+    questionTamil: "Navigation bar, hero section, course cards மற்றும் footer கொண்ட responsive DEEP CODE website உருவாக்கவும். Mobile, tablet மற்றும் desktop திரைகளுக்கு ஏற்ப navigation, course grid மற்றும் text sizes மாறும்படி அமைக்கவும்.",
+    hintEnglish: "Use the viewport meta tag, mobile-first CSS, Flexbox or Grid, and media queries.",
+    hintTamil: "Viewport meta tag, mobile-first CSS, Flexbox அல்லது Grid மற்றும் media queries பயன்படுத்தவும்.",
+    expectedOutput: "A complete responsive DEEP CODE website that works across different screen sizes.",
+    expectedOutputTamil: "வெவ்வேறு திரை அளவுகளில் சரியாகத் தோன்றும் முழுமையான responsive DEEP CODE website.",
+    challenge: true
+  }
+]
+
 ]
