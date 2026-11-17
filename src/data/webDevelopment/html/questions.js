@@ -1176,6 +1176,317 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 8: HTML Tables
+
+{
+  id: 1,
+  topicId: 8,
+  title: "Create Your First Table",
+  questionEnglish: "Create an HTML table with two columns: Name and Age. Add one student record: Deepak, 20.",
+  questionTamil: "Name மற்றும் Age என்ற இரண்டு columns கொண்ட HTML table உருவாக்கவும். Deepak, 20 என்ற ஒரு மாணவர் விவரத்தைச் சேர்க்கவும்.",
+  hintEnglish: "Use <table>, <tr>, <th>, and <td> tags.",
+  hintTamil: "<table>, <tr>, <th> மற்றும் <td> tags-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "A table with Name and Age headings and one row containing Deepak and 20.",
+  expectedOutputTamil: "Name மற்றும் Age தலைப்புகளுடன் Deepak மற்றும் 20 கொண்ட ஒரு வரி உள்ள table.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>Deepak</td>
+      <td>20</td>
+    </tr>
+  </table>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 8,
+  title: "Add Multiple Rows",
+  questionEnglish: "Create a student table with three columns: Name, Course, and College. Add two student records.",
+  questionTamil: "Name, Course மற்றும் College என்ற மூன்று columns கொண்ட மாணவர் table உருவாக்கவும். இரண்டு மாணவர் விவரங்களைச் சேர்க்கவும்.",
+  hintEnglish: "Create a separate <tr> for each student record.",
+  hintTamil: "ஒவ்வொரு மாணவர் விவரத்திற்கும் தனித்தனி <tr> உருவாக்கவும்.",
+  expectedOutput: "A table with three headings and two student records.",
+  expectedOutputTamil: "மூன்று தலைப்புகள் மற்றும் இரண்டு மாணவர் விவரங்கள் கொண்ட table.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Course</th>
+      <th>College</th>
+    </tr>
+    <tr>
+      <td>Deepak</td>
+      <td>B.Sc. Computer Science</td>
+      <td>ABC College</td>
+    </tr>
+    <tr>
+      <td>Arun</td>
+      <td>BCA</td>
+      <td>XYZ College</td>
+    </tr>
+  </table>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 8,
+  title: "Add a Table Caption",
+  questionEnglish: "Create a table showing three programming languages and add the caption 'Programming Languages'.",
+  questionTamil: "மூன்று programming languages-ஐக் காட்டும் table உருவாக்கி, அதற்கு 'Programming Languages' என்ற caption சேர்க்கவும்.",
+  hintEnglish: "Use the <caption> tag immediately after the opening <table> tag.",
+  hintTamil: "தொடக்க <table> tag-க்கு அடுத்ததாக <caption> tag-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "A table with the caption Programming Languages and three language entries.",
+  expectedOutputTamil: "Programming Languages என்ற caption மற்றும் மூன்று மொழிகள் கொண்ட table.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <table border="1">
+    <caption>Programming Languages</caption>
+    <tr>
+      <th>Language</th>
+    </tr>
+    <tr>
+      <td>Java</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+    </tr>
+    <tr>
+      <td>C++</td>
+    </tr>
+  </table>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 8,
+  title: "Merge Table Columns",
+  questionEnglish: "Create a table with three columns. In the first row, display 'Student Details' across all three columns using colspan.",
+  questionTamil: "மூன்று columns கொண்ட table உருவாக்கவும். முதல் வரியில் 'Student Details' என்ற உரை colspan பயன்படுத்தி மூன்று columns முழுவதும் தோன்ற வேண்டும்.",
+  hintEnglish: "Use colspan=\"3\" inside a <th> or <td> element.",
+  hintTamil: "<th> அல்லது <td> element-க்குள் colspan=\"3\" பயன்படுத்தவும்.",
+  expectedOutput: "A table whose first row contains Student Details across three columns.",
+  expectedOutputTamil: "முதல் வரியில் Student Details மூன்று columns முழுவதும் இணைக்கப்பட்ட table.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <table border="1">
+    <tr>
+      <th colspan="3">Student Details</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Course</th>
+    </tr>
+    <tr>
+      <td>Deepak</td>
+      <td>20</td>
+      <td>B.Sc. CS</td>
+    </tr>
+  </table>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 8,
+  title: "Merge Table Rows",
+  questionEnglish: "Create a table with columns Name, Course, and Department. Use rowspan to make the department 'Computer Science' cover two student rows.",
+  questionTamil: "Name, Course மற்றும் Department columns கொண்ட table உருவாக்கவும். இரண்டு மாணவர் வரிகளுக்கும் 'Computer Science' என்ற department பொதுவாக இருக்க rowspan பயன்படுத்தவும்.",
+  hintEnglish: "Use rowspan=\"2\" in the department cell.",
+  hintTamil: "Department cell-ல் rowspan=\"2\" பயன்படுத்தவும்.",
+  expectedOutput: "A table where Computer Science occupies one cell spanning two student rows.",
+  expectedOutputTamil: "Computer Science என்ற ஒரே cell இரண்டு மாணவர் வரிகளையும் இணைக்கும் table.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Course</th>
+      <th>Department</th>
+    </tr>
+    <tr>
+      <td>Deepak</td>
+      <td>B.Sc. CS</td>
+      <td rowspan="2">Computer Science</td>
+    </tr>
+    <tr>
+      <td>Arun</td>
+      <td>BCA</td>
+    </tr>
+  </table>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 8,
+  title: "Use Table Head and Body",
+  questionEnglish: "Create a student marks table using <thead> and <tbody>. Include columns for Name and Marks and add two student records.",
+  questionTamil: "<thead> மற்றும் <tbody> பயன்படுத்தி மாணவர் மதிப்பெண் table உருவாக்கவும். Name மற்றும் Marks columns மற்றும் இரண்டு மாணவர் விவரங்களைச் சேர்க்கவும்.",
+  hintEnglish: "Place the heading row inside <thead> and student records inside <tbody>.",
+  hintTamil: "Heading row-ஐ <thead>-க்குள்ளும் மாணவர் விவரங்களை <tbody>-க்குள்ளும் வைக்கவும்.",
+  expectedOutput: "A student marks table with a header section and two data rows.",
+  expectedOutputTamil: "Header பகுதி மற்றும் இரண்டு data rows கொண்ட மாணவர் மதிப்பெண் table.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Deepak</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Arun</td>
+        <td>85</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 8,
+  title: "Create a Product Price Table",
+  questionEnglish: "Create a product table with columns Product Name, Quantity, and Price. Add three products with their details.",
+  questionTamil: "Product Name, Quantity மற்றும் Price columns கொண்ட product table உருவாக்கவும். மூன்று பொருட்களின் விவரங்களைச் சேர்க்கவும்.",
+  hintEnglish: "Use table headings and separate data rows for each product.",
+  hintTamil: "Table headings மற்றும் ஒவ்வொரு பொருளுக்கும் தனித்தனி data rows பயன்படுத்தவும்.",
+  expectedOutput: "A product table containing three products, their quantities, and prices.",
+  expectedOutputTamil: "மூன்று பொருட்கள், அவற்றின் அளவு மற்றும் விலைகளைக் கொண்ட product table.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h2>Product List</h2>
+  <table border="1">
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <td>Keyboard</td>
+      <td>2</td>
+      <td>₹800</td>
+    </tr>
+    <tr>
+      <td>Mouse</td>
+      <td>3</td>
+      <td>₹400</td>
+    </tr>
+    <tr>
+      <td>Monitor</td>
+      <td>1</td>
+      <td>₹8000</td>
+    </tr>
+  </table>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 8,
+  title: "Add a Table Footer",
+  questionEnglish: "Create a shopping bill table with Product and Price columns. Add two products and display the total amount in a <tfoot> section.",
+  questionTamil: "Product மற்றும் Price columns கொண்ட shopping bill table உருவாக்கவும். இரண்டு பொருட்களைச் சேர்த்து, மொத்தத் தொகையை <tfoot> பகுதியில் காட்டவும்.",
+  hintEnglish: "Use <tfoot> for the final total row.",
+  hintTamil: "இறுதி மொத்தத் தொகை வரிக்கு <tfoot> பயன்படுத்தவும்.",
+  expectedOutput: "A shopping bill with two product rows and a total row in the footer.",
+  expectedOutputTamil: "இரண்டு பொருள் வரிகள் மற்றும் footer-ல் மொத்தத் தொகை வரி கொண்ட shopping bill.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Keyboard</td>
+        <td>₹800</td>
+      </tr>
+      <tr>
+        <td>Mouse</td>
+        <td>₹400</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Total</th>
+        <td>₹1200</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 8,
+  title: "Build a College Timetable",
+  questionEnglish: "Create a college timetable with columns for Day, 9 AM, 10 AM, and 11 AM. Add at least five weekdays and their subjects. Use colspan or rowspan wherever appropriate.",
+  questionTamil: "Day, 9 AM, 10 AM மற்றும் 11 AM columns கொண்ட college timetable உருவாக்கவும். குறைந்தது ஐந்து வார நாட்களையும் அவற்றின் பாடங்களையும் சேர்க்கவும். தேவையான இடங்களில் colspan அல்லது rowspan பயன்படுத்தவும்.",
+  hintEnglish: "Organize the timetable using table headings, rows, and data cells.",
+  hintTamil: "Table headings, rows மற்றும் data cells பயன்படுத்தி timetable-ஐ அமைக்கவும்.",
+  expectedOutput: "A college timetable with at least five weekdays and three time-slot columns.",
+  expectedOutputTamil: "குறைந்தது ஐந்து வார நாட்கள் மற்றும் மூன்று நேர columns கொண்ட college timetable.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 8,
+  title: "Build a Student Result Sheet",
+  questionEnglish: "Create a student result sheet with columns for Roll Number, Name, HTML Marks, CSS Marks, JavaScript Marks, and Total. Include at least three students. Add a caption and organize the table using thead, tbody, and tfoot.",
+  questionTamil: "Roll Number, Name, HTML Marks, CSS Marks, JavaScript Marks மற்றும் Total columns கொண்ட மாணவர் மதிப்பெண் பட்டியலை உருவாக்கவும். குறைந்தது மூன்று மாணவர்களைச் சேர்க்கவும். Caption சேர்த்து thead, tbody மற்றும் tfoot பயன்படுத்தி table-ஐ அமைக்கவும்.",
+  hintEnglish: "Use <caption>, <thead>, <tbody>, and <tfoot>. Calculate each student's total marks.",
+  hintTamil: "<caption>, <thead>, <tbody> மற்றும் <tfoot> பயன்படுத்தவும். ஒவ்வொரு மாணவரின் மொத்த மதிப்பெண்களையும் கணக்கிடவும்.",
+  expectedOutput: "A result sheet with three student records and their total marks.",
+  expectedOutputTamil: "மூன்று மாணவர் விவரங்கள் மற்றும் அவர்களின் மொத்த மதிப்பெண்கள் கொண்ட result sheet.",
+  challenge: true
+},
+
+
 
 
 
