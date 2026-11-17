@@ -761,6 +761,196 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 6: HTML Images
+
+{
+  id: 1,
+  topicId: 6,
+  title: "Display Your First Image",
+  questionEnglish: "Display an image named profile.jpg on a webpage.",
+  questionTamil: "profile.jpg என்ற பெயருடைய படத்தை ஒரு இணையப் பக்கத்தில் காட்டவும்.",
+  hintEnglish: "Use the <img> tag with the src attribute.",
+  hintTamil: "src attribute உடன் <img> tag-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "The profile.jpg image appears on the webpage.",
+  expectedOutputTamil: "இணையப் பக்கத்தில் profile.jpg படம் தோன்றும்.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <img src="profile.jpg" alt="Profile photo">
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 6,
+  title: "Add Alternative Text",
+  questionEnglish: "Display an image named laptop.jpg and provide the alternative text 'Laptop on a desk'.",
+  questionTamil: "laptop.jpg என்ற படத்தைக் காட்டி, அதற்கு 'Laptop on a desk' என்ற மாற்று உரையை வழங்கவும்.",
+  hintEnglish: "Use the alt attribute inside the <img> tag.",
+  hintTamil: "<img> tag-க்குள் alt attribute-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "The laptop image appears. Its alternative text is available if the image cannot load.",
+  expectedOutputTamil: "Laptop படம் தோன்றும். படம் ஏற்றப்படாவிட்டால் அதன் மாற்று உரை கிடைக்கும்.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <img src="laptop.jpg" alt="Laptop on a desk">
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 6,
+  title: "Set Image Width",
+  questionEnglish: "Display an image named college.jpg with a width of 300 pixels.",
+  questionTamil: "college.jpg என்ற படத்தை 300 pixels அகலத்தில் காட்டவும்.",
+  hintEnglish: "Use the width attribute.",
+  hintTamil: "width attribute-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "The college image appears with a width of 300 pixels.",
+  expectedOutputTamil: "College படம் 300 pixels அகலத்தில் தோன்றும்.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <img src="college.jpg" alt="College building" width="300">
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 6,
+  title: "Set Image Height",
+  questionEnglish: "Display an image named student.jpg with a height of 200 pixels.",
+  questionTamil: "student.jpg என்ற படத்தை 200 pixels உயரத்தில் காட்டவும்.",
+  hintEnglish: "Use the height attribute.",
+  hintTamil: "height attribute-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "The student image appears with a height of 200 pixels.",
+  expectedOutputTamil: "Student படம் 200 pixels உயரத்தில் தோன்றும்.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <img src="student.jpg" alt="Student" height="200">
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 6,
+  title: "Display Multiple Images",
+  questionEnglish: "Display three images named html.jpg, css.jpg, and javascript.jpg on the same webpage.",
+  questionTamil: "html.jpg, css.jpg மற்றும் javascript.jpg என்ற மூன்று படங்களையும் ஒரே இணையப் பக்கத்தில் காட்டவும்.",
+  hintEnglish: "Use three separate <img> tags.",
+  hintTamil: "மூன்று தனித்தனி <img> tags-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "Three images representing HTML, CSS, and JavaScript appear on the webpage.",
+  expectedOutputTamil: "HTML, CSS மற்றும் JavaScript ஆகியவற்றைக் குறிக்கும் மூன்று படங்கள் தோன்றும்.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <img src="html.jpg" alt="HTML logo">
+  <img src="css.jpg" alt="CSS logo">
+  <img src="javascript.jpg" alt="JavaScript logo">
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 6,
+  title: "Create a Clickable Image",
+  questionEnglish: "Display an image named logo.png. When the user clicks it, open https://www.google.com.",
+  questionTamil: "logo.png என்ற படத்தைக் காட்டவும். பயனர் அதைக் கிளிக் செய்யும்போது https://www.google.com திறக்க வேண்டும்.",
+  hintEnglish: "Place the <img> tag inside an <a> tag.",
+  hintTamil: "<img> tag-ஐ <a> tag-க்குள் வைக்கவும்.",
+  expectedOutput: "A clickable logo image that opens Google.",
+  expectedOutputTamil: "Google-ஐத் திறக்கும் clickable logo படம்.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <a href="https://www.google.com">
+    <img src="logo.png" alt="Website logo">
+  </a>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 6,
+  title: "Add an Image with a Caption",
+  questionEnglish: "Display an image of a laptop with the caption 'My Learning Setup'.",
+  questionTamil: "Laptop படத்தைக் காட்டி, அதற்குக் கீழே 'My Learning Setup' என்ற caption-ஐக் காட்டவும்.",
+  hintEnglish: "Use <figure>, <img>, and <figcaption> tags.",
+  hintTamil: "<figure>, <img> மற்றும் <figcaption> tags-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "A laptop image with the caption 'My Learning Setup' below it.",
+  expectedOutputTamil: "Laptop படத்திற்குக் கீழே 'My Learning Setup' என்ற caption தோன்றும்.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <figure>
+    <img src="laptop.jpg" alt="Laptop setup" width="300">
+    <figcaption>My Learning Setup</figcaption>
+  </figure>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 6,
+  title: "Use an Online Image",
+  questionEnglish: "Display an online image using its image URL and provide suitable alternative text.",
+  questionTamil: "ஒரு online image-ன் URL-ஐப் பயன்படுத்தி அந்தப் படத்தைக் காட்டவும். அதற்குப் பொருத்தமான alternative text வழங்கவும்.",
+  hintEnglish: "Place the complete image URL inside the src attribute.",
+  hintTamil: "முழுமையான image URL-ஐ src attribute-க்குள் வழங்கவும்.",
+  expectedOutput: "The online image loads and appears on the webpage.",
+  expectedOutputTamil: "Online image ஏற்றப்பட்டு இணையப் பக்கத்தில் தோன்றும்.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <img
+    src="https://placehold.co/300x200"
+    alt="Sample placeholder image"
+  >
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 6,
+  title: "Build a Student Profile Card",
+  questionEnglish: "Create a student profile section with a profile image, student name, course, and a short description. Use suitable image attributes and semantic HTML elements.",
+  questionTamil: "Profile படம், மாணவரின் பெயர், படிப்பு மற்றும் சிறிய விளக்கம் கொண்ட student profile பகுதியை உருவாக்கவும். பொருத்தமான image attributes மற்றும் semantic HTML elements-ஐப் பயன்படுத்தவும்.",
+  hintEnglish: "Combine <section>, <figure>, <img>, <figcaption>, and paragraph tags.",
+  hintTamil: "<section>, <figure>, <img>, <figcaption> மற்றும் paragraph tags-ஐ இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A student profile section showing an image, name, course, and description.",
+  expectedOutputTamil: "படம், பெயர், படிப்பு மற்றும் விளக்கம் கொண்ட student profile பகுதி.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 6,
+  title: "Create a Business Image Gallery",
+  questionEnglish: "Build an image gallery for a photography studio. Display at least four images with suitable alternative text and captions. Make each image clickable so that it opens a larger or original image.",
+  questionTamil: "ஒரு photography studio-க்காக image gallery உருவாக்கவும். குறைந்தது நான்கு படங்களைப் பொருத்தமான alternative text மற்றும் captions உடன் காட்டவும். ஒவ்வொரு படத்தையும் கிளிக் செய்தால் அதன் பெரிய அல்லது அசல் படம் திறக்க வேண்டும்.",
+  hintEnglish: "Combine <figure>, <img>, <figcaption>, and <a> tags. Use CSS only if you want to arrange the images in a grid.",
+  hintTamil: "<figure>, <img>, <figcaption> மற்றும் <a> tags-ஐ இணைத்துப் பயன்படுத்தவும். படங்களை grid வடிவில் அமைக்க விரும்பினால் CSS-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "A photography gallery containing at least four clickable images with captions.",
+  expectedOutputTamil: "குறைந்தது நான்கு clickable படங்கள் மற்றும் captions கொண்ட photography gallery.",
+  challenge: true
+},
+
 
 
 ];
