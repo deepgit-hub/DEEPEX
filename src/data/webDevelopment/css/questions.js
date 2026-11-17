@@ -1275,4 +1275,269 @@ Practice helps improve your skills.
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 6,
+    title: "Add a Solid Border",
+    questionEnglish: "Create a div with the text 'Welcome to CSS'. Add a 2px solid red border around it.",
+    questionTamil: "'Welcome to CSS' என்ற உரையுடன் div உருவாக்கவும். அதைச் சுற்றி 2px solid red border அமைக்கவும்.",
+    hintEnglish: "Use the border property with width, style, and color.",
+    hintTamil: "border property-யில் width, style மற்றும் color அமைக்கவும்.",
+    expectedOutput: "A div surrounded by a 2px solid red border.",
+    expectedOutputTamil: "2px தடிமனான solid red border கொண்ட div தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  border: 2px solid red;
+}
+</style>
+</head>
+<body>
+<div class="box">Welcome to CSS</div>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 6,
+    title: "Change Border Styles",
+    questionEnglish: "Create three div elements. Give the first a solid border, the second a dashed border, and the third a dotted border. Use a 3px black border for all three.",
+    questionTamil: "மூன்று div elements உருவாக்கவும். முதலாவதற்கு solid border, இரண்டாவதற்கு dashed border, மூன்றாவதற்கு dotted border அமைக்கவும். மூன்றிற்கும் 3px black border பயன்படுத்தவும்.",
+    hintEnglish: "Use the border-style property with solid, dashed, and dotted values.",
+    hintTamil: "border-style property-யில் solid, dashed மற்றும் dotted values பயன்படுத்தவும்.",
+    expectedOutput: "Three boxes appear with solid, dashed, and dotted black borders.",
+    expectedOutputTamil: "Solid, dashed மற்றும் dotted black borders கொண்ட மூன்று பெட்டிகள் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  border-width: 3px;
+  border-color: black;
+  margin: 10px;
+  padding: 10px;
+}
+.one {
+  border-style: solid;
+}
+.two {
+  border-style: dashed;
+}
+.three {
+  border-style: dotted;
+}
+</style>
+</head>
+<body>
+<div class="box one">Solid Border</div>
+<div class="box two">Dashed Border</div>
+<div class="box three">Dotted Border</div>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 6,
+    title: "Set Individual Border Colors",
+    questionEnglish: "Create a div with a 4px solid border. Set its top border to red, right border to blue, bottom border to green, and left border to orange.",
+    questionTamil: "4px solid border கொண்ட div உருவாக்கவும். அதன் மேல் border-ஐ red, வலது border-ஐ blue, கீழ் border-ஐ green மற்றும் இடது border-ஐ orange ஆக அமைக்கவும்.",
+    hintEnglish: "Use border-top-color, border-right-color, border-bottom-color, and border-left-color.",
+    hintTamil: "நான்கு பக்கங்களுக்கும் தனித்தனி border color properties பயன்படுத்தவும்.",
+    expectedOutput: "A box with four differently colored border sides.",
+    expectedOutputTamil: "நான்கு பக்கங்களிலும் வெவ்வேறு நிற border கொண்ட பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  border: 4px solid;
+  border-top-color: red;
+  border-right-color: blue;
+  border-bottom-color: green;
+  border-left-color: orange;
+  padding: 30px;
+}
+</style>
+</head>
+<body>
+<div class="box">Four Border Colors</div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 6,
+    title: "Create Rounded Borders",
+    questionEnglish: "Create a div with a 200px width, 100px height, lightblue background, and 3px solid blue border. Make its corners rounded using a 20px border radius.",
+    questionTamil: "200px width, 100px height, lightblue background மற்றும் 3px solid blue border கொண்ட div உருவாக்கவும். 20px border-radius பயன்படுத்தி அதன் மூலைகளை வட்டமாக்கவும்.",
+    hintEnglish: "Use border-radius: 20px.",
+    hintTamil: "border-radius: 20px பயன்படுத்தவும்.",
+    expectedOutput: "A light blue box with a blue border and rounded corners.",
+    expectedOutputTamil: "Blue border மற்றும் வட்டமான மூலைகளுடன் light blue பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: lightblue;
+  border: 3px solid blue;
+  border-radius: 20px;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 6,
+    title: "Create a Circular Element",
+    questionEnglish: "Create a div with equal width and height of 120px. Give it a blue background and use border-radius: 50% to create a circle.",
+    questionTamil: "120px width மற்றும் height கொண்ட div உருவாக்கவும். அதற்கு blue background கொடுத்து border-radius: 50% பயன்படுத்தி வட்டமாக மாற்றவும்.",
+    hintEnglish: "Use equal width and height with border-radius: 50%.",
+    hintTamil: "சமமான width மற்றும் height உடன் border-radius: 50% பயன்படுத்தவும்.",
+    expectedOutput: "A blue circular shape appears on the page.",
+    expectedOutputTamil: "பக்கத்தில் நீல நிற வட்ட வடிவம் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.circle {
+  width: 120px;
+  height: 120px;
+  background-color: blue;
+  border-radius: 50%;
+}
+</style>
+</head>
+<body>
+<div class="circle"></div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 6,
+    title: "Add an Outline",
+    questionEnglish: "Create a paragraph with a 2px solid black border. Add a 3px solid red outline around the paragraph.",
+    questionTamil: "2px solid black border கொண்ட paragraph உருவாக்கவும். அதைச் சுற்றி 3px solid red outline அமைக்கவும்.",
+    hintEnglish: "Use the outline property separately from border.",
+    hintTamil: "border-இலிருந்து தனியாக outline property பயன்படுத்தவும்.",
+    expectedOutput: "The paragraph has a black border and a red outline outside it.",
+    expectedOutputTamil: "Paragraph-க்கு black border மற்றும் அதற்கு வெளியே red outline தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+  border: 2px solid black;
+  outline: 3px solid red;
+  padding: 15px;
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+<p>This paragraph has a border and outline.</p>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 6,
+    title: "Change Outline Offset",
+    questionEnglish: "Create a div with a 2px solid black border and a 3px solid blue outline. Set the outline offset to 5px.",
+    questionTamil: "2px solid black border மற்றும் 3px solid blue outline கொண்ட div உருவாக்கவும். Outline offset-ஐ 5px ஆக அமைக்கவும்.",
+    hintEnglish: "Use the outline-offset property.",
+    hintTamil: "outline-offset property பயன்படுத்தவும்.",
+    expectedOutput: "A blue outline appears 5px away from the black border.",
+    expectedOutputTamil: "Black border-இலிருந்து 5px இடைவெளியில் blue outline தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  border: 2px solid black;
+  outline: 3px solid blue;
+  outline-offset: 5px;
+  padding: 20px;
+  margin: 15px;
+}
+</style>
+</head>
+<body>
+<div class="box">Outline Offset</div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 6,
+    title: "Style Different Border Sides",
+    questionEnglish: "Create a div with a 200px width and 100px height. Give its top border a 4px solid red style, right border a 4px dashed blue style, bottom border a 4px dotted green style, and left border a 4px double purple style.",
+    questionTamil: "200px width மற்றும் 100px height கொண்ட div உருவாக்கவும். மேல் border-க்கு 4px solid red, வலது border-க்கு 4px dashed blue, கீழ் border-க்கு 4px dotted green மற்றும் இடது border-க்கு 4px double purple அமைக்கவும்.",
+    hintEnglish: "Use border-top, border-right, border-bottom, and border-left.",
+    hintTamil: "border-top, border-right, border-bottom மற்றும் border-left properties பயன்படுத்தவும்.",
+    expectedOutput: "A box with four sides displaying different border styles and colors.",
+    expectedOutputTamil: "நான்கு பக்கங்களிலும் வெவ்வேறு border styles மற்றும் நிறங்களைக் கொண்ட பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 200px;
+  height: 100px;
+  border-top: 4px solid red;
+  border-right: 4px dashed blue;
+  border-bottom: 4px dotted green;
+  border-left: 4px double purple;
+}
+</style>
+</head>
+<body>
+<div class="box">Different Borders</div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 6,
+    title: "Challenge: Profile Picture Frame",
+    questionEnglish: "Create a profile picture frame using a div. Give it a circular shape, a thick colored border, and an outline with an offset. Add a name below the frame.",
+    questionTamil: "div பயன்படுத்தி profile picture frame உருவாக்கவும். அதை வட்ட வடிவமாக்கி தடிமனான நிறமுள்ள border மற்றும் offset கொண்ட outline அமைக்கவும். Frame-க்கு கீழே ஒரு பெயரையும் சேர்க்கவும்.",
+    hintEnglish: "Combine border-radius, border, outline, and outline-offset.",
+    hintTamil: "border-radius, border, outline மற்றும் outline-offset ஆகியவற்றை இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "A circular profile frame with a decorative border and outline, followed by a name.",
+    expectedOutputTamil: "அழகான border மற்றும் outline கொண்ட வட்டமான profile frame-க்கு கீழே பெயர் தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 6,
+    title: "Challenge: DEEP CODE Course Card",
+    questionEnglish: "Create a DEEP CODE course card with a title, description, and button. Use different border styles, rounded corners, and an outline to make the card attractive.",
+    questionTamil: "Title, description மற்றும் button கொண்ட DEEP CODE course card உருவாக்கவும். Card-ஐ அழகாக வடிவமைக்க வெவ்வேறு border styles, rounded corners மற்றும் outline பயன்படுத்தவும்.",
+    hintEnglish: "Experiment with border styles, border-radius, outline, and outline-offset.",
+    hintTamil: "Border styles, border-radius, outline மற்றும் outline-offset பயன்படுத்திப் பாருங்கள்.",
+    expectedOutput: "An attractive DEEP CODE course card with decorative borders.",
+    expectedOutputTamil: "அழகான border வடிவமைப்புகளைக் கொண்ட DEEP CODE course card தோன்றும்.",
+    challenge: true
+  }
+]
+
 ]
