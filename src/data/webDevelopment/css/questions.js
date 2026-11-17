@@ -4115,4 +4115,291 @@ nav > ul > li {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 16,
+    title: "Create a Hover Transition",
+    questionEnglish: "Create a blue button. Use a CSS transition so its background changes smoothly to green when the user hovers over it.",
+    questionTamil: "நீல நிற button உருவாக்கவும். பயனர் hover செய்யும்போது அதன் background மெதுவாக பச்சையாக மாற CSS transition பயன்படுத்தவும்.",
+    hintEnglish: "Use transition: background-color 0.5s.",
+    hintTamil: "transition: background-color 0.5s பயன்படுத்தவும்.",
+    expectedOutput: "The button smoothly changes from blue to green when hovered.",
+    expectedOutputTamil: "Hover செய்யும்போது button நீல நிறத்திலிருந்து பச்சை நிறத்திற்கு மெதுவாக மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+button {
+  background-color: blue;
+  color: white;
+  padding: 15px 25px;
+  transition: background-color 0.5s;
+}
+button:hover {
+  background-color: green;
+}
+</style>
+</head>
+<body>
+<button>Hover Me</button>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 16,
+    title: "Control Transition Duration",
+    questionEnglish: "Create a button that changes its background from red to orange when hovered. Set the transition duration to 2 seconds.",
+    questionTamil: "Hover செய்யும்போது background சிவப்பிலிருந்து orange ஆக மாறும் button உருவாக்கவும். Transition duration-ஐ 2 seconds ஆக அமைக்கவும்.",
+    hintEnglish: "Use transition-duration: 2s.",
+    hintTamil: "transition-duration: 2s பயன்படுத்தவும்.",
+    expectedOutput: "The button smoothly changes from red to orange over 2 seconds.",
+    expectedOutputTamil: "Button 2 seconds கால அளவில் சிவப்பிலிருந்து orange நிறத்திற்கு மெதுவாக மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+button {
+  background-color: red;
+  color: white;
+  padding: 15px 25px;
+  transition-property: background-color;
+  transition-duration: 2s;
+}
+button:hover {
+  background-color: orange;
+}
+</style>
+</head>
+<body>
+<button>Change Color</button>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 16,
+    title: "Scale an Element",
+    questionEnglish: "Create a box with a blue background. Use transform: scale(1.2) to increase its size when the user hovers over it.",
+    questionTamil: "நீல நிற background கொண்ட box உருவாக்கவும். பயனர் hover செய்யும்போது அதன் அளவை அதிகரிக்க transform: scale(1.2) பயன்படுத்தவும்.",
+    hintEnglish: "Use the scale() transform function.",
+    hintTamil: "scale() transform function பயன்படுத்தவும்.",
+    expectedOutput: "The box becomes 1.2 times its original scale when hovered.",
+    expectedOutputTamil: "Hover செய்யும்போது box அதன் ஆரம்ப அளவை விட 1.2 மடங்கு பெரிதாகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 120px;
+  height: 120px;
+  background-color: blue;
+  transition: transform 0.4s;
+}
+.box:hover {
+  transform: scale(1.2);
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 16,
+    title: "Rotate an Element",
+    questionEnglish: "Create a square box. Use transform: rotate(45deg) to rotate it by 45 degrees when hovered.",
+    questionTamil: "ஒரு சதுர வடிவ box உருவாக்கவும். Hover செய்யும்போது அதை 45 degrees சுழற்ற transform: rotate(45deg) பயன்படுத்தவும்.",
+    hintEnglish: "Use the rotate() transform function.",
+    hintTamil: "rotate() transform function பயன்படுத்தவும்.",
+    expectedOutput: "The square rotates by 45 degrees when hovered.",
+    expectedOutputTamil: "Hover செய்யும்போது சதுரம் 45 degrees சுழலும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  transition: transform 0.5s;
+}
+.box:hover {
+  transform: rotate(45deg);
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 16,
+    title: "Move an Element",
+    questionEnglish: "Create a box and use transform: translateX(50px) to move it 50px to the right when hovered.",
+    questionTamil: "ஒரு box உருவாக்கவும். Hover செய்யும்போது அதை 50px வலதுபுறம் நகர்த்த transform: translateX(50px) பயன்படுத்தவும்.",
+    hintEnglish: "Use translateX() with a transition.",
+    hintTamil: "translateX() மற்றும் transition பயன்படுத்தவும்.",
+    expectedOutput: "The box smoothly moves 50px to the right when hovered.",
+    expectedOutputTamil: "Hover செய்யும்போது box மெதுவாக 50px வலதுபுறம் நகரும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  transition: transform 0.5s;
+}
+.box:hover {
+  transform: translateX(50px);
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 16,
+    title: "Change Transition Timing",
+    questionEnglish: "Create two buttons. Give the first button an ease transition and the second button a linear transition. Make both buttons change their background color when hovered.",
+    questionTamil: "இரண்டு buttons உருவாக்கவும். முதல் button-க்கு ease transition மற்றும் இரண்டாவது button-க்கு linear transition அமைக்கவும். Hover செய்யும்போது இரண்டின் background நிறமும் மாற வேண்டும்.",
+    hintEnglish: "Use transition-timing-function with ease and linear.",
+    hintTamil: "transition-timing-function-ல் ease மற்றும் linear பயன்படுத்தவும்.",
+    expectedOutput: "Both buttons change color, but their transition timing behavior is different.",
+    expectedOutputTamil: "இரண்டு buttons-ம் நிறம் மாறும்; ஆனால் அவற்றின் transition வேகம் மாறுபடும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+button {
+  padding: 15px;
+  color: white;
+  background-color: blue;
+  transition-property: background-color;
+  transition-duration: 1s;
+}
+.ease {
+  transition-timing-function: ease;
+}
+.linear {
+  transition-timing-function: linear;
+}
+button:hover {
+  background-color: green;
+}
+</style>
+</head>
+<body>
+<button class="ease">Ease</button>
+<button class="linear">Linear</button>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 16,
+    title: "Combine Multiple Transforms",
+    questionEnglish: "Create a box that scales to 1.2 times its size and rotates by 10 degrees when hovered. Use a transition to make the effect smooth.",
+    questionTamil: "Hover செய்யும்போது 1.2 மடங்கு பெரிதாகி 10 degrees சுழலும் box உருவாக்கவும். இந்த விளைவை மென்மையாக்க transition பயன்படுத்தவும்.",
+    hintEnglish: "Combine scale() and rotate() in one transform declaration.",
+    hintTamil: "ஒரே transform declaration-ல் scale() மற்றும் rotate() இணைக்கவும்.",
+    expectedOutput: "The box smoothly becomes larger and rotates when hovered.",
+    expectedOutputTamil: "Hover செய்யும்போது box மெதுவாகப் பெரிதாகி சுழலும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+  transition: transform 0.5s;
+}
+.box:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 16,
+    title: "Create a Card Hover Effect",
+    questionEnglish: "Create a course card with a heading and description. When hovered, move the card 10px upwards and increase its size slightly. Use transitions to make the effect smooth.",
+    questionTamil: "Heading மற்றும் description கொண்ட course card உருவாக்கவும். Hover செய்யும்போது card-ஐ 10px மேலே நகர்த்தி அதன் அளவைச் சிறிதளவு அதிகரிக்கவும். விளைவை மென்மையாக்க transitions பயன்படுத்தவும்.",
+    hintEnglish: "Use translateY(-10px), scale(), and transition.",
+    hintTamil: "translateY(-10px), scale() மற்றும் transition பயன்படுத்தவும்.",
+    expectedOutput: "The course card smoothly moves upward and becomes slightly larger on hover.",
+    expectedOutputTamil: "Hover செய்யும்போது course card மெதுவாக மேலே நகர்ந்து சிறிதளவு பெரிதாகும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  width: 250px;
+  padding: 20px;
+  background-color: lightblue;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h2>CSS Course</h2>
+  <p>Learn CSS transitions and transforms.</p>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 16,
+    title: "Challenge: Interactive Product Cards",
+    questionEnglish: "Create three product cards. Add smooth hover effects using transitions and transforms. Each card should move slightly upward, scale, and change its border color when hovered.",
+    questionTamil: "மூன்று product cards உருவாக்கவும். Hover செய்யும்போது transitions மற்றும் transforms பயன்படுத்தி மென்மையான விளைவுகளை உருவாக்கவும். ஒவ்வொரு card-ம் சிறிது மேலே நகர்ந்து, பெரிதாகி, border நிறத்தை மாற்ற வேண்டும்.",
+    hintEnglish: "Combine translateY(), scale(), border-color, and transition.",
+    hintTamil: "translateY(), scale(), border-color மற்றும் transition இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "Three product cards with smooth hover animations.",
+    expectedOutputTamil: "மென்மையான hover animations கொண்ட மூன்று product cards தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 16,
+    title: "Challenge: DEEP CODE Landing Page Effects",
+    questionEnglish: "Create a DEEP CODE landing page with a heading, description, button, and course cards. Add smooth transitions and transforms to buttons and cards to improve the user experience.",
+    questionTamil: "Heading, description, button மற்றும் course cards கொண்ட DEEP CODE landing page உருவாக்கவும். User experience மேம்பட buttons மற்றும் cards-க்கு smooth transitions மற்றும் transforms சேர்க்கவும்.",
+    hintEnglish: "Use different transform effects and suitable transition properties for each element.",
+    hintTamil: "ஒவ்வொரு element-க்கும் வெவ்வேறு transform effects மற்றும் பொருத்தமான transition properties பயன்படுத்தவும்.",
+    expectedOutput: "An attractive landing page with smooth interactive hover effects.",
+    expectedOutputTamil: "மென்மையான interactive hover effects கொண்ட அழகான landing page தோன்றும்.",
+    challenge: true
+  }
+]
+
 ]
