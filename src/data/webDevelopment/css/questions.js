@@ -1022,4 +1022,257 @@ Practice helps improve your skills.
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 5,
+    title: "Set Element Width and Height",
+    questionEnglish: "Create a div with the text 'CSS Box Model'. Set its width to 200px and height to 100px. Give it a lightblue background.",
+    questionTamil: "'CSS Box Model' என்ற உரையுடன் div உருவாக்கவும். அதன் width-ஐ 200px ஆகவும் height-ஐ 100px ஆகவும் அமைத்து lightblue background கொடுக்கவும்.",
+    hintEnglish: "Use width, height, and background-color properties.",
+    hintTamil: "width, height மற்றும் background-color properties பயன்படுத்தவும்.",
+    expectedOutput: "A light blue rectangular box measuring 200px wide and 100px high.",
+    expectedOutputTamil: "200px அகலமும் 100px உயரமும் கொண்ட light blue செவ்வகப் பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+<div class="box">CSS Box Model</div>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 5,
+    title: "Add Padding",
+    questionEnglish: "Create a div with the text 'Welcome'. Give it a lightgray background and 20px padding on all four sides.",
+    questionTamil: "'Welcome' என்ற உரையுடன் div உருவாக்கவும். அதற்கு lightgray background மற்றும் நான்கு பக்கங்களிலும் 20px padding கொடுக்கவும்.",
+    hintEnglish: "Use the padding property.",
+    hintTamil: "padding property பயன்படுத்தவும்.",
+    expectedOutput: "The text appears inside a light gray box with 20px internal spacing.",
+    expectedOutputTamil: "20px உள் இடைவெளியுடன் light gray பெட்டிக்குள் text தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  background-color: lightgray;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="box">Welcome</div>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 5,
+    title: "Add Margin",
+    questionEnglish: "Create two div boxes. Give both boxes a lightblue background, width of 150px, and height of 80px. Add 20px margin to each box.",
+    questionTamil: "இரண்டு div boxes உருவாக்கவும். இரண்டிற்கும் lightblue background, 150px width மற்றும் 80px height கொடுக்கவும். ஒவ்வொரு box-க்கும் 20px margin அமைக்கவும்.",
+    hintEnglish: "Use margin to create space outside each box.",
+    hintTamil: "ஒவ்வொரு box-க்கும் வெளியே இடைவெளி உருவாக்க margin பயன்படுத்தவும்.",
+    expectedOutput: "Two light blue boxes appear with space around each box.",
+    expectedOutputTamil: "ஒவ்வொரு box-ஐச் சுற்றியும் இடைவெளியுடன் இரண்டு light blue boxes தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 150px;
+  height: 80px;
+  background-color: lightblue;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 5,
+    title: "Add Border",
+    questionEnglish: "Create a div with the text 'My Box'. Set its width to 200px, height to 100px, and add a 3px solid black border.",
+    questionTamil: "'My Box' என்ற உரையுடன் div உருவாக்கவும். அதன் width-ஐ 200px, height-ஐ 100px ஆக அமைத்து 3px solid black border கொடுக்கவும்.",
+    hintEnglish: "Use the border property.",
+    hintTamil: "border property பயன்படுத்தவும்.",
+    expectedOutput: "A rectangular box with a 3px solid black border.",
+    expectedOutputTamil: "3px தடிமனான solid black border கொண்ட செவ்வகப் பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 200px;
+  height: 100px;
+  border: 3px solid black;
+}
+</style>
+</head>
+<body>
+<div class="box">My Box</div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 5,
+    title: "Style Individual Padding Sides",
+    questionEnglish: "Create a div with a lightyellow background. Set its top padding to 10px, right padding to 20px, bottom padding to 30px, and left padding to 40px.",
+    questionTamil: "Lightyellow background கொண்ட div உருவாக்கவும். அதன் top padding-ஐ 10px, right padding-ஐ 20px, bottom padding-ஐ 30px மற்றும் left padding-ஐ 40px ஆக அமைக்கவும்.",
+    hintEnglish: "Use padding-top, padding-right, padding-bottom, and padding-left.",
+    hintTamil: "padding-top, padding-right, padding-bottom மற்றும் padding-left properties பயன்படுத்தவும்.",
+    expectedOutput: "The content has different internal spacing on each side.",
+    expectedOutputTamil: "Content-ஐச் சுற்றி ஒவ்வொரு பக்கத்திலும் வெவ்வேறு உள் இடைவெளி இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  background-color: lightyellow;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}
+</style>
+</head>
+<body>
+<div class="box">Different padding on each side</div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 5,
+    title: "Style Individual Margin Sides",
+    questionEnglish: "Create a div with a lightgreen background. Set its top margin to 10px, right margin to 20px, bottom margin to 30px, and left margin to 40px.",
+    questionTamil: "Lightgreen background கொண்ட div உருவாக்கவும். அதன் top margin-ஐ 10px, right margin-ஐ 20px, bottom margin-ஐ 30px மற்றும் left margin-ஐ 40px ஆக அமைக்கவும்.",
+    hintEnglish: "Use margin-top, margin-right, margin-bottom, and margin-left.",
+    hintTamil: "margin-top, margin-right, margin-bottom மற்றும் margin-left properties பயன்படுத்தவும்.",
+    expectedOutput: "The box has different external spacing on each side.",
+    expectedOutputTamil: "Box-ஐச் சுற்றி ஒவ்வொரு பக்கத்திலும் வெவ்வேறு வெளிப்புற இடைவெளி இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  background-color: lightgreen;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+</style>
+</head>
+<body>
+<div class="box">Different margin on each side</div>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 5,
+    title: "Create a Rounded Box",
+    questionEnglish: "Create a div with a lightblue background, 200px width, 100px height, and 15px padding. Use border-radius to make its corners rounded.",
+    questionTamil: "Lightblue background, 200px width, 100px height மற்றும் 15px padding கொண்ட div உருவாக்கவும். அதன் மூலைகளை வட்டமாக்க border-radius பயன்படுத்தவும்.",
+    hintEnglish: "Use border-radius: 15px.",
+    hintTamil: "border-radius: 15px பயன்படுத்தவும்.",
+    expectedOutput: "A light blue rectangular box with rounded corners.",
+    expectedOutputTamil: "வட்டமான மூலைகளைக் கொண்ட light blue செவ்வகப் பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 200px;
+  height: 100px;
+  padding: 15px;
+  background-color: lightblue;
+  border-radius: 15px;
+}
+</style>
+</head>
+<body>
+<div class="box">Rounded Box</div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 5,
+    title: "Understand Box Sizing",
+    questionEnglish: "Create a div with width 200px, height 100px, padding 20px, and a 5px solid black border. Use box-sizing: border-box so that the total rendered width remains 200px and the total height remains 100px.",
+    questionTamil: "200px width, 100px height, 20px padding மற்றும் 5px solid black border கொண்ட div உருவாக்கவும். மொத்தமாகத் தோன்றும் width 200px மற்றும் height 100px ஆகவே இருக்க box-sizing: border-box பயன்படுத்தவும்.",
+    hintEnglish: "Apply box-sizing: border-box to the div.",
+    hintTamil: "div-க்கு box-sizing: border-box அமைக்கவும்.",
+    expectedOutput: "A box whose total outer dimensions are 200px wide and 100px high, including padding and border.",
+    expectedOutputTamil: "Padding மற்றும் border உட்பட மொத்த வெளிப்புற அளவு 200px அகலமும் 100px உயரமும் கொண்ட box தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border: 5px solid black;
+  box-sizing: border-box;
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+<div class="box">Box Sizing</div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 5,
+    title: "Challenge: Product Card",
+    questionEnglish: "Create a product card with a product name, price, and description. Use width, padding, margin, border, border-radius, and box-sizing to create a properly sized card.",
+    questionTamil: "Product name, price மற்றும் description கொண்ட product card உருவாக்கவும். சரியான அளவுள்ள card உருவாக்க width, padding, margin, border, border-radius மற்றும் box-sizing பயன்படுத்தவும்.",
+    hintEnglish: "Use box-sizing: border-box and combine the box model properties.",
+    hintTamil: "box-sizing: border-box பயன்படுத்தி box model properties-ஐ இணைக்கவும்.",
+    expectedOutput: "A neatly spaced product card with a border and rounded corners.",
+    expectedOutputTamil: "Border மற்றும் வட்டமான மூலைகளுடன் சரியான இடைவெளி கொண்ட product card தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 5,
+    title: "Challenge: DEEP CODE Course Card",
+    questionEnglish: "Create a DEEP CODE course card containing a course title, description, and a button. Use the CSS box model to control the card's width, height, padding, margin, border, and border-radius. Make sure the card's total width is predictable.",
+    questionTamil: "Course title, description மற்றும் button கொண்ட DEEP CODE course card உருவாக்கவும். Card-ன் width, height, padding, margin, border மற்றும் border-radius ஆகியவற்றைக் கட்டுப்படுத்த CSS box model பயன்படுத்தவும். Card-ன் மொத்த width சரியாகக் கணிக்கக்கூடியதாக இருக்க வேண்டும்.",
+    hintEnglish: "Use box-sizing: border-box and style the card as a single container.",
+    hintTamil: "box-sizing: border-box பயன்படுத்தி card-ஐ ஒரே container ஆக வடிவமைக்கவும்.",
+    expectedOutput: "A well-sized DEEP CODE course card with consistent spacing and rounded borders.",
+    expectedOutputTamil: "சீரான இடைவெளி மற்றும் வட்டமான border கொண்ட சரியான அளவிலான DEEP CODE course card.",
+    challenge: true
+  }
+]
+
 ]
