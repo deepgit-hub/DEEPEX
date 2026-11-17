@@ -2053,4 +2053,278 @@ p {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 9,
+    title: "Display Block",
+    questionEnglish: "Create three span elements. Use display: block to make each span appear on a separate line.",
+    questionTamil: "மூன்று span elements உருவாக்கவும். ஒவ்வொரு span-மும் தனித்தனி வரியில் தோன்ற display: block பயன்படுத்தவும்.",
+    hintEnglish: "Use the display property with the block value.",
+    hintTamil: "display property-யில் block value பயன்படுத்தவும்.",
+    expectedOutput: "The three span elements appear vertically, one below another.",
+    expectedOutputTamil: "மூன்று span elements-ம் ஒன்றன் கீழ் ஒன்றாகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+span {
+  display: block;
+  background-color: lightblue;
+  margin: 5px;
+}
+</style>
+</head>
+<body>
+<span>First</span>
+<span>Second</span>
+<span>Third</span>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 9,
+    title: "Display Inline",
+    questionEnglish: "Create three div elements. Use display: inline to make them appear on the same line. Give each one a lightgreen background.",
+    questionTamil: "மூன்று div elements உருவாக்கவும். அவை ஒரே வரியில் தோன்ற display: inline பயன்படுத்தவும். ஒவ்வொன்றுக்கும் lightgreen background கொடுக்கவும்.",
+    hintEnglish: "Use display: inline.",
+    hintTamil: "display: inline பயன்படுத்தவும்.",
+    expectedOutput: "The three div elements appear side by side on the same line.",
+    expectedOutputTamil: "மூன்று div elements-ம் ஒரே வரியில் அருகருகே தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  display: inline;
+  background-color: lightgreen;
+}
+</style>
+</head>
+<body>
+<div class="box">Box 1 </div>
+<div class="box">Box 2 </div>
+<div class="box">Box 3</div>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 9,
+    title: "Display Inline-Block",
+    questionEnglish: "Create three div elements. Use display: inline-block and set each element to 120px width and 80px height. Give each a lightblue background.",
+    questionTamil: "மூன்று div elements உருவாக்கவும். display: inline-block பயன்படுத்தி ஒவ்வொன்றுக்கும் 120px width மற்றும் 80px height அமைக்கவும். ஒவ்வொன்றுக்கும் lightblue background கொடுக்கவும்.",
+    hintEnglish: "Use display: inline-block.",
+    hintTamil: "display: inline-block பயன்படுத்தவும்.",
+    expectedOutput: "Three boxes appear side by side, each with the specified width and height.",
+    expectedOutputTamil: "குறிப்பிட்ட width மற்றும் height கொண்ட மூன்று பெட்டிகள் அருகருகே தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  display: inline-block;
+  width: 120px;
+  height: 80px;
+  background-color: lightblue;
+  margin: 5px;
+}
+</style>
+</head>
+<body>
+<div class="box">One</div>
+<div class="box">Two</div>
+<div class="box">Three</div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 9,
+    title: "Hide an Element",
+    questionEnglish: "Create three paragraphs. Use display: none to completely hide the second paragraph while keeping the first and third visible.",
+    questionTamil: "மூன்று paragraphs உருவாக்கவும். இரண்டாவது paragraph-ஐ முழுமையாக மறைக்க display: none பயன்படுத்தவும். முதல் மற்றும் மூன்றாவது paragraphs தெரிய வேண்டும்.",
+    hintEnglish: "Apply display: none to the second paragraph using a class.",
+    hintTamil: "Class பயன்படுத்தி இரண்டாவது paragraph-க்கு display: none அமைக்கவும்.",
+    expectedOutput: "Only the first and third paragraphs are visible. No space is reserved for the hidden paragraph.",
+    expectedOutputTamil: "முதல் மற்றும் மூன்றாவது paragraphs மட்டும் தெரியும். மறைக்கப்பட்ட paragraph-க்காக இடம் ஒதுக்கப்படாது.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.hidden {
+  display: none;
+}
+</style>
+</head>
+<body>
+<p>First paragraph</p>
+<p class="hidden">Second paragraph</p>
+<p>Third paragraph</p>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 9,
+    title: "Use Visibility Hidden",
+    questionEnglish: "Create three paragraphs. Use visibility: hidden to hide the second paragraph while keeping its original space in the layout.",
+    questionTamil: "மூன்று paragraphs உருவாக்கவும். இரண்டாவது paragraph-ஐ மறைக்க visibility: hidden பயன்படுத்தவும். ஆனால் அதன் இடம் layout-ல் இருக்க வேண்டும்.",
+    hintEnglish: "Use visibility: hidden instead of display: none.",
+    hintTamil: "display: none-க்கு பதிலாக visibility: hidden பயன்படுத்தவும்.",
+    expectedOutput: "The second paragraph is invisible, but its space remains in the layout.",
+    expectedOutputTamil: "இரண்டாவது paragraph தெரியாது; ஆனால் அதற்கான இடம் layout-ல் இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.hidden {
+  visibility: hidden;
+}
+</style>
+</head>
+<body>
+<p>First paragraph</p>
+<p class="hidden">Second paragraph</p>
+<p>Third paragraph</p>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 9,
+    title: "Use Display Flex",
+    questionEnglish: "Create a container with three div boxes. Use display: flex to arrange the boxes horizontally.",
+    questionTamil: "மூன்று div boxes கொண்ட container உருவாக்கவும். Boxes கிடைமட்டமாக வரிசைப்படுத்த display: flex பயன்படுத்தவும்.",
+    hintEnglish: "Apply display: flex to the parent container.",
+    hintTamil: "Parent container-க்கு display: flex அமைக்கவும்.",
+    expectedOutput: "The three boxes appear horizontally in a flex container.",
+    expectedOutputTamil: "Flex container-க்குள் மூன்று பெட்டிகளும் கிடைமட்டமாகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  gap: 10px;
+}
+.box {
+  background-color: lightblue;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 9,
+    title: "Use Display Grid",
+    questionEnglish: "Create a container with four div boxes. Use display: grid and grid-template-columns: repeat(2, 1fr) to arrange the boxes in two columns.",
+    questionTamil: "நான்கு div boxes கொண்ட container உருவாக்கவும். Boxes இரண்டு columns-ல் வரிசைப்படுத்த display: grid மற்றும் grid-template-columns: repeat(2, 1fr) பயன்படுத்தவும்.",
+    hintEnglish: "Use display: grid and define two equal columns.",
+    hintTamil: "display: grid பயன்படுத்தி இரண்டு சமமான columns அமைக்கவும்.",
+    expectedOutput: "Four boxes appear in a two-column grid with two rows.",
+    expectedOutputTamil: "இரண்டு columns மற்றும் இரண்டு rows கொண்ட grid-ல் நான்கு பெட்டிகள் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.box {
+  background-color: lightgreen;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+  <div class="box">Four</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 9,
+    title: "Use Display Flex Column",
+    questionEnglish: "Create three div boxes inside a container. Use display: flex and flex-direction: column to arrange the boxes vertically.",
+    questionTamil: "ஒரு container-க்குள் மூன்று div boxes உருவாக்கவும். அவற்றை செங்குத்தாக வரிசைப்படுத்த display: flex மற்றும் flex-direction: column பயன்படுத்தவும்.",
+    hintEnglish: "Set flex-direction to column.",
+    hintTamil: "flex-direction-ஐ column ஆக அமைக்கவும்.",
+    expectedOutput: "The three boxes appear vertically, one below another.",
+    expectedOutputTamil: "மூன்று பெட்டிகளும் ஒன்றன் கீழ் ஒன்றாகச் செங்குத்தாகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.box {
+  background-color: lightblue;
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">First</div>
+  <div class="box">Second</div>
+  <div class="box">Third</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 9,
+    title: "Challenge: Navigation Menu",
+    questionEnglish: "Create a navigation menu with four links: Home, About, Courses, and Contact. Use display properties to arrange the links horizontally and style them like a navigation bar.",
+    questionTamil: "Home, About, Courses மற்றும் Contact என்ற நான்கு links கொண்ட navigation menu உருவாக்கவும். Links-ஐ கிடைமட்டமாக வரிசைப்படுத்த display properties பயன்படுத்தி navigation bar போல வடிவமைக்கவும்.",
+    hintEnglish: "Try display: flex on the navigation container.",
+    hintTamil: "Navigation container-ல் display: flex பயன்படுத்திப் பாருங்கள்.",
+    expectedOutput: "A horizontal navigation menu containing four links.",
+    expectedOutputTamil: "நான்கு links கொண்ட கிடைமட்ட navigation menu தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 9,
+    title: "Challenge: DEEP CODE Course Layout",
+    questionEnglish: "Create a DEEP CODE page with a navigation bar, a main content section, three course cards, and a footer. Use block, inline, inline-block, flex, or grid display values where appropriate.",
+    questionTamil: "Navigation bar, main content section, மூன்று course cards மற்றும் footer கொண்ட DEEP CODE page உருவாக்கவும். தேவையான இடங்களில் block, inline, inline-block, flex அல்லது grid display values பயன்படுத்தவும்.",
+    hintEnglish: "Choose a suitable display value for each section based on its layout needs.",
+    hintTamil: "ஒவ்வொரு பகுதியின் layout தேவைக்கேற்ப பொருத்தமான display value தேர்ந்தெடுக்கவும்.",
+    expectedOutput: "A complete DEEP CODE page with properly arranged sections and course cards.",
+    expectedOutputTamil: "சரியாக வரிசைப்படுத்தப்பட்ட sections மற்றும் course cards கொண்ட முழுமையான DEEP CODE page தோன்றும்.",
+    challenge: true
+  }
+]
+
 ]
