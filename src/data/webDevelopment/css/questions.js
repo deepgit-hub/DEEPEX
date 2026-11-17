@@ -5292,4 +5292,287 @@ button {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 20,
+    title: "Create Your First CSS Variable",
+    questionEnglish: "Create a CSS variable named --primary-color with the value blue inside :root. Use it to set the heading color.",
+    questionTamil: ":root-க்குள் --primary-color என்ற CSS variable உருவாக்கி அதன் value-ஐ blue ஆக அமைக்கவும். Heading நிறத்திற்கு அந்த variable பயன்படுத்தவும்.",
+    hintEnglish: "Declare the variable inside :root and access it using var().",
+    hintTamil: ":root-க்குள் variable உருவாக்கி var() மூலம் பயன்படுத்தவும்.",
+    expectedOutput: "The heading appears blue using the CSS variable.",
+    expectedOutputTamil: "CSS variable பயன்படுத்தி heading நீல நிறத்தில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root {
+  --primary-color: blue;
+}
+h1 {
+  color: var(--primary-color);
+}
+</style>
+</head>
+<body>
+<h1>CSS Variables</h1>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 20,
+    title: "Use Multiple CSS Variables",
+    questionEnglish: "Create two CSS variables named --primary-color and --background-color. Use them to style a heading and the webpage background.",
+    questionTamil: "--primary-color மற்றும் --background-color என்ற இரண்டு CSS variables உருவாக்கவும். அவற்றைப் பயன்படுத்தி heading மற்றும் webpage background வடிவமைக்கவும்.",
+    hintEnglish: "Declare both variables inside :root.",
+    hintTamil: "இரண்டு variables-ஐயும் :root-க்குள் உருவாக்கவும்.",
+    expectedOutput: "The heading and webpage background use the colors defined by the CSS variables.",
+    expectedOutputTamil: "Heading மற்றும் webpage background CSS variables-ல் வரையறுக்கப்பட்ட நிறங்களைப் பயன்படுத்தும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root {
+  --primary-color: darkblue;
+  --background-color: lightyellow;
+}
+body {
+  background-color: var(--background-color);
+}
+h1 {
+  color: var(--primary-color);
+}
+</style>
+</head>
+<body>
+<h1>Reusable CSS Variables</h1>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 20,
+    title: "Use Variables for Spacing",
+    questionEnglish: "Create a CSS variable named --main-spacing with a value of 20px. Use it as the padding value of a div.",
+    questionTamil: "--main-spacing என்ற CSS variable-ஐ 20px value-உடன் உருவாக்கவும். Div-ன் padding ஆக அதைப் பயன்படுத்தவும்.",
+    hintEnglish: "Use var(--main-spacing) inside the padding property.",
+    hintTamil: "padding property-க்குள் var(--main-spacing) பயன்படுத்தவும்.",
+    expectedOutput: "The div has 20px padding using the CSS variable.",
+    expectedOutputTamil: "CSS variable பயன்படுத்தி div-க்கு 20px padding அமைக்கப்படும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root {
+  --main-spacing: 20px;
+}
+.box {
+  padding: var(--main-spacing);
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+<div class="box">Reusable Spacing</div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 20,
+    title: "Use Variables in Multiple Elements",
+    questionEnglish: "Create a CSS variable named --theme-color with the value purple. Use the same variable for a heading, paragraph, and button background.",
+    questionTamil: "--theme-color என்ற CSS variable-ஐ purple value-உடன் உருவாக்கவும். அதே variable-ஐ heading, paragraph மற்றும் button background-க்கு பயன்படுத்தவும்.",
+    hintEnglish: "Use the same var(--theme-color) in multiple CSS rules.",
+    hintTamil: "பல CSS rules-ல் ஒரே var(--theme-color) பயன்படுத்தவும்.",
+    expectedOutput: "The heading, paragraph, and button use the same purple theme color.",
+    expectedOutputTamil: "Heading, paragraph மற்றும் button ஒரே purple theme நிறத்தைப் பயன்படுத்தும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root {
+  --theme-color: purple;
+}
+h1, p {
+  color: var(--theme-color);
+}
+button {
+  background-color: var(--theme-color);
+  color: white;
+}
+</style>
+</head>
+<body>
+<h1>My Theme</h1>
+<p>Reusable colors make CSS easier to maintain.</p>
+<button>Continue</button>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 20,
+    title: "Use a Local CSS Variable",
+    questionEnglish: "Create a div and define a local CSS variable named --card-color with the value lightgreen inside its class. Use that variable as the div background color.",
+    questionTamil: "ஒரு div உருவாக்கி அதன் class-க்குள் --card-color என்ற local CSS variable-ஐ lightgreen value-உடன் வரையறுக்கவும். Div background color-க்கு அந்த variable பயன்படுத்தவும்.",
+    hintEnglish: "Declare the variable inside .card instead of :root.",
+    hintTamil: ":root-க்கு பதிலாக .card-க்குள் variable உருவாக்கவும்.",
+    expectedOutput: "The card displays a light green background using its local CSS variable.",
+    expectedOutputTamil: "Local CSS variable பயன்படுத்தி card light green background-ல் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  --card-color: lightgreen;
+  background-color: var(--card-color);
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="card">Local CSS Variable</div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 20,
+    title: "Use a Variable Fallback Value",
+    questionEnglish: "Create a heading that uses var(--heading-color, blue) as its text color. Do not define --heading-color. Use the fallback color provided by var().",
+    questionTamil: "Text color-க்கு var(--heading-color, blue) பயன்படுத்தும் heading உருவாக்கவும். --heading-color-ஐ வரையறுக்க வேண்டாம். var() வழங்கும் fallback நிறத்தைப் பயன்படுத்தவும்.",
+    hintEnglish: "The second argument of var() is the fallback value.",
+    hintTamil: "var()-ன் இரண்டாவது argument fallback value ஆகும்.",
+    expectedOutput: "The heading appears blue because the custom property is not defined.",
+    expectedOutputTamil: "Custom property வரையறுக்கப்படாததால் heading நீல நிறத்தில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  color: var(--heading-color, blue);
+}
+</style>
+</head>
+<body>
+<h1>Fallback CSS Variable</h1>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 20,
+    title: "Create a Dark Theme",
+    questionEnglish: "Create a webpage with CSS variables for background color and text color. Define dark theme values and use them to style the body and heading.",
+    questionTamil: "Background color மற்றும் text color-க்கான CSS variables கொண்ட webpage உருவாக்கவும். Dark theme values வரையறுத்து body மற்றும் heading வடிவமைக்க அவற்றைப் பயன்படுத்தவும்.",
+    hintEnglish: "Define variables such as --bg-color and --text-color inside :root.",
+    hintTamil: ":root-க்குள் --bg-color மற்றும் --text-color போன்ற variables உருவாக்கவும்.",
+    expectedOutput: "A webpage with a dark background and light-colored text.",
+    expectedOutputTamil: "Dark background மற்றும் வெளிர் நிற text கொண்ட webpage தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root {
+  --bg-color: #121212;
+  --text-color: white;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<h1>Dark Theme</h1>
+<p>Welcome to the dark theme example.</p>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 20,
+    title: "Organize CSS Using Variables",
+    questionEnglish: "Create a small webpage with a heading, paragraph, card, and button. Define CSS variables for primary color, secondary color, spacing, and border radius. Reuse these variables throughout the stylesheet.",
+    questionTamil: "Heading, paragraph, card மற்றும் button கொண்ட சிறிய webpage உருவாக்கவும். Primary color, secondary color, spacing மற்றும் border radius-க்கான CSS variables வரையறுத்து stylesheet முழுவதும் அவற்றை மீண்டும் பயன்படுத்தவும்.",
+    hintEnglish: "Define reusable variables inside :root and access them with var().",
+    hintTamil: ":root-க்குள் மீண்டும் பயன்படுத்தக்கூடிய variables உருவாக்கி var() மூலம் பயன்படுத்தவும்.",
+    expectedOutput: "A consistently styled webpage using reusable CSS variables.",
+    expectedOutputTamil: "மீண்டும் பயன்படுத்தக்கூடிய CSS variables மூலம் ஒரே மாதிரியாக வடிவமைக்கப்பட்ட webpage தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root {
+  --primary-color: darkblue;
+  --secondary-color: lightblue;
+  --main-spacing: 20px;
+  --corner-radius: 10px;
+}
+body {
+  padding: var(--main-spacing);
+}
+h1 {
+  color: var(--primary-color);
+}
+.card {
+  background-color: var(--secondary-color);
+  padding: var(--main-spacing);
+  border-radius: var(--corner-radius);
+}
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--corner-radius);
+}
+</style>
+</head>
+<body>
+<h1>CSS Best Practices</h1>
+<div class="card">
+  <p>Learn to write reusable CSS.</p>
+  <button>Learn More</button>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 20,
+    title: "Challenge: Reusable Website Theme",
+    questionEnglish: "Create a website theme using CSS variables for primary color, secondary color, background color, text color, spacing, and border radius. Use these variables across a navigation bar, cards, and buttons. Include a fallback value for at least one variable.",
+    questionTamil: "Primary color, secondary color, background color, text color, spacing மற்றும் border radius ஆகியவற்றிற்கான CSS variables பயன்படுத்தி website theme உருவாக்கவும். Navigation bar, cards மற்றும் buttons முழுவதும் அவற்றைப் பயன்படுத்தவும். குறைந்தது ஒரு variable-க்கு fallback value சேர்க்கவும்.",
+    hintEnglish: "Use :root, var(), local variables, and fallback values.",
+    hintTamil: ":root, var(), local variables மற்றும் fallback values பயன்படுத்தவும்.",
+    expectedOutput: "A consistently themed website with reusable CSS variables.",
+    expectedOutputTamil: "மீண்டும் பயன்படுத்தக்கூடிய CSS variables கொண்ட ஒரே theme-ல் வடிவமைக்கப்பட்ட website.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 20,
+    title: "Challenge: DEEP CODE Design System",
+    questionEnglish: "Create a simple DEEP CODE design system using CSS variables. Define colors, font sizes, spacing, border radius, and shadows. Use these variables to design a navigation bar, hero section, course cards, and buttons. Keep the CSS organized and reusable.",
+    questionTamil: "CSS variables பயன்படுத்தி எளிய DEEP CODE design system உருவாக்கவும். Colors, font sizes, spacing, border radius மற்றும் shadows வரையறுக்கவும். அவற்றைப் பயன்படுத்தி navigation bar, hero section, course cards மற்றும் buttons வடிவமைக்கவும். CSS-ஐ ஒழுங்காகவும் மீண்டும் பயன்படுத்தக்கூடியதாகவும் வைத்திருக்கவும்.",
+    hintEnglish: "Create a centralized set of design variables in :root and reuse them across all sections.",
+    hintTamil: ":root-க்குள் ஒரே இடத்தில் design variables உருவாக்கி அனைத்து sections-லும் மீண்டும் பயன்படுத்தவும்.",
+    expectedOutput: "A complete DEEP CODE page with a consistent design system and reusable CSS.",
+    expectedOutputTamil: "ஒரே மாதிரியான design system மற்றும் மீண்டும் பயன்படுத்தக்கூடிய CSS கொண்ட முழுமையான DEEP CODE page.",
+    challenge: true
+  }
+]
+
 ]
