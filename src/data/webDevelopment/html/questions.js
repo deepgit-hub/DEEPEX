@@ -951,6 +951,232 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 7: HTML Lists
+
+{
+  id: 1,
+  topicId: 7,
+  title: "Create an Ordered List",
+  questionEnglish: "Create an ordered list containing three programming languages: Java, Python, and C++.",
+  questionTamil: "Java, Python மற்றும் C++ ஆகிய மூன்று programming languages கொண்ட ordered list உருவாக்கவும்.",
+  hintEnglish: "Use the <ol> tag with three <li> elements.",
+  hintTamil: "மூன்று <li> elements உடன் <ol> tag-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "1. Java\n2. Python\n3. C++",
+  expectedOutputTamil: "1. Java\n2. Python\n3. C++",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <ol>
+    <li>Java</li>
+    <li>Python</li>
+    <li>C++</li>
+  </ol>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 7,
+  title: "Create an Unordered List",
+  questionEnglish: "Create an unordered list containing three hobbies: Reading, Coding, and Gaming.",
+  questionTamil: "Reading, Coding மற்றும் Gaming ஆகிய மூன்று பொழுதுபோக்குகளைக் கொண்ட unordered list உருவாக்கவும்.",
+  hintEnglish: "Use the <ul> tag with <li> elements.",
+  hintTamil: "<li> elements உடன் <ul> tag-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "• Reading\n• Coding\n• Gaming",
+  expectedOutputTamil: "• Reading\n• Coding\n• Gaming",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <ul>
+    <li>Reading</li>
+    <li>Coding</li>
+    <li>Gaming</li>
+  </ul>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 7,
+  title: "Create a Shopping List",
+  questionEnglish: "Create a shopping list containing Milk, Bread, Eggs, and Rice using an unordered list.",
+  questionTamil: "Milk, Bread, Eggs மற்றும் Rice ஆகியவற்றைக் கொண்ட shopping list-ஐ unordered list பயன்படுத்தி உருவாக்கவும்.",
+  hintEnglish: "Place each shopping item inside a separate <li> element.",
+  hintTamil: "ஒவ்வொரு பொருளையும் தனித்தனி <li> element-க்குள் வைக்கவும்.",
+  expectedOutput: "• Milk\n• Bread\n• Eggs\n• Rice",
+  expectedOutputTamil: "• Milk\n• Bread\n• Eggs\n• Rice",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h2>Shopping List</h2>
+  <ul>
+    <li>Milk</li>
+    <li>Bread</li>
+    <li>Eggs</li>
+    <li>Rice</li>
+  </ul>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 7,
+  title: "Create a Numbered To-Do List",
+  questionEnglish: "Create a numbered to-do list with these tasks: Wake Up, Study HTML, Practice Coding, and Complete Homework.",
+  questionTamil: "Wake Up, Study HTML, Practice Coding மற்றும் Complete Homework ஆகிய பணிகளைக் கொண்ட numbered to-do list உருவாக்கவும்.",
+  hintEnglish: "Use an ordered list and add each task as a list item.",
+  hintTamil: "Ordered list பயன்படுத்தி ஒவ்வொரு பணியையும் list item ஆகச் சேர்க்கவும்.",
+  expectedOutput: "1. Wake Up\n2. Study HTML\n3. Practice Coding\n4. Complete Homework",
+  expectedOutputTamil: "1. Wake Up\n2. Study HTML\n3. Practice Coding\n4. Complete Homework",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h2>My To-Do List</h2>
+  <ol>
+    <li>Wake Up</li>
+    <li>Study HTML</li>
+    <li>Practice Coding</li>
+    <li>Complete Homework</li>
+  </ol>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 7,
+  title: "Change Ordered List Starting Number",
+  questionEnglish: "Create an ordered list containing HTML, CSS, and JavaScript. Make the numbering start from 5.",
+  questionTamil: "HTML, CSS மற்றும் JavaScript கொண்ட ordered list உருவாக்கவும். அதன் எண் 5-இல் தொடங்க வேண்டும்.",
+  hintEnglish: "Use the start attribute in the <ol> tag.",
+  hintTamil: "<ol> tag-ல் start attribute-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "5. HTML\n6. CSS\n7. JavaScript",
+  expectedOutputTamil: "5. HTML\n6. CSS\n7. JavaScript",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <ol start="5">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ol>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 7,
+  title: "Create a Description List",
+  questionEnglish: "Create a description list containing three web technologies and their meanings: HTML - Structure, CSS - Styling, and JavaScript - Interactivity.",
+  questionTamil: "HTML - Structure, CSS - Styling மற்றும் JavaScript - Interactivity ஆகிய மூன்று web technologies மற்றும் அவற்றின் விளக்கங்களைக் கொண்ட description list உருவாக்கவும்.",
+  hintEnglish: "Use <dl> for the list, <dt> for each term, and <dd> for its description.",
+  hintTamil: "List-க்கு <dl>, ஒவ்வொரு term-க்கும் <dt>, அதன் விளக்கத்திற்கு <dd> பயன்படுத்தவும்.",
+  expectedOutput: "HTML\n  Structure\nCSS\n  Styling\nJavaScript\n  Interactivity",
+  expectedOutputTamil: "HTML\n  Structure\nCSS\n  Styling\nJavaScript\n  Interactivity",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <dl>
+    <dt>HTML</dt>
+    <dd>Structure</dd>
+
+    <dt>CSS</dt>
+    <dd>Styling</dd>
+
+    <dt>JavaScript</dt>
+    <dd>Interactivity</dd>
+  </dl>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 7,
+  title: "Create a Nested List",
+  questionEnglish: "Create a nested list with the main category 'Programming Languages' and the sub-items Java, Python, and C++.",
+  questionTamil: "'Programming Languages' என்ற முக்கியப் பிரிவையும், அதன் கீழ் Java, Python மற்றும் C++ என்ற துணைப் பட்டியலையும் கொண்ட nested list உருவாக்கவும்.",
+  hintEnglish: "Place another <ul> inside the parent <li> element.",
+  hintTamil: "Parent <li> element-க்குள் மற்றொரு <ul>-ஐ வைக்கவும்.",
+  expectedOutput: "• Programming Languages\n  • Java\n  • Python\n  • C++",
+  expectedOutputTamil: "• Programming Languages\n  • Java\n  • Python\n  • C++",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <ul>
+    <li>Programming Languages
+      <ul>
+        <li>Java</li>
+        <li>Python</li>
+        <li>C++</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 7,
+  title: "Reverse Ordered List",
+  questionEnglish: "Create an ordered list containing Gold, Silver, and Bronze. Display the numbering in descending order starting from 3.",
+  questionTamil: "Gold, Silver மற்றும் Bronze கொண்ட ordered list உருவாக்கவும். எண்கள் 3-இல் தொடங்கி இறங்கு வரிசையில் காட்டப்பட வேண்டும்.",
+  hintEnglish: "Use the reversed attribute in the <ol> tag.",
+  hintTamil: "<ol> tag-ல் reversed attribute-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "3. Gold\n2. Silver\n1. Bronze",
+  expectedOutputTamil: "3. Gold\n2. Silver\n1. Bronze",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <ol reversed>
+    <li>Gold</li>
+    <li>Silver</li>
+    <li>Bronze</li>
+  </ol>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 7,
+  title: "Build a Course Syllabus",
+  questionEnglish: "Create a course syllabus using a nested list. Include three main modules: Frontend Development, Backend Development, and Database. Add at least two topics under each module.",
+  questionTamil: "Nested list பயன்படுத்தி ஒரு course syllabus உருவாக்கவும். Frontend Development, Backend Development மற்றும் Database ஆகிய மூன்று முக்கிய modules-ஐச் சேர்த்து, ஒவ்வொரு module-க்கும் குறைந்தது இரண்டு topics சேர்க்கவும்.",
+  hintEnglish: "Use a parent list with nested unordered lists for the module topics.",
+  hintTamil: "ஒவ்வொரு module-ன் topics-க்கும் nested unordered lists கொண்ட parent list-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "A course syllabus with three main modules and at least two subtopics under each module.",
+  expectedOutputTamil: "மூன்று முக்கிய modules மற்றும் ஒவ்வொன்றின் கீழும் குறைந்தது இரண்டு துணைத் தலைப்புகள் கொண்ட course syllabus.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 7,
+  title: "Create a Restaurant Menu",
+  questionEnglish: "Build a restaurant menu using HTML lists. Include at least three food categories, with three items under each category. Use suitable ordered, unordered, or nested lists.",
+  questionTamil: "HTML lists பயன்படுத்தி ஒரு restaurant menu உருவாக்கவும். குறைந்தது மூன்று உணவு வகைகளைச் சேர்த்து, ஒவ்வொரு வகையின் கீழும் மூன்று உணவுப் பொருட்களைச் சேர்க்கவும். பொருத்தமான ordered, unordered அல்லது nested lists-ஐப் பயன்படுத்தவும்.",
+  hintEnglish: "Use nested lists to organize food categories and their items.",
+  hintTamil: "உணவு வகைகளையும் அவற்றின் பொருட்களையும் ஒழுங்குபடுத்த nested lists-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "A restaurant menu with at least three categories and three food items in each category.",
+  expectedOutputTamil: "குறைந்தது மூன்று வகைகளும் ஒவ்வொரு வகையிலும் மூன்று உணவுப் பொருட்களும் கொண்ட restaurant menu.",
+  challenge: true
+},
+
+
 
 
 ];
