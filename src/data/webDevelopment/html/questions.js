@@ -3728,6 +3728,187 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 19: HTML Entities
+
+{
+  id: 1,
+  topicId: 19,
+  title: "Display the Less Than Symbol",
+  questionEnglish: "Display the less-than symbol (<) on a webpage using an HTML entity.",
+  questionTamil: "HTML entity பயன்படுத்தி less-than symbol (<) ஒன்றை webpage-ல் காட்டவும்.",
+  hintEnglish: "Use &lt;.",
+  hintTamil: "&lt; பயன்படுத்தவும்.",
+  expectedOutput: "<",
+  expectedOutputTamil: "<",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>&lt;</p>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 19,
+  title: "Display the Greater Than Symbol",
+  questionEnglish: "Display the greater-than symbol (>) using an HTML entity.",
+  questionTamil: "HTML entity பயன்படுத்தி greater-than symbol (>) காட்டவும்.",
+  hintEnglish: "Use &gt;.",
+  hintTamil: "&gt; பயன்படுத்தவும்.",
+  expectedOutput: ">",
+  expectedOutputTamil: ">",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>&gt;</p>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 19,
+  title: "Display the Ampersand Symbol",
+  questionEnglish: "Display the ampersand symbol (&) on a webpage using an HTML entity.",
+  questionTamil: "HTML entity பயன்படுத்தி ampersand symbol (&) webpage-ல் காட்டவும்.",
+  hintEnglish: "Use &amp;.",
+  hintTamil: "&amp; பயன்படுத்தவும்.",
+  expectedOutput: "&",
+  expectedOutputTamil: "&",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>&amp;</p>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 19,
+  title: "Display the Copyright Symbol",
+  questionEnglish: "Display the copyright symbol followed by the text '2026 DEEP CODE'.",
+  questionTamil: "Copyright symbol-க்கு அடுத்ததாக '2026 DEEP CODE' என்ற உரையைக் காட்டவும்.",
+  hintEnglish: "Use &copy;.",
+  hintTamil: "&copy; பயன்படுத்தவும்.",
+  expectedOutput: "© 2026 DEEP CODE",
+  expectedOutputTamil: "© 2026 DEEP CODE",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>&copy; 2026 DEEP CODE</p>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 19,
+  title: "Display the Registered Symbol",
+  questionEnglish: "Display the registered trademark symbol after the brand name ATEXRA.",
+  questionTamil: "ATEXRA என்ற brand பெயருக்குப் பிறகு registered trademark symbol காட்டவும்.",
+  hintEnglish: "Use &reg;.",
+  hintTamil: "&reg; பயன்படுத்தவும்.",
+  expectedOutput: "ATEXRA®",
+  expectedOutputTamil: "ATEXRA®",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>ATEXRA&reg;</p>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 19,
+  title: "Display the Euro Symbol",
+  questionEnglish: "Display the price '50 Euro' using the Euro currency symbol entity.",
+  questionTamil: "Euro currency symbol entity பயன்படுத்தி '50 Euro' என்ற விலையைக் காட்டவும்.",
+  hintEnglish: "Use &euro;.",
+  hintTamil: "&euro; பயன்படுத்தவும்.",
+  expectedOutput: "€50",
+  expectedOutputTamil: "€50",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>&euro;50</p>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 19,
+  title: "Display Non-Breaking Spaces",
+  questionEnglish: "Display the words 'DEEP CODE' with five non-breaking spaces between them.",
+  questionTamil: "'DEEP CODE' என்ற வார்த்தைகளுக்கு இடையில் ஐந்து non-breaking spaces வைத்து காட்டவும்.",
+  hintEnglish: "Use &nbsp; five times between the words.",
+  hintTamil: "வார்த்தைகளுக்கு இடையில் &nbsp; ஐந்து முறை பயன்படுத்தவும்.",
+  expectedOutput: "DEEP     CODE (with five non-breaking spaces between the words)",
+  expectedOutputTamil: "DEEP     CODE (வார்த்தைகளுக்கு இடையில் ஐந்து non-breaking spaces)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>DEEP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CODE</p>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 19,
+  title: "Display Quotation Marks",
+  questionEnglish: "Display the sentence 'Learning never stops' inside quotation marks using HTML quotation entities.",
+  questionTamil: "HTML quotation entities பயன்படுத்தி 'Learning never stops' என்ற வாக்கியத்தை quotation marks-க்குள் காட்டவும்.",
+  hintEnglish: "Use &ldquo; for the opening quotation mark and &rdquo; for the closing quotation mark.",
+  hintTamil: "தொடக்க quotation mark-க்கு &ldquo; மற்றும் இறுதி quotation mark-க்கு &rdquo; பயன்படுத்தவும்.",
+  expectedOutput: "“Learning never stops”",
+  expectedOutputTamil: "“Learning never stops”",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>&ldquo;Learning never stops&rdquo;</p>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 19,
+  title: "Create an HTML Symbols Page",
+  questionEnglish: "Create a webpage displaying at least ten HTML entities, including copyright, registered trademark, ampersand, less-than, greater-than, Euro, non-breaking space, and quotation marks. Display each entity with its name and rendered symbol.",
+  questionTamil: "Copyright, registered trademark, ampersand, less-than, greater-than, Euro, non-breaking space மற்றும் quotation marks உள்ளிட்ட குறைந்தது பத்து HTML entities கொண்ட webpage உருவாக்கவும். ஒவ்வொரு entity-யையும் அதன் பெயர் மற்றும் காட்டப்படும் symbol உடன் வழங்கவும்.",
+  hintEnglish: "Use named HTML entities and organize them with headings or a table.",
+  hintTamil: "Named HTML entities பயன்படுத்தி headings அல்லது table மூலம் ஒழுங்குபடுத்தவும்.",
+  expectedOutput: "A symbols reference page containing at least ten named HTML entities.",
+  expectedOutputTamil: "குறைந்தது பத்து named HTML entities கொண்ட symbols reference page.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 19,
+  title: "Build a Web Development Reference Page",
+  questionEnglish: "Create a reference page explaining common HTML symbols used in programming. Include code comparison symbols, copyright and trademark symbols, currency symbols, and quotation marks. Use HTML entities wherever necessary.",
+  questionTamil: "Programming-ல் பயன்படுத்தப்படும் பொதுவான HTML symbols-ஐ விளக்கும் reference page உருவாக்கவும். Code comparison symbols, copyright மற்றும் trademark symbols, currency symbols மற்றும் quotation marks சேர்க்கவும். தேவையான இடங்களில் HTML entities பயன்படுத்தவும்.",
+  hintEnglish: "Use suitable HTML entities and organize the information into clear sections.",
+  hintTamil: "பொருத்தமான HTML entities பயன்படுத்தி தகவல்களைத் தெளிவான பிரிவுகளாக ஒழுங்குபடுத்தவும்.",
+  expectedOutput: "A structured HTML symbol reference page with examples and descriptions.",
+  expectedOutputTamil: "உதாரணங்கள் மற்றும் விளக்கங்களுடன் அமைக்கப்பட்ட HTML symbol reference page.",
+  challenge: true
+},
+
+
 
 
 
