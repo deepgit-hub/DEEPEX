@@ -4402,4 +4402,327 @@ button:hover {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 17,
+    title: "Create Your First Animation",
+    questionEnglish: "Create a box that changes its background from red to blue using CSS @keyframes. Make the animation last 3 seconds.",
+    questionTamil: "CSS @keyframes பயன்படுத்தி background சிவப்பிலிருந்து நீலமாக மாறும் box உருவாக்கவும். Animation 3 seconds நீடிக்க வேண்டும்.",
+    hintEnglish: "Define @keyframes and apply animation-duration: 3s.",
+    hintTamil: "@keyframes வரையறுத்து animation-duration: 3s அமைக்கவும்.",
+    expectedOutput: "The box changes from red to blue over a 3-second animation.",
+    expectedOutputTamil: "Box 3 seconds animation-ல் சிவப்பிலிருந்து நீலமாக மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation: changeColor 3s;
+}
+@keyframes changeColor {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: blue;
+  }
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 17,
+    title: "Create a Moving Animation",
+    questionEnglish: "Create a box that moves from left to right using @keyframes. Use translateX() and make the animation last 3 seconds.",
+    questionTamil: "@keyframes பயன்படுத்தி இடமிருந்து வலமாக நகரும் box உருவாக்கவும். translateX() பயன்படுத்தி animation-ஐ 3 seconds ஆக அமைக்கவும்.",
+    hintEnglish: "Animate the transform property from translateX(0) to translateX(200px).",
+    hintTamil: "transform property-ஐ translateX(0) இலிருந்து translateX(200px) வரை animate செய்யவும்.",
+    expectedOutput: "The box moves 200px to the right over 3 seconds.",
+    expectedOutputTamil: "Box 3 seconds-ல் 200px வலதுபுறம் நகரும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  width: 350px;
+  height: 120px;
+}
+.box {
+  width: 80px;
+  height: 80px;
+  background-color: blue;
+  animation: moveBox 3s forwards;
+}
+@keyframes moveBox {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box"></div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 17,
+    title: "Repeat an Animation",
+    questionEnglish: "Create a box that changes its background color between red and green. Use animation-iteration-count: infinite to repeat the animation continuously.",
+    questionTamil: "Background நிறம் சிவப்பு மற்றும் பச்சைக்கு இடையே மாறும் box உருவாக்கவும். Animation தொடர்ந்து மீண்டும் நடைபெற animation-iteration-count: infinite பயன்படுத்தவும்.",
+    hintEnglish: "Use animation-iteration-count: infinite.",
+    hintTamil: "animation-iteration-count: infinite பயன்படுத்தவும்.",
+    expectedOutput: "The box continuously repeats its color-changing animation.",
+    expectedOutputTamil: "Box தொடர்ந்து நிறம் மாறும் animation-ஐ மீண்டும் மீண்டும் காட்டும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  animation: colors 2s infinite alternate;
+}
+@keyframes colors {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: green;
+  }
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 17,
+    title: "Rotate an Animated Element",
+    questionEnglish: "Create a square box that continuously rotates 360 degrees using CSS animation. Set the animation duration to 3 seconds.",
+    questionTamil: "CSS animation பயன்படுத்தி தொடர்ந்து 360 degrees சுழலும் சதுர box உருவாக்கவும். Animation duration-ஐ 3 seconds ஆக அமைக்கவும்.",
+    hintEnglish: "Use transform: rotate(360deg) inside @keyframes.",
+    hintTamil: "@keyframes-க்குள் transform: rotate(360deg) பயன்படுத்தவும்.",
+    expectedOutput: "The square continuously rotates in a complete circle.",
+    expectedOutputTamil: "சதுரம் தொடர்ந்து முழு வட்டமாகச் சுழலும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 17,
+    title: "Use Animation Delay",
+    questionEnglish: "Create a box that changes its color from blue to purple. Set animation-delay to 2 seconds so that the animation starts after a delay.",
+    questionTamil: "Box-ன் நிறம் நீலத்திலிருந்து purple ஆக மாறும்படி உருவாக்கவும். Animation 2 seconds தாமதத்திற்குப் பிறகு தொடங்க animation-delay அமைக்கவும்.",
+    hintEnglish: "Use animation-delay: 2s.",
+    hintTamil: "animation-delay: 2s பயன்படுத்தவும்.",
+    expectedOutput: "The box begins its blue-to-purple color animation after 2 seconds.",
+    expectedOutputTamil: "2 seconds தாமதத்திற்குப் பிறகு box நீலத்திலிருந்து purple ஆக மாறத் தொடங்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation: change 2s forwards;
+  animation-delay: 2s;
+}
+@keyframes change {
+  to {
+    background-color: purple;
+  }
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 17,
+    title: "Use Animation Direction",
+    questionEnglish: "Create a box that changes from red to blue. Use animation-direction: alternate and animation-iteration-count: infinite so the animation moves forward and backward repeatedly.",
+    questionTamil: "சிவப்பிலிருந்து நீலமாக மாறும் box உருவாக்கவும். Animation முன்னும் பின்னும் தொடர்ந்து நடைபெற animation-direction: alternate மற்றும் animation-iteration-count: infinite பயன்படுத்தவும்.",
+    hintEnglish: "Use alternate with an infinite iteration count.",
+    hintTamil: "alternate மற்றும் infinite iteration count பயன்படுத்தவும்.",
+    expectedOutput: "The box repeatedly changes from red to blue and then from blue to red.",
+    expectedOutputTamil: "Box சிவப்பிலிருந்து நீலமாகவும் பின்னர் நீலத்திலிருந்து சிவப்பாகவும் தொடர்ந்து மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  animation: change 2s infinite alternate;
+}
+@keyframes change {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: blue;
+  }
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 17,
+    title: "Create a Bouncing Animation",
+    questionEnglish: "Create a ball using a circular div. Use CSS keyframes to make it move up and down continuously.",
+    questionTamil: "வட்டமான div பயன்படுத்தி ball உருவாக்கவும். அது தொடர்ந்து மேலும் கீழும் நகர CSS keyframes பயன்படுத்தவும்.",
+    hintEnglish: "Use translateY() with alternate animation direction.",
+    hintTamil: "translateY() மற்றும் alternate animation direction பயன்படுத்தவும்.",
+    expectedOutput: "A circular ball continuously bounces up and down.",
+    expectedOutputTamil: "வட்டமான பந்து தொடர்ந்து மேலும் கீழும் குதிக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  height: 180px;
+  padding: 20px;
+}
+.ball {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  animation: bounce 1s ease-in-out infinite alternate;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100px);
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="ball"></div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 17,
+    title: "Create a Loading Animation",
+    questionEnglish: "Create a circular loading indicator using CSS. Use border styling and a continuous rotation animation to make it spin.",
+    questionTamil: "CSS பயன்படுத்தி வட்ட வடிவ loading indicator உருவாக்கவும். Border styling மற்றும் தொடர்ந்து சுழலும் animation பயன்படுத்தி அதைச் சுழலச் செய்யவும்.",
+    hintEnglish: "Use border, border-top-color, border-radius: 50%, and @keyframes.",
+    hintTamil: "border, border-top-color, border-radius: 50% மற்றும் @keyframes பயன்படுத்தவும்.",
+    expectedOutput: "A circular loading indicator continuously rotates.",
+    expectedOutputTamil: "வட்ட வடிவ loading indicator தொடர்ந்து சுழலும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid lightgray;
+  border-top-color: blue;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
+</head>
+<body>
+<div class="loader"></div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 17,
+    title: "Challenge: Animated Login Page",
+    questionEnglish: "Create a login page with a heading, input fields, and a login button. Add suitable CSS animations to make the page elements appear smoothly when the page loads.",
+    questionTamil: "Heading, input fields மற்றும் login button கொண்ட login page உருவாக்கவும். Page load ஆகும்போது elements மென்மையாகத் தோன்ற CSS animations சேர்க்கவும்.",
+    hintEnglish: "Use @keyframes with opacity and transform properties.",
+    hintTamil: "opacity மற்றும் transform properties உடன் @keyframes பயன்படுத்தவும்.",
+    expectedOutput: "A login page whose elements appear with smooth entrance animations.",
+    expectedOutputTamil: "Elements மென்மையான entrance animations-உடன் தோன்றும் login page.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 17,
+    title: "Challenge: DEEP CODE Loading Screen",
+    questionEnglish: "Create a DEEP CODE loading screen with a logo or heading, an animated loading indicator, and a loading message. Use CSS animations to make the screen visually attractive.",
+    questionTamil: "Logo அல்லது heading, animated loading indicator மற்றும் loading message கொண்ட DEEP CODE loading screen உருவாக்கவும். Screen-ஐ அழகாக மாற்ற CSS animations பயன்படுத்தவும்.",
+    hintEnglish: "Combine rotation, color changes, opacity, and animation timing.",
+    hintTamil: "Rotation, color changes, opacity மற்றும் animation timing ஆகியவற்றை இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "An attractive DEEP CODE loading screen with animated elements.",
+    expectedOutputTamil: "Animated elements கொண்ட அழகான DEEP CODE loading screen.",
+    challenge: true
+  }
+]
+
 ]
