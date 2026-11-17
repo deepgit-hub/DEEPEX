@@ -2661,4 +2661,337 @@ body {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 11,
+    title: "Create a Flex Container",
+    questionEnglish: "Create a container with three div boxes. Use display: flex to arrange them horizontally.",
+    questionTamil: "மூன்று div boxes கொண்ட container உருவாக்கவும். அவற்றை கிடைமட்டமாக வரிசைப்படுத்த display: flex பயன்படுத்தவும்.",
+    hintEnglish: "Apply display: flex to the parent container.",
+    hintTamil: "Parent container-க்கு display: flex அமைக்கவும்.",
+    expectedOutput: "Three boxes appear horizontally in a flex container.",
+    expectedOutputTamil: "Flex container-ல் மூன்று பெட்டிகளும் கிடைமட்டமாகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  gap: 10px;
+}
+.box {
+  background-color: lightblue;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 11,
+    title: "Change Flex Direction",
+    questionEnglish: "Create three boxes inside a flex container. Use flex-direction: column to arrange them vertically.",
+    questionTamil: "Flex container-க்குள் மூன்று boxes உருவாக்கவும். அவற்றை செங்குத்தாக வரிசைப்படுத்த flex-direction: column பயன்படுத்தவும்.",
+    hintEnglish: "Use the flex-direction property.",
+    hintTamil: "flex-direction property பயன்படுத்தவும்.",
+    expectedOutput: "Three boxes appear vertically, one below another.",
+    expectedOutputTamil: "மூன்று boxes-ம் ஒன்றன் கீழ் ஒன்றாகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.box {
+  background-color: lightgreen;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 11,
+    title: "Center Items Horizontally",
+    questionEnglish: "Create three boxes inside a flex container. Use justify-content: center to position the boxes in the horizontal center of the container.",
+    questionTamil: "Flex container-க்குள் மூன்று boxes உருவாக்கவும். அவற்றை container-ன் கிடைமட்ட மையத்தில் அமைக்க justify-content: center பயன்படுத்தவும்.",
+    hintEnglish: "Use justify-content to control alignment along the main axis.",
+    hintTamil: "Main axis-ல் alignment கட்டுப்படுத்த justify-content பயன்படுத்தவும்.",
+    expectedOutput: "The three boxes appear together in the horizontal center of the container.",
+    expectedOutputTamil: "மூன்று boxes-ம் container-ன் கிடைமட்ட மையத்தில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: lightgray;
+  padding: 20px;
+}
+.box {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 11,
+    title: "Align Items Vertically",
+    questionEnglish: "Create a flex container with three boxes of different heights. Use align-items: center to align them vertically in the center of the container.",
+    questionTamil: "வெவ்வேறு உயரங்களைக் கொண்ட மூன்று boxes கொண்ட flex container உருவாக்கவும். அவற்றை container-ன் செங்குத்து மையத்தில் align செய்ய align-items: center பயன்படுத்தவும்.",
+    hintEnglish: "Use align-items to control alignment along the cross axis.",
+    hintTamil: "Cross axis-ல் alignment அமைக்க align-items பயன்படுத்தவும்.",
+    expectedOutput: "All three boxes are vertically centered inside the flex container.",
+    expectedOutputTamil: "மூன்று boxes-ம் flex container-க்குள் செங்குத்தாக மையப்படுத்தப்படும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  gap: 10px;
+  background-color: lightgray;
+}
+.box {
+  background-color: orange;
+  padding: 20px;
+}
+.one {
+  height: 40px;
+}
+.two {
+  height: 80px;
+}
+.three {
+  height: 60px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box one">One</div>
+  <div class="box two">Two</div>
+  <div class="box three">Three</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 11,
+    title: "Use Space Between",
+    questionEnglish: "Create a flex container with three boxes. Use justify-content: space-between to place the first box at the start, the second in the middle area, and the third at the end.",
+    questionTamil: "மூன்று boxes கொண்ட flex container உருவாக்கவும். முதல் box தொடக்கத்திலும், இரண்டாவது நடுப்பகுதியிலும், மூன்றாவது இறுதியிலும் வருமாறு justify-content: space-between பயன்படுத்தவும்.",
+    hintEnglish: "Use justify-content: space-between.",
+    hintTamil: "justify-content: space-between பயன்படுத்தவும்.",
+    expectedOutput: "Three boxes are distributed with equal available space between adjacent boxes.",
+    expectedOutputTamil: "அடுத்தடுத்த boxes-க்கிடையே கிடைக்கும் இடைவெளி சமமாகப் பகிரப்படும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgray;
+  padding: 15px;
+}
+.box {
+  background-color: teal;
+  color: white;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 11,
+    title: "Allow Flex Wrapping",
+    questionEnglish: "Create a flex container with six boxes. Use flex-wrap: wrap so that the boxes move to another row when there is not enough horizontal space.",
+    questionTamil: "ஆறு boxes கொண்ட flex container உருவாக்கவும். கிடைமட்ட இடம் போதாதபோது boxes அடுத்த வரிசைக்குச் செல்ல flex-wrap: wrap பயன்படுத்தவும்.",
+    hintEnglish: "Use flex-wrap: wrap and give each box a suitable width.",
+    hintTamil: "flex-wrap: wrap பயன்படுத்தி ஒவ்வொரு box-க்கும் பொருத்தமான width அமைக்கவும்.",
+    expectedOutput: "The boxes wrap onto additional rows when the container becomes too narrow.",
+    expectedOutputTamil: "Container அகலம் குறையும்போது boxes அடுத்தடுத்த வரிசைகளில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 350px;
+}
+.box {
+  width: 100px;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+  <div class="box">Four</div>
+  <div class="box">Five</div>
+  <div class="box">Six</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 11,
+    title: "Control Flex Item Growth",
+    questionEnglish: "Create three boxes inside a flex container. Give the first box flex-grow: 1, the second flex-grow: 2, and the third flex-grow: 1.",
+    questionTamil: "Flex container-க்குள் மூன்று boxes உருவாக்கவும். முதல் மற்றும் மூன்றாவது box-க்கு flex-grow: 1, இரண்டாவது box-க்கு flex-grow: 2 அமைக்கவும்.",
+    hintEnglish: "Use the flex-grow property to distribute available space.",
+    hintTamil: "கிடைக்கும் இடத்தைப் பகிர flex-grow property பயன்படுத்தவும்.",
+    expectedOutput: "The second box receives twice as much available extra space as each of the other two boxes.",
+    expectedOutputTamil: "இரண்டாவது box மற்ற இரண்டு boxes-ஐ விட இரண்டு மடங்கு கூடுதல் இடத்தைப் பெறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+}
+.box {
+  background-color: lightblue;
+  padding: 20px;
+}
+.one {
+  flex-grow: 1;
+}
+.two {
+  flex-grow: 2;
+}
+.three {
+  flex-grow: 1;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box one">One</div>
+  <div class="box two">Two</div>
+  <div class="box three">Three</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 11,
+    title: "Create a Centered Layout",
+    questionEnglish: "Create a full-height container with a heading in the center. Use Flexbox to center the heading both horizontally and vertically.",
+    questionTamil: "முழு உயரம் கொண்ட container உருவாக்கி அதன் மையத்தில் heading அமைக்கவும். Heading-ஐ கிடைமட்டமாகவும் செங்குத்தாகவும் மையப்படுத்த Flexbox பயன்படுத்தவும்.",
+    hintEnglish: "Combine justify-content: center and align-items: center.",
+    hintTamil: "justify-content: center மற்றும் align-items: center இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "The heading appears exactly in the center of the container.",
+    expectedOutputTamil: "Heading container-ன் சரியான மையத்தில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: lightyellow;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome to DEEP CODE</h1>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 11,
+    title: "Challenge: Responsive Navigation Bar",
+    questionEnglish: "Create a navigation bar with a logo and four links. Use Flexbox to align the logo to the left and links to the right. Make the navigation responsive using flex-wrap or another suitable Flexbox technique.",
+    questionTamil: "Logo மற்றும் நான்கு links கொண்ட navigation bar உருவாக்கவும். Logo-ஐ இடதுபுறத்திலும் links-ஐ வலதுபுறத்திலும் அமைக்க Flexbox பயன்படுத்தவும். flex-wrap அல்லது பொருத்தமான Flexbox முறையைப் பயன்படுத்தி responsive ஆக உருவாக்கவும்.",
+    hintEnglish: "Try justify-content: space-between, align-items: center, and flex-wrap.",
+    hintTamil: "justify-content: space-between, align-items: center மற்றும் flex-wrap பயன்படுத்திப் பாருங்கள்.",
+    expectedOutput: "A navigation bar with a left-aligned logo and right-aligned links that can adapt to smaller widths.",
+    expectedOutputTamil: "இடதுபுற logo மற்றும் வலதுபுற links கொண்ட, சிறிய திரைகளுக்கு ஏற்ப மாறக்கூடிய navigation bar.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 11,
+    title: "Challenge: DEEP CODE Learning Dashboard",
+    questionEnglish: "Create a DEEP CODE dashboard with a header, sidebar, main content area, and three course cards. Use Flexbox to arrange the layout and make it adapt to smaller screens.",
+    questionTamil: "Header, sidebar, main content area மற்றும் மூன்று course cards கொண்ட DEEP CODE dashboard உருவாக்கவும். Layout அமைக்க Flexbox பயன்படுத்தி சிறிய திரைகளுக்கு ஏற்ப மாறும்படி உருவாக்கவும்.",
+    hintEnglish: "Combine flex-direction, justify-content, align-items, flex-wrap, and gap.",
+    hintTamil: "flex-direction, justify-content, align-items, flex-wrap மற்றும் gap ஆகியவற்றை இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "A responsive dashboard with an organized header, sidebar, and course cards.",
+    expectedOutputTamil: "ஒழுங்கான header, sidebar மற்றும் course cards கொண்ட responsive dashboard.",
+    challenge: true
+  }
+]
+
 ]
