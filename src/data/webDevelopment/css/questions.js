@@ -743,4 +743,283 @@ body {
   }
 ]
  
+[
+  {
+    id: 1,
+    topicId: 4,
+    title: "Text Alignment",
+    questionEnglish: "Create a heading and paragraph. Align the heading to the center and the paragraph to the right.",
+    questionTamil: "ஒரு heading மற்றும் paragraph உருவாக்கவும். Heading-ஐ மையத்திலும் paragraph-ஐ வலது பக்கத்திலும் align செய்யவும்.",
+    hintEnglish: "Use text-align with center and right values.",
+    hintTamil: "text-align property-யில் center மற்றும் right values பயன்படுத்தவும்.",
+    expectedOutput: "The heading is centered and the paragraph is aligned to the right.",
+    expectedOutputTamil: "Heading மையத்திலும் paragraph வலது பக்கத்திலும் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  text-align: center;
+}
+p {
+  text-align: right;
+}
+</style>
+</head>
+<body>
+<h1>Text Alignment</h1>
+<p>This paragraph is on the right.</p>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 4,
+    title: "Text Decoration",
+    questionEnglish: "Create three paragraphs. Apply underline to the first, overline to the second, and line-through to the third.",
+    questionTamil: "மூன்று paragraphs உருவாக்கவும். முதலாவது paragraph-க்கு underline, இரண்டாவது paragraph-க்கு overline மற்றும் மூன்றாவது paragraph-க்கு line-through அமைக்கவும்.",
+    hintEnglish: "Use the text-decoration property.",
+    hintTamil: "text-decoration property பயன்படுத்தவும்.",
+    expectedOutput: "The three paragraphs display different text decorations.",
+    expectedOutputTamil: "மூன்று paragraphs-லும் வெவ்வேறு text decorations தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.one {
+  text-decoration: underline;
+}
+.two {
+  text-decoration: overline;
+}
+.three {
+  text-decoration: line-through;
+}
+</style>
+</head>
+<body>
+<p class="one">Underlined text</p>
+<p class="two">Overline text</p>
+<p class="three">Line-through text</p>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 4,
+    title: "Text Transformation",
+    questionEnglish: "Create three paragraphs. Display the first in uppercase, the second in lowercase, and the third with the first letter of each word capitalized.",
+    questionTamil: "மூன்று paragraphs உருவாக்கவும். முதலாவது uppercase, இரண்டாவது lowercase மற்றும் மூன்றாவது ஒவ்வொரு வார்த்தையின் முதல் எழுத்தும் capital ஆகத் தோன்றும்படி அமைக்கவும்.",
+    hintEnglish: "Use text-transform with uppercase, lowercase, and capitalize.",
+    hintTamil: "text-transform property-யில் uppercase, lowercase மற்றும் capitalize values பயன்படுத்தவும்.",
+    expectedOutput: "The three paragraphs display their text in the requested letter cases.",
+    expectedOutputTamil: "மூன்று paragraphs-ம் கேட்டபடி வெவ்வேறு எழுத்து வடிவங்களில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.upper {
+  text-transform: uppercase;
+}
+.lower {
+  text-transform: lowercase;
+}
+.capital {
+  text-transform: capitalize;
+}
+</style>
+</head>
+<body>
+<p class="upper">welcome to css</p>
+<p class="lower">LEARNING WEB DEVELOPMENT</p>
+<p class="capital">deep code learning platform</p>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 4,
+    title: "Font Family",
+    questionEnglish: "Create three paragraphs and apply Arial, Georgia, and Courier New font families respectively.",
+    questionTamil: "மூன்று paragraphs உருவாக்கி அவற்றிற்கு முறையே Arial, Georgia மற்றும் Courier New font families அமைக்கவும்.",
+    hintEnglish: "Use the font-family property.",
+    hintTamil: "font-family property பயன்படுத்தவும்.",
+    expectedOutput: "Each paragraph displays using a different font family.",
+    expectedOutputTamil: "ஒவ்வொரு paragraph-மும் வெவ்வேறு font family-ல் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.first {
+  font-family: Arial, sans-serif;
+}
+.second {
+  font-family: Georgia, serif;
+}
+.third {
+  font-family: "Courier New", monospace;
+}
+</style>
+</head>
+<body>
+<p class="first">Arial font</p>
+<p class="second">Georgia font</p>
+<p class="third">Courier New font</p>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 4,
+    title: "Font Weight",
+    questionEnglish: "Create three paragraphs. Display the first with normal font weight, the second with bold font weight, and the third with a font weight of 700.",
+    questionTamil: "மூன்று paragraphs உருவாக்கவும். முதலாவது normal font weight, இரண்டாவது bold மற்றும் மூன்றாவது 700 font weight-ல் தோன்றும்படி அமைக்கவும்.",
+    hintEnglish: "Use the font-weight property.",
+    hintTamil: "font-weight property பயன்படுத்தவும்.",
+    expectedOutput: "The paragraphs display normal, bold, and 700 font weights.",
+    expectedOutputTamil: "Paragraphs normal, bold மற்றும் 700 font weights-ல் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.normal {
+  font-weight: normal;
+}
+.bold {
+  font-weight: bold;
+}
+.strong {
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+<p class="normal">Normal text</p>
+<p class="bold">Bold text</p>
+<p class="strong">Weight 700 text</p>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 4,
+    title: "Font Style",
+    questionEnglish: "Create three paragraphs. Display the first in normal style, the second in italic, and the third in oblique style.",
+    questionTamil: "மூன்று paragraphs உருவாக்கவும். முதலாவது normal style, இரண்டாவது italic மற்றும் மூன்றாவது oblique style-ல் தோன்றும்படி அமைக்கவும்.",
+    hintEnglish: "Use font-style with normal, italic, and oblique values.",
+    hintTamil: "font-style property-யில் normal, italic மற்றும் oblique values பயன்படுத்தவும்.",
+    expectedOutput: "The paragraphs display normal, italic, and oblique text styles.",
+    expectedOutputTamil: "Paragraphs normal, italic மற்றும் oblique எழுத்து வடிவங்களில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.normal {
+  font-style: normal;
+}
+.italic {
+  font-style: italic;
+}
+.oblique {
+  font-style: oblique;
+}
+</style>
+</head>
+<body>
+<p class="normal">Normal style</p>
+<p class="italic">Italic style</p>
+<p class="oblique">Oblique style</p>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 4,
+    title: "Letter and Word Spacing",
+    questionEnglish: "Create a heading and paragraph. Set the heading letter spacing to 4px and the paragraph word spacing to 10px.",
+    questionTamil: "ஒரு heading மற்றும் paragraph உருவாக்கவும். Heading-ன் letter spacing-ஐ 4px ஆகவும் paragraph-ன் word spacing-ஐ 10px ஆகவும் அமைக்கவும்.",
+    hintEnglish: "Use letter-spacing and word-spacing properties.",
+    hintTamil: "letter-spacing மற்றும் word-spacing properties பயன்படுத்தவும்.",
+    expectedOutput: "The heading has wider letter spacing and the paragraph has wider word spacing.",
+    expectedOutputTamil: "Heading-ல் எழுத்துகளுக்கிடையேயும் paragraph-ல் வார்த்தைகளுக்கிடையேயும் அதிக இடைவெளி இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  letter-spacing: 4px;
+}
+p {
+  word-spacing: 10px;
+}
+</style>
+</head>
+<body>
+<h1>CSS SPACING</h1>
+<p>Learning CSS is interesting.</p>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 4,
+    title: "Line Height",
+    questionEnglish: "Create a paragraph containing three lines of text. Use CSS to set its line height to 2.",
+    questionTamil: "மூன்று வரிகள் கொண்ட paragraph உருவாக்கவும். CSS பயன்படுத்தி அதன் line height-ஐ 2 ஆக அமைக்கவும்.",
+    hintEnglish: "Use the line-height property.",
+    hintTamil: "line-height property பயன்படுத்தவும்.",
+    expectedOutput: "The lines of the paragraph have increased vertical spacing.",
+    expectedOutputTamil: "Paragraph வரிகளுக்கிடையே அதிக செங்குத்து இடைவெளி இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+  line-height: 2;
+}
+</style>
+</head>
+<body>
+<p>
+Learning HTML is the first step.<br>
+CSS makes webpages attractive.<br>
+Practice helps improve your skills.
+</p>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 4,
+    title: "Challenge: Personal Portfolio Typography",
+    questionEnglish: "Create a personal portfolio introduction with a heading, subtitle, and description. Use different font families, sizes, weights, alignments, text decorations, and spacing to create a clear visual hierarchy.",
+    questionTamil: "Heading, subtitle மற்றும் description கொண்ட personal portfolio introduction உருவாக்கவும். தெளிவான visual hierarchy உருவாக்க வெவ்வேறு font families, sizes, weights, alignments, text decorations மற்றும் spacing பயன்படுத்தவும்.",
+    hintEnglish: "Use font-family, font-size, font-weight, text-align, and line-height.",
+    hintTamil: "font-family, font-size, font-weight, text-align மற்றும் line-height பயன்படுத்தவும்.",
+    expectedOutput: "A portfolio introduction with clearly differentiated and readable typography.",
+    expectedOutputTamil: "தெளிவாக வேறுபடுத்தப்பட்ட மற்றும் படிக்க எளிதான எழுத்து வடிவங்களைக் கொண்ட portfolio introduction.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 4,
+    title: "Challenge: DEEP CODE Article",
+    questionEnglish: "Create a DEEP CODE learning article with a title, subtitle, multiple paragraphs, and an important note. Use suitable font styling, alignment, line spacing, and text decoration to make the article readable.",
+    questionTamil: "Title, subtitle, பல paragraphs மற்றும் முக்கிய குறிப்பு கொண்ட DEEP CODE learning article உருவாக்கவும். படிக்க எளிதாக இருக்க பொருத்தமான font styling, alignment, line spacing மற்றும் text decoration பயன்படுத்தவும்.",
+    hintEnglish: "Create separate CSS classes for the title, subtitle, paragraphs, and note.",
+    hintTamil: "Title, subtitle, paragraphs மற்றும் note ஆகியவற்றிற்கு தனித்தனி CSS classes உருவாக்கவும்.",
+    expectedOutput: "A well-formatted learning article with readable typography and a highlighted note.",
+    expectedOutputTamil: "படிக்க எளிதான எழுத்து வடிவங்களும் முக்கியமாகக் காட்டப்பட்ட குறிப்பும் கொண்ட learning article.",
+    challenge: true
+  }
+]
+
 ]
