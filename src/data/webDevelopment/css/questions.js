@@ -1785,4 +1785,272 @@ p {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 8,
+    title: "Set Fixed Width",
+    questionEnglish: "Create a div and set its width to 300px. Give it a lightblue background so its size is visible.",
+    questionTamil: "ஒரு div உருவாக்கி அதன் width-ஐ 300px ஆக அமைக்கவும். அதன் அளவு தெளிவாகத் தெரிய lightblue background கொடுக்கவும்.",
+    hintEnglish: "Use the width property.",
+    hintTamil: "width property பயன்படுத்தவும்.",
+    expectedOutput: "A light blue box with a width of 300px.",
+    expectedOutputTamil: "300px அகலமுள்ள light blue பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 300px;
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+<div class="box">Fixed Width</div>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 8,
+    title: "Set Fixed Height",
+    questionEnglish: "Create a div with a width of 200px and height of 150px. Give it a lightgreen background.",
+    questionTamil: "200px width மற்றும் 150px height கொண்ட div உருவாக்கவும். அதற்கு lightgreen background கொடுக்கவும்.",
+    hintEnglish: "Use width and height properties.",
+    hintTamil: "width மற்றும் height properties பயன்படுத்தவும்.",
+    expectedOutput: "A light green box measuring 200px wide and 150px high.",
+    expectedOutputTamil: "200px அகலமும் 150px உயரமும் கொண்ட light green பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 200px;
+  height: 150px;
+  background-color: lightgreen;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 8,
+    title: "Use Percentage Width",
+    questionEnglish: "Create a parent div with a width of 500px and a lightgray background. Inside it, create another div with a width of 50% and a blue background.",
+    questionTamil: "500px width மற்றும் lightgray background கொண்ட parent div உருவாக்கவும். அதற்குள் 50% width மற்றும் blue background கொண்ட மற்றொரு div உருவாக்கவும்.",
+    hintEnglish: "Percentage width is calculated relative to the containing block.",
+    hintTamil: "Percentage width என்பது அதை உள்ளடக்கிய parent block-ஐ அடிப்படையாகக் கொண்டு கணக்கிடப்படும்.",
+    expectedOutput: "A blue box occupying half the width of the 500px parent.",
+    expectedOutputTamil: "500px parent-ன் பாதி அகலத்தை நிரப்பும் நீல பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.parent {
+  width: 500px;
+  background-color: lightgray;
+}
+.child {
+  width: 50%;
+  height: 80px;
+  background-color: blue;
+}
+</style>
+</head>
+<body>
+<div class="parent">
+  <div class="child"></div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 8,
+    title: "Set Maximum Width",
+    questionEnglish: "Create a content container with width: 100% and max-width: 600px. Center it horizontally and give it a lightblue background.",
+    questionTamil: "width: 100% மற்றும் max-width: 600px கொண்ட content container உருவாக்கவும். அதை கிடைமட்டமாக மையப்படுத்தி lightblue background கொடுக்கவும்.",
+    hintEnglish: "Use max-width and margin: 0 auto.",
+    hintTamil: "max-width மற்றும் margin: 0 auto பயன்படுத்தவும்.",
+    expectedOutput: "A container that can shrink on smaller screens but does not exceed 600px.",
+    expectedOutputTamil: "சிறிய திரைகளில் சுருங்கக்கூடிய, ஆனால் 600px-ஐத் தாண்டாத container தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: lightblue;
+  padding: 20px;
+  box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  Responsive Content
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 8,
+    title: "Set Minimum Width",
+    questionEnglish: "Create a div with width: 50%, min-width: 250px, and a lightyellow background. Ensure that the div never becomes narrower than 250px.",
+    questionTamil: "width: 50%, min-width: 250px மற்றும் lightyellow background கொண்ட div உருவாக்கவும். அந்த div 250px-ஐ விடக் குறுகியதாக மாறாமல் அமைக்கவும்.",
+    hintEnglish: "Use the min-width property.",
+    hintTamil: "min-width property பயன்படுத்தவும்.",
+    expectedOutput: "The div occupies 50% of its parent when possible but never becomes narrower than 250px.",
+    expectedOutputTamil: "சாத்தியமானபோது parent-ன் 50% அகலத்தைப் பெறும்; ஆனால் 250px-ஐ விடக் குறுகியதாக மாறாது.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.parent {
+  width: 100%;
+}
+.box {
+  width: 50%;
+  min-width: 250px;
+  background-color: lightyellow;
+  height: 100px;
+}
+</style>
+</head>
+<body>
+<div class="parent">
+  <div class="box">Minimum Width</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 8,
+    title: "Set Maximum Height",
+    questionEnglish: "Create a div with width: 250px, height: 200px, and max-height: 100px. Add enough text to demonstrate vertical overflow and set overflow: auto.",
+    questionTamil: "250px width, 200px height மற்றும் max-height: 100px கொண்ட div உருவாக்கவும். Vertical overflow தெரியும் அளவுக்கு text சேர்த்து overflow: auto அமைக்கவும்.",
+    hintEnglish: "Use max-height and overflow: auto.",
+    hintTamil: "max-height மற்றும் overflow: auto பயன்படுத்தவும்.",
+    expectedOutput: "The box is limited to 100px high and shows a scrollbar when its content overflows.",
+    expectedOutputTamil: "Box-ன் உயரம் 100px ஆகக் கட்டுப்படுத்தப்படும்; content அதிகமானால் scrollbar தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 250px;
+  height: 200px;
+  max-height: 100px;
+  overflow: auto;
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+<div class="box">
+  <p>Line one of the content.</p>
+  <p>Line two of the content.</p>
+  <p>Line three of the content.</p>
+  <p>Line four of the content.</p>
+  <p>Line five of the content.</p>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 8,
+    title: "Use Viewport Width",
+    questionEnglish: "Create a div with width: 50vw and height: 100px. Give it a purple background. The div should occupy half the viewport width.",
+    questionTamil: "width: 50vw மற்றும் height: 100px கொண்ட div உருவாக்கவும். அதற்கு purple background கொடுக்கவும். அந்த div viewport-ன் பாதி அகலத்தை நிரப்ப வேண்டும்.",
+    hintEnglish: "The vw unit represents a percentage of the viewport width.",
+    hintTamil: "vw unit என்பது viewport width-ன் சதவீதத்தை குறிக்கிறது.",
+    expectedOutput: "A purple box occupying half of the browser viewport width.",
+    expectedOutputTamil: "Browser viewport-ன் பாதி அகலத்தை நிரப்பும் purple பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 50vw;
+  height: 100px;
+  background-color: purple;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 8,
+    title: "Use Viewport Height",
+    questionEnglish: "Create a section with height: 50vh and a lightgreen background. Add a heading inside it.",
+    questionTamil: "height: 50vh மற்றும் lightgreen background கொண்ட section உருவாக்கவும். அதற்குள் ஒரு heading சேர்க்கவும்.",
+    hintEnglish: "The vh unit represents a percentage of the viewport height.",
+    hintTamil: "vh unit என்பது viewport height-ன் சதவீதத்தை குறிக்கிறது.",
+    expectedOutput: "A section that occupies half of the browser viewport height.",
+    expectedOutputTamil: "Browser viewport-ன் பாதி உயரத்தை நிரப்பும் section தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.section {
+  height: 50vh;
+  background-color: lightgreen;
+}
+</style>
+</head>
+<body>
+<section class="section">
+  <h1>Half Viewport Height</h1>
+</section>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 8,
+    title: "Challenge: Responsive Content Container",
+    questionEnglish: "Create a responsive content container that uses 90% of its parent's width, never exceeds 800px, and remains centered. Add suitable padding and a background color.",
+    questionTamil: "Parent-ன் 90% width பயன்படுத்தும், 800px-ஐத் தாண்டாத மற்றும் மையத்தில் இருக்கும் responsive content container உருவாக்கவும். பொருத்தமான padding மற்றும் background color கொடுக்கவும்.",
+    hintEnglish: "Combine width, max-width, margin, and box-sizing.",
+    hintTamil: "width, max-width, margin மற்றும் box-sizing properties இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "A centered responsive container that adapts to the available screen width.",
+    expectedOutputTamil: "கிடைக்கும் திரை அகலத்திற்கு ஏற்ப மாறும் மையப்படுத்தப்பட்ட responsive container தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 8,
+    title: "Challenge: Full-Screen Hero Section",
+    questionEnglish: "Create a DEEP CODE hero section that occupies the full viewport width and at least 80% of the viewport height. Add a heading, description, and button. Make sure the content fits comfortably.",
+    questionTamil: "முழு viewport width மற்றும் குறைந்தது 80% viewport height கொண்ட DEEP CODE hero section உருவாக்கவும். Heading, description மற்றும் button சேர்த்து content வசதியாகப் பொருந்தும்படி அமைக்கவும்.",
+    hintEnglish: "Use 100vw or 100% width, min-height: 80vh, and appropriate box sizing.",
+    hintTamil: "100vw அல்லது 100% width, min-height: 80vh மற்றும் பொருத்தமான box sizing பயன்படுத்தவும்.",
+    expectedOutput: "A large DEEP CODE hero section with content inside it.",
+    expectedOutputTamil: "Content கொண்ட பெரிய DEEP CODE hero section தோன்றும்.",
+    challenge: true
+  }
+]
+
 ]
