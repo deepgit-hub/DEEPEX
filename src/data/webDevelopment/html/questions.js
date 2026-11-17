@@ -2668,6 +2668,231 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 14: Div and Span Elements
+
+{
+  id: 1,
+  topicId: 14,
+  title: "Create a Div Container",
+  questionEnglish: "Create a div container containing a heading 'About Me' and a paragraph introducing yourself.",
+  questionTamil: "'About Me' என்ற heading மற்றும் உங்களை அறிமுகப்படுத்தும் paragraph கொண்ட div container உருவாக்கவும்.",
+  hintEnglish: "Use the <div> tag to group the elements.",
+  hintTamil: "Elements-ஐ ஒன்றாகக் குழுவாக்க <div> tag பயன்படுத்தவும்.",
+  expectedOutput: "A div containing an About Me heading and a paragraph.",
+  expectedOutputTamil: "About Me heading மற்றும் paragraph கொண்ட div.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <div>
+    <h2>About Me</h2>
+    <p>My name is Deepak. I am learning web development.</p>
+  </div>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 14,
+  title: "Highlight Text Using Span",
+  questionEnglish: "Create a paragraph that displays 'I love HTML'. Use a span element to group the word 'HTML'.",
+  questionTamil: "'I love HTML' என்ற paragraph உருவாக்கவும். 'HTML' என்ற வார்த்தையை group செய்ய span element பயன்படுத்தவும்.",
+  hintEnglish: "Place the word inside the <span> tag.",
+  hintTamil: "அந்த வார்த்தையை <span> tag-க்குள் வைக்கவும்.",
+  expectedOutput: "I love HTML, with HTML wrapped inside a span element.",
+  expectedOutputTamil: "HTML என்ற வார்த்தை span element-க்குள் இருக்கும் I love HTML paragraph.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>I love <span>HTML</span></p>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 14,
+  title: "Create Multiple Div Sections",
+  questionEnglish: "Create three separate div sections with the headings Home, About, and Contact.",
+  questionTamil: "Home, About மற்றும் Contact என்ற headings கொண்ட மூன்று தனித்தனி div sections உருவாக்கவும்.",
+  hintEnglish: "Use a separate <div> for each section.",
+  hintTamil: "ஒவ்வொரு section-க்கும் தனித்தனி <div> பயன்படுத்தவும்.",
+  expectedOutput: "Three separate sections titled Home, About, and Contact.",
+  expectedOutputTamil: "Home, About மற்றும் Contact என்ற தலைப்புகளைக் கொண்ட மூன்று தனித்தனி sections.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <div>
+    <h2>Home</h2>
+    <p>Welcome to our website.</p>
+  </div>
+
+  <div>
+    <h2>About</h2>
+    <p>Learn about our company.</p>
+  </div>
+
+  <div>
+    <h2>Contact</h2>
+    <p>Contact us for more information.</p>
+  </div>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 14,
+  title: "Use Span Inside a Paragraph",
+  questionEnglish: "Create a paragraph displaying 'My career goal is Cybersecurity'. Wrap the word 'Cybersecurity' inside a span element.",
+  questionTamil: "'My career goal is Cybersecurity' என்ற paragraph உருவாக்கவும். 'Cybersecurity' என்ற வார்த்தையை span element-க்குள் வைக்கவும்.",
+  hintEnglish: "Use a span element inside the paragraph.",
+  hintTamil: "Paragraph-க்குள் span element பயன்படுத்தவும்.",
+  expectedOutput: "My career goal is Cybersecurity, with Cybersecurity wrapped in span.",
+  expectedOutputTamil: "Cybersecurity என்ற வார்த்தை span-க்குள் இருக்கும் paragraph.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>
+    My career goal is
+    <span>Cybersecurity</span>
+  </p>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 14,
+  title: "Create a Profile Container",
+  questionEnglish: "Create a profile container using div. Include your name, course, age, and career goal.",
+  questionTamil: "Div பயன்படுத்தி ஒரு profile container உருவாக்கவும். அதில் உங்கள் பெயர், படிப்பு, வயது மற்றும் career goal சேர்க்கவும்.",
+  hintEnglish: "Group the profile details inside one div element.",
+  hintTamil: "Profile விவரங்களை ஒரே div element-க்குள் குழுவாக்கவும்.",
+  expectedOutput: "A profile container displaying name, course, age, and career goal.",
+  expectedOutputTamil: "பெயர், படிப்பு, வயது மற்றும் career goal காட்டும் profile container.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <div>
+    <h2>Student Profile</h2>
+    <p>Name: Deepak</p>
+    <p>Course: B.Sc. Computer Science</p>
+    <p>Age: 20</p>
+    <p>Career Goal: Cybersecurity</p>
+  </div>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 14,
+  title: "Group Important Information",
+  questionEnglish: "Create a paragraph about web development. Use separate span elements to group the words HTML, CSS, and JavaScript.",
+  questionTamil: "Web development பற்றிய paragraph உருவாக்கவும். HTML, CSS மற்றும் JavaScript வார்த்தைகளை தனித்தனி span elements மூலம் group செய்யவும்.",
+  hintEnglish: "Use three span elements inside one paragraph.",
+  hintTamil: "ஒரே paragraph-க்குள் மூன்று span elements பயன்படுத்தவும்.",
+  expectedOutput: "A paragraph containing HTML, CSS, and JavaScript inside separate span elements.",
+  expectedOutputTamil: "HTML, CSS மற்றும் JavaScript ஆகியவை தனித்தனி span elements-க்குள் உள்ள paragraph.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>
+    Web development uses
+    <span>HTML</span>,
+    <span>CSS</span>, and
+    <span>JavaScript</span>.
+  </p>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 14,
+  title: "Create a Product Container",
+  questionEnglish: "Create a product container using div. Include the product name, description, price, and an Add to Cart button.",
+  questionTamil: "Div பயன்படுத்தி product container உருவாக்கவும். Product name, description, price மற்றும் Add to Cart button சேர்க்கவும்.",
+  hintEnglish: "Place all product details inside a single div element.",
+  hintTamil: "அனைத்து product விவரங்களையும் ஒரே div element-க்குள் வைக்கவும்.",
+  expectedOutput: "A product container showing product details and an Add to Cart button.",
+  expectedOutputTamil: "Product விவரங்கள் மற்றும் Add to Cart button கொண்ட product container.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <div>
+    <h2>Wireless Mouse</h2>
+    <p>Comfortable wireless mouse.</p>
+    <p>Price: ₹500</p>
+    <button type="button">Add to Cart</button>
+  </div>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 14,
+  title: "Create Nested Div Containers",
+  questionEnglish: "Create an outer div named concept-section using an id. Inside it, create two inner div sections titled HTML Basics and HTML Examples.",
+  questionTamil: "concept-section என்ற id கொண்ட outer div உருவாக்கவும். அதற்குள் HTML Basics மற்றும் HTML Examples என்ற தலைப்புகளைக் கொண்ட இரண்டு inner div sections உருவாக்கவும்.",
+  hintEnglish: "Place two div elements inside the outer div.",
+  hintTamil: "Outer div-க்குள் இரண்டு div elements வைக்கவும்.",
+  expectedOutput: "One outer concept section containing two inner sections.",
+  expectedOutputTamil: "இரண்டு inner sections கொண்ட ஒரு outer concept section.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <div id="concept-section">
+    <div>
+      <h2>HTML Basics</h2>
+      <p>Learn the basics of HTML.</p>
+    </div>
+
+    <div>
+      <h2>HTML Examples</h2>
+      <p>Explore practical HTML examples.</p>
+    </div>
+  </div>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 14,
+  title: "Build a Student Profile Card",
+  questionEnglish: "Create a student profile card using div containers. Include a profile image, name, course, career goal, and a short description. Use span elements to group important details.",
+  questionTamil: "Div containers பயன்படுத்தி student profile card உருவாக்கவும். Profile image, பெயர், படிப்பு, career goal மற்றும் சிறிய விளக்கம் சேர்க்கவும். முக்கிய விவரங்களை group செய்ய span elements பயன்படுத்தவும்.",
+  hintEnglish: "Combine nested div and span elements with image and text elements.",
+  hintTamil: "Nested div மற்றும் span elements-ஐ image மற்றும் text elements உடன் இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A student profile card containing an image and organized profile information.",
+  expectedOutputTamil: "படம் மற்றும் ஒழுங்குபடுத்தப்பட்ட profile விவரங்கள் கொண்ட student profile card.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 14,
+  title: "Build a Business Service Section",
+  questionEnglish: "Create a business services section for ATEXRA using div containers. Include at least three service blocks: Website Development, AI Chatbot Integration, and Automation. Use span elements to highlight important words in the descriptions.",
+  questionTamil: "Div containers பயன்படுத்தி ATEXRA-க்கான business services பகுதியை உருவாக்கவும். Website Development, AI Chatbot Integration மற்றும் Automation ஆகிய குறைந்தது மூன்று service blocks சேர்க்கவும். விளக்கங்களில் முக்கிய வார்த்தைகளை highlight செய்ய span elements பயன்படுத்தவும்.",
+  hintEnglish: "Create an outer div and separate inner div containers for each service.",
+  hintTamil: "Outer div மற்றும் ஒவ்வொரு service-க்கும் தனித்தனி inner div containers உருவாக்கவும்.",
+  expectedOutput: "An ATEXRA services section with three service blocks and highlighted words.",
+  expectedOutputTamil: "மூன்று service blocks மற்றும் முக்கிய வார்த்தைகள் highlight செய்யப்பட்ட ATEXRA services பகுதி.",
+  challenge: true
+},
+
 
 
 
