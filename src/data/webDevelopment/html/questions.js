@@ -128,8 +128,138 @@ const questions = [
     expectedOutputTamil: "நிறுவனத்தின் பெயர், விளக்கம், சேவைகள் மற்றும் தொடர்பு செய்தியைக் காட்டும் mini company webpage.",
     challenge: true
   },
-  
 
+
+
+  {
+    topicId: 2,
+    id: 1,
+    title: "Create a Basic HTML Document",
+    questionEnglish: "Create a valid HTML document using DOCTYPE, html, head and body elements. Display 'Hello HTML' inside the body.",
+    questionTamil: "DOCTYPE, html, head மற்றும் body elements-ஐப் பயன்படுத்தி சரியான HTML document உருவாக்கவும். Body-க்குள் 'Hello HTML' என்பதைக் காட்டவும்.",
+    hintEnglish: "Start with <!DOCTYPE html> and place the visible content inside body.",
+    hintTamil: "<!DOCTYPE html> என்று தொடங்கி, தெரியும் உள்ளடக்கத்தை body-க்குள் எழுதவும்.",
+    expectedOutput: "Hello HTML",
+    expectedOutputTamil: "Hello HTML",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<head>\n<title>My First Page</title>\n</head>\n<body>\n<p>Hello HTML</p>\n</body>\n</html>"
+  },
+  {
+    topicId: 2,
+    id: 2,
+    title: "Set the Browser Tab Title",
+    questionEnglish: "Create an HTML document with the browser tab title 'My Website'. Display 'Welcome' inside the body.",
+    questionTamil: "Browser tab-ல் 'My Website' என்ற title-ஐக் காட்டும் HTML document உருவாக்கவும். Body-க்குள் 'Welcome' என்பதைக் காட்டவும்.",
+    hintEnglish: "Write the title element inside head.",
+    hintTamil: "title element-ஐ head-க்குள் எழுதவும்.",
+    expectedOutput: "Browser tab: My Website\nPage content: Welcome",
+    expectedOutputTamil: "Browser tab: My Website\nபக்க உள்ளடக்கம்: Welcome",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<head>\n<title>My Website</title>\n</head>\n<body>\n<h1>Welcome</h1>\n</body>\n</html>"
+  },
+  {
+    topicId: 2,
+    id: 3,
+    title: "Separate Head and Body",
+    questionEnglish: "Create an HTML document with the title 'Student Page' inside head and the text 'I am a student' inside body.",
+    questionTamil: "head-க்குள் 'Student Page' என்ற title-ஐயும் body-க்குள் 'I am a student' என்ற உரையையும் கொண்ட HTML document உருவாக்கவும்.",
+    hintEnglish: "The title belongs inside head, while visible content belongs inside body.",
+    hintTamil: "title என்பது head-க்குள் இருக்க வேண்டும்; பயனருக்குத் தெரியும் உள்ளடக்கம் body-க்குள் இருக்க வேண்டும்.",
+    expectedOutput: "Browser tab: Student Page\nI am a student",
+    expectedOutputTamil: "Browser tab: Student Page\nI am a student",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<head>\n<title>Student Page</title>\n</head>\n<body>\n<p>I am a student</p>\n</body>\n</html>"
+  },
+  {
+    topicId: 2,
+    id: 4,
+    title: "Create a Page with Two Sections of Content",
+    questionEnglish: "Create a complete HTML document that displays the heading 'My Learning' and the paragraph 'I am learning web development'.",
+    questionTamil: "'My Learning' என்ற heading மற்றும் 'I am learning web development' என்ற paragraph-ஐக் காட்டும் முழுமையான HTML document உருவாக்கவும்.",
+    hintEnglish: "Use the complete HTML structure and place h1 and p inside body.",
+    hintTamil: "முழுமையான HTML structure-ஐப் பயன்படுத்தி h1 மற்றும் p-ஐ body-க்குள் எழுதவும்.",
+    expectedOutput: "My Learning\nI am learning web development",
+    expectedOutputTamil: "My Learning\nநான் web development கற்றுக்கொண்டு இருக்கிறேன்.",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<head>\n<title>My Learning</title>\n</head>\n<body>\n<h1>My Learning</h1>\n<p>I am learning web development</p>\n</body>\n</html>"
+  },
+  {
+    topicId: 2,
+    id: 5,
+    title: "Create a Student Profile Document",
+    questionEnglish: "Create a complete HTML document with the title 'Student Profile'. Display the student's name, department and college year inside the body.",
+    questionTamil: "'Student Profile' என்ற title கொண்ட முழுமையான HTML document உருவாக்கவும். Body-க்குள் மாணவரின் பெயர், துறை மற்றும் படிக்கும் ஆண்டைக் காட்டவும்.",
+    hintEnglish: "Use title inside head and headings or paragraphs inside body.",
+    hintTamil: "head-க்குள் title-ஐயும் body-க்குள் headings அல்லது paragraphs-ஐயும் பயன்படுத்தவும்.",
+    expectedOutput: "Student Profile\nName: Deepak\nDepartment: Computer Science\nYear: Final Year",
+    expectedOutputTamil: "Student Profile\nபெயர்: Deepak\nதுறை: Computer Science\nஆண்டு: Final Year",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<head>\n<title>Student Profile</title>\n</head>\n<body>\n<h1>Student Profile</h1>\n<p>Name: Deepak</p>\n<p>Department: Computer Science</p>\n<p>Year: Final Year</p>\n</body>\n</html>"
+  },
+  {
+    topicId: 2,
+    id: 6,
+    title: "Create a College Information Page",
+    questionEnglish: "Create a complete HTML document with the title 'My College'. Display the college name as a heading and its department information as a paragraph.",
+    questionTamil: "'My College' என்ற title கொண்ட முழுமையான HTML document உருவாக்கவும். College பெயரை heading ஆகவும் அதன் department தகவலை paragraph ஆகவும் காட்டவும்.",
+    hintEnglish: "Use the title element inside head and h1 and p elements inside body.",
+    hintTamil: "head-க்குள் title element-ஐயும் body-க்குள் h1 மற்றும் p elements-ஐயும் பயன்படுத்தவும்.",
+    expectedOutput: "My College\nABC College of Arts and Science\nDepartment: Computer Science",
+    expectedOutputTamil: "My College\nABC College of Arts and Science\nதுறை: Computer Science",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<head>\n<title>My College</title>\n</head>\n<body>\n<h1>ABC College of Arts and Science</h1>\n<p>Department: Computer Science</p>\n</body>\n</html>"
+  },
+  {
+    topicId: 2,
+    id: 7,
+    title: "Create a Simple Product Page",
+    questionEnglish: "Create a complete HTML document for a product. Set the browser title to 'Product Details'. Display the product name, price and a short description inside the body.",
+    questionTamil: "ஒரு product-க்கான முழுமையான HTML document உருவாக்கவும். Browser title-ஐ 'Product Details' என்று அமைத்து, body-க்குள் product பெயர், விலை மற்றும் சிறிய விளக்கத்தைக் காட்டவும்.",
+    hintEnglish: "Use a title in head and suitable headings and paragraphs in body.",
+    hintTamil: "head-ல் title-ஐயும் body-ல் பொருத்தமான headings மற்றும் paragraphs-ஐயும் பயன்படுத்தவும்.",
+    expectedOutput: "Product Details\nWireless Mouse\nPrice: Rs. 499\nA comfortable wireless mouse.",
+    expectedOutputTamil: "Product Details\nWireless Mouse\nவிலை: Rs. 499\nவசதியான wireless mouse.",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<head>\n<title>Product Details</title>\n</head>\n<body>\n<h1>Wireless Mouse</h1>\n<p>Price: Rs. 499</p>\n<p>A comfortable wireless mouse.</p>\n</body>\n</html>"
+  },
+  {
+    topicId: 2,
+    id: 8,
+    title: "Build a Complete Welcome Page",
+    questionEnglish: "Create a complete HTML document for a learning website. Set its title to 'Learn With Us'. Display a welcome heading, a short introduction and a course name.",
+    questionTamil: "ஒரு learning website-க்கான முழுமையான HTML document உருவாக்கவும். அதன் title-ஐ 'Learn With Us' என்று அமைத்து, welcome heading, சிறிய அறிமுகம் மற்றும் course பெயரைக் காட்டவும்.",
+    hintEnglish: "Remember to place metadata and title in head and all visible content in body.",
+    hintTamil: "Metadata மற்றும் title-ஐ head-க்குள், தெரியும் அனைத்து உள்ளடக்கத்தையும் body-க்குள் எழுதவும்.",
+    expectedOutput: "Learn With Us\nWelcome to Our Learning Website\nLearn at your own pace.\nCourse: HTML Basics",
+    expectedOutputTamil: "Learn With Us\nஎங்கள் Learning Website-க்கு வரவேற்கிறோம்\nஉங்கள் வேகத்தில் கற்றுக்கொள்ளுங்கள்.\nபாடம்: HTML Basics",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<head>\n<title>Learn With Us</title>\n</head>\n<body>\n<h1>Welcome to Our Learning Website</h1>\n<p>Learn at your own pace.</p>\n<p>Course: HTML Basics</p>\n</body>\n</html>"
+  },
+  {
+    topicId: 2,
+    id: 9,
+    title: "Challenge: Build a Personal Website Structure",
+    questionEnglish: "Create a complete HTML document for a personal website. Include a suitable browser title, a main heading, an introduction, education details and career goals. Organize the document correctly using head and body.",
+    questionTamil: "ஒரு personal website-க்கான முழுமையான HTML document உருவாக்கவும். பொருத்தமான browser title, main heading, அறிமுகம், கல்வி விவரங்கள் மற்றும் தொழில் இலக்குகளைச் சேர்க்கவும். head மற்றும் body-ஐச் சரியாகப் பயன்படுத்தி document-ஐ அமைக்கவும்.",
+    hintEnglish: "Plan what belongs inside head and what should be visible inside body. Use suitable heading and paragraph elements.",
+    hintTamil: "head-க்குள் என்ன இருக்க வேண்டும், body-க்குள் என்ன தெரிய வேண்டும் என்று திட்டமிடுங்கள். பொருத்தமான heading மற்றும் paragraph elements-ஐப் பயன்படுத்தவும்.",
+    expectedOutput: "A complete personal website displaying a title, introduction, education details and career goal.",
+    expectedOutputTamil: "Title, அறிமுகம், கல்வி விவரங்கள் மற்றும் தொழில் இலக்கைக் காட்டும் முழுமையான personal website.",
+    challenge: true
+  },
+  {
+    topicId: 2,
+    id: 10,
+    title: "Challenge: Create a Business Webpage Structure",
+    questionEnglish: "Create a complete HTML document for a fictional web development company. Include a browser title, company name, company introduction, three services and a contact message. Place each part in the correct document section.",
+    questionTamil: "ஒரு கற்பனையான web development நிறுவனத்திற்கான முழுமையான HTML document உருவாக்கவும். Browser title, நிறுவனத்தின் பெயர், அறிமுகம், மூன்று சேவைகள் மற்றும் தொடர்பு செய்தி ஆகியவற்றைச் சேர்த்து ஒவ்வொன்றையும் சரியான document பகுதியில் அமைக்கவும்.",
+    hintEnglish: "Use head for page information and body for visible content. Organize the content using headings and paragraphs.",
+    hintTamil: "Page தகவல்களுக்கு head-ஐயும் தெரியும் உள்ளடக்கத்திற்கு body-ஐயும் பயன்படுத்தவும். Headings மற்றும் paragraphs மூலம் உள்ளடக்கத்தை ஒழுங்குபடுத்தவும்.",
+    expectedOutput: "A complete business webpage displaying the company name, introduction, three services and contact message.",
+    expectedOutputTamil: "நிறுவனத்தின் பெயர், அறிமுகம், மூன்று சேவைகள் மற்றும் தொடர்பு செய்தியைக் காட்டும் முழுமையான business webpage.",
+    challenge: true
+  }
 ];
+
 
 export default questions;
