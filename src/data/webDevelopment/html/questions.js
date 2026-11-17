@@ -3313,6 +3313,226 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 17: HTML Iframes
+
+{
+  id: 1,
+  topicId: 17,
+  title: "Create Your First Iframe",
+  questionEnglish: "Create an iframe that displays https://www.example.com inside a webpage.",
+  questionTamil: "https://www.example.com இணையதளத்தை ஒரு webpage-க்குள் காட்டும் iframe உருவாக்கவும்.",
+  hintEnglish: "Use the <iframe> tag with the src attribute.",
+  hintTamil: "src attribute உடன் <iframe> tag பயன்படுத்தவும்.",
+  expectedOutput: "An embedded frame attempting to display the example.com website.",
+  expectedOutputTamil: "example.com இணையதளத்தைக் காட்ட முயற்சிக்கும் embedded frame.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <iframe src="https://www.example.com"></iframe>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 17,
+  title: "Set Iframe Dimensions",
+  questionEnglish: "Create an iframe displaying https://www.example.com with a width of 600 pixels and a height of 400 pixels.",
+  questionTamil: "https://www.example.com இணையதளத்தைக் காட்டும் 600 pixels அகலம் மற்றும் 400 pixels உயரம் கொண்ட iframe உருவாக்கவும்.",
+  hintEnglish: "Use the width and height attributes.",
+  hintTamil: "width மற்றும் height attributes பயன்படுத்தவும்.",
+  expectedOutput: "An iframe with dimensions 600 by 400 pixels.",
+  expectedOutputTamil: "600 × 400 pixels அளவுள்ள iframe.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <iframe
+    src="https://www.example.com"
+    width="600"
+    height="400"
+    title="Example Website"
+  ></iframe>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 17,
+  title: "Embed a YouTube Video",
+  questionEnglish: "Embed a YouTube video using an iframe with the video ID dQw4w9WgXcQ.",
+  questionTamil: "dQw4w9WgXcQ என்ற video ID பயன்படுத்தி iframe மூலம் YouTube video ஒன்றை embed செய்யவும்.",
+  hintEnglish: "Use the YouTube embed URL format: https://www.youtube.com/embed/VIDEO_ID.",
+  hintTamil: "YouTube embed URL வடிவத்தைப் பயன்படுத்தவும்: https://www.youtube.com/embed/VIDEO_ID.",
+  expectedOutput: "An iframe containing the embedded YouTube video, subject to YouTube availability and embedding permissions.",
+  expectedOutputTamil: "YouTube availability மற்றும் embedding அனுமதியைப் பொறுத்து embedded video காட்டும் iframe.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title="YouTube video"
+    allowfullscreen
+  ></iframe>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 17,
+  title: "Add a Frame Border",
+  questionEnglish: "Create an iframe displaying https://www.example.com and add a visible border using the style attribute.",
+  questionTamil: "https://www.example.com இணையதளத்தைக் காட்டும் iframe உருவாக்கி style attribute மூலம் border சேர்க்கவும்.",
+  hintEnglish: "Use the style attribute with border: 2px solid black.",
+  hintTamil: "border: 2px solid black என்ற style attribute பயன்படுத்தவும்.",
+  expectedOutput: "An embedded frame surrounded by a black border.",
+  expectedOutputTamil: "கருப்பு border கொண்ட embedded frame.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <iframe
+    src="https://www.example.com"
+    width="500"
+    height="300"
+    title="Example Website"
+    style="border: 2px solid black;"
+  ></iframe>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 17,
+  title: "Embed a Google Map",
+  questionEnglish: "Create an iframe that embeds a Google Map using a Google Maps embed URL.",
+  questionTamil: "Google Maps embed URL பயன்படுத்தி Google Map-ஐக் காட்டும் iframe உருவாக்கவும்.",
+  hintEnglish: "Use a valid Google Maps embed URL as the iframe source.",
+  hintTamil: "Iframe source ஆகச் சரியான Google Maps embed URL பயன்படுத்தவும்.",
+  expectedOutput: "An iframe displaying an embedded Google Map, if the supplied URL is valid.",
+  expectedOutputTamil: "வழங்கப்பட்ட URL சரியாக இருந்தால் Google Map காட்டும் iframe.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <iframe
+    src="https://www.google.com/maps?q=Chennai&output=embed"
+    width="600"
+    height="400"
+    title="Map of Chennai"
+    loading="lazy"
+  ></iframe>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 17,
+  title: "Add Iframe Title",
+  questionEnglish: "Create an iframe that displays an external website and provide an accessible title describing its content.",
+  questionTamil: "வெளிப்புற இணையதளத்தைக் காட்டும் iframe உருவாக்கி, அதன் உள்ளடக்கத்தை விளக்கும் accessible title வழங்கவும்.",
+  hintEnglish: "Use the title attribute.",
+  hintTamil: "title attribute பயன்படுத்தவும்.",
+  expectedOutput: "An iframe with a descriptive title attribute.",
+  expectedOutputTamil: "விளக்கமான title attribute கொண்ட iframe.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <iframe
+    src="https://www.example.com"
+    width="500"
+    height="300"
+    title="Example Website Content"
+  ></iframe>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 17,
+  title: "Load an Iframe Lazily",
+  questionEnglish: "Create an iframe that displays an external webpage and uses lazy loading.",
+  questionTamil: "வெளிப்புற webpage-ஐக் காட்டி lazy loading பயன்படுத்தும் iframe உருவாக்கவும்.",
+  hintEnglish: "Use loading=\"lazy\".",
+  hintTamil: "loading=\"lazy\" பயன்படுத்தவும்.",
+  expectedOutput: "An iframe configured to load when it approaches the visible area.",
+  expectedOutputTamil: "பார்க்கக்கூடிய பகுதிக்கு அருகில் வரும்போது load ஆக அமைக்கப்பட்ட iframe.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <iframe
+    src="https://www.example.com"
+    width="500"
+    height="300"
+    title="Example Website"
+    loading="lazy"
+  ></iframe>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 17,
+  title: "Create a Sandboxed Iframe",
+  questionEnglish: "Create an iframe displaying an external webpage with the sandbox attribute enabled.",
+  questionTamil: "Sandbox attribute இயக்கப்பட்ட நிலையில் வெளிப்புற webpage-ஐக் காட்டும் iframe உருவாக்கவும்.",
+  hintEnglish: "Add the sandbox attribute to the iframe.",
+  hintTamil: "Iframe-க்கு sandbox attribute சேர்க்கவும்.",
+  expectedOutput: "An iframe with sandbox restrictions applied to its embedded content.",
+  expectedOutputTamil: "Embedded content-க்கு sandbox கட்டுப்பாடுகள் பயன்படுத்தப்பட்ட iframe.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <iframe
+    src="https://www.example.com"
+    width="500"
+    height="300"
+    title="Sandboxed Website"
+    sandbox
+  ></iframe>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 17,
+  title: "Build an Online Learning Page",
+  questionEnglish: "Create an online learning page that embeds a YouTube tutorial, a Google Map showing a college location, and an external documentation website. Give each iframe a suitable title and dimensions.",
+  questionTamil: "YouTube tutorial, கல்லூரி இடத்தைக் காட்டும் Google Map மற்றும் வெளிப்புற documentation இணையதளம் ஆகியவற்றை embed செய்யும் online learning page உருவாக்கவும். ஒவ்வொரு iframe-க்கும் பொருத்தமான title மற்றும் dimensions வழங்கவும்.",
+  hintEnglish: "Use three separate iframe elements with suitable URLs, titles, widths, and heights.",
+  hintTamil: "பொருத்தமான URLs, titles, widths மற்றும் heights உடன் மூன்று தனித்தனி iframe elements பயன்படுத்தவும்.",
+  expectedOutput: "An online learning page with three embedded resources.",
+  expectedOutputTamil: "மூன்று embedded resources கொண்ட online learning page.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 17,
+  title: "Build a Business Location Page",
+  questionEnglish: "Create a business location page for ATEXRA. Include a heading, business address, Google Map iframe, and an embedded video introducing the business.",
+  questionTamil: "ATEXRA-க்கான business location page உருவாக்கவும். Heading, business address, Google Map iframe மற்றும் நிறுவனத்தை அறிமுகப்படுத்தும் embedded video சேர்க்கவும்.",
+  hintEnglish: "Combine headings, paragraphs, Google Maps iframe, and YouTube iframe.",
+  hintTamil: "Headings, paragraphs, Google Maps iframe மற்றும் YouTube iframe இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "An ATEXRA business page with address, map, and introduction video.",
+  expectedOutputTamil: "Address, map மற்றும் introduction video கொண்ட ATEXRA business page.",
+  challenge: true
+}
+
 
 
 
