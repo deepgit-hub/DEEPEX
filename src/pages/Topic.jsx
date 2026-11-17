@@ -1,141 +1,223 @@
-import { useNavigate, useParams } from "react-router-dom";
+
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 import {
   doc,
   getDoc,
   updateDoc,
 } from "firebase/firestore";
+
 import { db } from "../firebase";
+
 import MentorSupport from "../components/MentorSupportButton";
-import "../styles/Topic.css";
 import SetupGuide from "../components/SetupGuide";
+
+import "../styles/Topic.css";
 
 function Topic() {
   const navigate = useNavigate();
-  
+  const location = useLocation();
 
-const { languageId, topicId } = useParams();
+  const { languageId, topicId } = useParams();
 
-const [topic, setTopic] = useState(null);
-const [showSetupGuide, setShowSetupGuide] =
-  useState(false);
-const student = JSON.parse(
-  localStorage.getItem("student")
-);
+  // Detect Web Development
+  const isWebDevelopment =
+    location.pathname.startsWith("/web-topic/");
+
+  const [topic, setTopic] = useState(null);
+
+  const [showSetupGuide, setShowSetupGuide] =
+    useState(false);
+
+  const [loading, setLoading] = useState(true);
+
+  const student = JSON.parse(
+    localStorage.getItem("student")
+  );
+
+  // =====================================
+  // FETCH TOPIC
+  // =====================================
+
   useEffect(() => {
-  async function fetchTopic() {
-    const topicRef = doc(
-      db,
-      "languages",
-      languageId,
-      "concepts",
-      topicId
-    );
+    async function fetchTopic() {
+      try {
+        setLoading(true);
 
-    const topicSnap = await getDoc(topicRef);
+        const collectionName = isWebDevelopment
+          ? "webDevelopment"
+          : "languages";
 
-    if (topicSnap.exists()) {
-      setTopic(topicSnap.data());
-    }
-  }
+        const topicRef = doc(
+          db,
+          collectionName,
+          languageId,
+          "concepts",
+          topicId
+        );
 
-  fetchTopic();
-}, [languageId, topicId]);
+        const topicSnap = await getDoc(topicRef);
 
-if (!topic) {
-  return <h2>Loading...</h2>;
-}
-const completedTopicsByLanguage =
-  student?.completedTopicsByLanguage || {};
+        if (topicSnap.exists()) {
+          setTopic(topicSnap.data());
+        } else {
+          setTopic(null);
+        }
 
-const currentLanguageTopics =
-  completedTopicsByLanguage[languageId] || [];
-
-const isCompleted = currentLanguageTopics.includes(
-  Number(topicId)
-);
-const handleMarkAsLearned = async () => {
-  try {
-    if (!student) {
-      alert("❌ Student information not found.");
-      navigate("/");
-      return;
-    }
-
-    const completedTopicsByLanguage = {
-      ...(student.completedTopicsByLanguage || {}),
-    };
-
-    const currentLanguageTopics =
-      completedTopicsByLanguage[languageId] || [];
-
-    let updatedTopics;
-
-    if (currentLanguageTopics.includes(Number(topicId))) {
-      // Mark as Unread
-      updatedTopics = currentLanguageTopics.filter(
-        (id) => id !== Number(topicId)
-      );
-    } else {
-      // Mark as Learned
-      updatedTopics = [
-        ...currentLanguageTopics,
-        Number(topicId),
-      ];
-    }
-
-    completedTopicsByLanguage[languageId] = updatedTopics;
-
-    await updateDoc(
-      doc(db, "students", student.username),
-      {
-        [`completedTopicsByLanguage.${languageId}`]:
-          updatedTopics,
+      } catch (error) {
+        console.error("Error fetching topic:", error);
+        setTopic(null);
+      } finally {
+        setLoading(false);
       }
-    );
+    }
 
-    const updatedStudent = {
-      ...student,
-      completedTopicsByLanguage,
-    };
+    fetchTopic();
 
-    localStorage.setItem(
-      "student",
-      JSON.stringify(updatedStudent)
-    );
+  }, [languageId, topicId, isWebDevelopment]);
 
-    alert(
-      isCompleted
-        ? "↩️ Topic marked as Unread."
-        : "🎉 Topic marked as Learned!"
-    );
+  // =====================================
+  // LOADING
+  // =====================================
 
-    window.location.reload();
-  } catch (error) {
-    console.error(error);
-    alert("❌ Failed to update progress.");
+  if (loading) {
+    return <h2>Loading...</h2>;
   }
-};
+
+  if (!topic) {
+    return <h2>Topic not found.</h2>;
+  }
+
+  // =====================================
+  // PROGRAMMING PROGRESS
+  // =====================================
+
+  const completedTopicsByLanguage =
+    student?.completedTopicsByLanguage || {};
+
+  const currentLanguageTopics =
+    completedTopicsByLanguage[languageId] || [];
+
+  const isCompleted = currentLanguageTopics.includes(
+    Number(topicId)
+  );
+
+  // =====================================
+  // MARK AS LEARNED
+  // =====================================
+
+  const handleMarkAsLearned = async () => {
+    try {
+      if (!student) {
+        alert("❌ Student information not found.");
+        navigate("/");
+        return;
+      }
+
+      const completedTopicsByLanguage = {
+        ...(student.completedTopicsByLanguage || {}),
+      };
+
+      const currentLanguageTopics =
+        completedTopicsByLanguage[languageId] || [];
+
+      let updatedTopics;
+
+      if (currentLanguageTopics.includes(Number(topicId))) {
+        // Mark as Unread
+        updatedTopics = currentLanguageTopics.filter(
+          (id) => id !== Number(topicId)
+        );
+      } else {
+        // Mark as Learned
+        updatedTopics = [
+          ...currentLanguageTopics,
+          Number(topicId),
+        ];
+      }
+
+      completedTopicsByLanguage[languageId] = updatedTopics;
+
+      await updateDoc(
+        doc(db, "students", student.username),
+        {
+          [`completedTopicsByLanguage.${languageId}`]:
+            updatedTopics,
+        }
+      );
+
+      const updatedStudent = {
+        ...student,
+        completedTopicsByLanguage,
+      };
+
+      localStorage.setItem(
+        "student",
+        JSON.stringify(updatedStudent)
+      );
+
+      alert(
+        isCompleted
+          ? "↩️ Topic marked as Unread."
+          : "🎉 Topic marked as Learned!"
+      );
+
+      window.location.reload();
+
+    } catch (error) {
+      console.error(error);
+      alert("❌ Failed to update progress.");
+    }
+  };
+
+  // =====================================
+  // NAVIGATION
+  // =====================================
+
+  const handleBack = () => {
+    if (isWebDevelopment) {
+      navigate(`/web-home/${languageId}`);
+    } else {
+      navigate(`/home/${languageId}`);
+    }
+  };
+
+  const handleStartLearning = () => {
+    if (isWebDevelopment) {
+      navigate(`/web-questions/${languageId}/${topicId}`);
+    } else {
+      navigate(`/questions/${languageId}/${topicId}`);
+    }
+  };
+
+  // =====================================
+  // PAGE
+  // =====================================
+
   return (
     <div className="topic-page">
+
       <div className="container">
 
-        {/* Header */}
+        {/* HEADER */}
 
         <div className="topic-header">
 
           <button
             className="back-btn"
-           onClick={() => navigate(`/home/${languageId}`)}
+            onClick={handleBack}
           >
             ← Back
           </button>
 
-          <h1 className="topic-title">{topic.title}</h1>
+          <h1 className="topic-title">
+            {topic.title}
+          </h1>
 
         </div>
 
-        {/* English */}
+        {/* ENGLISH DEFINITION */}
 
         <div className="topic-section">
 
@@ -145,7 +227,7 @@ const handleMarkAsLearned = async () => {
 
         </div>
 
-        {/* Tamil */}
+        {/* TAMIL DEFINITION */}
 
         <div className="topic-section">
 
@@ -155,7 +237,7 @@ const handleMarkAsLearned = async () => {
 
         </div>
 
-        {/* Real World */}
+        {/* REAL WORLD USAGE */}
 
         <div className="topic-section">
 
@@ -165,7 +247,7 @@ const handleMarkAsLearned = async () => {
 
         </div>
 
-        {/* Tamil Real World */}
+        {/* TAMIL REAL WORLD USAGE */}
 
         <div className="topic-section">
 
@@ -175,7 +257,7 @@ const handleMarkAsLearned = async () => {
 
         </div>
 
-        {/* Syntax */}
+        {/* SYNTAX */}
 
         <div className="topic-section">
 
@@ -187,7 +269,7 @@ const handleMarkAsLearned = async () => {
 
         </div>
 
-        {/* Syntax Explanation English */}
+        {/* SYNTAX EXPLANATION ENGLISH */}
 
         <div className="topic-section">
 
@@ -195,17 +277,17 @@ const handleMarkAsLearned = async () => {
 
           <ul className="topic-list">
 
-            {topic.syntaxExplanationEnglish.map((item, index) => (
-
-              <li key={index}>{item}</li>
-
-            ))}
+            {(topic.syntaxExplanationEnglish || []).map(
+              (item, index) => (
+                <li key={index}>{item}</li>
+              )
+            )}
 
           </ul>
 
         </div>
 
-        {/* Syntax Explanation Tamil */}
+        {/* SYNTAX EXPLANATION TAMIL */}
 
         <div className="topic-section">
 
@@ -213,17 +295,17 @@ const handleMarkAsLearned = async () => {
 
           <ul className="topic-list">
 
-            {topic.syntaxExplanationTamil.map((item, index) => (
-
-              <li key={index}>{item}</li>
-
-            ))}
+            {(topic.syntaxExplanationTamil || []).map(
+              (item, index) => (
+                <li key={index}>{item}</li>
+              )
+            )}
 
           </ul>
 
         </div>
 
-        {/* Example Program */}
+        {/* EXAMPLE PROGRAM */}
 
         <div className="topic-section">
 
@@ -235,7 +317,7 @@ const handleMarkAsLearned = async () => {
 
         </div>
 
-        {/* Program Explanation English */}
+        {/* PROGRAM EXPLANATION ENGLISH */}
 
         <div className="topic-section">
 
@@ -243,17 +325,17 @@ const handleMarkAsLearned = async () => {
 
           <ul className="topic-list">
 
-            {topic.programExplanationEnglish.map((item, index) => (
-
-              <li key={index}>{item}</li>
-
-            ))}
+            {(topic.programExplanationEnglish || []).map(
+              (item, index) => (
+                <li key={index}>{item}</li>
+              )
+            )}
 
           </ul>
 
         </div>
 
-        {/* Program Explanation Tamil */}
+        {/* PROGRAM EXPLANATION TAMIL */}
 
         <div className="topic-section">
 
@@ -261,17 +343,17 @@ const handleMarkAsLearned = async () => {
 
           <ul className="topic-list">
 
-            {topic.programExplanationTamil.map((item, index) => (
-
-              <li key={index}>{item}</li>
-
-            ))}
+            {(topic.programExplanationTamil || []).map(
+              (item, index) => (
+                <li key={index}>{item}</li>
+              )
+            )}
 
           </ul>
 
         </div>
 
-        {/* Output */}
+        {/* OUTPUT */}
 
         <div className="topic-section">
 
@@ -283,40 +365,60 @@ const handleMarkAsLearned = async () => {
 
         </div>
 
-        {/* Buttons */}
+        {/* BUTTONS */}
 
         <div className="topic-buttons">
-<button
-  className="setup-btn"
-  onClick={() => setShowSetupGuide(true)}
->
-  🚀 Get Your PC Ready
-</button> 
-          <button
-            className="topic-start-btn"
-            onClick={() => navigate(`/questions/${languageId}/${topicId}`)}
-          >
-            🚀 Start Coding
-          </button>
+
+          {/* PROGRAMMING SETUP GUIDE */}
+
+          {!isWebDevelopment && (
+            <button
+              className="setup-btn"
+              onClick={() => setShowSetupGuide(true)}
+            >
+              🚀 Get Your PC Ready
+            </button>
+          )}
+
+          {/* START LEARNING */}
 
           <button
-  className="topic-complete-btn"
-  onClick={handleMarkAsLearned}
->
-  {isCompleted
-    ? "↩️ Mark as Unread"
-    : "✅ Mark as Learned"}
-</button>
-<SetupGuide
-  isOpen={showSetupGuide}
-  onClose={() => setShowSetupGuide(false)}
-  language={languageId}
-/>
+            className="topic-start-btn"
+            onClick={handleStartLearning}
+          >
+            🚀 {isWebDevelopment ? "Start Practicing" : "Start Coding"}
+          </button>
+
+          {/* PROGRAMMING PROGRESS */}
+
+          {!isWebDevelopment && (
+            <button
+              className="topic-complete-btn"
+              onClick={handleMarkAsLearned}
+            >
+              {isCompleted
+                ? "↩️ Mark as Unread"
+                : "✅ Mark as Learned"}
+            </button>
+          )}
+
         </div>
+
+        {/* SETUP GUIDE */}
+
+        {!isWebDevelopment && (
+          <SetupGuide
+            isOpen={showSetupGuide}
+            onClose={() => setShowSetupGuide(false)}
+            language={languageId}
+          />
+        )}
 
       </div>
 
-        <MentorSupport />
+      {/* MENTOR SUPPORT */}
+
+      <MentorSupport />
 
     </div>
   );
