@@ -5048,4 +5048,248 @@ nav a {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 19,
+    title: "Add a Box Shadow",
+    questionEnglish: "Create a div with a white background and a 200px width. Use box-shadow to add a simple gray shadow around the box.",
+    questionTamil: "வெள்ளை background மற்றும் 200px width கொண்ட div உருவாக்கவும். Box-ஐச் சுற்றி எளிய gray shadow சேர்க்க box-shadow பயன்படுத்தவும்.",
+    hintEnglish: "Use box-shadow: 2px 2px 5px gray.",
+    hintTamil: "box-shadow: 2px 2px 5px gray பயன்படுத்தவும்.",
+    expectedOutput: "A white box with a gray shadow around it.",
+    expectedOutputTamil: "சுற்றிலும் gray shadow கொண்ட வெள்ளை box தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 200px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 2px 2px 5px gray;
+}
+</style>
+</head>
+<body>
+<div class="box">Box Shadow</div>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 19,
+    title: "Create a Text Shadow",
+    questionEnglish: "Create a heading displaying 'Welcome to CSS'. Use text-shadow to add a gray shadow behind the text.",
+    questionTamil: "'Welcome to CSS' என்ற heading உருவாக்கவும். அதன் பின்னால் gray shadow சேர்க்க text-shadow பயன்படுத்தவும்.",
+    hintEnglish: "Use text-shadow: 2px 2px 4px gray.",
+    hintTamil: "text-shadow: 2px 2px 4px gray பயன்படுத்தவும்.",
+    expectedOutput: "The heading appears with a gray shadow behind its letters.",
+    expectedOutputTamil: "Heading எழுத்துகளுக்குப் பின்னால் gray shadow தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  text-shadow: 2px 2px 4px gray;
+}
+</style>
+</head>
+<body>
+<h1>Welcome to CSS</h1>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 19,
+    title: "Create an Inset Shadow",
+    questionEnglish: "Create a div with a lightgray background. Use box-shadow with the inset keyword to create an inner shadow.",
+    questionTamil: "Lightgray background கொண்ட div உருவாக்கவும். உள் shadow உருவாக்க box-shadow-ல் inset keyword பயன்படுத்தவும்.",
+    hintEnglish: "Use box-shadow: inset 3px 3px 8px gray.",
+    hintTamil: "box-shadow: inset 3px 3px 8px gray பயன்படுத்தவும்.",
+    expectedOutput: "The box displays a shadow inside its edges.",
+    expectedOutputTamil: "Box-ன் உள் விளிம்புகளில் shadow தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: lightgray;
+  box-shadow: inset 3px 3px 8px gray;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 19,
+    title: "Create a Linear Gradient",
+    questionEnglish: "Create a section with a background that changes horizontally from red to yellow using linear-gradient().",
+    questionTamil: "linear-gradient() பயன்படுத்தி background கிடைமட்டமாக சிவப்பிலிருந்து மஞ்சளாக மாறும் section உருவாக்கவும்.",
+    hintEnglish: "Use background: linear-gradient(to right, red, yellow).",
+    hintTamil: "background: linear-gradient(to right, red, yellow) பயன்படுத்தவும்.",
+    expectedOutput: "A section with a horizontal red-to-yellow gradient.",
+    expectedOutputTamil: "சிவப்பிலிருந்து மஞ்சளாக மாறும் கிடைமட்ட gradient கொண்ட section தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.section {
+  height: 150px;
+  background: linear-gradient(to right, red, yellow);
+}
+</style>
+</head>
+<body>
+<div class="section"></div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 19,
+    title: "Create a Vertical Gradient",
+    questionEnglish: "Create a section with a vertical gradient that changes from blue at the top to purple at the bottom.",
+    questionTamil: "மேலே blue நிறத்திலிருந்து கீழே purple நிறமாக மாறும் vertical gradient கொண்ட section உருவாக்கவும்.",
+    hintEnglish: "Use linear-gradient(to bottom, blue, purple).",
+    hintTamil: "linear-gradient(to bottom, blue, purple) பயன்படுத்தவும்.",
+    expectedOutput: "A section with a vertical blue-to-purple gradient.",
+    expectedOutputTamil: "Blue நிறத்திலிருந்து purple நிறமாக மாறும் செங்குத்து gradient கொண்ட section தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.section {
+  height: 200px;
+  background: linear-gradient(to bottom, blue, purple);
+}
+</style>
+</head>
+<body>
+<div class="section"></div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 19,
+    title: "Create a Radial Gradient",
+    questionEnglish: "Create a div with a radial gradient that starts with yellow at the center and changes to red at the edges.",
+    questionTamil: "மையத்தில் மஞ்சள் நிறத்திலிருந்து விளிம்புகளில் சிவப்பாக மாறும் radial gradient கொண்ட div உருவாக்கவும்.",
+    hintEnglish: "Use radial-gradient(yellow, red).",
+    hintTamil: "radial-gradient(yellow, red) பயன்படுத்தவும்.",
+    expectedOutput: "A circular-style gradient with yellow in the center and red toward the edges.",
+    expectedOutputTamil: "மையத்தில் மஞ்சளும் விளிம்புகளில் சிவப்பும் கொண்ட radial gradient தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 250px;
+  height: 150px;
+  background: radial-gradient(yellow, red);
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 19,
+    title: "Combine Multiple Shadows",
+    questionEnglish: "Create a box with a white background. Apply two box shadows: one gray shadow on the bottom-right and another blue shadow on the top-left.",
+    questionTamil: "வெள்ளை background கொண்ட box உருவாக்கவும். கீழ் வலது பக்கத்தில் gray shadow மற்றும் மேல் இடது பக்கத்தில் blue shadow என இரண்டு box shadows அமைக்கவும்.",
+    hintEnglish: "Separate multiple box-shadow values using commas.",
+    hintTamil: "பல box-shadow values-ஐ comma மூலம் பிரிக்கவும்.",
+    expectedOutput: "A white box with two shadows in different directions and colors.",
+    expectedOutputTamil: "வெவ்வேறு திசைகள் மற்றும் நிறங்களில் இரண்டு shadows கொண்ட வெள்ளை box தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 200px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 5px 5px 8px gray, -5px -5px 8px blue;
+}
+</style>
+</head>
+<body>
+<div class="box">Multiple Shadows</div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 19,
+    title: "Create a Gradient Button",
+    questionEnglish: "Create a button with a linear gradient background from blue to purple. Add a white text color and a box shadow.",
+    questionTamil: "Blue நிறத்திலிருந்து purple நிறத்திற்கு மாறும் linear gradient background கொண்ட button உருவாக்கவும். வெள்ளை text color மற்றும் box shadow சேர்க்கவும்.",
+    hintEnglish: "Combine linear-gradient(), color, and box-shadow.",
+    hintTamil: "linear-gradient(), color மற்றும் box-shadow இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "A blue-to-purple gradient button with white text and a shadow.",
+    expectedOutputTamil: "வெள்ளை text மற்றும் shadow கொண்ட blue-to-purple gradient button தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+button {
+  padding: 15px 25px;
+  color: white;
+  border: none;
+  background: linear-gradient(to right, blue, purple);
+  box-shadow: 2px 4px 8px gray;
+}
+</style>
+</head>
+<body>
+<button>Start Learning</button>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 19,
+    title: "Challenge: Modern Product Card",
+    questionEnglish: "Create a modern product card with a heading, description, and button. Use box-shadow, text-shadow, and a gradient background to make it visually attractive.",
+    questionTamil: "Heading, description மற்றும் button கொண்ட modern product card உருவாக்கவும். அழகான தோற்றத்திற்காக box-shadow, text-shadow மற்றும் gradient background பயன்படுத்தவும்.",
+    hintEnglish: "Combine different shadow types and a linear gradient.",
+    hintTamil: "வெவ்வேறு shadow வகைகள் மற்றும் linear gradient இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "A modern product card with decorative shadows and a gradient background.",
+    expectedOutputTamil: "அலங்கார shadows மற்றும் gradient background கொண்ட modern product card தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 19,
+    title: "Challenge: DEEP CODE Hero Design",
+    questionEnglish: "Create a DEEP CODE hero section with a gradient background, heading, description, and button. Add suitable text shadows and box shadows to create a professional appearance.",
+    questionTamil: "Gradient background, heading, description மற்றும் button கொண்ட DEEP CODE hero section உருவாக்கவும். Professional தோற்றத்திற்காக text shadows மற்றும் box shadows பயன்படுத்தவும்.",
+    hintEnglish: "Experiment with linear-gradient(), text-shadow, and multiple box-shadow values.",
+    hintTamil: "linear-gradient(), text-shadow மற்றும் பல box-shadow values பயன்படுத்திப் பாருங்கள்.",
+    expectedOutput: "A professional DEEP CODE hero section with gradients and shadows.",
+    expectedOutputTamil: "Gradients மற்றும் shadows கொண்ட professional DEEP CODE hero section தோன்றும்.",
+    challenge: true
+  }
+]
+
 ]
