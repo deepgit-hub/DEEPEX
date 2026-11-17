@@ -3841,4 +3841,278 @@ li::marker {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 15,
+    title: "Descendant Combinator",
+    questionEnglish: "Create a div containing three paragraphs and another paragraph outside the div. Use the descendant combinator to make all paragraphs inside the div blue.",
+    questionTamil: "மூன்று paragraphs கொண்ட div உருவாக்கவும். அதற்கு வெளியேயும் ஒரு paragraph உருவாக்கவும். Div-க்குள் உள்ள paragraphs மட்டும் நீலமாக மாற descendant combinator பயன்படுத்தவும்.",
+    hintEnglish: "Use the selector div p.",
+    hintTamil: "div p selector பயன்படுத்தவும்.",
+    expectedOutput: "Only the paragraphs inside the div appear blue.",
+    expectedOutputTamil: "Div-க்குள் உள்ள paragraphs மட்டும் நீல நிறத்தில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+div p {
+  color: blue;
+}
+</style>
+</head>
+<body>
+<div>
+  <p>First inside paragraph</p>
+  <p>Second inside paragraph</p>
+  <p>Third inside paragraph</p>
+</div>
+<p>Outside paragraph</p>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 15,
+    title: "Child Combinator",
+    questionEnglish: "Create a div containing one direct paragraph and another paragraph inside a nested div. Use the child combinator to make only direct child paragraphs red.",
+    questionTamil: "ஒரு direct paragraph மற்றும் nested div-க்குள் மற்றொரு paragraph கொண்ட div உருவாக்கவும். Direct child paragraphs மட்டும் சிவப்பாக மாற child combinator பயன்படுத்தவும்.",
+    hintEnglish: "Use the selector div > p.",
+    hintTamil: "div > p selector பயன்படுத்தவும்.",
+    expectedOutput: "Only the direct child paragraph of the outer div appears red.",
+    expectedOutputTamil: "வெளிப்புற div-ன் direct child paragraph மட்டும் சிவப்பாகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+div > p {
+  color: red;
+}
+</style>
+</head>
+<body>
+<div>
+  <p>Direct child paragraph</p>
+  <div>
+    <p>Nested paragraph</p>
+  </div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 15,
+    title: "Adjacent Sibling Combinator",
+    questionEnglish: "Create a heading followed immediately by a paragraph and then another paragraph. Use the adjacent sibling combinator to make only the first paragraph after the heading green.",
+    questionTamil: "ஒரு heading-க்கு உடனடியாக ஒரு paragraph மற்றும் அதற்குப் பிறகு மற்றொரு paragraph உருவாக்கவும். Heading-க்கு உடனடியாக வரும் முதல் paragraph மட்டும் பச்சையாக மாற adjacent sibling combinator பயன்படுத்தவும்.",
+    hintEnglish: "Use the selector h1 + p.",
+    hintTamil: "h1 + p selector பயன்படுத்தவும்.",
+    expectedOutput: "Only the paragraph immediately following the heading appears green.",
+    expectedOutputTamil: "Heading-க்கு உடனடியாக அடுத்து வரும் paragraph மட்டும் பச்சை நிறத்தில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 + p {
+  color: green;
+}
+</style>
+</head>
+<body>
+<h1>CSS Combinators</h1>
+<p>First paragraph after heading.</p>
+<p>Second paragraph.</p>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 15,
+    title: "General Sibling Combinator",
+    questionEnglish: "Create a heading followed by three paragraphs. Use the general sibling combinator to make every paragraph after the heading purple.",
+    questionTamil: "ஒரு heading-க்கு பிறகு மூன்று paragraphs உருவாக்கவும். Heading-க்கு பிறகு வரும் அனைத்து paragraphs-யும் purple ஆக மாற general sibling combinator பயன்படுத்தவும்.",
+    hintEnglish: "Use the selector h1 ~ p.",
+    hintTamil: "h1 ~ p selector பயன்படுத்தவும்.",
+    expectedOutput: "All paragraphs that are later siblings of the heading appear purple.",
+    expectedOutputTamil: "Heading-க்கு பிறகு அதே parent-ல் வரும் அனைத்து paragraph siblings-ம் purple நிறத்தில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 ~ p {
+  color: purple;
+}
+</style>
+</head>
+<body>
+<h1>Sibling Selectors</h1>
+<p>First paragraph</p>
+<p>Second paragraph</p>
+<p>Third paragraph</p>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 15,
+    title: "Combine Descendant and Child Combinators",
+    questionEnglish: "Create a section containing a div with a heading and a paragraph. Also create a nested div with another paragraph. Use a descendant selector to style all paragraphs inside the section gray and a child selector to make direct paragraphs inside the section red.",
+    questionTamil: "Heading மற்றும் paragraph கொண்ட div உள்ள section உருவாக்கவும். மேலும் மற்றொரு paragraph கொண்ட nested div உருவாக்கவும். Section-க்குள் உள்ள அனைத்து paragraphs-ஐ gray ஆகவும், section-ன் direct child paragraphs-ஐ red ஆகவும் மாற்ற descendant மற்றும் child selectors பயன்படுத்தவும்.",
+    hintEnglish: "Combine section p and section > p selectors.",
+    hintTamil: "section p மற்றும் section > p selectors இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "All paragraphs inside the section are gray, while direct child paragraphs are red.",
+    expectedOutputTamil: "Section-க்குள் உள்ள அனைத்து paragraphs-ம் gray ஆக இருக்கும்; direct child paragraphs மட்டும் red ஆக இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+section p {
+  color: gray;
+}
+section > p {
+  color: red;
+}
+</style>
+</head>
+<body>
+<section>
+  <h2>Section Heading</h2>
+  <p>Direct paragraph</p>
+  <div>
+    <p>Nested paragraph</p>
+  </div>
+</section>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 15,
+    title: "Select Adjacent Headings and Paragraphs",
+    questionEnglish: "Create two heading and paragraph pairs. Use an h2 + p selector to style only the paragraph immediately following each h2 heading with a blue background.",
+    questionTamil: "இரண்டு heading மற்றும் paragraph pairs உருவாக்கவும். ஒவ்வொரு h2 heading-க்கும் உடனடியாக அடுத்து வரும் paragraph-க்கு மட்டும் blue background அமைக்க h2 + p selector பயன்படுத்தவும்.",
+    hintEnglish: "Use the adjacent sibling combinator (+).",
+    hintTamil: "Adjacent sibling combinator (+) பயன்படுத்தவும்.",
+    expectedOutput: "The first paragraph after each h2 heading has a blue background.",
+    expectedOutputTamil: "ஒவ்வொரு h2 heading-க்கும் அடுத்த முதல் paragraph மட்டும் blue background கொண்டிருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+h2 + p {
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<p>Learn HTML structure.</p>
+<p>Practice HTML tags.</p>
+
+<h2>CSS</h2>
+<p>Learn CSS styling.</p>
+<p>Practice CSS properties.</p>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 15,
+    title: "Style All Following Siblings",
+    questionEnglish: "Create a heading, a paragraph, a list, and another paragraph inside the same div. Use the general sibling combinator to style all paragraphs that follow the heading blue.",
+    questionTamil: "ஒரே div-க்குள் heading, paragraph, list மற்றும் மற்றொரு paragraph உருவாக்கவும். Heading-க்கு பிறகு வரும் அனைத்து paragraph siblings-யும் நீலமாக மாற்ற general sibling combinator பயன்படுத்தவும்.",
+    hintEnglish: "Use h2 ~ p. Remember that the elements must share the same parent.",
+    hintTamil: "h2 ~ p பயன்படுத்தவும். Elements ஒரே parent-ஐ பகிர்ந்து கொள்ள வேண்டும்.",
+    expectedOutput: "Both paragraphs following the heading appear blue, even though a list appears between them.",
+    expectedOutputTamil: "இரண்டு paragraphs-க்கும் இடையில் list இருந்தாலும் heading-க்கு பிறகு வரும் இரண்டு paragraphs-ம் நீலமாகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+h2 ~ p {
+  color: blue;
+}
+</style>
+</head>
+<body>
+<div>
+  <h2>Learning Topics</h2>
+  <p>HTML Basics</p>
+  <ul>
+    <li>Tags</li>
+    <li>Elements</li>
+  </ul>
+  <p>CSS Basics</p>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 15,
+    title: "Style Nested Navigation Links",
+    questionEnglish: "Create a navigation list inside a nav element. Use a descendant combinator to remove the underline from all links inside the nav and a child combinator to make direct list items bold.",
+    questionTamil: "nav element-க்குள் navigation list உருவாக்கவும். nav-க்குள் உள்ள அனைத்து links-ன் underline-ஐ நீக்க descendant combinator மற்றும் direct list items-ஐ bold ஆக்க child combinator பயன்படுத்தவும்.",
+    hintEnglish: "Use nav a and nav > ul > li selectors.",
+    hintTamil: "nav a மற்றும் nav > ul > li selectors பயன்படுத்தவும்.",
+    expectedOutput: "Navigation links have no underline, and direct list items are bold.",
+    expectedOutputTamil: "Navigation links-ல் underline இருக்காது; direct list items bold ஆகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+nav a {
+  text-decoration: none;
+}
+nav > ul > li {
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses</a></li>
+  </ul>
+</nav>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 15,
+    title: "Challenge: Blog Article Styling",
+    questionEnglish: "Create a blog article with a heading, introductory paragraph, nested content sections, and related paragraphs. Use descendant, child, adjacent sibling, and general sibling combinators to style different elements.",
+    questionTamil: "Heading, introductory paragraph, nested content sections மற்றும் தொடர்புடைய paragraphs கொண்ட blog article உருவாக்கவும். வெவ்வேறு elements-ஐ வடிவமைக்க descendant, child, adjacent sibling மற்றும் general sibling combinators பயன்படுத்தவும்.",
+    hintEnglish: "Think about parent-child relationships and sibling relationships between elements.",
+    hintTamil: "Elements-க்கு இடையிலான parent-child மற்றும் sibling தொடர்புகளைப் புரிந்து selectors அமைக்கவும்.",
+    expectedOutput: "A blog article with different styles applied according to the relationships between elements.",
+    expectedOutputTamil: "Elements இடையிலான தொடர்புகளுக்கு ஏற்ப வெவ்வேறு styles கொண்ட blog article தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 15,
+    title: "Challenge: DEEP CODE Navigation and Courses",
+    questionEnglish: "Create a DEEP CODE page with a navigation menu, course sections, headings, and descriptions. Use all four CSS combinators to style navigation links, direct children, paragraphs following headings, and other related elements.",
+    questionTamil: "Navigation menu, course sections, headings மற்றும் descriptions கொண்ட DEEP CODE page உருவாக்கவும். Navigation links, direct children, headings-க்கு பிறகு வரும் paragraphs மற்றும் தொடர்புடைய elements-ஐ வடிவமைக்க நான்கு CSS combinators-யும் பயன்படுத்தவும்.",
+    hintEnglish: "Use space, >, +, and ~ combinators in different selectors.",
+    hintTamil: "வெவ்வேறு selectors-ல் space, >, + மற்றும் ~ combinators பயன்படுத்தவும்.",
+    expectedOutput: "A DEEP CODE page with clearly styled navigation and course sections using different combinators.",
+    expectedOutputTamil: "வெவ்வேறு combinators மூலம் தெளிவாக வடிவமைக்கப்பட்ட navigation மற்றும் course sections கொண்ட DEEP CODE page.",
+    challenge: true
+  }
+]
+
 ]
