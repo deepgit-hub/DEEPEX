@@ -3319,4 +3319,268 @@ body {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 13,
+    title: "Hover Effect",
+    questionEnglish: "Create a button with a blue background. Use the :hover pseudo-class to change its background to green when the mouse moves over it.",
+    questionTamil: "Blue background கொண்ட button உருவாக்கவும். Mouse button மீது வரும்போது அதன் background பச்சையாக மாற :hover pseudo-class பயன்படுத்தவும்.",
+    hintEnglish: "Use button:hover.",
+    hintTamil: "button:hover பயன்படுத்தவும்.",
+    expectedOutput: "The button is blue normally and turns green when hovered.",
+    expectedOutputTamil: "சாதாரணமாக button நீல நிறத்தில் இருக்கும்; mouse hover செய்யும்போது பச்சையாக மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+button {
+  background-color: blue;
+  color: white;
+  padding: 12px 20px;
+}
+button:hover {
+  background-color: green;
+}
+</style>
+</head>
+<body>
+<button>Hover Over Me</button>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 13,
+    title: "Active Pseudo-Class",
+    questionEnglish: "Create a button and use the :active pseudo-class to change its background to orange while the user is pressing it.",
+    questionTamil: "ஒரு button உருவாக்கவும். பயனர் அதை அழுத்திக் கொண்டிருக்கும் போது அதன் background orange ஆக மாற :active pseudo-class பயன்படுத்தவும்.",
+    hintEnglish: "Use button:active.",
+    hintTamil: "button:active பயன்படுத்தவும்.",
+    expectedOutput: "The button changes to orange while being pressed.",
+    expectedOutputTamil: "Button-ஐ அழுத்திக் கொண்டிருக்கும்போது அது orange நிறமாக மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+button {
+  background-color: blue;
+  color: white;
+  padding: 12px 20px;
+}
+button:active {
+  background-color: orange;
+}
+</style>
+</head>
+<body>
+<button>Press Me</button>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 13,
+    title: "Focus Pseudo-Class",
+    questionEnglish: "Create a text input. Use the :focus pseudo-class to change its border to blue when the user clicks inside the input or focuses it using the keyboard.",
+    questionTamil: "ஒரு text input உருவாக்கவும். பயனர் அதற்குள் click செய்யும்போது அல்லது keyboard மூலம் focus செய்யும்போது அதன் border நீலமாக மாற :focus pseudo-class பயன்படுத்தவும்.",
+    hintEnglish: "Use input:focus.",
+    hintTamil: "input:focus பயன்படுத்தவும்.",
+    expectedOutput: "The input border turns blue when the input receives focus.",
+    expectedOutputTamil: "Input focus பெறும்போது அதன் border நீலமாக மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+input {
+  padding: 10px;
+  border: 2px solid gray;
+}
+input:focus {
+  border-color: blue;
+  outline: none;
+}
+</style>
+</head>
+<body>
+<input type="text" placeholder="Enter your name">
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 13,
+    title: "First Child Selector",
+    questionEnglish: "Create a div containing three paragraphs. Use the :first-child pseudo-class to make the first paragraph red.",
+    questionTamil: "மூன்று paragraphs கொண்ட div உருவாக்கவும். முதல் paragraph சிவப்பாக மாற :first-child pseudo-class பயன்படுத்தவும்.",
+    hintEnglish: "Use p:first-child.",
+    hintTamil: "p:first-child பயன்படுத்தவும்.",
+    expectedOutput: "Only the first paragraph inside the div appears red.",
+    expectedOutputTamil: "Div-க்குள் உள்ள முதல் paragraph மட்டும் சிவப்பாகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+p:first-child {
+  color: red;
+}
+</style>
+</head>
+<body>
+<div>
+  <p>First paragraph</p>
+  <p>Second paragraph</p>
+  <p>Third paragraph</p>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 13,
+    title: "Last Child Selector",
+    questionEnglish: "Create a list with four list items. Use the :last-child pseudo-class to make the last item green.",
+    questionTamil: "நான்கு list items கொண்ட list உருவாக்கவும். கடைசி item பச்சையாக மாற :last-child pseudo-class பயன்படுத்தவும்.",
+    hintEnglish: "Use li:last-child.",
+    hintTamil: "li:last-child பயன்படுத்தவும்.",
+    expectedOutput: "Only the last list item appears green.",
+    expectedOutputTamil: "கடைசி list item மட்டும் பச்சை நிறத்தில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+li:last-child {
+  color: green;
+}
+</style>
+</head>
+<body>
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+  <li>React</li>
+</ul>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 13,
+    title: "Nth Child Selector",
+    questionEnglish: "Create a list with five items. Use the :nth-child(2) pseudo-class to give the second item a yellow background.",
+    questionTamil: "ஐந்து items கொண்ட list உருவாக்கவும். இரண்டாவது item-க்கு மஞ்சள் background கொடுக்க :nth-child(2) pseudo-class பயன்படுத்தவும்.",
+    hintEnglish: "Use li:nth-child(2).",
+    hintTamil: "li:nth-child(2) பயன்படுத்தவும்.",
+    expectedOutput: "Only the second list item has a yellow background.",
+    expectedOutputTamil: "இரண்டாவது list item மட்டும் மஞ்சள் background கொண்டிருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+li:nth-child(2) {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+<ul>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+  <li>Five</li>
+</ul>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 13,
+    title: "Checked Pseudo-Class",
+    questionEnglish: "Create two checkboxes with labels. Use the :checked pseudo-class to change the text color of a label when its checkbox is selected.",
+    questionTamil: "Labels கொண்ட இரண்டு checkboxes உருவாக்கவும். Checkbox தேர்வு செய்யப்பட்டால் அதன் label-ன் text color மாற :checked pseudo-class பயன்படுத்தவும்.",
+    hintEnglish: "Use input:checked + label.",
+    hintTamil: "input:checked + label selector பயன்படுத்தவும்.",
+    expectedOutput: "A selected checkbox makes its associated label green and bold.",
+    expectedOutputTamil: "Checkbox தேர்வு செய்யப்பட்டால் அதனுடன் தொடர்புடைய label பச்சையாகவும் bold ஆகவும் மாறும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+input:checked + label {
+  color: green;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<input type="checkbox" id="html">
+<label for="html">HTML</label>
+<br>
+<input type="checkbox" id="css">
+<label for="css">CSS</label>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 13,
+    title: "Disabled Pseudo-Class",
+    questionEnglish: "Create two text inputs. Disable the second input and use the :disabled pseudo-class to give disabled inputs a lightgray background.",
+    questionTamil: "இரண்டு text inputs உருவாக்கவும். இரண்டாவது input-ஐ disable செய்து disabled inputs-க்கு lightgray background கொடுக்க :disabled pseudo-class பயன்படுத்தவும்.",
+    hintEnglish: "Use input:disabled.",
+    hintTamil: "input:disabled பயன்படுத்தவும்.",
+    expectedOutput: "The first input remains normal and the disabled second input has a light gray background.",
+    expectedOutputTamil: "முதல் input இயல்பாகவும் இரண்டாவது disabled input lightgray background-உடனும் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+input:disabled {
+  background-color: lightgray;
+}
+</style>
+</head>
+<body>
+<input type="text" placeholder="Enabled input">
+<br><br>
+<input type="text" placeholder="Disabled input" disabled>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 13,
+    title: "Challenge: Interactive Course Cards",
+    questionEnglish: "Create three course cards. Use :hover to change a card's background, :active to change its appearance while pressed, and :nth-child() to highlight the second card.",
+    questionTamil: "மூன்று course cards உருவாக்கவும். Card-ன் background மாற்ற :hover, அழுத்தும்போது அதன் தோற்றத்தை மாற்ற :active மற்றும் இரண்டாவது card-ஐ highlight செய்ய :nth-child() பயன்படுத்தவும்.",
+    hintEnglish: "Combine multiple pseudo-classes in your stylesheet.",
+    hintTamil: "உங்கள் stylesheet-ல் பல pseudo-classes இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "Three cards with hover, active, and second-card highlighting effects.",
+    expectedOutputTamil: "Hover, active மற்றும் இரண்டாவது card highlight effects கொண்ட மூன்று cards தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 13,
+    title: "Challenge: DEEP CODE Registration Form",
+    questionEnglish: "Create a DEEP CODE registration form with text inputs, checkboxes, and a submit button. Use :focus, :checked, :disabled, and :hover to improve the user experience.",
+    questionTamil: "Text inputs, checkboxes மற்றும் submit button கொண்ட DEEP CODE registration form உருவாக்கவும். User experience மேம்பட :focus, :checked, :disabled மற்றும் :hover பயன்படுத்தவும்.",
+    hintEnglish: "Think about how each form element should look when focused, selected, disabled, or hovered.",
+    hintTamil: "ஒவ்வொரு form element-மும் focus, selected, disabled அல்லது hover நிலையில் எப்படி இருக்க வேண்டும் என்று யோசிக்கவும்.",
+    expectedOutput: "An interactive-looking registration form with different pseudo-class styles.",
+    expectedOutputTamil: "வெவ்வேறு pseudo-class styles கொண்ட அழகான registration form தோன்றும்.",
+    challenge: true
+  }
+]
+
 ]
