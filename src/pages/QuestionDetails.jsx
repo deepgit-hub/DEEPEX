@@ -1,130 +1,236 @@
+
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {
+  useNavigate,
+  useParams,
+  useLocation,
+} from "react-router-dom";
+
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
+
 import "../styles/QuestionDetails.css";
 
 function QuestionDetails() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const { languageId, topicId, questionId } = useParams();
+
+  const isWebDevelopment =
+    location.pathname.startsWith("/web-question/");
 
   const [showSolution, setShowSolution] = useState(false);
 
   const [topic, setTopic] = useState(null);
   const [question, setQuestion] = useState(null);
-const compilerLinks = {
-  cpp: "https://onecompiler.com/cpp",
-  java: "https://onecompiler.com/java",
-  python: "https://onecompiler.com/python",
-};
+  const [loading, setLoading] = useState(true);
+
+  // =====================================
+  // COMPILER LINKS
+  // =====================================
+
+  const compilerLinks = {
+    cpp: "https://onecompiler.com/cpp",
+    java: "https://onecompiler.com/java",
+    python: "https://onecompiler.com/python",
+
+    html: "https://onecompiler.com/html",
+    css: "https://onecompiler.com/html",
+    javascript: "https://onecompiler.com/javascript",
+  };
+
+  // =====================================
+  // FETCH TOPIC AND QUESTION
+  // =====================================
+
   useEffect(() => {
     async function fetchData() {
-      // Fetch Topic
-      const topicRef = doc(
-        db,
-        "languages",
-        languageId,
-        "concepts",
-        topicId
-      );
+      try {
+        setLoading(true);
 
-      const topicSnap = await getDoc(topicRef);
+        const collectionName = isWebDevelopment
+          ? "webDevelopment"
+          : "languages";
 
-      if (!topicSnap.exists()) return;
+        // Fetch Topic
+        const topicRef = doc(
+          db,
+          collectionName,
+          languageId,
+          "concepts",
+          topicId
+        );
 
-      setTopic(topicSnap.data());
+        const topicSnap = await getDoc(topicRef);
 
-      // Fetch Question
-      const questionRef = doc(
-        db,
-        "languages",
-        languageId,
-        "concepts",
-        topicId,
-        "questions",
-        questionId
-      );
+        if (!topicSnap.exists()) {
+          setTopic(null);
+          setQuestion(null);
+          return;
+        }
 
-      const questionSnap = await getDoc(questionRef);
+        setTopic(topicSnap.data());
 
-      if (!questionSnap.exists()) return;
+        // Fetch Question
+        const questionRef = doc(
+          db,
+          collectionName,
+          languageId,
+          "concepts",
+          topicId,
+          "questions",
+          questionId
+        );
 
-      setQuestion(questionSnap.data());
+        const questionSnap = await getDoc(questionRef);
+
+        if (!questionSnap.exists()) {
+          setQuestion(null);
+          return;
+        }
+
+        setQuestion(questionSnap.data());
+
+      } catch (error) {
+        console.error("Error fetching question:", error);
+        setTopic(null);
+        setQuestion(null);
+      } finally {
+        setLoading(false);
+      }
     }
 
     fetchData();
-  }, [languageId, topicId, questionId]);
 
-  if (!topic) return <h2>Loading Topic...</h2>;
+  }, [languageId, topicId, questionId, isWebDevelopment]);
 
-  if (!question) return <h2>Loading Question...</h2>;
+  // =====================================
+  // LOADING
+  // =====================================
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (!topic || !question) {
+    return <h2>Question not found.</h2>;
+  }
+
+  // =====================================
+  // BACK NAVIGATION
+  // =====================================
+
+  const handleBack = () => {
+    if (isWebDevelopment) {
+      navigate(`/web-questions/${languageId}/${topicId}`);
+    } else {
+      navigate(`/questions/${languageId}/${topicId}`);
+    }
+  };
+
+  // =====================================
+  // OPEN COMPILER
+  // =====================================
+
+  const handleRunCode = () => {
+    const compilerUrl = compilerLinks[languageId];
+
+    if (!compilerUrl) {
+      alert("Compiler is not available for this technology.");
+      return;
+    }
+
+    window.open(compilerUrl, "_blank", "noopener,noreferrer");
+  };
+
+  // =====================================
+  // PAGE
+  // =====================================
 
   return (
     <div className="question-details-page">
 
       <button
         className="back-btn"
-        onClick={() =>
-          navigate(`/questions/${languageId}/${topicId}`)
-        }
+        onClick={handleBack}
       >
         ⬅ Back
       </button>
 
       <div className="details-header">
+
         <h1>{topic.title}</h1>
 
         <p>{question.title}</p>
+
       </div>
 
+      {/* QUESTION ENGLISH */}
+
       <div className="info-card">
+
         <h2>📝 Question (English)</h2>
 
         <p>{question.questionEnglish}</p>
+
       </div>
 
+      {/* QUESTION TAMIL */}
+
       <div className="info-card">
+
         <h2>🌐 Question (Tamil)</h2>
 
         <p>{question.questionTamil}</p>
+
       </div>
 
+      {/* HINT ENGLISH */}
+
       <div className="info-card">
+
         <h2>💡 Hint (English)</h2>
 
         <p>{question.hintEnglish}</p>
+
       </div>
 
+      {/* HINT TAMIL */}
+
       <div className="info-card">
+
         <h2>💡 Hint (Tamil)</h2>
 
         <p>{question.hintTamil}</p>
+
       </div>
 
+      {/* EXPECTED OUTPUT */}
+
       <div className="code-card output-card">
+
         <h2>🎯 Expected Output</h2>
 
         <pre>{question.expectedOutput}</pre>
+
       </div>
+
+      {/* BUTTONS */}
 
       <div className="button-group">
 
         <button
           className="run-btn"
-          onClick={() =>
-            window.open(compilerLinks[languageId], "_blank")
-          }
+          onClick={handleRunCode}
         >
-          💻 Run Code
+          💻 {isWebDevelopment ? "Open Web Playground" : "Run Code"}
         </button>
 
         {!question.challenge && (
           <button
             className="solution-btn"
-            onClick={() =>
-              setShowSolution(!showSolution)
-            }
+            onClick={() => setShowSolution(!showSolution)}
           >
             {showSolution
               ? "Hide Solution"
@@ -134,14 +240,20 @@ const compilerLinks = {
 
       </div>
 
-      {showSolution && (
+      {/* SOLUTION */}
+
+      {showSolution && !question.challenge && (
+
         <div className="code-card solution-card">
+
           <h2>📖 Solution</h2>
 
           <pre>
             <code>{question.solution}</code>
           </pre>
+
         </div>
+
       )}
 
     </div>
