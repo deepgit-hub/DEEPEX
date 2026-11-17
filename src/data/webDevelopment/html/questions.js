@@ -1996,6 +1996,464 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 11: HTML Form Attributes
+
+{
+  id: 1,
+  topicId: 11,
+  title: "Make an Input Required",
+  questionEnglish: "Create a name input field that the user must fill before submitting the form.",
+  questionTamil: "Form submit செய்வதற்கு முன்பு பயனர் கட்டாயம் நிரப்ப வேண்டிய name input field உருவாக்கவும்.",
+  hintEnglish: "Use the required attribute.",
+  hintTamil: "required attribute பயன்படுத்தவும்.",
+  expectedOutput: "A required name input field that prevents empty submission through browser validation.",
+  expectedOutputTamil: "காலியாக submit செய்வதை browser validation மூலம் தடுக்கும் required name input field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 11,
+  title: "Add Placeholder Text",
+  questionEnglish: "Create an email input field that displays 'Enter your email' before the user types anything.",
+  questionTamil: "பயனர் எதையும் உள்ளிடுவதற்கு முன்பு 'Enter your email' என்று காட்டும் email input field உருவாக்கவும்.",
+  hintEnglish: "Use the placeholder attribute.",
+  hintTamil: "placeholder attribute பயன்படுத்தவும்.",
+  expectedOutput: "An email field displaying the placeholder 'Enter your email'.",
+  expectedOutputTamil: "'Enter your email' என்ற placeholder காட்டும் email field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Enter your email"
+    >
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 11,
+  title: "Set Minimum and Maximum Length",
+  questionEnglish: "Create a username field that accepts a minimum of 4 characters and a maximum of 12 characters.",
+  questionTamil: "குறைந்தது 4 மற்றும் அதிகபட்சம் 12 characters கொண்ட username-ஐ ஏற்றுக்கொள்ளும் field உருவாக்கவும்.",
+  hintEnglish: "Use minlength and maxlength attributes.",
+  hintTamil: "minlength மற்றும் maxlength attributes பயன்படுத்தவும்.",
+  expectedOutput: "A username field with a minimum length of 4 and maximum length of 12.",
+  expectedOutputTamil: "குறைந்தது 4 மற்றும் அதிகபட்சம் 12 characters கொண்ட username field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      minlength="4"
+      maxlength="12"
+    >
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 11,
+  title: "Set Number Range",
+  questionEnglish: "Create an age input field that only accepts values from 18 to 60 using browser validation.",
+  questionTamil: "Browser validation மூலம் 18 முதல் 60 வரை உள்ள வயதை மட்டும் ஏற்றுக்கொள்ளும் input field உருவாக்கவும்.",
+  hintEnglish: "Use min and max attributes with a number input.",
+  hintTamil: "Number input உடன் min மற்றும் max attributes பயன்படுத்தவும்.",
+  expectedOutput: "An age input field with a minimum value of 18 and maximum value of 60.",
+  expectedOutputTamil: "குறைந்தபட்சம் 18 மற்றும் அதிகபட்சம் 60 கொண்ட age input field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="age">Age:</label>
+    <input
+      type="number"
+      id="age"
+      name="age"
+      min="18"
+      max="60"
+    >
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 11,
+  title: "Add Default Input Value",
+  questionEnglish: "Create a text input field that already contains the default username 'Deepak'.",
+  questionTamil: "Default username 'Deepak' ஏற்கனவே உள்ளிடப்பட்டிருக்கும் text input field உருவாக்கவும்.",
+  hintEnglish: "Use the value attribute.",
+  hintTamil: "value attribute பயன்படுத்தவும்.",
+  expectedOutput: "A text field displaying Deepak as its initial value.",
+  expectedOutputTamil: "Deepak என்ற ஆரம்ப value கொண்ட text field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      value="Deepak"
+    >
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 11,
+  title: "Make an Input Read Only",
+  questionEnglish: "Create a text field displaying the course name 'B.Sc. Computer Science'. Users should be able to see the value but not edit it.",
+  questionTamil: "'B.Sc. Computer Science' என்ற course பெயரைக் காட்டும் text field உருவாக்கவும். பயனர்கள் value-ஐப் பார்க்கலாம், ஆனால் மாற்ற முடியாது.",
+  hintEnglish: "Use the readonly attribute.",
+  hintTamil: "readonly attribute பயன்படுத்தவும்.",
+  expectedOutput: "A text field showing B.Sc. Computer Science that cannot be edited.",
+  expectedOutputTamil: "மாற்ற முடியாத B.Sc. Computer Science value கொண்ட text field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="course">Course:</label>
+    <input
+      type="text"
+      id="course"
+      name="course"
+      value="B.Sc. Computer Science"
+      readonly
+    >
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 11,
+  title: "Disable an Input Field",
+  questionEnglish: "Create a text input field containing the value 'Registration Closed'. Disable the field so the user cannot interact with it.",
+  questionTamil: "'Registration Closed' என்ற value கொண்ட text input field உருவாக்கவும். பயனர் அதனுடன் செயல்பட முடியாதபடி field-ஐ disable செய்யவும்.",
+  hintEnglish: "Use the disabled attribute.",
+  hintTamil: "disabled attribute பயன்படுத்தவும்.",
+  expectedOutput: "A disabled text field displaying Registration Closed.",
+  expectedOutputTamil: "Registration Closed என்ற உரையைக் காட்டும் செயல்படாத text field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="status">Status:</label>
+    <input
+      type="text"
+      id="status"
+      name="status"
+      value="Registration Closed"
+      disabled
+    >
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 11,
+  title: "Add Pattern Validation",
+  questionEnglish: "Create a text input field that accepts a 10-digit phone number using the pattern attribute.",
+  questionTamil: "Pattern attribute பயன்படுத்தி 10 இலக்க phone number-ஐ ஏற்றுக்கொள்ளும் text input field உருவாக்கவும்.",
+  hintEnglish: "Use pattern=\"[0-9]{10}\".",
+  hintTamil: "pattern=\"[0-9]{10}\" பயன்படுத்தவும்.",
+  expectedOutput: "A phone number field that accepts exactly 10 digits through browser validation.",
+  expectedOutputTamil: "Browser validation மூலம் சரியாக 10 இலக்கங்களை ஏற்றுக்கொள்ளும் phone number field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="phone">Phone Number:</label>
+    <input
+      type="text"
+      id="phone"
+      name="phone"
+      pattern="[0-9]{10}"
+      title="Enter exactly 10 digits"
+      required
+    >
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 11,
+  title: "Build a Validated Registration Form",
+  questionEnglish: "Create a student registration form with name, email, password, age, and phone number. Apply suitable required, placeholder, minlength, maxlength, min, max, and pattern attributes.",
+  questionTamil: "Name, email, password, age மற்றும் phone number கொண்ட student registration form உருவாக்கவும். பொருத்தமான required, placeholder, minlength, maxlength, min, max மற்றும் pattern attributes பயன்படுத்தவும்.",
+  hintEnglish: "Choose suitable validation attributes for each input type.",
+  hintTamil: "ஒவ்வொரு input type-க்கும் பொருத்தமான validation attributes தேர்வு செய்யவும்.",
+  expectedOutput: "A registration form with browser-based validation for all requested fields.",
+  expectedOutputTamil: "கேட்கப்பட்ட அனைத்து fields-க்கும் browser validation கொண்ட registration form.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 11,
+  title: "Create a Secure Job Application Form Interface",
+  questionEnglish: "Build a job application form with required name and email fields, a password field with minimum length, a phone field with a 10-digit pattern, a readonly job role field, and a disabled application status field.",
+  questionTamil: "Required name மற்றும் email fields, குறைந்தபட்ச நீளமுள்ள password field, 10 இலக்க pattern கொண்ட phone field, readonly job role field மற்றும் disabled application status field கொண்ட job application form உருவாக்கவும்.",
+  hintEnglish: "Combine required, minlength, pattern, readonly, and disabled attributes appropriately.",
+  hintTamil: "Required, minlength, pattern, readonly மற்றும் disabled attributes-ஐச் சரியான முறையில் இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A job application form with all requested fields and validation attributes.",
+  expectedOutputTamil: "கேட்கப்பட்ட அனைத்து fields மற்றும் validation attributes கொண்ட job application form.",
+  challenge: true
+},
+
+// TOPIC 12: HTML Buttons
+
+{
+  id: 1,
+  topicId: 12,
+  title: "Create a Basic Button",
+  questionEnglish: "Create a button that displays the text 'Click Me'.",
+  questionTamil: "'Click Me' என்ற உரையைக் காட்டும் button உருவாக்கவும்.",
+  hintEnglish: "Use the <button> tag.",
+  hintTamil: "<button> tag பயன்படுத்தவும்.",
+  expectedOutput: "A button displaying Click Me.",
+  expectedOutputTamil: "Click Me என்ற உரையைக் காட்டும் button.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <button>Click Me</button>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 12,
+  title: "Create a Submit Button",
+  questionEnglish: "Create a form with a name input and a submit button displaying 'Register'.",
+  questionTamil: "Name input மற்றும் 'Register' என்ற உரையைக் கொண்ட submit button உடைய form உருவாக்கவும்.",
+  hintEnglish: "Use <button type=\"submit\">.",
+  hintTamil: "<button type=\"submit\"> பயன்படுத்தவும்.",
+  expectedOutput: "A form with a name field and Register submit button.",
+  expectedOutputTamil: "Name field மற்றும் Register submit button கொண்ட form.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 12,
+  title: "Create a Reset Button",
+  questionEnglish: "Create a form with name and email fields. Add a reset button that clears the entered values.",
+  questionTamil: "Name மற்றும் email fields கொண்ட form உருவாக்கவும். உள்ளிடப்பட்ட values-ஐ அழிக்கும் reset button சேர்க்கவும்.",
+  hintEnglish: "Use <button type=\"reset\">.",
+  hintTamil: "<button type=\"reset\"> பயன்படுத்தவும்.",
+  expectedOutput: "A form with name and email fields and a Reset button that restores their initial values.",
+  expectedOutputTamil: "Name மற்றும் email fields மற்றும் அவற்றின் ஆரம்ப values-ஐ மீட்டமைக்கும் Reset button கொண்ட form.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 12,
+  title: "Create a Button with an Alert",
+  questionEnglish: "Create a button displaying 'Show Message'. When clicked, it should display an alert saying 'Welcome to DEEP CODE'.",
+  questionTamil: "'Show Message' என்ற button உருவாக்கவும். அதைக் கிளிக் செய்யும்போது 'Welcome to DEEP CODE' என்ற alert தோன்ற வேண்டும்.",
+  hintEnglish: "Use the onclick attribute with JavaScript alert().",
+  hintTamil: "JavaScript alert() உடன் onclick attribute பயன்படுத்தவும்.",
+  expectedOutput: "Clicking the button displays an alert saying Welcome to DEEP CODE.",
+  expectedOutputTamil: "Button-ஐ கிளிக் செய்தால் Welcome to DEEP CODE என்ற alert தோன்றும்.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="alert('Welcome to DEEP CODE')">
+    Show Message
+  </button>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 12,
+  title: "Create a Navigation Button",
+  questionEnglish: "Create a button named 'Visit Google' that opens Google when clicked.",
+  questionTamil: "'Visit Google' என்ற button உருவாக்கவும். அதைக் கிளிக் செய்யும்போது Google திறக்க வேண்டும்.",
+  hintEnglish: "Use an <a> element containing a button, or style an anchor as a button. Avoid nesting interactive elements.",
+  hintTamil: "Button போல வடிவமைக்கப்பட்ட <a> element பயன்படுத்தவும். Interactive elements-ஐ ஒன்றுக்குள் ஒன்று வைக்க வேண்டாம்.",
+  expectedOutput: "A button-like link that opens Google.",
+  expectedOutputTamil: "Google-ஐத் திறக்கும் button போன்ற link.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <a href="https://www.google.com">
+    <button type="button">Visit Google</button>
+  </a>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 12,
+  title: "Create a Disabled Button",
+  questionEnglish: "Create a button displaying 'Submit'. Disable the button so users cannot click it.",
+  questionTamil: "'Submit' என்ற button உருவாக்கவும். பயனர்கள் அதைக் கிளிக் செய்ய முடியாதபடி disable செய்யவும்.",
+  hintEnglish: "Use the disabled attribute.",
+  hintTamil: "disabled attribute பயன்படுத்தவும்.",
+  expectedOutput: "A disabled Submit button.",
+  expectedOutputTamil: "செயல்படாத Submit button.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <button type="button" disabled>Submit</button>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 12,
+  title: "Create Multiple Buttons",
+  questionEnglish: "Create three buttons displaying 'Home', 'About', and 'Contact'.",
+  questionTamil: "'Home', 'About' மற்றும் 'Contact' என்ற உரைகளைக் கொண்ட மூன்று buttons உருவாக்கவும்.",
+  hintEnglish: "Use three separate button elements.",
+  hintTamil: "மூன்று தனித்தனி button elements பயன்படுத்தவும்.",
+  expectedOutput: "Three buttons: Home, About, and Contact.",
+  expectedOutputTamil: "Home, About மற்றும் Contact என்ற மூன்று buttons.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <button type="button">Home</button>
+  <button type="button">About</button>
+  <button type="button">Contact</button>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 12,
+  title: "Create a Button with JavaScript",
+  questionEnglish: "Create a button named 'Change Text'. When clicked, it should change the paragraph text from 'Hello Student' to 'Welcome to Web Development'.",
+  questionTamil: "'Change Text' என்ற button உருவாக்கவும். அதைக் கிளிக் செய்தால் paragraph-ல் உள்ள 'Hello Student' என்பது 'Welcome to Web Development' என்று மாற வேண்டும்.",
+  hintEnglish: "Use an id on the paragraph and JavaScript innerText inside an onclick event.",
+  hintTamil: "Paragraph-க்கு id கொடுத்து, onclick event-ல் JavaScript innerText பயன்படுத்தவும்.",
+  expectedOutput: "Before clicking: Hello Student. After clicking: Welcome to Web Development.",
+  expectedOutputTamil: "கிளிக் செய்வதற்கு முன்: Hello Student. கிளிக் செய்த பிறகு: Welcome to Web Development.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p id="message">Hello Student</p>
+
+  <button
+    type="button"
+    onclick="document.getElementById('message').innerText = 'Welcome to Web Development'"
+  >
+    Change Text
+  </button>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 12,
+  title: "Build an Interactive Profile Page",
+  questionEnglish: "Create a student profile page with a welcome message and three buttons: Show Details, Hide Details, and Change Message. Use JavaScript to make each button perform its respective action.",
+  questionTamil: "Welcome message மற்றும் Show Details, Hide Details, Change Message என்ற மூன்று buttons கொண்ட student profile page உருவாக்கவும். ஒவ்வொரு button-ம் அதற்குரிய செயலைச் செய்ய JavaScript பயன்படுத்தவும்.",
+  hintEnglish: "Use onclick events, getElementById(), innerText, and the display property.",
+  hintTamil: "onclick events, getElementById(), innerText மற்றும் display property பயன்படுத்தவும்.",
+  expectedOutput: "An interactive student profile page where the buttons show, hide, and change content.",
+  expectedOutputTamil: "Content-ஐக் காட்டவும், மறைக்கவும், மாற்றவும் கூடிய interactive student profile page.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 12,
+  title: "Build a Business Landing Page",
+  questionEnglish: "Create a landing page for a web development company with a heading, description, and three buttons: Explore Services, Contact Us, and Get Started. Make the buttons perform suitable actions using HTML links or JavaScript.",
+  questionTamil: "ஒரு web development நிறுவனத்திற்கான heading, description மற்றும் Explore Services, Contact Us, Get Started என்ற மூன்று buttons கொண்ட landing page உருவாக்கவும். HTML links அல்லது JavaScript பயன்படுத்தி buttons பொருத்தமான செயல்களைச் செய்யும்படி உருவாக்கவும்.",
+  hintEnglish: "Combine headings, paragraphs, anchor elements, buttons, and JavaScript where needed.",
+  hintTamil: "Headings, paragraphs, anchor elements, buttons மற்றும் தேவையான இடங்களில் JavaScript இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A business landing page with three working action buttons.",
+  expectedOutputTamil: "மூன்று செயல்படும் action buttons கொண்ட business landing page.",
+  challenge: true
+}
+
+
 
 
 
