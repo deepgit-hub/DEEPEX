@@ -150,7 +150,7 @@ const topics = [
     "output": "Email: [email field]\nPassword: [masked field]\nAge: [number field]\n☐ Receive updates"
   }
   
-
+ 
 ];
 
 export default topics;
