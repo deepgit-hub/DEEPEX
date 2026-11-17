@@ -2893,6 +2893,218 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 15: HTML Audio
+
+{
+  id: 1,
+  topicId: 15,
+  title: "Add Audio to a Webpage",
+  questionEnglish: "Add an audio file named music.mp3 to a webpage using the HTML audio element.",
+  questionTamil: "HTML audio element பயன்படுத்தி music.mp3 என்ற audio கோப்பை webpage-ல் சேர்க்கவும்.",
+  hintEnglish: "Use the <audio> tag with a source element.",
+  hintTamil: "Source element உடன் <audio> tag பயன்படுத்தவும்.",
+  expectedOutput: "An audio player that can load music.mp3.",
+  expectedOutputTamil: "music.mp3 கோப்பை ஏற்றக்கூடிய audio player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <audio controls>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 15,
+  title: "Add Audio Controls",
+  questionEnglish: "Display an audio player for song.mp3 with playback controls such as play, pause, and volume.",
+  questionTamil: "Play, pause மற்றும் volume போன்ற playback controls கொண்ட song.mp3 audio player உருவாக்கவும்.",
+  hintEnglish: "Add the controls attribute to the audio element.",
+  hintTamil: "Audio element-க்கு controls attribute சேர்க்கவும்.",
+  expectedOutput: "An audio player with browser-provided playback controls.",
+  expectedOutputTamil: "Browser வழங்கும் playback controls கொண்ட audio player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <audio src="song.mp3" controls>
+    Your browser does not support audio.
+  </audio>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 15,
+  title: "Add Multiple Audio Sources",
+  questionEnglish: "Create an audio player with two source formats: audio.mp3 and audio.ogg.",
+  questionTamil: "audio.mp3 மற்றும் audio.ogg ஆகிய இரண்டு source formats கொண்ட audio player உருவாக்கவும்.",
+  hintEnglish: "Use multiple <source> elements inside the audio element.",
+  hintTamil: "Audio element-க்குள் பல <source> elements பயன்படுத்தவும்.",
+  expectedOutput: "An audio player that can use either supported audio format.",
+  expectedOutputTamil: "ஆதரிக்கப்படும் audio format-ஐப் பயன்படுத்தக்கூடிய audio player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    <source src="audio.ogg" type="audio/ogg">
+    Your browser does not support audio.
+  </audio>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 15,
+  title: "Enable Audio Loop",
+  questionEnglish: "Create an audio player that continuously repeats the file background.mp3 after it finishes.",
+  questionTamil: "background.mp3 முடிந்ததும் மீண்டும் மீண்டும் இயங்கும் audio player உருவாக்கவும்.",
+  hintEnglish: "Use the loop attribute.",
+  hintTamil: "loop attribute பயன்படுத்தவும்.",
+  expectedOutput: "An audio player that repeats the audio file.",
+  expectedOutputTamil: "Audio கோப்பை மீண்டும் மீண்டும் இயக்கும் audio player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <audio controls loop>
+    <source src="background.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 15,
+  title: "Enable Audio Preloading",
+  questionEnglish: "Create an audio player for podcast.mp3 that hints to the browser to load audio metadata before playback.",
+  questionTamil: "Playback தொடங்குவதற்கு முன்பு audio metadata-ஐ ஏற்றுமாறு browser-க்கு அறிவுறுத்தும் podcast.mp3 audio player உருவாக்கவும்.",
+  hintEnglish: "Use preload=\"metadata\".",
+  hintTamil: "preload=\"metadata\" பயன்படுத்தவும்.",
+  expectedOutput: "An audio player configured to preload metadata.",
+  expectedOutputTamil: "Metadata-ஐ முன்கூட்டியே ஏற்ற அமைக்கப்பட்ட audio player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <audio controls preload="metadata">
+    <source src="podcast.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 15,
+  title: "Create an Audio Description",
+  questionEnglish: "Create an audio section with a heading 'Listen to Our Podcast', a paragraph describing the podcast, and an audio player for podcast.mp3.",
+  questionTamil: "'Listen to Our Podcast' என்ற heading, podcast பற்றிய paragraph மற்றும் podcast.mp3 audio player கொண்ட audio section உருவாக்கவும்.",
+  hintEnglish: "Combine heading, paragraph, and audio elements.",
+  hintTamil: "Heading, paragraph மற்றும் audio elements-ஐ இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A podcast section with a heading, description, and audio player.",
+  expectedOutputTamil: "Heading, விளக்கம் மற்றும் audio player கொண்ட podcast பகுதி.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <section>
+    <h2>Listen to Our Podcast</h2>
+    <p>Explore the latest technology discussions.</p>
+
+    <audio controls>
+      <source src="podcast.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 15,
+  title: "Create Multiple Audio Players",
+  questionEnglish: "Create two separate audio players for welcome.mp3 and lesson.mp3. Give each player a suitable heading.",
+  questionTamil: "welcome.mp3 மற்றும் lesson.mp3 ஆகியவற்றிற்கு இரண்டு தனித்தனி audio players உருவாக்கவும். ஒவ்வொரு player-க்கும் பொருத்தமான heading கொடுக்கவும்.",
+  hintEnglish: "Use two separate audio elements.",
+  hintTamil: "இரண்டு தனித்தனி audio elements பயன்படுத்தவும்.",
+  expectedOutput: "Two audio players with their respective headings.",
+  expectedOutputTamil: "அவற்றுக்குரிய headings உடன் இரண்டு audio players.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h2>Welcome Audio</h2>
+  <audio controls>
+    <source src="welcome.mp3" type="audio/mpeg">
+  </audio>
+
+  <h2>Lesson Audio</h2>
+  <audio controls>
+    <source src="lesson.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 15,
+  title: "Add Audio with Fallback Text",
+  questionEnglish: "Create an audio player for announcement.mp3 and display a fallback message if the browser does not support the audio element.",
+  questionTamil: "announcement.mp3-க்கான audio player உருவாக்கவும். Browser audio element-ஐ ஆதரிக்காவிட்டால் மாற்று செய்தியைக் காட்டவும்.",
+  hintEnglish: "Place fallback text inside the audio element after the source element.",
+  hintTamil: "Source element-க்கு அடுத்ததாக audio element-க்குள் fallback text வைக்கவும்.",
+  expectedOutput: "An audio player with a fallback message for unsupported browsers.",
+  expectedOutputTamil: "ஆதரிக்காத browser-களுக்கான மாற்று செய்தி கொண்ட audio player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <audio controls>
+    <source src="announcement.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    Please use a modern browser.
+  </audio>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 15,
+  title: "Build a Podcast Page",
+  questionEnglish: "Create a podcast webpage with a title, description, host name, publication date, and at least three audio episodes. Each episode should have its own heading and audio player.",
+  questionTamil: "Title, description, host name, publication date மற்றும் குறைந்தது மூன்று audio episodes கொண்ட podcast webpage உருவாக்கவும். ஒவ்வொரு episode-க்கும் தனித்தனி heading மற்றும் audio player இருக்க வேண்டும்.",
+  hintEnglish: "Use semantic sections, headings, paragraphs, time, and audio elements.",
+  hintTamil: "Semantic sections, headings, paragraphs, time மற்றும் audio elements பயன்படுத்தவும்.",
+  expectedOutput: "A podcast webpage with three independently playable episodes.",
+  expectedOutputTamil: "தனித்தனியாக இயக்கக்கூடிய மூன்று episodes கொண்ட podcast webpage.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 15,
+  title: "Build a Learning Audio Library",
+  questionEnglish: "Create an audio learning library for DEEP CODE with three categories: HTML Lessons, CSS Lessons, and JavaScript Lessons. Add at least two audio lessons under each category, with suitable headings and audio controls.",
+  questionTamil: "DEEP CODE-க்காக HTML Lessons, CSS Lessons மற்றும் JavaScript Lessons என்ற மூன்று பிரிவுகளைக் கொண்ட audio learning library உருவாக்கவும். ஒவ்வொரு பிரிவிலும் குறைந்தது இரண்டு audio lessons, பொருத்தமான headings மற்றும் audio controls சேர்க்கவும்.",
+  hintEnglish: "Use nested sections or articles and separate audio players for each lesson.",
+  hintTamil: "Nested sections அல்லது articles மற்றும் ஒவ்வொரு lesson-க்கும் தனித்தனி audio players பயன்படுத்தவும்.",
+  expectedOutput: "A DEEP CODE audio library with three categories and at least six audio lessons.",
+  expectedOutputTamil: "மூன்று பிரிவுகள் மற்றும் குறைந்தது ஆறு audio lessons கொண்ட DEEP CODE audio library.",
+  challenge: true
+},
+
 
 
 
