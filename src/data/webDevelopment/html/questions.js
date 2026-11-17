@@ -1486,6 +1486,296 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 9: HTML Forms
+
+{
+  id: 1,
+  topicId: 9,
+  title: "Create Your First Form",
+  questionEnglish: "Create a simple HTML form containing a text input for the user's name and a submit button.",
+  questionTamil: "பயனரின் பெயரை உள்ளிட text input மற்றும் submit button கொண்ட எளிய HTML form உருவாக்கவும்.",
+  hintEnglish: "Use the <form>, <input>, and <button> tags.",
+  hintTamil: "<form>, <input> மற்றும் <button> tags-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "A form with a name input field and a Submit button.",
+  expectedOutputTamil: "பெயரை உள்ளிடும் input field மற்றும் Submit button கொண்ட form.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 9,
+  title: "Create a Registration Form",
+  questionEnglish: "Create a student registration form with fields for full name, email address, and phone number.",
+  questionTamil: "முழுப் பெயர், email address மற்றும் phone number ஆகியவற்றுக்கான fields கொண்ட student registration form உருவாக்கவும்.",
+  hintEnglish: "Use separate input elements with suitable labels and input types.",
+  hintTamil: "பொருத்தமான labels மற்றும் input types உடன் தனித்தனி input elements பயன்படுத்தவும்.",
+  expectedOutput: "A registration form with name, email, and phone number fields.",
+  expectedOutputTamil: "பெயர், email மற்றும் phone number fields கொண்ட registration form.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h2>Student Registration</h2>
+  <form>
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name">
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone">
+    <br><br>
+
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 9,
+  title: "Create a Feedback Form",
+  questionEnglish: "Create a feedback form with a name field, a message textarea, and a submit button.",
+  questionTamil: "பெயர் field, message textarea மற்றும் submit button கொண்ட feedback form உருவாக்கவும்.",
+  hintEnglish: "Use <textarea> for the message field.",
+  hintTamil: "Message field-க்கு <textarea> பயன்படுத்தவும்.",
+  expectedOutput: "A feedback form with a name input, message text area, and Submit button.",
+  expectedOutputTamil: "பெயர் input, message textarea மற்றும் Submit button கொண்ட feedback form.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h2>Feedback Form</h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <br><br>
+
+    <label for="message">Your Feedback:</label>
+    <textarea id="message" name="message"></textarea>
+    <br><br>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 9,
+  title: "Create a Course Selection Form",
+  questionEnglish: "Create a course selection form with a dropdown containing HTML, CSS, JavaScript, and Python. Add a submit button.",
+  questionTamil: "HTML, CSS, JavaScript மற்றும் Python ஆகிய options கொண்ட dropdown மற்றும் submit button உடைய course selection form உருவாக்கவும்.",
+  hintEnglish: "Use the <select> and <option> tags.",
+  hintTamil: "<select> மற்றும் <option> tags-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "A course dropdown with four options and a Submit button.",
+  expectedOutputTamil: "நான்கு options மற்றும் Submit button கொண்ட course dropdown.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h2>Select a Course</h2>
+  <form>
+    <label for="course">Choose Course:</label>
+    <select id="course" name="course">
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="javascript">JavaScript</option>
+      <option value="python">Python</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 9,
+  title: "Create a Gender Selection Form",
+  questionEnglish: "Create a form that allows a user to select one option from Male, Female, and Other using radio buttons.",
+  questionTamil: "Male, Female மற்றும் Other ஆகியவற்றில் ஒன்றை radio buttons மூலம் தேர்வு செய்யும் form உருவாக்கவும்.",
+  hintEnglish: "Use radio inputs with the same name attribute.",
+  hintTamil: "ஒரே name attribute கொண்ட radio inputs-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "Three radio button options: Male, Female, and Other.",
+  expectedOutputTamil: "Male, Female மற்றும் Other ஆகிய மூன்று radio button options.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <p>Select Gender:</p>
+
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label>
+
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 9,
+  title: "Create a Skills Selection Form",
+  questionEnglish: "Create a form that allows students to select multiple skills using checkboxes: HTML, CSS, JavaScript, and Python.",
+  questionTamil: "HTML, CSS, JavaScript மற்றும் Python ஆகிய skills-ல் பலவற்றை checkboxes மூலம் தேர்வு செய்யும் form உருவாக்கவும்.",
+  hintEnglish: "Use checkbox inputs. Give each checkbox a suitable value.",
+  hintTamil: "Checkbox inputs பயன்படுத்தி ஒவ்வொன்றுக்கும் பொருத்தமான value வழங்கவும்.",
+  expectedOutput: "Four checkboxes for HTML, CSS, JavaScript, and Python.",
+  expectedOutputTamil: "HTML, CSS, JavaScript மற்றும் Python ஆகியவற்றுக்கான நான்கு checkboxes.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <p>Select Your Skills:</p>
+
+    <input type="checkbox" id="html" name="skills" value="HTML">
+    <label for="html">HTML</label>
+
+    <input type="checkbox" id="css" name="skills" value="CSS">
+    <label for="css">CSS</label>
+
+    <input type="checkbox" id="javascript" name="skills" value="JavaScript">
+    <label for="javascript">JavaScript</label>
+
+    <input type="checkbox" id="python" name="skills" value="Python">
+    <label for="python">Python</label>
+
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 9,
+  title: "Create a Login Form",
+  questionEnglish: "Create a login form with username and password fields and a Login button.",
+  questionTamil: "Username மற்றும் password fields மற்றும் Login button கொண்ட login form உருவாக்கவும்.",
+  hintEnglish: "Use a text input for username and a password input for the password.",
+  hintTamil: "Username-க்கு text input மற்றும் password-க்கு password input பயன்படுத்தவும்.",
+  expectedOutput: "A login form with username, password, and Login button.",
+  expectedOutputTamil: "Username, password மற்றும் Login button கொண்ட login form.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h2>Login</h2>
+  <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <br><br>
+
+    <button type="submit">Login</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 9,
+  title: "Group Form Fields",
+  questionEnglish: "Create a registration form with two grouped sections: Personal Information and Account Information. Use fieldsets and legends to organize the fields.",
+  questionTamil: "Personal Information மற்றும் Account Information என்ற இரண்டு பிரிவுகளைக் கொண்ட registration form உருவாக்கவும். Fields-ஐ ஒழுங்குபடுத்த fieldset மற்றும் legend பயன்படுத்தவும்.",
+  hintEnglish: "Use <fieldset> to group related fields and <legend> to give each group a title.",
+  hintTamil: "தொடர்புடைய fields-ஐ குழுவாக்க <fieldset> மற்றும் ஒவ்வொரு குழுவிற்கும் தலைப்பு வழங்க <legend> பயன்படுத்தவும்.",
+  expectedOutput: "A registration form with two visually grouped sections and their titles.",
+  expectedOutputTamil: "இரண்டு தனித்தனி பிரிவுகள் மற்றும் அவற்றின் தலைப்புகளைக் கொண்ட registration form.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h2>Registration Form</h2>
+  <form>
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+      <legend>Account Information</legend>
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+    </fieldset>
+
+    <br>
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 9,
+  title: "Build a College Admission Form",
+  questionEnglish: "Create a college admission form containing student name, date of birth, email, phone number, gender selection, course selection, address, and a submit button. Organize related fields using fieldsets and legends.",
+  questionTamil: "மாணவர் பெயர், பிறந்த தேதி, email, phone number, gender selection, course selection, address மற்றும் submit button கொண்ட college admission form உருவாக்கவும். தொடர்புடைய fields-ஐ fieldsets மற்றும் legends பயன்படுத்தி ஒழுங்குபடுத்தவும்.",
+  hintEnglish: "Combine text, date, email, tel, radio, select, and textarea elements.",
+  hintTamil: "Text, date, email, tel, radio, select மற்றும் textarea elements-ஐ இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A college admission form containing all requested fields in organized sections.",
+  expectedOutputTamil: "கேட்கப்பட்ட அனைத்து fields-களையும் ஒழுங்குபடுத்தப்பட்ட பிரிவுகளில் கொண்ட college admission form.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 9,
+  title: "Build a Business Contact Form",
+  questionEnglish: "Create a contact form for a web development company. Include full name, email, phone number, service selection (Website Development, Chatbot Integration, Automation), project description, preferred contact method, and a submit button.",
+  questionTamil: "ஒரு web development நிறுவனத்திற்கான contact form உருவாக்கவும். Full name, email, phone number, service selection (Website Development, Chatbot Integration, Automation), project description, preferred contact method மற்றும் submit button சேர்க்கவும்.",
+  hintEnglish: "Combine input fields, a dropdown, textarea, radio buttons, and a submit button.",
+  hintTamil: "Input fields, dropdown, textarea, radio buttons மற்றும் submit button ஆகியவற்றை இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A business contact form containing all requested customer and project details.",
+  expectedOutputTamil: "கேட்கப்பட்ட வாடிக்கையாளர் மற்றும் project விவரங்களைக் கொண்ட business contact form.",
+  challenge: true
+}
+
 
 
 
