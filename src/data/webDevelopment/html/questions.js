@@ -3105,6 +3105,214 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 16: HTML Video
+
+{
+  id: 1,
+  topicId: 16,
+  title: "Add a Video to a Webpage",
+  questionEnglish: "Display a video named introduction.mp4 on a webpage using the HTML video element.",
+  questionTamil: "HTML video element பயன்படுத்தி introduction.mp4 என்ற video-ஐ webpage-ல் காட்டவும்.",
+  hintEnglish: "Use the <video> tag with a source element.",
+  hintTamil: "Source element உடன் <video> tag பயன்படுத்தவும்.",
+  expectedOutput: "A video player that can load introduction.mp4.",
+  expectedOutputTamil: "introduction.mp4 கோப்பை ஏற்றக்கூடிய video player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <video width="500">
+    <source src="introduction.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 16,
+  title: "Add Video Controls",
+  questionEnglish: "Display a video named lesson.mp4 with play, pause, volume, and playback controls.",
+  questionTamil: "Play, pause, volume மற்றும் playback controls கொண்ட lesson.mp4 video-ஐக் காட்டவும்.",
+  hintEnglish: "Add the controls attribute to the video element.",
+  hintTamil: "Video element-க்கு controls attribute சேர்க்கவும்.",
+  expectedOutput: "A video player displaying browser playback controls.",
+  expectedOutputTamil: "Browser playback controls காட்டும் video player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <video width="500" controls>
+    <source src="lesson.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 16,
+  title: "Set Video Dimensions",
+  questionEnglish: "Display a video named demo.mp4 with a width of 600 pixels and a height of 350 pixels.",
+  questionTamil: "demo.mp4 என்ற video-ஐ 600 pixels அகலம் மற்றும் 350 pixels உயரத்தில் காட்டவும்.",
+  hintEnglish: "Use the width and height attributes.",
+  hintTamil: "width மற்றும் height attributes பயன்படுத்தவும்.",
+  expectedOutput: "A video player with dimensions 600 by 350 pixels.",
+  expectedOutputTamil: "600 × 350 pixels அளவுள்ள video player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <video width="600" height="350" controls>
+    <source src="demo.mp4" type="video/mp4">
+  </video>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 16,
+  title: "Enable Video Loop",
+  questionEnglish: "Create a video player for background.mp4 that repeats the video continuously.",
+  questionTamil: "background.mp4 video-ஐ தொடர்ந்து மீண்டும் இயக்கும் video player உருவாக்கவும்.",
+  hintEnglish: "Use the loop attribute.",
+  hintTamil: "loop attribute பயன்படுத்தவும்.",
+  expectedOutput: "A video player that repeats the video after it finishes.",
+  expectedOutputTamil: "Video முடிந்ததும் மீண்டும் இயக்கும் video player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <video controls loop width="500">
+    <source src="background.mp4" type="video/mp4">
+  </video>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 16,
+  title: "Add a Video Poster",
+  questionEnglish: "Create a video player for course.mp4 that displays thumbnail.jpg before the video starts playing.",
+  questionTamil: "course.mp4 video இயக்கப்படுவதற்கு முன்பு thumbnail.jpg படத்தைக் காட்டும் video player உருவாக்கவும்.",
+  hintEnglish: "Use the poster attribute.",
+  hintTamil: "poster attribute பயன்படுத்தவும்.",
+  expectedOutput: "A video player showing thumbnail.jpg as its preview image.",
+  expectedOutputTamil: "Preview படமாக thumbnail.jpg காட்டும் video player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <video controls width="500" poster="thumbnail.jpg">
+    <source src="course.mp4" type="video/mp4">
+  </video>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 16,
+  title: "Add Multiple Video Sources",
+  questionEnglish: "Create a video player with two sources: video.mp4 and video.webm.",
+  questionTamil: "video.mp4 மற்றும் video.webm ஆகிய இரண்டு sources கொண்ட video player உருவாக்கவும்.",
+  hintEnglish: "Use multiple source elements inside the video element.",
+  hintTamil: "Video element-க்குள் பல source elements பயன்படுத்தவும்.",
+  expectedOutput: "A video player that can select a supported video format.",
+  expectedOutputTamil: "ஆதரிக்கப்படும் video format-ஐத் தேர்வு செய்யக்கூடிய video player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <video controls width="500">
+    <source src="video.mp4" type="video/mp4">
+    <source src="video.webm" type="video/webm">
+    Your browser does not support video.
+  </video>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 16,
+  title: "Enable Video Muted Mode",
+  questionEnglish: "Create a video player for presentation.mp4 that starts with its audio muted.",
+  questionTamil: "presentation.mp4 என்ற video-ஐ அதன் audio mute செய்யப்பட்ட நிலையில் தொடங்கும் video player உருவாக்கவும்.",
+  hintEnglish: "Use the muted attribute.",
+  hintTamil: "muted attribute பயன்படுத்தவும்.",
+  expectedOutput: "A video player that starts without sound.",
+  expectedOutputTamil: "ஒலி இல்லாமல் தொடங்கும் video player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <video controls muted width="500">
+    <source src="presentation.mp4" type="video/mp4">
+  </video>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 16,
+  title: "Add Video Subtitles",
+  questionEnglish: "Create a video player for lesson.mp4 and add an English subtitle track using subtitles.vtt.",
+  questionTamil: "lesson.mp4 video player உருவாக்கி subtitles.vtt பயன்படுத்தி English subtitle track சேர்க்கவும்.",
+  hintEnglish: "Use the <track> element with kind, src, srclang, and label attributes.",
+  hintTamil: "kind, src, srclang மற்றும் label attributes உடன் <track> element பயன்படுத்தவும்.",
+  expectedOutput: "A video player with an English subtitle track.",
+  expectedOutputTamil: "English subtitle track கொண்ட video player.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <video controls width="500">
+    <source src="lesson.mp4" type="video/mp4">
+
+    <track
+      src="subtitles.vtt"
+      kind="subtitles"
+      srclang="en"
+      label="English"
+      default
+    >
+  </video>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 16,
+  title: "Build a Video Learning Page",
+  questionEnglish: "Create a learning webpage with a heading, lesson description, a video player with a poster image, English subtitles, and a list of related lessons.",
+  questionTamil: "Heading, lesson description, poster image கொண்ட video player, English subtitles மற்றும் தொடர்புடைய lessons பட்டியல் கொண்ட learning webpage உருவாக்கவும்.",
+  hintEnglish: "Combine headings, paragraphs, video, track, image poster, and list elements.",
+  hintTamil: "Headings, paragraphs, video, track, image poster மற்றும் list elements-ஐ இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A video learning page with lesson details, a playable video, subtitles, and related lessons.",
+  expectedOutputTamil: "Lesson விவரங்கள், இயக்கக்கூடிய video, subtitles மற்றும் தொடர்புடைய lessons கொண்ட learning page.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 16,
+  title: "Build a DEEP CODE Video Library",
+  questionEnglish: "Create a DEEP CODE video library with three categories: HTML Tutorials, CSS Tutorials, and JavaScript Tutorials. Add at least two videos under each category. Include headings, descriptions, poster images, and video controls.",
+  questionTamil: "HTML Tutorials, CSS Tutorials மற்றும் JavaScript Tutorials என்ற மூன்று பிரிவுகளைக் கொண்ட DEEP CODE video library உருவாக்கவும். ஒவ்வொரு பிரிவிலும் குறைந்தது இரண்டு videos சேர்க்கவும். Headings, descriptions, poster images மற்றும் video controls சேர்க்கவும்.",
+  hintEnglish: "Organize the page using sections and separate video elements for every lesson.",
+  hintTamil: "Sections பயன்படுத்தி ஒவ்வொரு lesson-க்கும் தனித்தனி video elements அமைக்கவும்.",
+  expectedOutput: "A DEEP CODE video library containing three categories and at least six video players.",
+  expectedOutputTamil: "மூன்று பிரிவுகள் மற்றும் குறைந்தது ஆறு video players கொண்ட DEEP CODE video library.",
+  challenge: true
+},
+
 
 
 
