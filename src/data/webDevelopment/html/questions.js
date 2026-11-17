@@ -3908,17 +3908,225 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 20: HTML Meta Tags
 
+{
+  id: 1,
+  topicId: 20,
+  title: "Add Character Encoding",
+  questionEnglish: "Create an HTML document and specify UTF-8 character encoding using a meta tag.",
+  questionTamil: "Meta tag பயன்படுத்தி UTF-8 character encoding குறிப்பிடும் HTML document உருவாக்கவும்.",
+  hintEnglish: "Use <meta charset=\"UTF-8\"> inside the head section.",
+  hintTamil: "Head section-க்குள் <meta charset=\"UTF-8\"> பயன்படுத்தவும்.",
+  expectedOutput: "An HTML document configured with UTF-8 character encoding.",
+  expectedOutputTamil: "UTF-8 character encoding அமைக்கப்பட்ட HTML document.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Webpage</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+</body>
+</html>`
+},
 
+{
+  id: 2,
+  topicId: 20,
+  title: "Add a Viewport Meta Tag",
+  questionEnglish: "Create an HTML document with a viewport meta tag so the webpage can adapt to mobile screen widths.",
+  questionTamil: "Mobile screen width-க்கு ஏற்ப webpage மாறுவதற்கு viewport meta tag கொண்ட HTML document உருவாக்கவும்.",
+  hintEnglish: "Use name=\"viewport\" and content=\"width=device-width, initial-scale=1.0\".",
+  hintTamil: "name=\"viewport\" மற்றும் content=\"width=device-width, initial-scale=1.0\" பயன்படுத்தவும்.",
+  expectedOutput: "A webpage configured with a responsive viewport.",
+  expectedOutputTamil: "Responsive viewport அமைக்கப்பட்ட webpage.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Page</title>
+</head>
+<body>
+  <h1>Welcome to Mobile Web Design</h1>
+</body>
+</html>`
+},
 
+{
+  id: 3,
+  topicId: 20,
+  title: "Add a Description Meta Tag",
+  questionEnglish: "Create an HTML document with a meta description explaining that the website teaches HTML, CSS, and JavaScript.",
+  questionTamil: "HTML, CSS மற்றும் JavaScript கற்றுத் தரும் website என்பதை விளக்கும் meta description கொண்ட HTML document உருவாக்கவும்.",
+  hintEnglish: "Use name=\"description\" and provide a suitable content value.",
+  hintTamil: "name=\"description\" பயன்படுத்தி பொருத்தமான content value வழங்கவும்.",
+  expectedOutput: "An HTML document containing a meta description in its head section.",
+  expectedOutputTamil: "Head section-ல் meta description கொண்ட HTML document.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Learn HTML, CSS, and JavaScript with practical examples.">
+  <title>Web Development Learning</title>
+</head>
+<body>
+  <h1>Learn Web Development</h1>
+</body>
+</html>`
+},
 
+{
+  id: 4,
+  topicId: 20,
+  title: "Add Author Information",
+  questionEnglish: "Create an HTML document with a meta author tag containing the name Deepak.",
+  questionTamil: "Deepak என்ற பெயரைக் கொண்ட meta author tag உடைய HTML document உருவாக்கவும்.",
+  hintEnglish: "Use name=\"author\".",
+  hintTamil: "name=\"author\" பயன்படுத்தவும்.",
+  expectedOutput: "An HTML document with Deepak specified as its author.",
+  expectedOutputTamil: "Deepak author ஆகக் குறிப்பிடப்பட்ட HTML document.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Deepak">
+  <title>My Webpage</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+</body>
+</html>`
+},
 
+{
+  id: 5,
+  topicId: 20,
+  title: "Add Keywords Meta Tag",
+  questionEnglish: "Create an HTML document with a keywords meta tag containing HTML, CSS, JavaScript, and Web Development.",
+  questionTamil: "HTML, CSS, JavaScript மற்றும் Web Development ஆகிய keywords கொண்ட meta tag உடைய HTML document உருவாக்கவும்.",
+  hintEnglish: "Use name=\"keywords\" and separate the keywords with commas.",
+  hintTamil: "name=\"keywords\" பயன்படுத்தி keywords-ஐ commas மூலம் பிரிக்கவும்.",
+  expectedOutput: "An HTML document containing the requested keywords in a meta tag.",
+  expectedOutputTamil: "கேட்கப்பட்ட keywords meta tag-ல் கொண்ட HTML document.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Web Development">
+  <title>Web Development</title>
+</head>
+<body>
+  <h1>Learn Web Development</h1>
+</body>
+</html>`
+},
 
+{
+  id: 6,
+  topicId: 20,
+  title: "Add a Browser Theme Color",
+  questionEnglish: "Create an HTML document that suggests a blue theme color for supported mobile browser interfaces.",
+  questionTamil: "ஆதரிக்கப்படும் mobile browser interface-களுக்கு நீல நிற theme color பரிந்துரைக்கும் HTML document உருவாக்கவும்.",
+  hintEnglish: "Use the theme-color meta tag.",
+  hintTamil: "theme-color meta tag பயன்படுத்தவும்.",
+  expectedOutput: "An HTML document with a blue theme-color value.",
+  expectedOutputTamil: "நீல theme-color value கொண்ட HTML document.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#0000FF">
+  <title>Blue Theme Page</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+</body>
+</html>`
+},
 
+{
+  id: 7,
+  topicId: 20,
+  title: "Add Open Graph Metadata",
+  questionEnglish: "Create an HTML document with Open Graph metadata for the title 'DEEP CODE Learning Platform' and description 'Learn programming and web development'.",
+  questionTamil: "'DEEP CODE Learning Platform' என்ற title மற்றும் 'Learn programming and web development' என்ற description கொண்ட Open Graph metadata உருவாக்கவும்.",
+  hintEnglish: "Use property=\"og:title\" and property=\"og:description\".",
+  hintTamil: "property=\"og:title\" மற்றும் property=\"og:description\" பயன்படுத்தவும்.",
+  expectedOutput: "An HTML document containing the requested Open Graph title and description.",
+  expectedOutputTamil: "கேட்கப்பட்ட Open Graph title மற்றும் description கொண்ட HTML document.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta property="og:title" content="DEEP CODE Learning Platform">
+  <meta property="og:description" content="Learn programming and web development">
+  <title>DEEP CODE</title>
+</head>
+<body>
+  <h1>DEEP CODE</h1>
+</body>
+</html>`
+},
 
+{
+  id: 8,
+  topicId: 20,
+  title: "Add a Refresh Meta Tag",
+  questionEnglish: "Create an HTML document that instructs the browser to refresh the page after 30 seconds.",
+  questionTamil: "30 விநாடிகளுக்குப் பிறகு பக்கத்தை refresh செய்ய browser-க்கு அறிவுறுத்தும் HTML document உருவாக்கவும்.",
+  hintEnglish: "Use http-equiv=\"refresh\" and content=\"30\".",
+  hintTamil: "http-equiv=\"refresh\" மற்றும் content=\"30\" பயன்படுத்தவும்.",
+  expectedOutput: "A webpage configured to request a refresh after 30 seconds.",
+  expectedOutputTamil: "30 விநாடிகளுக்குப் பிறகு refresh செய்ய அமைக்கப்பட்ட webpage.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="30">
+  <title>Auto Refresh Page</title>
+</head>
+<body>
+  <h1>This page refreshes after 30 seconds.</h1>
+</body>
+</html>`
+},
 
+{
+  id: 9,
+  topicId: 20,
+  title: "Build SEO Metadata for a Website",
+  questionEnglish: "Create a complete head section for a DEEP CODE webpage. Include character encoding, viewport, title, description, author, theme color, and Open Graph title and description metadata.",
+  questionTamil: "DEEP CODE webpage-க்கான முழுமையான head section உருவாக்கவும். Character encoding, viewport, title, description, author, theme color மற்றும் Open Graph title மற்றும் description metadata சேர்க்கவும்.",
+  hintEnglish: "Organize all requested metadata elements inside the head section.",
+  hintTamil: "கேட்கப்பட்ட அனைத்து metadata elements-ஐயும் head section-க்குள் ஒழுங்குபடுத்தவும்.",
+  expectedOutput: "A complete head section containing all requested metadata.",
+  expectedOutputTamil: "கேட்கப்பட்ட அனைத்து metadata கொண்ட முழுமையான head section.",
+  challenge: true
+},
 
-
+{
+  id: 10,
+  topicId: 20,
+  title: "Build a Complete Website Head Section",
+  questionEnglish: "Create a complete HTML document for ATEXRA with a professional head section. Include UTF-8 encoding, responsive viewport, page title, SEO description, author information, theme color, Open Graph title, description, and an Open Graph image URL.",
+  questionTamil: "ATEXRA-க்கான professional head section கொண்ட முழுமையான HTML document உருவாக்கவும். UTF-8 encoding, responsive viewport, page title, SEO description, author information, theme color, Open Graph title, description மற்றும் Open Graph image URL சேர்க்கவும்.",
+  hintEnglish: "Use the appropriate meta charset, name, property, and content attributes inside the head element.",
+  hintTamil: "Head element-க்குள் பொருத்தமான meta charset, name, property மற்றும் content attributes பயன்படுத்தவும்.",
+  expectedOutput: "A complete ATEXRA HTML document with all requested metadata.",
+  expectedOutputTamil: "கேட்கப்பட்ட அனைத்து metadata கொண்ட முழுமையான ATEXRA HTML document.",
+  challenge: true
+}
 
 ];
 
