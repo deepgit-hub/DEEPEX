@@ -1774,7 +1774,229 @@ const questions = [
   expectedOutput: "A business contact form containing all requested customer and project details.",
   expectedOutputTamil: "கேட்கப்பட்ட வாடிக்கையாளர் மற்றும் project விவரங்களைக் கொண்ட business contact form.",
   challenge: true
-}
+},
+
+// TOPIC 10: HTML Input Types
+
+{
+  id: 1,
+  topicId: 10,
+  title: "Text Input",
+  questionEnglish: "Create a form with a text input field that allows a user to enter their full name.",
+  questionTamil: "பயனர் தனது முழுப் பெயரை உள்ளிடக்கூடிய text input field கொண்ட form உருவாக்கவும்.",
+  hintEnglish: "Use <input type=\"text\">.",
+  hintTamil: "<input type=\"text\"> பயன்படுத்தவும்.",
+  expectedOutput: "A text input field for entering a full name.",
+  expectedOutputTamil: "முழுப் பெயரை உள்ளிடுவதற்கான text input field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name">
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 10,
+  title: "Email Input",
+  questionEnglish: "Create a form with an email input field and a submit button.",
+  questionTamil: "Email input field மற்றும் submit button கொண்ட form உருவாக்கவும்.",
+  hintEnglish: "Use <input type=\"email\">.",
+  hintTamil: "<input type=\"email\"> பயன்படுத்தவும்.",
+  expectedOutput: "An email input field and a Submit button.",
+  expectedOutputTamil: "Email input field மற்றும் Submit button.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 10,
+  title: "Password Input",
+  questionEnglish: "Create a password input field where the entered characters are hidden.",
+  questionTamil: "உள்ளிடப்படும் எழுத்துக்கள் மறைக்கப்படும் password input field உருவாக்கவும்.",
+  hintEnglish: "Use <input type=\"password\">.",
+  hintTamil: "<input type=\"password\"> பயன்படுத்தவும்.",
+  expectedOutput: "A password field that masks the entered characters.",
+  expectedOutputTamil: "உள்ளிடப்படும் எழுத்துக்களை மறைக்கும் password field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 10,
+  title: "Number Input",
+  questionEnglish: "Create a number input field that allows a student to enter their age.",
+  questionTamil: "மாணவர் தனது வயதை உள்ளிடக்கூடிய number input field உருவாக்கவும்.",
+  hintEnglish: "Use <input type=\"number\">.",
+  hintTamil: "<input type=\"number\"> பயன்படுத்தவும்.",
+  expectedOutput: "A number input field for entering age.",
+  expectedOutputTamil: "வயதை உள்ளிடுவதற்கான number input field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age">
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 10,
+  title: "Date Input",
+  questionEnglish: "Create a form field that allows a student to select their date of birth using a date picker.",
+  questionTamil: "மாணவர் date picker மூலம் தனது பிறந்த தேதியைத் தேர்வு செய்யக்கூடிய form field உருவாக்கவும்.",
+  hintEnglish: "Use <input type=\"date\">.",
+  hintTamil: "<input type=\"date\"> பயன்படுத்தவும்.",
+  expectedOutput: "A date picker for selecting a date of birth.",
+  expectedOutputTamil: "பிறந்த தேதியைத் தேர்வு செய்வதற்கான date picker.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 10,
+  title: "Radio Input",
+  questionEnglish: "Create three radio options for selecting a course: HTML, CSS, and JavaScript. The user must select only one option.",
+  questionTamil: "HTML, CSS மற்றும் JavaScript ஆகியவற்றில் ஒரு course-ஐ மட்டும் தேர்வு செய்ய மூன்று radio options உருவாக்கவும்.",
+  hintEnglish: "Use radio inputs with the same name attribute.",
+  hintTamil: "ஒரே name attribute கொண்ட radio inputs பயன்படுத்தவும்.",
+  expectedOutput: "Three radio options for HTML, CSS, and JavaScript.",
+  expectedOutputTamil: "HTML, CSS மற்றும் JavaScript ஆகியவற்றுக்கான மூன்று radio options.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <input type="radio" id="html" name="course" value="HTML">
+    <label for="html">HTML</label>
+
+    <input type="radio" id="css" name="course" value="CSS">
+    <label for="css">CSS</label>
+
+    <input type="radio" id="js" name="course" value="JavaScript">
+    <label for="js">JavaScript</label>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 10,
+  title: "Checkbox Input",
+  questionEnglish: "Create checkbox inputs that allow a student to select multiple skills: HTML, CSS, JavaScript, and Python.",
+  questionTamil: "HTML, CSS, JavaScript மற்றும் Python ஆகிய பல skills-ஐ மாணவர் தேர்வு செய்யக்கூடிய checkbox inputs உருவாக்கவும்.",
+  hintEnglish: "Use <input type=\"checkbox\">.",
+  hintTamil: "<input type=\"checkbox\"> பயன்படுத்தவும்.",
+  expectedOutput: "Four checkboxes for selecting programming and web development skills.",
+  expectedOutputTamil: "Programming மற்றும் web development skills தேர்வு செய்வதற்கான நான்கு checkboxes.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <input type="checkbox" id="html" name="skills" value="HTML">
+    <label for="html">HTML</label>
+
+    <input type="checkbox" id="css" name="skills" value="CSS">
+    <label for="css">CSS</label>
+
+    <input type="checkbox" id="js" name="skills" value="JavaScript">
+    <label for="js">JavaScript</label>
+
+    <input type="checkbox" id="python" name="skills" value="Python">
+    <label for="python">Python</label>
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 10,
+  title: "File Input",
+  questionEnglish: "Create a file upload field that allows students to select a PDF file containing their resume.",
+  questionTamil: "மாணவர்கள் தங்களது resume கொண்ட PDF கோப்பைத் தேர்வு செய்யக்கூடிய file upload field உருவாக்கவும்.",
+  hintEnglish: "Use <input type=\"file\"> with the accept attribute.",
+  hintTamil: "accept attribute உடன் <input type=\"file\"> பயன்படுத்தவும்.",
+  expectedOutput: "A file selection field that accepts PDF files.",
+  expectedOutputTamil: "PDF கோப்புகளைத் தேர்வு செய்யக்கூடிய file selection field.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <form>
+    <label for="resume">Upload Resume:</label>
+    <input type="file" id="resume" name="resume" accept=".pdf">
+  </form>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 10,
+  title: "Build a Job Application Form",
+  questionEnglish: "Create a job application form with text, email, telephone, date, number, and file input fields. Include a submit button.",
+  questionTamil: "Text, email, telephone, date, number மற்றும் file input fields கொண்ட job application form உருவாக்கவும். Submit button சேர்க்கவும்.",
+  hintEnglish: "Combine different HTML input types according to the information being collected.",
+  hintTamil: "சேகரிக்கப்படும் தகவல்களுக்கு ஏற்ப வெவ்வேறு HTML input types-ஐ இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A job application form with all six requested input types.",
+  expectedOutputTamil: "கேட்கப்பட்ட ஆறு input types கொண்ட job application form.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 10,
+  title: "Build an Event Registration Form",
+  questionEnglish: "Create an event registration form with name, email, date of birth, number of participants, course selection, and resume upload. Use suitable input types.",
+  questionTamil: "பெயர், email, பிறந்த தேதி, பங்கேற்பாளர்களின் எண்ணிக்கை, course selection மற்றும் resume upload கொண்ட event registration form உருவாக்கவும். பொருத்தமான input types பயன்படுத்தவும்.",
+  hintEnglish: "Choose appropriate input types such as text, email, date, number, radio, and file.",
+  hintTamil: "Text, email, date, number, radio மற்றும் file போன்ற பொருத்தமான input types தேர்வு செய்யவும்.",
+  expectedOutput: "A complete event registration form containing all requested input fields.",
+  expectedOutputTamil: "கேட்கப்பட்ட அனைத்து input fields கொண்ட event registration form.",
+  challenge: true
+},
+
+
 
 
 
