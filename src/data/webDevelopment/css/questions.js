@@ -3583,4 +3583,262 @@ input:disabled {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 14,
+    title: "Style the First Letter",
+    questionEnglish: "Create a paragraph containing a sentence. Use the ::first-letter pseudo-element to make the first letter red and 40px in size.",
+    questionTamil: "ஒரு வாக்கியம் கொண்ட paragraph உருவாக்கவும். முதல் எழுத்தை சிவப்பாகவும் 40px அளவிலும் மாற்ற ::first-letter pseudo-element பயன்படுத்தவும்.",
+    hintEnglish: "Use p::first-letter.",
+    hintTamil: "p::first-letter பயன்படுத்தவும்.",
+    expectedOutput: "The first letter of the paragraph appears larger and red.",
+    expectedOutputTamil: "Paragraph-ன் முதல் எழுத்து பெரியதாகவும் சிவப்பாகவும் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+p::first-letter {
+  color: red;
+  font-size: 40px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<p>Welcome to the world of CSS.</p>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 14,
+    title: "Style the First Line",
+    questionEnglish: "Create a paragraph with multiple lines. Use the ::first-line pseudo-element to make the first line blue and bold.",
+    questionTamil: "பல வரிகள் கொண்ட paragraph உருவாக்கவும். முதல் வரியை நீலமாகவும் bold ஆகவும் மாற்ற ::first-line pseudo-element பயன்படுத்தவும்.",
+    hintEnglish: "Use p::first-line.",
+    hintTamil: "p::first-line பயன்படுத்தவும்.",
+    expectedOutput: "The first formatted line of the paragraph appears blue and bold.",
+    expectedOutputTamil: "Paragraph-ன் முதல் formatted line நீலமாகவும் bold ஆகவும் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+p::first-line {
+  color: blue;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<p>
+CSS helps us design beautiful websites.
+It controls colors, layouts, spacing, and fonts.
+Learning CSS makes webpages more attractive.
+</p>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 14,
+    title: "Add Content Before an Element",
+    questionEnglish: "Create a paragraph containing 'Learning CSS'. Use the ::before pseudo-element to add the word 'Start:' before the paragraph text.",
+    questionTamil: "'Learning CSS' என்ற உரையைக் கொண்ட paragraph உருவாக்கவும். Paragraph text-க்கு முன் 'Start:' என்ற வார்த்தையைச் சேர்க்க ::before pseudo-element பயன்படுத்தவும்.",
+    hintEnglish: "Use p::before with the content property.",
+    hintTamil: "content property-யுடன் p::before பயன்படுத்தவும்.",
+    expectedOutput: "The paragraph appears as 'Start: Learning CSS'.",
+    expectedOutputTamil: "Paragraph 'Start: Learning CSS' என்று தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+p::before {
+  content: "Start: ";
+  color: green;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<p>Learning CSS</p>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 14,
+    title: "Add Content After an Element",
+    questionEnglish: "Create a paragraph containing 'Course Completed'. Use the ::after pseudo-element to add a check mark after the text.",
+    questionTamil: "'Course Completed' என்ற உரையைக் கொண்ட paragraph உருவாக்கவும். Text-க்கு பிறகு check mark சேர்க்க ::after pseudo-element பயன்படுத்தவும்.",
+    hintEnglish: "Use p::after and content: ' ✓'.",
+    hintTamil: "p::after மற்றும் content: ' ✓' பயன்படுத்தவும்.",
+    expectedOutput: "The paragraph displays 'Course Completed' followed by a check mark.",
+    expectedOutputTamil: "Paragraph-ல் 'Course Completed' என்ற உரைக்குப் பிறகு check mark தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+p::after {
+  content: " ✓";
+  color: green;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<p>Course Completed</p>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 14,
+    title: "Style Selected Text",
+    questionEnglish: "Create a paragraph with some text. Use the ::selection pseudo-element to change the selected text background to yellow and its color to black.",
+    questionTamil: "சில உரைகளைக் கொண்ட paragraph உருவாக்கவும். Select செய்யப்பட்ட text-ன் background-ஐ மஞ்சளாகவும் text color-ஐ கருப்பாகவும் மாற்ற ::selection pseudo-element பயன்படுத்தவும்.",
+    hintEnglish: "Use p::selection or ::selection.",
+    hintTamil: "p::selection அல்லது ::selection பயன்படுத்தவும்.",
+    expectedOutput: "When the user selects paragraph text, it appears with a yellow background and black text.",
+    expectedOutputTamil: "பயனர் paragraph text-ஐ select செய்யும்போது அது மஞ்சள் background மற்றும் கருப்பு text-உடன் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+p::selection {
+  background-color: yellow;
+  color: black;
+}
+</style>
+</head>
+<body>
+<p>Select this text to see the custom selection style.</p>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 14,
+    title: "Create Decorative Quotes",
+    questionEnglish: "Create a blockquote containing an inspirational message. Use ::before and ::after to add opening and closing quotation marks.",
+    questionTamil: "ஒரு ஊக்கமளிக்கும் செய்தியைக் கொண்ட blockquote உருவாக்கவும். Opening மற்றும் closing quotation marks சேர்க்க ::before மற்றும் ::after பயன்படுத்தவும்.",
+    hintEnglish: "Use content: '“' before the text and content: '”' after it.",
+    hintTamil: "Text-க்கு முன் content: '“' மற்றும் பின் content: '”' பயன்படுத்தவும்.",
+    expectedOutput: "The inspirational message appears between decorative quotation marks.",
+    expectedOutputTamil: "ஊக்கமளிக்கும் செய்தி அலங்கார quotation marks-க்கு இடையில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+blockquote::before {
+  content: "“";
+  color: blue;
+  font-size: 30px;
+}
+blockquote::after {
+  content: "”";
+  color: blue;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+<blockquote>
+  Never stop learning.
+</blockquote>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 14,
+    title: "Create a Decorative Heading",
+    questionEnglish: "Create a heading with the text 'Our Courses'. Use the ::after pseudo-element to add a short blue line below the heading.",
+    questionTamil: "'Our Courses' என்ற heading உருவாக்கவும். அதன் கீழே சிறிய நீல கோடு சேர்க்க ::after pseudo-element பயன்படுத்தவும்.",
+    hintEnglish: "Use content: '', display: block, and set a width and height.",
+    hintTamil: "content: '', display: block மற்றும் width, height அமைக்கவும்.",
+    expectedOutput: "The heading appears with a short blue decorative line underneath.",
+    expectedOutputTamil: "Heading-க்கு கீழே சிறிய நீல அலங்கார கோடு தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: blue;
+  margin-top: 8px;
+}
+</style>
+</head>
+<body>
+<h1>Our Courses</h1>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 14,
+    title: "Create a List Marker",
+    questionEnglish: "Create a list of three learning topics. Use the ::marker pseudo-element to change the list markers to red and increase their font size.",
+    questionTamil: "மூன்று learning topics கொண்ட list உருவாக்கவும். List markers-ஐ சிவப்பாகவும் பெரிய எழுத்து அளவிலும் மாற்ற ::marker pseudo-element பயன்படுத்தவும்.",
+    hintEnglish: "Use li::marker.",
+    hintTamil: "li::marker பயன்படுத்தவும்.",
+    expectedOutput: "The list markers appear red and larger than the default size.",
+    expectedOutputTamil: "List markers இயல்பை விடப் பெரியதாகவும் சிவப்பாகவும் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+li::marker {
+  color: red;
+  font-size: 24px;
+}
+</style>
+</head>
+<body>
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ul>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 14,
+    title: "Challenge: Stylish Article",
+    questionEnglish: "Create a blog article with a title, multiple paragraphs, and a quotation. Use ::first-letter, ::first-line, ::before, and ::after to add decorative and typographic effects.",
+    questionTamil: "Title, பல paragraphs மற்றும் quotation கொண்ட blog article உருவாக்கவும். அலங்கார மற்றும் எழுத்து வடிவ விளைவுகளுக்கு ::first-letter, ::first-line, ::before மற்றும் ::after பயன்படுத்தவும்.",
+    hintEnglish: "Apply different pseudo-elements to suitable HTML elements.",
+    hintTamil: "பொருத்தமான HTML elements-க்கு வெவ்வேறு pseudo-elements பயன்படுத்தவும்.",
+    expectedOutput: "A blog article with decorative quotation marks and enhanced paragraph typography.",
+    expectedOutputTamil: "அலங்கார quotation marks மற்றும் மேம்படுத்தப்பட்ட paragraph typography கொண்ட blog article.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 14,
+    title: "Challenge: DEEP CODE Section Design",
+    questionEnglish: "Create a DEEP CODE section with a heading, course description, learning list, and important note. Use pseudo-elements to add decorative heading lines, custom list markers, and additional text.",
+    questionTamil: "Heading, course description, learning list மற்றும் முக்கிய குறிப்பு கொண்ட DEEP CODE section உருவாக்கவும். அலங்கார heading lines, custom list markers மற்றும் கூடுதல் text சேர்க்க pseudo-elements பயன்படுத்தவும்.",
+    hintEnglish: "Experiment with ::before, ::after, ::marker, and ::first-letter.",
+    hintTamil: "::before, ::after, ::marker மற்றும் ::first-letter பயன்படுத்திப் பாருங்கள்.",
+    expectedOutput: "A styled DEEP CODE section with custom decorative elements.",
+    expectedOutputTamil: "Custom அலங்கார elements கொண்ட வடிவமைக்கப்பட்ட DEEP CODE section.",
+    challenge: true
+  }
+]
+
 ]
