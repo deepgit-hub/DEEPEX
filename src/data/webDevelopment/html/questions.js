@@ -3531,7 +3531,204 @@ const questions = [
   expectedOutput: "An ATEXRA business page with address, map, and introduction video.",
   expectedOutputTamil: "Address, map மற்றும் introduction video கொண்ட ATEXRA business page.",
   challenge: true
-}
+},
+
+// TOPIC 18: HTML Attributes
+
+{
+  id: 1,
+  topicId: 18,
+  title: "Add an ID Attribute",
+  questionEnglish: "Create a heading displaying 'Welcome' and assign it the ID 'main-heading'.",
+  questionTamil: "'Welcome' என்று காட்டும் heading உருவாக்கி அதற்கு 'main-heading' என்ற ID வழங்கவும்.",
+  hintEnglish: "Add id=\"main-heading\" inside the opening heading tag.",
+  hintTamil: "தொடக்க heading tag-க்குள் id=\"main-heading\" சேர்க்கவும்.",
+  expectedOutput: "A Welcome heading with the ID main-heading.",
+  expectedOutputTamil: "main-heading என்ற ID கொண்ட Welcome heading.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h1 id="main-heading">Welcome</h1>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 18,
+  title: "Add a Class Attribute",
+  questionEnglish: "Create three paragraphs and assign the same class name 'description' to all of them.",
+  questionTamil: "மூன்று paragraphs உருவாக்கி அவை அனைத்திற்கும் 'description' என்ற ஒரே class name வழங்கவும்.",
+  hintEnglish: "Use the class attribute on each paragraph.",
+  hintTamil: "ஒவ்வொரு paragraph-க்கும் class attribute பயன்படுத்தவும்.",
+  expectedOutput: "Three paragraphs sharing the description class.",
+  expectedOutputTamil: "Description என்ற ஒரே class கொண்ட மூன்று paragraphs.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p class="description">Learn HTML.</p>
+  <p class="description">Learn CSS.</p>
+  <p class="description">Learn JavaScript.</p>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 18,
+  title: "Add a Style Attribute",
+  questionEnglish: "Create a heading 'Hello World' and change its text color to blue using the style attribute.",
+  questionTamil: "'Hello World' என்ற heading உருவாக்கி style attribute மூலம் அதன் text color-ஐ blue ஆக மாற்றவும்.",
+  hintEnglish: "Use style=\"color: blue;\".",
+  hintTamil: "style=\"color: blue;\" பயன்படுத்தவும்.",
+  expectedOutput: "A blue Hello World heading.",
+  expectedOutputTamil: "நீல நிறத்தில் Hello World heading.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <h1 style="color: blue;">Hello World</h1>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 18,
+  title: "Use the Title Attribute",
+  questionEnglish: "Create a paragraph displaying 'Hover over me'. Add a title attribute that displays 'This is additional information' when the user hovers over it.",
+  questionTamil: "'Hover over me' என்று காட்டும் paragraph உருவாக்கவும். பயனர் hover செய்யும்போது 'This is additional information' என்று காட்டும் title attribute சேர்க்கவும்.",
+  hintEnglish: "Use the title attribute inside the paragraph tag.",
+  hintTamil: "Paragraph tag-க்குள் title attribute பயன்படுத்தவும்.",
+  expectedOutput: "A paragraph with a tooltip when the user hovers over it.",
+  expectedOutputTamil: "Hover செய்யும்போது tooltip காட்டும் paragraph.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p title="This is additional information">
+    Hover over me
+  </p>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 18,
+  title: "Use the Target Attribute",
+  questionEnglish: "Create a link named 'Visit YouTube' that opens the website in a new tab.",
+  questionTamil: "'Visit YouTube' என்ற link-ஐக் கிளிக் செய்தால் இணையதளம் புதிய tab-ல் திறக்க வேண்டும்.",
+  hintEnglish: "Use target=\"_blank\" and rel=\"noopener noreferrer\".",
+  hintTamil: "target=\"_blank\" மற்றும் rel=\"noopener noreferrer\" பயன்படுத்தவும்.",
+  expectedOutput: "A link that opens YouTube in a new tab.",
+  expectedOutputTamil: "YouTube-ஐ புதிய tab-ல் திறக்கும் link.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <a
+    href="https://www.youtube.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Visit YouTube
+  </a>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 18,
+  title: "Use the Alt Attribute",
+  questionEnglish: "Display an image named profile.jpg and provide alternative text 'Student Profile Image'.",
+  questionTamil: "profile.jpg என்ற படத்தைக் காட்டி 'Student Profile Image' என்ற alternative text வழங்கவும்.",
+  hintEnglish: "Use the alt attribute inside the image element.",
+  hintTamil: "Image element-க்குள் alt attribute பயன்படுத்தவும்.",
+  expectedOutput: "An image with the alternative text Student Profile Image.",
+  expectedOutputTamil: "Student Profile Image என்ற alternative text கொண்ட படம்.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <img src="profile.jpg" alt="Student Profile Image">
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 18,
+  title: "Use the Lang Attribute",
+  questionEnglish: "Create an HTML document and specify that its primary language is English.",
+  questionTamil: "முக்கிய மொழி English என்று குறிப்பிடும் HTML document உருவாக்கவும்.",
+  hintEnglish: "Use the lang attribute on the html element.",
+  hintTamil: "HTML element-ல் lang attribute பயன்படுத்தவும்.",
+  expectedOutput: "An HTML document with lang=\"en\".",
+  expectedOutputTamil: "lang=\"en\" கொண்ட HTML document.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>English Page</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 18,
+  title: "Use the Data Attribute",
+  questionEnglish: "Create a button displaying 'View Course'. Add a custom data attribute named data-course-id with the value '101'.",
+  questionTamil: "'View Course' என்ற button உருவாக்கவும். அதற்கு '101' என்ற value கொண்ட data-course-id என்ற custom data attribute சேர்க்கவும்.",
+  hintEnglish: "Use the data-* attribute format.",
+  hintTamil: "data-* attribute வடிவத்தைப் பயன்படுத்தவும்.",
+  expectedOutput: "A View Course button with data-course-id=\"101\".",
+  expectedOutputTamil: "data-course-id=\"101\" கொண்ட View Course button.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <button type="button" data-course-id="101">
+    View Course
+  </button>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 18,
+  title: "Build a Profile Using Attributes",
+  questionEnglish: "Create a student profile page using id, class, style, title, and alt attributes. Include a heading, profile image, and paragraphs describing the student.",
+  questionTamil: "id, class, style, title மற்றும் alt attributes பயன்படுத்தி student profile page உருவாக்கவும். Heading, profile image மற்றும் மாணவரைப் பற்றிய paragraphs சேர்க்கவும்.",
+  hintEnglish: "Apply each attribute to a suitable HTML element.",
+  hintTamil: "ஒவ்வொரு attribute-ஐயும் பொருத்தமான HTML element-க்கு வழங்கவும்.",
+  expectedOutput: "A student profile page using all five requested attributes.",
+  expectedOutputTamil: "கேட்கப்பட்ட ஐந்து attributes-ஐயும் பயன்படுத்தும் student profile page.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 18,
+  title: "Build an Accessible Course Card",
+  questionEnglish: "Create a course card for DEEP CODE using suitable HTML attributes. Include an image with alt text, a heading with an ID, paragraphs with a shared class, a button with a custom data attribute, and a link that opens in a new tab.",
+  questionTamil: "பொருத்தமான HTML attributes பயன்படுத்தி DEEP CODE-க்கான course card உருவாக்கவும். Alt text கொண்ட image, ID கொண்ட heading, ஒரே class கொண்ட paragraphs, custom data attribute கொண்ட button மற்றும் புதிய tab-ல் திறக்கும் link சேர்க்கவும்.",
+  hintEnglish: "Combine id, class, alt, data-*, target, and rel attributes.",
+  hintTamil: "id, class, alt, data-*, target மற்றும் rel attributes இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A DEEP CODE course card demonstrating all requested attributes.",
+  expectedOutputTamil: "கேட்கப்பட்ட அனைத்து attributes-ஐயும் காட்டும் DEEP CODE course card.",
+  challenge: true
+},
+
+
 
 
 
