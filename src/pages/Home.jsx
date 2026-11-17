@@ -4,7 +4,7 @@ import MentorSupport from "../components/MentorSupportButton";
 import ThingsToRemember from "../components/ThingsToRemember";
 
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 
 import {
   collection,
@@ -25,7 +25,13 @@ import "../styles/Home.css";
 
 function Home() {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const { languageId } = useParams();
+
+  // Detect Web Development route
+  const isWebDevelopment =
+    location.pathname.startsWith("/web-home/");
 
   const [topics, setTopics] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -43,11 +49,20 @@ function Home() {
     { id: "cpp", name: "⚡ C++" },
   ];
 
+  // =====================================
+  // FETCH TOPICS
+  // =====================================
+
   useEffect(() => {
     async function fetchTopics() {
       try {
         const snapshot = await getDocs(
-          collection(db, "languages", languageId, "concepts")
+          collection(
+            db,
+            isWebDevelopment ? "webDevelopment" : "languages",
+            languageId,
+            "concepts"
+          )
         );
 
         const data = snapshot.docs
@@ -64,6 +79,12 @@ function Home() {
     }
 
     async function fetchStudent() {
+      // Web Development does not use student progress
+      if (isWebDevelopment) {
+        setStudent(null);
+        return;
+      }
+
       try {
         const currentStudent = JSON.parse(
           localStorage.getItem("student")
@@ -94,18 +115,27 @@ function Home() {
       }
     }
 
+    setTopics([]);
+
     fetchTopics();
     fetchStudent();
-  }, [languageId]);
 
-  // Search
+  }, [languageId, isWebDevelopment]);
+
+  // =====================================
+  // SEARCH
+  // =====================================
+
   const filteredTopics = topics.filter((topic) =>
     topic.title
-      .toLowerCase()
+      ?.toLowerCase()
       .includes(searchTerm.toLowerCase())
   );
 
-  // Language-specific progress
+  // =====================================
+  // PROGRAMMING LANGUAGE PROGRESS
+  // =====================================
+
   const completedTopicsByLanguage =
     student?.completedTopicsByLanguage || {};
 
@@ -119,7 +149,10 @@ function Home() {
       ? Math.round((completedCount / topics.length) * 100)
       : 0;
 
-  // Fetch all three language leaderboards
+  // =====================================
+  // LEADERBOARD
+  // =====================================
+
   const fetchLeaderboards = async () => {
     try {
       setLeaderboardLoading(true);
@@ -159,6 +192,7 @@ function Home() {
       });
 
       setLeaderboards(results);
+
     } catch (error) {
       console.error("Error fetching leaderboards:", error);
     } finally {
@@ -171,18 +205,40 @@ function Home() {
     await fetchLeaderboards();
   };
 
+  // =====================================
+  // TOPIC NAVIGATION
+  // =====================================
+
+  const handleTopicClick = (topicId) => {
+    if (isWebDevelopment) {
+      navigate(`/web-topic/${languageId}/${topicId}`);
+    } else {
+      navigate(`/topic/${languageId}/${topicId}`);
+    }
+  };
+
   return (
     <div className="home-page">
+
       <div className="container">
+
+        {/* BACK BUTTON */}
 
         <button
           className="home-back-btn"
-          onClick={() => navigate("/deep")}
+          onClick={() =>
+            navigate(
+              isWebDevelopment
+                ? "/web-development"
+                : "/deep"
+            )
+          }
         >
-          ← Back to DEEPEX
+          ← Back to {isWebDevelopment ? "Web Development" : "DEEPEX"}
         </button>
 
         {/* HERO */}
+
         <section className="hero">
 
           <span className="hero-badge">
@@ -196,19 +252,16 @@ function Home() {
           </h1>
 
           <p className="hero-description">
-            Welcome to a bilingual coding platform where every concept is
+            Welcome to a bilingual learning platform where every concept is
             taught in both <strong>English</strong> and <strong>Tamil</strong>.
             Learn with simple explanations, real-world applications,
-            practical examples, coding exercises, and challenge questions.
+            practical examples, and challenge questions.
           </p>
 
           <p className="hero-description">
-            This platform helps students understand not only
-            <strong> how to code</strong>, but also
-            <strong> where</strong>,
-            <strong> why</strong>, and
-            <strong> when</strong> every concept is used in real software
-            development.
+            Understand not only <strong>how</strong> things work,
+            but also <strong>where</strong>, <strong>why</strong>, and
+            <strong>when</strong> they are used in real-world development.
           </p>
 
           <div className="hero-features">
@@ -229,7 +282,7 @@ function Home() {
                 <h3>Real-World Applications</h3>
               </div>
               <p>
-                Learn where every programming concept is used in industry.
+                Learn where every concept is used in real projects.
               </p>
             </div>
 
@@ -239,44 +292,58 @@ function Home() {
                 <h3>Practice as You Learn</h3>
               </div>
               <p>
-                Strengthen your understanding through coding questions.
+                Strengthen your understanding through practical questions.
               </p>
             </div>
 
           </div>
+
         </section>
 
         {/* TOPICS */}
+
         <section className="topics-section">
 
           <div className="section-header">
-            <h2>📚 {languageId?.toUpperCase()} Learning Hub</h2>
+
+            <h2>
+              📚 {languageId?.toUpperCase()} Learning Hub
+            </h2>
+
             <p>
-              Explore every topic and track your learning progress.
+              {isWebDevelopment
+                ? "Explore every topic and strengthen your web development skills."
+                : "Explore every topic and track your learning progress."}
             </p>
+
           </div>
 
           {/* LEARNING HUB ACTIONS */}
-          <div className="remember-button-container">
 
-            <button
-              className="remember-btn"
-              onClick={() => setShowRemember(true)}
-            >
-              📌 Things to Remember
-            </button>
+          {!isWebDevelopment && (
+            <div className="remember-button-container">
 
-            <button
-              className="remember-btn"
-              onClick={() => navigate("/choose-language")}
-            >
-              🌐 Switch Language
-            </button>
+              <button
+                className="remember-btn"
+                onClick={() => setShowRemember(true)}
+              >
+                📌 Things to Remember
+              </button>
 
-          </div>
+              <button
+                className="remember-btn"
+                onClick={() => navigate("/choose-language")}
+              >
+                🌐 Switch Language
+              </button>
+
+            </div>
+          )}
 
           {/* SEARCH */}
+
           <div className="topic-search">
+
             <span className="search-icon">🔍</span>
 
             <input
@@ -285,85 +352,109 @@ function Home() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
+
           </div>
 
-          {/* PROGRESS */}
-          <div className="progress-card">
+          {/* PROGRAMMING PROGRESS */}
 
-            <div className="progress-top">
-              <h3>📈 Overall Progress</h3>
-              <span className="progress-percent">{progress}%</span>
-            </div>
+          {!isWebDevelopment && (
+            <div className="progress-card">
 
-            <div className="progress-bar">
-              <div
-                className="progress-fill"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
+              <div className="progress-top">
+                <h3>📈 Overall Progress</h3>
+                <span className="progress-percent">
+                  {progress}%
+                </span>
+              </div>
 
-            <div className="progress-bottom">
+              <div className="progress-bar">
+                <div
+                  className="progress-fill"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
 
-              <p>
-                <strong>{completedCount}</strong>
-                {" / "}
-                <strong>{topics.length}</strong>
-                {" Topics Completed"}
-              </p>
+              <div className="progress-bottom">
 
-              <div className="progress-actions">
-
-                <p className="progress-message">
-                  {student && topics.length > 0
-                    ? `🚀 Keep going! You've completed ${completedCount} of ${topics.length} topics.`
-                    : "Loading your progress..."}
+                <p>
+                  <strong>{completedCount}</strong>
+                  {" / "}
+                  <strong>{topics.length}</strong>
+                  {" Topics Completed"}
                 </p>
 
-                <button
-                  className="deep-leaderboard-btn"
-                  onClick={handleLeaderboardOpen}
-                >
-                  🏆 LEADERBOARD
-                </button>
+                <div className="progress-actions">
+
+                  <p className="progress-message">
+                    {student && topics.length > 0
+                      ? `🚀 Keep going! You've completed ${completedCount} of ${topics.length} topics.`
+                      : "Loading your progress..."}
+                  </p>
+
+                  <button
+                    className="deep-leaderboard-btn"
+                    onClick={handleLeaderboardOpen}
+                  >
+                    🏆 LEADERBOARD
+                  </button>
+
+                </div>
 
               </div>
 
             </div>
-          </div>
+          )}
 
           {/* TOPIC GRID */}
+
           <div className="topics-grid">
+
             {filteredTopics.map((topic) => (
               <TopicCard
                 key={topic.id}
                 title={topic.title}
-                completed={currentLanguageTopics.includes(topic.id)}
-                onClick={() =>
-                  navigate(`/topic/${languageId}/${topic.id}`)
+                completed={
+                  !isWebDevelopment &&
+                  currentLanguageTopics.includes(topic.id)
                 }
+                onClick={() => handleTopicClick(topic.id)}
               />
             ))}
+
+            {filteredTopics.length === 0 && (
+              <p>
+                {topics.length === 0
+                  ? "No topics available yet."
+                  : "No matching topics found."}
+              </p>
+            )}
+
           </div>
 
         </section>
 
-        {/* THINGS TO REMEMBER POPUP */}
-        <ThingsToRemember
-          isOpen={showRemember}
-          onClose={() => setShowRemember(false)}
-          language={languageId}
-        />
+        {/* THINGS TO REMEMBER */}
+
+        {!isWebDevelopment && (
+          <ThingsToRemember
+            isOpen={showRemember}
+            onClose={() => setShowRemember(false)}
+            language={languageId}
+          />
+        )}
 
         <MentorSupport />
 
       </div>
 
       {/* FOOTER */}
+
       <footer className="footer">
 
         <div className="footer-container">
 
           <div className="footer-left">
+
             <h2>🌾 DEEP CODE</h2>
 
             <p>
@@ -381,17 +472,20 @@ function Home() {
               Start today, stay consistent, and let your code
               speak for itself.
             </p>
+
           </div>
 
           <div className="footer-center">
+
             <h3>👨‍💻 About the Developer</h3>
 
             <p>
               Hi! I'm <strong>Deepak</strong>, a Computer Science
               student passionate about helping Tamil students
-              learn programming through simple explanations,
-              practical coding exercises, and real-world examples.
+              learn technology through simple explanations,
+              practical exercises, and real-world examples.
             </p>
+
           </div>
 
           <div className="footer-right">
@@ -436,12 +530,15 @@ function Home() {
 
       </footer>
 
-      {/* DEEP CODE LEADERBOARD POPUP */}
-      {showLeaderboard && (
+      {/* PROGRAMMING LEADERBOARD */}
+
+      {!isWebDevelopment && showLeaderboard && (
+
         <div
           className="deep-leaderboard-overlay"
           onClick={() => setShowLeaderboard(false)}
         >
+
           <div
             className="deep-leaderboard-modal"
             onClick={(e) => e.stopPropagation()}
@@ -467,9 +564,11 @@ function Home() {
             <div className="deep-leaderboard-categories">
 
               {leaderboardLanguages.map((language) => {
+
                 const rankings = leaderboards[language.id] || [];
 
                 return (
+
                   <div
                     className="deep-leaderboard-category"
                     key={language.id}
@@ -492,17 +591,23 @@ function Home() {
                         <tbody>
 
                           {leaderboardLoading ? (
+
                             <tr>
                               <td colSpan="3">Loading rankings...</td>
                             </tr>
+
                           ) : rankings.length === 0 ? (
+
                             <tr>
                               <td colSpan="3">
                                 Students are learning in this language 🌱
                               </td>
                             </tr>
+
                           ) : (
+
                             rankings.map((student, index) => (
+
                               <tr key={student.username}>
                                 <td>
                                   {["🥇", "🥈", "🥉"][index]}
@@ -510,7 +615,9 @@ function Home() {
                                 <td>{student.name}</td>
                                 <td>{student.completedCount}</td>
                               </tr>
+
                             ))
+
                           )}
 
                         </tbody>
@@ -520,7 +627,9 @@ function Home() {
                     </div>
 
                   </div>
+
                 );
+
               })}
 
             </div>
@@ -530,7 +639,9 @@ function Home() {
             </div>
 
           </div>
+
         </div>
+
       )}
 
     </div>
