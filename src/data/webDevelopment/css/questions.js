@@ -242,8 +242,7 @@ const questions = [
     expectedOutputTamil: "Heading, description மற்றும் வடிவமைக்கப்பட்ட button கொண்ட அழகான DEEP CODE welcome section.",
     challenge: true
   },
- 
-[
+
   {
     id: 1,
     topicId: 2,
@@ -492,10 +491,7 @@ p {
     expectedOutput: "A course page with clearly differentiated sections and styles.",
     expectedOutputTamil: "தெளிவாக வேறுபடுத்தப்பட்ட பகுதிகள் மற்றும் styles கொண்ட course page.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 3,
@@ -740,10 +736,7 @@ body {
     expectedOutput: "An attractive DEEP CODE hero section with a styled background.",
     expectedOutputTamil: "அழகாக வடிவமைக்கப்பட்ட background கொண்ட DEEP CODE hero section.",
     challenge: true
-  }
-]
- 
-[
+  },
   {
     id: 1,
     topicId: 4,
@@ -1019,10 +1012,7 @@ Practice helps improve your skills.
     expectedOutput: "A well-formatted learning article with readable typography and a highlighted note.",
     expectedOutputTamil: "படிக்க எளிதான எழுத்து வடிவங்களும் முக்கியமாகக் காட்டப்பட்ட குறிப்பும் கொண்ட learning article.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 5,
@@ -1272,10 +1262,7 @@ Practice helps improve your skills.
     expectedOutput: "A well-sized DEEP CODE course card with consistent spacing and rounded borders.",
     expectedOutputTamil: "சீரான இடைவெளி மற்றும் வட்டமான border கொண்ட சரியான அளவிலான DEEP CODE course card.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 6,
@@ -1537,10 +1524,7 @@ p {
     expectedOutput: "An attractive DEEP CODE course card with decorative borders.",
     expectedOutputTamil: "அழகான border வடிவமைப்புகளைக் கொண்ட DEEP CODE course card தோன்றும்.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 7,
@@ -1782,10 +1766,7 @@ p {
     expectedOutput: "Three course cards with consistent internal and external spacing.",
     expectedOutputTamil: "சீரான உள் மற்றும் வெளிப்புற இடைவெளியுடன் மூன்று course cards தோன்றும்.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 8,
@@ -2050,10 +2031,7 @@ p {
     expectedOutput: "A large DEEP CODE hero section with content inside it.",
     expectedOutputTamil: "Content கொண்ட பெரிய DEEP CODE hero section தோன்றும்.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 9,
@@ -2324,10 +2302,7 @@ span {
     expectedOutput: "A complete DEEP CODE page with properly arranged sections and course cards.",
     expectedOutputTamil: "சரியாக வரிசைப்படுத்தப்பட்ட sections மற்றும் course cards கொண்ட முழுமையான DEEP CODE page தோன்றும்.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 10,
@@ -2658,10 +2633,7 @@ body {
     expectedOutput: "A learning dashboard with a sticky header, a course card badge, and a fixed help button.",
     expectedOutputTamil: "Sticky header, course card badge மற்றும் fixed help button கொண்ட learning dashboard தோன்றும்.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 11,
@@ -2991,10 +2963,7 @@ body {
     expectedOutput: "A responsive dashboard with an organized header, sidebar, and course cards.",
     expectedOutputTamil: "ஒழுங்கான header, sidebar மற்றும் course cards கொண்ட responsive dashboard.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 12,
@@ -3316,10 +3285,7 @@ body {
     expectedOutput: "A responsive DEEP CODE dashboard with an organized grid layout.",
     expectedOutputTamil: "ஒழுங்கான grid layout கொண்ட responsive DEEP CODE dashboard தோன்றும்.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 13,
@@ -3580,10 +3546,7 @@ input:disabled {
     expectedOutput: "An interactive-looking registration form with different pseudo-class styles.",
     expectedOutputTamil: "வெவ்வேறு pseudo-class styles கொண்ட அழகான registration form தோன்றும்.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 14,
@@ -3838,10 +3801,7 @@ li::marker {
     expectedOutput: "A styled DEEP CODE section with custom decorative elements.",
     expectedOutputTamil: "Custom அலங்கார elements கொண்ட வடிவமைக்கப்பட்ட DEEP CODE section.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 15,
@@ -4112,10 +4072,7 @@ nav > ul > li {
     expectedOutput: "A DEEP CODE page with clearly styled navigation and course sections using different combinators.",
     expectedOutputTamil: "வெவ்வேறு combinators மூலம் தெளிவாக வடிவமைக்கப்பட்ட navigation மற்றும் course sections கொண்ட DEEP CODE page.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 16,
@@ -4399,10 +4356,7 @@ button:hover {
     expectedOutput: "An attractive landing page with smooth interactive hover effects.",
     expectedOutputTamil: "மென்மையான interactive hover effects கொண்ட அழகான landing page தோன்றும்.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 17,
@@ -4722,10 +4676,7 @@ button:hover {
     expectedOutput: "An attractive DEEP CODE loading screen with animated elements.",
     expectedOutputTamil: "Animated elements கொண்ட அழகான DEEP CODE loading screen.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 18,
@@ -5045,10 +4996,7 @@ nav a {
     expectedOutput: "A complete responsive DEEP CODE website that works across different screen sizes.",
     expectedOutputTamil: "வெவ்வேறு திரை அளவுகளில் சரியாகத் தோன்றும் முழுமையான responsive DEEP CODE website.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 19,
@@ -5289,10 +5237,7 @@ button {
     expectedOutput: "A professional DEEP CODE hero section with gradients and shadows.",
     expectedOutputTamil: "Gradients மற்றும் shadows கொண்ட professional DEEP CODE hero section தோன்றும்.",
     challenge: true
-  }
-]
-
-[
+  },
   {
     id: 1,
     topicId: 20,
@@ -5573,6 +5518,6 @@ button {
     expectedOutputTamil: "ஒரே மாதிரியான design system மற்றும் மீண்டும் பயன்படுத்தக்கூடிய CSS கொண்ட முழுமையான DEEP CODE page.",
     challenge: true
   }
-]
 
-]
+
+];
