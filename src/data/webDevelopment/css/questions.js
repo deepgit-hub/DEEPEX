@@ -1540,4 +1540,249 @@ p {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 7,
+    title: "Set Margin",
+    questionEnglish: "Create a div with a lightblue background and 150px width. Apply 20px margin on all four sides.",
+    questionTamil: "Lightblue background மற்றும் 150px width கொண்ட div உருவாக்கவும். நான்கு பக்கங்களிலும் 20px margin அமைக்கவும்.",
+    hintEnglish: "Use margin: 20px.",
+    hintTamil: "margin: 20px பயன்படுத்தவும்.",
+    expectedOutput: "A light blue box with 20px external spacing on all sides.",
+    expectedOutputTamil: "நான்கு பக்கங்களிலும் 20px வெளிப்புற இடைவெளியுடன் light blue பெட்டி தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 150px;
+  background-color: lightblue;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+<div class="box">Margin Example</div>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 7,
+    title: "Set Padding",
+    questionEnglish: "Create a paragraph with a lightyellow background. Apply 25px padding on all sides.",
+    questionTamil: "Lightyellow background கொண்ட paragraph உருவாக்கவும். நான்கு பக்கங்களிலும் 25px padding அமைக்கவும்.",
+    hintEnglish: "Use padding: 25px.",
+    hintTamil: "padding: 25px பயன்படுத்தவும்.",
+    expectedOutput: "The paragraph has 25px internal spacing around its text.",
+    expectedOutputTamil: "Paragraph text-ஐச் சுற்றி 25px உள் இடைவெளி இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+  background-color: lightyellow;
+  padding: 25px;
+}
+</style>
+</head>
+<body>
+<p>Padding creates space inside an element.</p>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 7,
+    title: "Use Different Vertical and Horizontal Margins",
+    questionEnglish: "Create a div with a lightgreen background. Set its top and bottom margins to 30px and its left and right margins to 50px.",
+    questionTamil: "Lightgreen background கொண்ட div உருவாக்கவும். அதன் மேல் மற்றும் கீழ் margin-ஐ 30px ஆகவும் இடது மற்றும் வலது margin-ஐ 50px ஆகவும் அமைக்கவும்.",
+    hintEnglish: "Use the two-value margin shorthand: margin: 30px 50px.",
+    hintTamil: "இரண்டு values கொண்ட margin shorthand: margin: 30px 50px பயன்படுத்தவும்.",
+    expectedOutput: "The div has 30px vertical and 50px horizontal external spacing.",
+    expectedOutputTamil: "Div-க்கு செங்குத்தாக 30px மற்றும் கிடைமட்டமாக 50px வெளிப்புற இடைவெளி இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  background-color: lightgreen;
+  margin: 30px 50px;
+}
+</style>
+</head>
+<body>
+<div class="box">Margin Shorthand</div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 7,
+    title: "Center a Box Using Auto Margin",
+    questionEnglish: "Create a div with a width of 300px and a lightblue background. Use auto left and right margins to center it horizontally.",
+    questionTamil: "300px width மற்றும் lightblue background கொண்ட div உருவாக்கவும். அதை கிடைமட்டமாக மையப்படுத்த இடது மற்றும் வலது பக்கங்களில் auto margin பயன்படுத்தவும்.",
+    hintEnglish: "Use margin: 0 auto.",
+    hintTamil: "margin: 0 auto பயன்படுத்தவும்.",
+    expectedOutput: "A 300px wide box appears centered horizontally on the page.",
+    expectedOutputTamil: "300px அகலமுள்ள பெட்டி பக்கத்தின் கிடைமட்ட மையத்தில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 300px;
+  background-color: lightblue;
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+<div class="box">Centered Box</div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 7,
+    title: "Set Individual Padding Values",
+    questionEnglish: "Create a div with a lightgray background. Set its top padding to 10px, right padding to 20px, bottom padding to 30px, and left padding to 40px.",
+    questionTamil: "Lightgray background கொண்ட div உருவாக்கவும். Top padding 10px, right padding 20px, bottom padding 30px மற்றும் left padding 40px ஆக அமைக்கவும்.",
+    hintEnglish: "Use the four individual padding properties.",
+    hintTamil: "நான்கு தனித்தனி padding properties பயன்படுத்தவும்.",
+    expectedOutput: "The content has different internal spacing on each side.",
+    expectedOutputTamil: "Content-ஐச் சுற்றி ஒவ்வொரு பக்கத்திலும் வெவ்வேறு உள் இடைவெளி இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  background-color: lightgray;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}
+</style>
+</head>
+<body>
+<div class="box">Individual Padding</div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 7,
+    title: "Set Individual Margin Values",
+    questionEnglish: "Create a div with a lightpink background. Set its top margin to 10px, right margin to 20px, bottom margin to 30px, and left margin to 40px.",
+    questionTamil: "Lightpink background கொண்ட div உருவாக்கவும். Top margin 10px, right margin 20px, bottom margin 30px மற்றும் left margin 40px ஆக அமைக்கவும்.",
+    hintEnglish: "Use the four individual margin properties.",
+    hintTamil: "நான்கு தனித்தனி margin properties பயன்படுத்தவும்.",
+    expectedOutput: "The box has different external spacing on each side.",
+    expectedOutputTamil: "Box-ஐச் சுற்றி ஒவ்வொரு பக்கத்திலும் வெவ்வேறு வெளிப்புற இடைவெளி இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  background-color: lightpink;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+</style>
+</head>
+<body>
+<div class="box">Individual Margin</div>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 7,
+    title: "Use Padding Shorthand",
+    questionEnglish: "Create a div with a lightblue background. Use the three-value padding shorthand to set top padding to 10px, left and right padding to 20px, and bottom padding to 30px.",
+    questionTamil: "Lightblue background கொண்ட div உருவாக்கவும். Three-value padding shorthand பயன்படுத்தி top padding 10px, இடது மற்றும் வலது padding 20px, bottom padding 30px ஆக அமைக்கவும்.",
+    hintEnglish: "Use padding: 10px 20px 30px.",
+    hintTamil: "padding: 10px 20px 30px பயன்படுத்தவும்.",
+    expectedOutput: "The box has 10px top, 20px horizontal, and 30px bottom internal spacing.",
+    expectedOutputTamil: "Box-ல் மேல் 10px, கிடைமட்டமாக 20px மற்றும் கீழே 30px உள் இடைவெளி இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  background-color: lightblue;
+  padding: 10px 20px 30px;
+}
+</style>
+</head>
+<body>
+<div class="box">Padding Shorthand</div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 7,
+    title: "Create Spacing Between Cards",
+    questionEnglish: "Create two product cards using div elements. Give each card 15px padding and 20px margin. Add a 1px solid gray border.",
+    questionTamil: "Div elements பயன்படுத்தி இரண்டு product cards உருவாக்கவும். ஒவ்வொரு card-க்கும் 15px padding மற்றும் 20px margin கொடுக்கவும். 1px solid gray border அமைக்கவும்.",
+    hintEnglish: "Use a shared CSS class for both cards.",
+    hintTamil: "இரண்டு cards-க்கும் ஒரே CSS class பயன்படுத்தவும்.",
+    expectedOutput: "Two product cards appear with internal spacing, external spacing, and gray borders.",
+    expectedOutputTamil: "உள் இடைவெளி, வெளிப்புற இடைவெளி மற்றும் gray border கொண்ட இரண்டு product cards தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  padding: 15px;
+  margin: 20px;
+  border: 1px solid gray;
+}
+</style>
+</head>
+<body>
+<div class="card">Product 1 - Laptop</div>
+<div class="card">Product 2 - Keyboard</div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 7,
+    title: "Challenge: Student Profile Layout",
+    questionEnglish: "Create a student profile card with a name, department, and description. Use different margin and padding values to organize the content and create clear spacing.",
+    questionTamil: "பெயர், துறை மற்றும் விளக்கம் கொண்ட student profile card உருவாக்கவும். Content-ஐ ஒழுங்குபடுத்தவும் தெளிவான இடைவெளி உருவாக்கவும் வெவ்வேறு margin மற்றும் padding values பயன்படுத்தவும்.",
+    hintEnglish: "Apply padding inside the card and margins between its elements.",
+    hintTamil: "Card-க்குள் padding மற்றும் அதன் elements இடையே margin பயன்படுத்தவும்.",
+    expectedOutput: "A well-spaced student profile card with organized content.",
+    expectedOutputTamil: "ஒழுங்கான content மற்றும் சரியான இடைவெளி கொண்ட student profile card தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 7,
+    title: "Challenge: DEEP CODE Course Cards",
+    questionEnglish: "Create three DEEP CODE course cards for HTML, CSS, and JavaScript. Use margin and padding to create equal spacing between cards and inside each card.",
+    questionTamil: "HTML, CSS மற்றும் JavaScript ஆகியவற்றிற்கு மூன்று DEEP CODE course cards உருவாக்கவும். Cards இடையேயும் ஒவ்வொரு card-க்குள்ளும் சீரான இடைவெளி உருவாக்க margin மற்றும் padding பயன்படுத்தவும்.",
+    hintEnglish: "Create one reusable card class and apply consistent spacing.",
+    hintTamil: "மீண்டும் பயன்படுத்தக்கூடிய card class உருவாக்கி ஒரே மாதிரியான spacing அமைக்கவும்.",
+    expectedOutput: "Three course cards with consistent internal and external spacing.",
+    expectedOutputTamil: "சீரான உள் மற்றும் வெளிப்புற இடைவெளியுடன் மூன்று course cards தோன்றும்.",
+    challenge: true
+  }
+]
+
 ]
