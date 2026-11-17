@@ -663,7 +663,7 @@ body {
     output: "An orange DEEP CODE box positioned 20 pixels from the top and 30 pixels from the left inside a light gray container."
   },
 
-[
+
   {
     id: 11,
     title: "CSS Flexbox",
@@ -1397,7 +1397,7 @@ h1 {
     output:
       "A blue box with white DEEP CODE text and 20 pixels of internal padding."
   }
-]
+
 
 ];
 
