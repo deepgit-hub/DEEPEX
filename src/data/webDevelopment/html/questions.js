@@ -572,6 +572,195 @@ const questions = [
   challenge: true
 },
 
+// TOPIC 5: Links and Anchor Tags
+
+{
+  id: 1,
+  topicId: 5,
+  title: "Create Your First Link",
+  questionEnglish: "Create a hyperlink with the text 'Visit Google' that opens https://www.google.com.",
+  questionTamil: "'Visit Google' என்ற உரையுடன் https://www.google.com இணையதளத்தைத் திறக்கும் hyperlink உருவாக்கவும்.",
+  hintEnglish: "Use the <a> tag with the href attribute.",
+  hintTamil: "href attribute உடன் <a> tag-ஐ பயன்படுத்தவும்.",
+  expectedOutput: "Visit Google (clickable link)",
+  expectedOutputTamil: "Visit Google (கிளிக் செய்யக்கூடிய இணைப்பு)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <a href="https://www.google.com">Visit Google</a>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 5,
+  title: "Open Link in New Tab",
+  questionEnglish: "Create a link named 'Visit YouTube' that opens YouTube in a new browser tab.",
+  questionTamil: "'Visit YouTube' என்ற பெயரில் YouTube-ஐ புதிய browser tab-ல் திறக்கும் link உருவாக்கவும்.",
+  hintEnglish: "Use the target attribute with the value _blank.",
+  hintTamil: "target attribute-க்கு _blank என்ற value-ஐ வழங்கவும்.",
+  expectedOutput: "Visit YouTube (opens in a new tab)",
+  expectedOutputTamil: "Visit YouTube (புதிய tab-ல் திறக்கும்)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">Visit YouTube</a>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 5,
+  title: "Create an Email Link",
+  questionEnglish: "Create a link that opens the user's email application when clicked. Display the text 'Contact Us'.",
+  questionTamil: "கிளிக் செய்யும்போது பயனரின் email application-ஐத் திறக்கும் link உருவாக்கவும். 'Contact Us' என்ற உரையைக் காட்டவும்.",
+  hintEnglish: "Use mailto: inside the href attribute.",
+  hintTamil: "href attribute-க்குள் mailto: என்பதைப் பயன்படுத்தவும்.",
+  expectedOutput: "Contact Us (opens the email application)",
+  expectedOutputTamil: "Contact Us (email application திறக்கும்)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <a href="mailto:contact@example.com">Contact Us</a>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 5,
+  title: "Create a Telephone Link",
+  questionEnglish: "Create a clickable telephone link that displays the number '+911234567890'.",
+  questionTamil: "'+911234567890' என்ற எண்ணைக் காட்டும் clickable telephone link உருவாக்கவும்.",
+  hintEnglish: "Use the tel: protocol inside href.",
+  hintTamil: "href-க்குள் tel: protocol-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "+911234567890 (clickable telephone link)",
+  expectedOutputTamil: "+911234567890 (கிளிக் செய்யக்கூடிய தொலைபேசி இணைப்பு)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <a href="tel:+911234567890">+911234567890</a>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 5,
+  title: "Link to Another Page",
+  questionEnglish: "Create a link named 'About Us' that opens a page called about.html.",
+  questionTamil: "'About Us' என்ற பெயரில் about.html என்ற பக்கத்தைத் திறக்கும் link உருவாக்கவும்.",
+  hintEnglish: "Use the relative file path in the href attribute.",
+  hintTamil: "href attribute-ல் relative file path-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "About Us (opens about.html when that file exists)",
+  expectedOutputTamil: "About Us (about.html கோப்பு இருந்தால் அந்தப் பக்கம் திறக்கும்)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <a href="about.html">About Us</a>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 5,
+  title: "Create an Internal Page Link",
+  questionEnglish: "Create a page with a heading 'My Courses' and a link at the top that takes the user directly to that heading.",
+  questionTamil: "'My Courses' என்ற heading கொண்ட பக்கத்தை உருவாக்கவும். மேலே உள்ள link-ஐ கிளிக் செய்தால் அந்த heading-க்கு நேரடியாகச் செல்ல வேண்டும்.",
+  hintEnglish: "Give the heading an id and use # followed by that id in the link.",
+  hintTamil: "Heading-க்கு id கொடுத்து, link-ல் அந்த id-க்கு முன் # பயன்படுத்தவும்.",
+  expectedOutput: "A 'Go to My Courses' link that jumps to the My Courses heading.",
+  expectedOutputTamil: "My Courses heading-க்கு அழைத்துச் செல்லும் 'Go to My Courses' link.",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <a href="#courses">Go to My Courses</a>
+
+  <h2 id="courses">My Courses</h2>
+  <p>HTML</p>
+  <p>CSS</p>
+  <p>JavaScript</p>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 5,
+  title: "Create Multiple Navigation Links",
+  questionEnglish: "Create a simple navigation section with three links: Home, About, and Contact. Link them to index.html, about.html, and contact.html respectively.",
+  questionTamil: "Home, About மற்றும் Contact என்ற மூன்று links கொண்ட navigation பகுதியை உருவாக்கவும். அவற்றை முறையே index.html, about.html மற்றும் contact.html கோப்புகளுடன் இணைக்கவும்.",
+  hintEnglish: "Use three separate <a> tags.",
+  hintTamil: "மூன்று தனித்தனி <a> tags-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "Home | About | Contact (three clickable links)",
+  expectedOutputTamil: "Home | About | Contact (மூன்று clickable links)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 5,
+  title: "Create a Download Link",
+  questionEnglish: "Create a link named 'Download Notes' that allows users to download a file called notes.pdf.",
+  questionTamil: "'Download Notes' என்ற பெயரில் notes.pdf கோப்பைப் பதிவிறக்க உதவும் link உருவாக்கவும்.",
+  hintEnglish: "Use the download attribute in the anchor tag.",
+  hintTamil: "Anchor tag-ல் download attribute-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "Download Notes (offers notes.pdf for download when the file exists)",
+  expectedOutputTamil: "Download Notes (notes.pdf கோப்பு இருந்தால் பதிவிறக்க உதவும்)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <a href="notes.pdf" download>Download Notes</a>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 5,
+  title: "Personal Portfolio Navigation",
+  questionEnglish: "Create a personal portfolio navigation section with links to Home, Skills, Projects, and Contact. Each link should navigate to its corresponding section on the same page.",
+  questionTamil: "Home, Skills, Projects மற்றும் Contact ஆகியவற்றுக்கான links கொண்ட personal portfolio navigation பகுதியை உருவாக்கவும். ஒவ்வொரு link-ம் அதற்குரிய அதே பக்கத்தின் section-க்கு அழைத்துச் செல்ல வேண்டும்.",
+  hintEnglish: "Use <nav>, anchor tags, section IDs, and internal links.",
+  hintTamil: "<nav>, anchor tags, section IDs மற்றும் internal links-ஐப் பயன்படுத்தவும்.",
+  expectedOutput: "A portfolio page with four working navigation links and four corresponding sections.",
+  expectedOutputTamil: "நான்கு செயல்படும் navigation links மற்றும் அவற்றுக்குரிய நான்கு sections கொண்ட portfolio பக்கம்.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 5,
+  title: "Build a Business Website Navigation",
+  questionEnglish: "Create a navigation section for a small business website with Home, Services, Gallery, About, and Contact links. Make each link navigate to its matching section. Also make the Contact link open an email application.",
+  questionTamil: "ஒரு சிறு வணிக இணையதளத்திற்காக Home, Services, Gallery, About மற்றும் Contact links கொண்ட navigation பகுதியை உருவாக்கவும். ஒவ்வொரு link-ம் அதற்குரிய section-க்கு செல்ல வேண்டும். Contact link email application-ஐத் திறக்க வேண்டும்.",
+  hintEnglish: "Combine internal anchor links with a mailto: link.",
+  hintTamil: "Internal anchor links மற்றும் mailto: link-ஐ இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A business website navigation with five links, working section navigation, and an email contact link.",
+  expectedOutputTamil: "ஐந்து links, செயல்படும் section navigation மற்றும் email contact link கொண்ட வணிக இணையதள navigation.",
+  challenge: true
+},
+
 
 
 ];
