@@ -103,6 +103,25 @@ function App() {
   path="/web-development"
   element={<WebDevelopment />}
 />
+<Route
+  path="/web-home/:languageId"
+  element={<Home />}
+/>
+
+<Route
+  path="/web-topic/:languageId/:topicId"
+  element={<Topic />}
+/>
+
+<Route
+  path="/web-questions/:languageId/:topicId"
+  element={<Question />}
+/>
+
+<Route
+  path="/web-question/:languageId/:topicId/:questionId"
+  element={<QuestionDetails />}
+/>
 
 <Route
   path="/welcome"
