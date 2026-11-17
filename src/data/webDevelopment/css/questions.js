@@ -2994,4 +2994,329 @@ body {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 12,
+    title: "Create a Grid Container",
+    questionEnglish: "Create a container with four div boxes. Use display: grid to make it a grid container.",
+    questionTamil: "நான்கு div boxes கொண்ட container உருவாக்கவும். அதை grid container ஆக மாற்ற display: grid பயன்படுத்தவும்.",
+    hintEnglish: "Apply display: grid to the parent element.",
+    hintTamil: "Parent element-க்கு display: grid அமைக்கவும்.",
+    expectedOutput: "The four boxes are displayed in a grid using the default one-column layout.",
+    expectedOutputTamil: "Default ஒரு-column layout-ல் நான்கு boxes-ம் grid ஆகத் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  gap: 10px;
+}
+.box {
+  background-color: lightblue;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+  <div class="box">Four</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 12,
+    title: "Create Two Grid Columns",
+    questionEnglish: "Create four boxes inside a grid container. Use grid-template-columns: repeat(2, 1fr) to arrange them into two equal columns.",
+    questionTamil: "Grid container-க்குள் நான்கு boxes உருவாக்கவும். அவற்றை இரண்டு சமமான columns-ல் அமைக்க grid-template-columns: repeat(2, 1fr) பயன்படுத்தவும்.",
+    hintEnglish: "Use repeat(2, 1fr) to create two equal columns.",
+    hintTamil: "இரண்டு சமமான columns உருவாக்க repeat(2, 1fr) பயன்படுத்தவும்.",
+    expectedOutput: "Four boxes appear in two equal columns and two rows.",
+    expectedOutputTamil: "இரண்டு சமமான columns மற்றும் இரண்டு rows-ல் நான்கு boxes தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.box {
+  background-color: lightgreen;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+  <div class="box">Four</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 12,
+    title: "Create Three Grid Columns",
+    questionEnglish: "Create six boxes inside a grid container. Use grid-template-columns: repeat(3, 1fr) to arrange them into three equal columns.",
+    questionTamil: "Grid container-க்குள் ஆறு boxes உருவாக்கவும். அவற்றை மூன்று சமமான columns-ல் அமைக்க grid-template-columns: repeat(3, 1fr) பயன்படுத்தவும்.",
+    hintEnglish: "Use repeat(3, 1fr).",
+    hintTamil: "repeat(3, 1fr) பயன்படுத்தவும்.",
+    expectedOutput: "Six boxes appear in three equal columns and two rows.",
+    expectedOutputTamil: "மூன்று சமமான columns மற்றும் இரண்டு rows-ல் ஆறு boxes தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.box {
+  background-color: lightblue;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+  <div class="box">Four</div>
+  <div class="box">Five</div>
+  <div class="box">Six</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 12,
+    title: "Set Grid Gap",
+    questionEnglish: "Create a grid with four boxes arranged in two columns. Use a 20px gap between rows and columns.",
+    questionTamil: "இரண்டு columns-ல் அமைக்கப்பட்ட நான்கு boxes கொண்ட grid உருவாக்கவும். Rows மற்றும் columns இடையே 20px gap அமைக்கவும்.",
+    hintEnglish: "Use the gap property.",
+    hintTamil: "gap property பயன்படுத்தவும்.",
+    expectedOutput: "Four boxes appear in two columns with 20px spacing between grid items.",
+    expectedOutputTamil: "Grid items இடையே 20px இடைவெளியுடன் நான்கு boxes இரண்டு columns-ல் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.box {
+  background-color: lightpink;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+  <div class="box">Four</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 12,
+    title: "Set Grid Row Heights",
+    questionEnglish: "Create a grid with two columns and two rows. Use grid-template-rows to make the first row 100px high and the second row 150px high.",
+    questionTamil: "இரண்டு columns மற்றும் இரண்டு rows கொண்ட grid உருவாக்கவும். முதல் row-ன் உயரத்தை 100px ஆகவும் இரண்டாவது row-ன் உயரத்தை 150px ஆகவும் அமைக்க grid-template-rows பயன்படுத்தவும்.",
+    hintEnglish: "Use grid-template-rows: 100px 150px.",
+    hintTamil: "grid-template-rows: 100px 150px பயன்படுத்தவும்.",
+    expectedOutput: "A grid with two rows of different heights.",
+    expectedOutputTamil: "வெவ்வேறு உயரங்களைக் கொண்ட இரண்டு rows உடைய grid தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100px 150px;
+  gap: 10px;
+}
+.box {
+  background-color: lightblue;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+  <div class="box">Four</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 12,
+    title: "Span Multiple Columns",
+    questionEnglish: "Create a grid with three equal columns. Make the first item span across all three columns using grid-column: 1 / 4.",
+    questionTamil: "மூன்று சமமான columns கொண்ட grid உருவாக்கவும். முதல் item மூன்று columns முழுவதும் பரவ grid-column: 1 / 4 பயன்படுத்தவும்.",
+    hintEnglish: "Use grid-column to control how many columns an item occupies.",
+    hintTamil: "ஒரு item எத்தனை columns-ஐ நிரப்ப வேண்டும் என்பதை அமைக்க grid-column பயன்படுத்தவும்.",
+    expectedOutput: "The first box spans the full grid width, while the other boxes occupy individual columns.",
+    expectedOutputTamil: "முதல் box முழு grid அகலத்தையும் நிரப்பும்; மற்ற boxes தனித்தனி columns-ல் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.box {
+  background-color: lightgreen;
+  padding: 20px;
+}
+.header {
+  grid-column: 1 / 4;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box header">Header</div>
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 12,
+    title: "Span Multiple Rows",
+    questionEnglish: "Create a grid with three columns and two rows. Make the first item span both rows using grid-row: 1 / 3.",
+    questionTamil: "மூன்று columns மற்றும் இரண்டு rows கொண்ட grid உருவாக்கவும். முதல் item இரண்டு rows முழுவதும் பரவ grid-row: 1 / 3 பயன்படுத்தவும்.",
+    hintEnglish: "Use grid-row to control the vertical space occupied by an item.",
+    hintTamil: "ஒரு item செங்குத்தாக எத்தனை rows-ஐ நிரப்ப வேண்டும் என்பதை அமைக்க grid-row பயன்படுத்தவும்.",
+    expectedOutput: "The first item occupies the height of two rows.",
+    expectedOutputTamil: "முதல் item இரண்டு rows-ன் முழு உயரத்தையும் நிரப்பும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+}
+.box {
+  background-color: lightblue;
+  padding: 15px;
+}
+.sidebar {
+  grid-row: 1 / 3;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box sidebar">Sidebar</div>
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+  <div class="box">Four</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 12,
+    title: "Create a Responsive Grid",
+    questionEnglish: "Create a grid of course cards. Use repeat(auto-fit, minmax(200px, 1fr)) so that the number of columns adjusts automatically according to the available width.",
+    questionTamil: "Course cards கொண்ட grid உருவாக்கவும். கிடைக்கும் அகலத்திற்கு ஏற்ப columns எண்ணிக்கை தானாக மாற repeat(auto-fit, minmax(200px, 1fr)) பயன்படுத்தவும்.",
+    hintEnglish: "Use auto-fit and minmax() inside grid-template-columns.",
+    hintTamil: "grid-template-columns-க்குள் auto-fit மற்றும் minmax() பயன்படுத்தவும்.",
+    expectedOutput: "Course cards automatically rearrange into as many columns as fit the available space, with a minimum column width of 200px.",
+    expectedOutputTamil: "கிடைக்கும் இடத்திற்கு ஏற்ப course cards தானாக columns-ஆக மாறும். ஒவ்வொரு column-ன் குறைந்தபட்ச அகலம் 200px ஆக இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.card {
+  background-color: lightblue;
+  padding: 25px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">HTML</div>
+  <div class="card">CSS</div>
+  <div class="card">JavaScript</div>
+  <div class="card">React</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 12,
+    title: "Challenge: Website Layout",
+    questionEnglish: "Create a website layout with a header spanning all columns, a sidebar, a main content area, and a footer spanning the full width. Use CSS Grid to arrange the sections.",
+    questionTamil: "அனைத்து columns-ஐயும் நிரப்பும் header, sidebar, main content area மற்றும் முழு அகலத்தையும் நிரப்பும் footer கொண்ட website layout உருவாக்கவும். பகுதிகளை வரிசைப்படுத்த CSS Grid பயன்படுத்தவும்.",
+    hintEnglish: "Use grid-template-columns, grid-template-rows, grid-column, and grid-row.",
+    hintTamil: "grid-template-columns, grid-template-rows, grid-column மற்றும் grid-row பயன்படுத்தவும்.",
+    expectedOutput: "A structured website layout with a header, sidebar, main content, and footer.",
+    expectedOutputTamil: "Header, sidebar, main content மற்றும் footer கொண்ட ஒழுங்கான website layout.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 12,
+    title: "Challenge: DEEP CODE Course Dashboard",
+    questionEnglish: "Create a responsive DEEP CODE dashboard with a header, sidebar, course cards, and footer. Use CSS Grid to organize the layout and make the course cards automatically adjust to the available screen width.",
+    questionTamil: "Header, sidebar, course cards மற்றும் footer கொண்ட responsive DEEP CODE dashboard உருவாக்கவும். Layout-ஐ ஒழுங்குபடுத்த CSS Grid பயன்படுத்தி course cards கிடைக்கும் திரை அகலத்திற்கு ஏற்ப தானாக மாறும்படி அமைக்கவும்.",
+    hintEnglish: "Combine grid-template-areas or grid-column with repeat(), auto-fit, and minmax().",
+    hintTamil: "grid-template-areas அல்லது grid-column உடன் repeat(), auto-fit மற்றும் minmax() இணைத்துப் பயன்படுத்தவும்.",
+    expectedOutput: "A responsive DEEP CODE dashboard with an organized grid layout.",
+    expectedOutputTamil: "ஒழுங்கான grid layout கொண்ட responsive DEEP CODE dashboard தோன்றும்.",
+    challenge: true
+  }
+]
+
 ]
