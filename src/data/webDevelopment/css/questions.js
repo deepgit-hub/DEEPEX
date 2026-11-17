@@ -2327,4 +2327,338 @@ span {
   }
 ]
 
+[
+  {
+    id: 1,
+    topicId: 10,
+    title: "Static Position",
+    questionEnglish: "Create three div boxes and set their position property to static. Give each box a different background color.",
+    questionTamil: "மூன்று div boxes உருவாக்கி அவற்றின் position property-ஐ static ஆக அமைக்கவும். ஒவ்வொரு box-க்கும் வெவ்வேறு background color கொடுக்கவும்.",
+    hintEnglish: "Use position: static. This is the normal document flow.",
+    hintTamil: "position: static பயன்படுத்தவும். இது இயல்பான document flow ஆகும்.",
+    expectedOutput: "Three colored boxes appear in their normal document order.",
+    expectedOutputTamil: "மூன்று வண்ணப் பெட்டிகளும் இயல்பான document வரிசையில் தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  position: static;
+  padding: 20px;
+  margin: 10px;
+}
+.one {
+  background-color: lightblue;
+}
+.two {
+  background-color: lightgreen;
+}
+.three {
+  background-color: lightpink;
+}
+</style>
+</head>
+<body>
+<div class="box one">Box One</div>
+<div class="box two">Box Two</div>
+<div class="box three">Box Three</div>
+</body>
+</html>`
+  },
+  {
+    id: 2,
+    topicId: 10,
+    title: "Relative Position",
+    questionEnglish: "Create a div with position: relative. Move it 20px down and 30px to the right using top and left properties.",
+    questionTamil: "position: relative கொண்ட div உருவாக்கவும். top மற்றும் left properties பயன்படுத்தி அதை 20px கீழேயும் 30px வலதுபுறமும் நகர்த்தவும்.",
+    hintEnglish: "Use position: relative, top: 20px, and left: 30px.",
+    hintTamil: "position: relative, top: 20px மற்றும் left: 30px பயன்படுத்தவும்.",
+    expectedOutput: "The box appears 20px lower and 30px to the right of its original position, while its original layout space remains reserved.",
+    expectedOutputTamil: "Box அதன் இயல்பான இடத்திலிருந்து 20px கீழேயும் 30px வலதுபுறமும் தோன்றும். அதன் பழைய layout இடம் தொடர்ந்து ஒதுக்கப்பட்டிருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  position: relative;
+  top: 20px;
+  left: 30px;
+  background-color: lightblue;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="box">Relative Position</div>
+</body>
+</html>`
+  },
+  {
+    id: 3,
+    topicId: 10,
+    title: "Absolute Position",
+    questionEnglish: "Create a parent div with position: relative. Inside it, create a child div with position: absolute, top: 10px, and right: 10px. Give the parent a lightgray background and the child a blue background.",
+    questionTamil: "position: relative கொண்ட parent div உருவாக்கவும். அதற்குள் position: absolute, top: 10px மற்றும் right: 10px கொண்ட child div உருவாக்கவும். Parent-க்கு lightgray background மற்றும் child-க்கு blue background கொடுக்கவும்.",
+    hintEnglish: "An absolutely positioned child uses its nearest positioned ancestor as its reference.",
+    hintTamil: "Absolute position கொண்ட child, அருகிலுள்ள positioned ancestor-ஐ reference ஆகப் பயன்படுத்தும்.",
+    expectedOutput: "A blue child box appears 10px from the top and right edges of its parent.",
+    expectedOutputTamil: "Parent-ன் மேல் மற்றும் வலது விளிம்புகளிலிருந்து 10px இடைவெளியில் நீல child box தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.parent {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: lightgray;
+}
+.child {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="parent">
+  Parent
+  <div class="child">Child</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 4,
+    topicId: 10,
+    title: "Fixed Position",
+    questionEnglish: "Create a fixed notification box at the bottom-right corner of the browser window. Use position: fixed, bottom: 20px, and right: 20px.",
+    questionTamil: "Browser window-ன் கீழ் வலது மூலையில் fixed notification box உருவாக்கவும். position: fixed, bottom: 20px மற்றும் right: 20px பயன்படுத்தவும்.",
+    hintEnglish: "Use position: fixed to position the element relative to the viewport.",
+    hintTamil: "Viewport-ஐ அடிப்படையாகக் கொண்டு element-ஐ அமைக்க position: fixed பயன்படுத்தவும்.",
+    expectedOutput: "A notification box stays at the bottom-right corner while the page scrolls.",
+    expectedOutputTamil: "Page scroll செய்தாலும் notification box கீழ் வலது மூலையில் நிலையாக இருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: darkblue;
+  color: white;
+  padding: 15px;
+}
+.content {
+  height: 1000px;
+}
+</style>
+</head>
+<body>
+<div class="content">
+  <h1>Scroll the Page</h1>
+</div>
+<div class="notification">New Notification!</div>
+</body>
+</html>`
+  },
+  {
+    id: 5,
+    topicId: 10,
+    title: "Sticky Position",
+    questionEnglish: "Create a long webpage with a heading bar. Set the heading bar to position: sticky and top: 0 so that it sticks to the top when scrolling within the page.",
+    questionTamil: "நீளமான webpage மற்றும் heading bar உருவாக்கவும். Page-ஐ scroll செய்யும்போது heading bar மேலே ஒட்டியிருக்க position: sticky மற்றும் top: 0 அமைக்கவும்.",
+    hintEnglish: "Use position: sticky and top: 0. The sticky element needs room to scroll within its container.",
+    hintTamil: "position: sticky மற்றும் top: 0 பயன்படுத்தவும். Sticky element அதன் container-க்குள் scroll ஆக போதுமான இடம் இருக்க வேண்டும்.",
+    expectedOutput: "The heading bar sticks to the top of the viewport as the page scrolls through its container.",
+    expectedOutputTamil: "Page-ஐ scroll செய்யும்போது heading bar viewport-ன் மேல் பகுதியில் ஒட்டியிருக்கும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+}
+.header {
+  position: sticky;
+  top: 0;
+  background-color: darkblue;
+  color: white;
+  padding: 15px;
+}
+.content {
+  height: 1200px;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="header">Sticky Header</div>
+<div class="content">
+  <h1>Scroll to see the effect</h1>
+  <p>This is a long webpage.</p>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 6,
+    topicId: 10,
+    title: "Use Top and Left Properties",
+    questionEnglish: "Create a parent div with position: relative. Place a child div using position: absolute, top: 30px, and left: 40px.",
+    questionTamil: "position: relative கொண்ட parent div உருவாக்கவும். அதற்குள் position: absolute, top: 30px மற்றும் left: 40px பயன்படுத்தி child div அமைக்கவும்.",
+    hintEnglish: "Set the parent as relative and the child as absolute.",
+    hintTamil: "Parent-ஐ relative ஆகவும் child-ஐ absolute ஆகவும் அமைக்கவும்.",
+    expectedOutput: "The child box appears 30px from the parent's top and 40px from its left.",
+    expectedOutputTamil: "Parent-ன் மேல் விளிம்பிலிருந்து 30px மற்றும் இடது விளிம்பிலிருந்து 40px தொலைவில் child box தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.parent {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: lightgray;
+}
+.child {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  background-color: orange;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="parent">
+  <div class="child">Child Box</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 7,
+    topicId: 10,
+    title: "Control Stacking with Z-Index",
+    questionEnglish: "Create two overlapping div boxes using position: absolute. Give the first box z-index: 1 and the second box z-index: 2 so that the second box appears on top.",
+    questionTamil: "position: absolute பயன்படுத்தி ஒன்றின் மீது ஒன்று படியும் இரண்டு div boxes உருவாக்கவும். முதல் box-க்கு z-index: 1 மற்றும் இரண்டாவது box-க்கு z-index: 2 அமைத்து இரண்டாவது box மேலே தோன்றும்படி செய்யவும்.",
+    hintEnglish: "A higher z-index generally places an element above a lower one within the relevant stacking context.",
+    hintTamil: "ஒரே stacking context-ல் அதிகமான z-index கொண்ட element பொதுவாக மற்ற element-க்கு மேலே தோன்றும்.",
+    expectedOutput: "The second box appears above the first box.",
+    expectedOutputTamil: "இரண்டாவது box முதல் box-க்கு மேலே தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  position: relative;
+  height: 200px;
+}
+.box {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  padding: 10px;
+}
+.one {
+  top: 20px;
+  left: 20px;
+  background-color: red;
+  z-index: 1;
+}
+.two {
+  top: 60px;
+  left: 80px;
+  background-color: blue;
+  color: white;
+  z-index: 2;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box one">First Box</div>
+  <div class="box two">Second Box</div>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 8,
+    topicId: 10,
+    title: "Position a Badge on a Card",
+    questionEnglish: "Create a product card with position: relative. Add a small 'NEW' badge inside it using position: absolute, top: 10px, and right: 10px.",
+    questionTamil: "position: relative கொண்ட product card உருவாக்கவும். அதற்குள் position: absolute, top: 10px மற்றும் right: 10px பயன்படுத்தி சிறிய 'NEW' badge சேர்க்கவும்.",
+    hintEnglish: "Make the card relative and the badge absolute.",
+    hintTamil: "Card-ஐ relative ஆகவும் badge-ஐ absolute ஆகவும் அமைக்கவும்.",
+    expectedOutput: "A product card with a NEW badge positioned at its top-right corner.",
+    expectedOutputTamil: "Product card-ன் மேல் வலது மூலையில் NEW badge தோன்றும்.",
+    challenge: false,
+    solution: `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  position: relative;
+  width: 250px;
+  padding: 40px 20px 20px;
+  background-color: lightgray;
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="badge">NEW</span>
+  <h2>Product Name</h2>
+  <p>Product description.</p>
+</div>
+</body>
+</html>`
+  },
+  {
+    id: 9,
+    topicId: 10,
+    title: "Challenge: Notification Interface",
+    questionEnglish: "Create a notification interface with a fixed notification button, a sticky header, and a positioned notification badge. Use relative, absolute, fixed, and sticky positioning appropriately.",
+    questionTamil: "Fixed notification button, sticky header மற்றும் positioned notification badge கொண்ட notification interface உருவாக்கவும். Relative, absolute, fixed மற்றும் sticky positioning-ஐ பொருத்தமான முறையில் பயன்படுத்தவும்.",
+    hintEnglish: "Choose a suitable positioned parent for the badge and keep the notification button fixed to the viewport.",
+    hintTamil: "Badge-க்கு பொருத்தமான positioned parent தேர்ந்தெடுத்து notification button-ஐ viewport-ல் fixed ஆக வைக்கவும்.",
+    expectedOutput: "A page with a sticky header, a notification badge, and a fixed notification button.",
+    expectedOutputTamil: "Sticky header, notification badge மற்றும் fixed notification button கொண்ட page தோன்றும்.",
+    challenge: true
+  },
+  {
+    id: 10,
+    topicId: 10,
+    title: "Challenge: DEEP CODE Learning Dashboard",
+    questionEnglish: "Create a DEEP CODE learning dashboard with a sticky navigation header, a course card containing an absolute NEW badge, and a fixed help button at the bottom-right corner. Use suitable positioning properties and z-index values.",
+    questionTamil: "Sticky navigation header, absolute NEW badge கொண்ட course card மற்றும் கீழ் வலது மூலையில் fixed help button கொண்ட DEEP CODE learning dashboard உருவாக்கவும். பொருத்தமான positioning properties மற்றும் z-index values பயன்படுத்தவும்.",
+    hintEnglish: "Use sticky for the header, relative and absolute for the card and badge, and fixed for the help button.",
+    hintTamil: "Header-க்கு sticky, card மற்றும் badge-க்கு relative மற்றும் absolute, help button-க்கு fixed பயன்படுத்தவும்.",
+    expectedOutput: "A learning dashboard with a sticky header, a course card badge, and a fixed help button.",
+    expectedOutputTamil: "Sticky header, course card badge மற்றும் fixed help button கொண்ட learning dashboard தோன்றும்.",
+    challenge: true
+  }
+]
+
 ]
