@@ -258,7 +258,322 @@ const questions = [
     expectedOutput: "A complete business webpage displaying the company name, introduction, three services and contact message.",
     expectedOutputTamil: "நிறுவனத்தின் பெயர், அறிமுகம், மூன்று சேவைகள் மற்றும் தொடர்பு செய்தியைக் காட்டும் முழுமையான business webpage.",
     challenge: true
-  }
+  },
+
+  {
+    topicId: 3,
+    id: 1,
+    title: "Display a Main Heading",
+    questionEnglish: "Create an HTML page that displays 'Welcome to Web Development' using the main heading element.",
+    questionTamil: "'Welcome to Web Development' என்பதை main heading ஆகக் காட்டும் HTML பக்கத்தை உருவாக்கவும்.",
+    hintEnglish: "Use the h1 element inside the body.",
+    hintTamil: "Body-க்குள் h1 element-ஐப் பயன்படுத்தவும்.",
+    expectedOutput: "Welcome to Web Development",
+    expectedOutputTamil: "Welcome to Web Development",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<body>\n<h1>Welcome to Web Development</h1>\n</body>\n</html>"
+  },
+  {
+    topicId: 3,
+    id: 2,
+    title: "Display a Second-Level Heading",
+    questionEnglish: "Create an HTML page that displays 'HTML Basics' using the second-level heading element.",
+    questionTamil: "'HTML Basics' என்பதை இரண்டாம் நிலைத் தலைப்பாகக் காட்டும் HTML பக்கத்தை உருவாக்கவும்.",
+    hintEnglish: "Use the h2 element.",
+    hintTamil: "h2 element-ஐப் பயன்படுத்தவும்.",
+    expectedOutput: "HTML Basics",
+    expectedOutputTamil: "HTML Basics",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<body>\n<h2>HTML Basics</h2>\n</body>\n</html>"
+  },
+  {
+    topicId: 3,
+    id: 3,
+    title: "Use Three Heading Levels",
+    questionEnglish: "Create an HTML page that displays 'Web Development', 'HTML' and 'HTML Headings' using h1, h2 and h3 respectively.",
+    questionTamil: "'Web Development', 'HTML' மற்றும் 'HTML Headings' ஆகியவற்றை முறையே h1, h2 மற்றும் h3 பயன்படுத்திக் காட்டவும்.",
+    hintEnglish: "Use h1 for the main heading, h2 for the section and h3 for the subsection.",
+    hintTamil: "முக்கிய தலைப்புக்கு h1, section-க்கு h2 மற்றும் subsection-க்கு h3 பயன்படுத்தவும்.",
+    expectedOutput: "Web Development\nHTML\nHTML Headings",
+    expectedOutputTamil: "Web Development\nHTML\nHTML Headings",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<body>\n<h1>Web Development</h1>\n<h2>HTML</h2>\n<h3>HTML Headings</h3>\n</body>\n</html>"
+  },
+  {
+    topicId: 3,
+    id: 4,
+    title: "Display All Six Heading Levels",
+    questionEnglish: "Create an HTML page that displays the texts 'Heading One' to 'Heading Six' using h1 to h6 respectively.",
+    questionTamil: "'Heading One' முதல் 'Heading Six' வரை உள்ள உரைகளை முறையே h1 முதல் h6 வரை பயன்படுத்திக் காட்டவும்.",
+    hintEnglish: "HTML provides six heading elements: h1, h2, h3, h4, h5 and h6.",
+    hintTamil: "HTML-ல் h1, h2, h3, h4, h5 மற்றும் h6 என ஆறு heading elements உள்ளன.",
+    expectedOutput: "Heading One\nHeading Two\nHeading Three\nHeading Four\nHeading Five\nHeading Six",
+    expectedOutputTamil: "Heading One\nHeading Two\nHeading Three\nHeading Four\nHeading Five\nHeading Six",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<body>\n<h1>Heading One</h1>\n<h2>Heading Two</h2>\n<h3>Heading Three</h3>\n<h4>Heading Four</h4>\n<h5>Heading Five</h5>\n<h6>Heading Six</h6>\n</body>\n</html>"
+  },
+  {
+    topicId: 3,
+    id: 5,
+    title: "Create a Course Heading Structure",
+    questionEnglish: "Create a webpage for a programming course. Display 'Programming Course' as h1, 'Java' as h2 and 'Variables' as h3.",
+    questionTamil: "ஒரு programming course-க்கான webpage உருவாக்கவும். 'Programming Course' என்பதை h1 ஆகவும், 'Java' என்பதை h2 ஆகவும், 'Variables' என்பதை h3 ஆகவும் காட்டவும்.",
+    hintEnglish: "Organize the headings from the main topic to the subsection.",
+    hintTamil: "முக்கிய தலைப்பிலிருந்து துணைத் தலைப்பு வரை headings-ஐ ஒழுங்குபடுத்தவும்.",
+    expectedOutput: "Programming Course\nJava\nVariables",
+    expectedOutputTamil: "Programming Course\nJava\nVariables",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<body>\n<h1>Programming Course</h1>\n<h2>Java</h2>\n<h3>Variables</h3>\n</body>\n</html>"
+  },
+  {
+    topicId: 3,
+    id: 6,
+    title: "Create Multiple Section Headings",
+    questionEnglish: "Create a webpage with 'My Portfolio' as the main heading and three section headings: 'About Me', 'Education' and 'Skills'.",
+    questionTamil: "'My Portfolio' என்ற main heading-ஐயும், 'About Me', 'Education' மற்றும் 'Skills' என்ற மூன்று section headings-ஐயும் கொண்ட webpage உருவாக்கவும்.",
+    hintEnglish: "Use h1 for the main heading and h2 for all three sections.",
+    hintTamil: "Main heading-க்கு h1 மற்றும் மூன்று sections-க்கும் h2 பயன்படுத்தவும்.",
+    expectedOutput: "My Portfolio\nAbout Me\nEducation\nSkills",
+    expectedOutputTamil: "My Portfolio\nAbout Me\nEducation\nSkills",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<body>\n<h1>My Portfolio</h1>\n<h2>About Me</h2>\n<h2>Education</h2>\n<h2>Skills</h2>\n</body>\n</html>"
+  },
+  {
+    topicId: 3,
+    id: 7,
+    title: "Organize a News Article",
+    questionEnglish: "Create a news article structure using 'Technology News' as h1, 'Cybersecurity Updates' as h2 and 'New Security Tools Released' as h3.",
+    questionTamil: "'Technology News' என்பதை h1 ஆகவும், 'Cybersecurity Updates' என்பதை h2 ஆகவும், 'New Security Tools Released' என்பதை h3 ஆகவும் பயன்படுத்தி news article structure உருவாக்கவும்.",
+    hintEnglish: "Use different heading levels to show the relationship between the main topic, section and article title.",
+    hintTamil: "Main topic, section மற்றும் article title ஆகியவற்றின் தொடர்பைக் காட்ட வெவ்வேறு heading levels-ஐப் பயன்படுத்தவும்.",
+    expectedOutput: "Technology News\nCybersecurity Updates\nNew Security Tools Released",
+    expectedOutputTamil: "Technology News\nCybersecurity Updates\nNew Security Tools Released",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<body>\n<h1>Technology News</h1>\n<h2>Cybersecurity Updates</h2>\n<h3>New Security Tools Released</h3>\n</body>\n</html>"
+  },
+  {
+    topicId: 3,
+    id: 8,
+    title: "Build a College Website Heading Structure",
+    questionEnglish: "Create a college webpage with 'ABC College' as h1. Add 'Departments' and 'Admissions' as h2 headings. Under Departments, display 'Computer Science' as an h3 heading.",
+    questionTamil: "'ABC College' என்பதை h1 ஆகக் கொண்ட college webpage உருவாக்கவும். 'Departments' மற்றும் 'Admissions' ஆகியவற்றை h2 ஆகவும், Departments-ன் கீழ் 'Computer Science' என்பதை h3 ஆகவும் காட்டவும்.",
+    hintEnglish: "Use h1 for the college name, h2 for main sections and h3 for a department under Departments.",
+    hintTamil: "College பெயருக்கு h1, முக்கிய sections-க்கு h2 மற்றும் Departments-ன் கீழுள்ள துறைக்கு h3 பயன்படுத்தவும்.",
+    expectedOutput: "ABC College\nDepartments\nComputer Science\nAdmissions",
+    expectedOutputTamil: "ABC College\nDepartments\nComputer Science\nAdmissions",
+    challenge: false,
+    solution: "<!DOCTYPE html>\n<html>\n<body>\n<h1>ABC College</h1>\n<h2>Departments</h2>\n<h3>Computer Science</h3>\n<h2>Admissions</h2>\n</body>\n</html>"
+  },
+  {
+    topicId: 3,
+    id: 9,
+    title: "Challenge: Build a Documentation Heading Structure",
+    questionEnglish: "Create a heading structure for a web development documentation page. Use 'Web Development Guide' as the main heading. Include HTML, CSS and JavaScript as section headings. Under HTML, include 'Elements' and 'Attributes' as subsection headings.",
+    questionTamil: "ஒரு web development documentation page-க்கான heading structure உருவாக்கவும். 'Web Development Guide' என்பதை main heading ஆகவும், HTML, CSS மற்றும் JavaScript ஆகியவற்றை section headings ஆகவும் அமைக்கவும். HTML-ன் கீழ் 'Elements' மற்றும் 'Attributes' ஆகியவற்றை subsection headings ஆகச் சேர்க்கவும்.",
+    hintEnglish: "Plan the hierarchy carefully. Use h1 for the main heading, h2 for the three sections and h3 for the HTML subsections.",
+    hintTamil: "Heading hierarchy-ஐ கவனமாகத் திட்டமிடுங்கள். Main heading-க்கு h1, மூன்று sections-க்கு h2 மற்றும் HTML துணைப் பகுதிகளுக்கு h3 பயன்படுத்தவும்.",
+    expectedOutput: "A documentation heading structure with one main heading, three section headings and two HTML subsection headings.",
+    expectedOutputTamil: "ஒரு main heading, மூன்று section headings மற்றும் இரண்டு HTML subsection headings கொண்ட documentation structure.",
+    challenge: true
+  },
+  {
+    topicId: 3,
+    id: 10,
+    title: "Challenge: Design a Learning Platform Heading Hierarchy",
+    questionEnglish: "Create the heading hierarchy for an online learning platform. Include 'DEEP CODE' as the main heading, 'Programming' and 'Web Development' as section headings. Under Web Development, add HTML, CSS and JavaScript as subsection headings. Choose suitable heading levels.",
+    questionTamil: "ஒரு online learning platform-க்கான heading hierarchy உருவாக்கவும். 'DEEP CODE' என்பதை main heading ஆகவும், 'Programming' மற்றும் 'Web Development' ஆகியவற்றை section headings ஆகவும் அமைக்கவும். Web Development-ன் கீழ் HTML, CSS மற்றும் JavaScript ஆகியவற்றை subsection headings ஆகச் சேர்க்கவும். பொருத்தமான heading levels-ஐத் தேர்ந்தெடுக்கவும்.",
+    hintEnglish: "Think about the parent-child relationship between the platform, its sections and the technologies.",
+    hintTamil: "Platform, அதன் sections மற்றும் technologies ஆகியவற்றுக்கிடையிலான parent-child தொடர்பைப் பற்றி சிந்தியுங்கள்.",
+    expectedOutput: "A heading hierarchy with DEEP CODE, Programming, Web Development, HTML, CSS and JavaScript.",
+    expectedOutputTamil: "DEEP CODE, Programming, Web Development, HTML, CSS மற்றும் JavaScript ஆகியவற்றைக் கொண்ட heading hierarchy.",
+    challenge: true
+  },
+
+
+
+{
+  id: 1,
+  topicId: 4,
+  title: "Create a Paragraph",
+  questionEnglish: "Create a paragraph that displays the text 'Welcome to my website'.",
+  questionTamil: "'Welcome to my website' என்ற உரையைக் காட்டும் ஒரு paragraph உருவாக்கவும்.",
+  hintEnglish: "Use the <p> tag.",
+  hintTamil: "<p> tag-ஐ பயன்படுத்தவும்.",
+  expectedOutput: "Welcome to my website",
+  expectedOutputTamil: "Welcome to my website",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>Welcome to my website</p>
+</body>
+</html>`
+},
+
+{
+  id: 2,
+  topicId: 4,
+  title: "Bold Text",
+  questionEnglish: "Display the text 'Cybersecurity is interesting' with the word 'Cybersecurity' in bold.",
+  questionTamil: "'Cybersecurity is interesting' என்ற உரையில் 'Cybersecurity' என்ற வார்த்தையை தடிமனாகக் காட்டவும்.",
+  hintEnglish: "Use the <strong> tag around the word.",
+  hintTamil: "அந்த வார்த்தையைச் சுற்றி <strong> tag-ஐ பயன்படுத்தவும்.",
+  expectedOutput: "Cybersecurity is interesting (Cybersecurity appears bold)",
+  expectedOutputTamil: "Cybersecurity is interesting (Cybersecurity தடிமனாகத் தோன்றும்)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p><strong>Cybersecurity</strong> is interesting</p>
+</body>
+</html>`
+},
+
+{
+  id: 3,
+  topicId: 4,
+  title: "Italic Text",
+  questionEnglish: "Display the sentence 'Learning HTML is fun' with the word 'fun' in italic.",
+  questionTamil: "'Learning HTML is fun' என்ற வாக்கியத்தில் 'fun' என்ற வார்த்தையை சாய்வாகக் காட்டவும்.",
+  hintEnglish: "Use the <em> tag around 'fun'.",
+  hintTamil: "'fun' என்ற வார்த்தையைச் சுற்றி <em> tag-ஐ பயன்படுத்தவும்.",
+  expectedOutput: "Learning HTML is fun (fun appears italic)",
+  expectedOutputTamil: "Learning HTML is fun (fun சாய்வாகத் தோன்றும்)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>Learning HTML is <em>fun</em></p>
+</body>
+</html>`
+},
+
+{
+  id: 4,
+  topicId: 4,
+  title: "Underline Text",
+  questionEnglish: "Create a paragraph that displays 'Important Notice' with the words underlined.",
+  questionTamil: "'Important Notice' என்ற வார்த்தைகள் அடிக்கோடுடன் தோன்றும் paragraph உருவாக்கவும்.",
+  hintEnglish: "Use the <u> tag.",
+  hintTamil: "<u> tag-ஐ பயன்படுத்தவும்.",
+  expectedOutput: "Important Notice (underlined)",
+  expectedOutputTamil: "Important Notice (அடிக்கோடுடன் தோன்றும்)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p><u>Important Notice</u></p>
+</body>
+</html>`
+},
+
+{
+  id: 5,
+  topicId: 4,
+  title: "Line Break",
+  questionEnglish: "Display your name and course on separate lines using a single paragraph.",
+  questionTamil: "ஒரே paragraph-ஐ பயன்படுத்தி உங்கள் பெயர் மற்றும் படிப்பை தனித்தனி வரிகளில் காட்டவும்.",
+  hintEnglish: "Use the <br> tag to break the line.",
+  hintTamil: "வரியைப் பிரிக்க <br> tag-ஐ பயன்படுத்தவும்.",
+  expectedOutput: "Deepak\nB.Sc. Computer Science",
+  expectedOutputTamil: "Deepak\nB.Sc. Computer Science",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>Deepak<br>B.Sc. Computer Science</p>
+</body>
+</html>`
+},
+
+{
+  id: 6,
+  topicId: 4,
+  title: "Small and Highlighted Text",
+  questionEnglish: "Display the text 'HTML Basics' normally and show 'Beginner Level' in smaller text.",
+  questionTamil: "'HTML Basics' என்ற உரையை இயல்பாகவும், 'Beginner Level' என்ற உரையை சிறிய அளவிலும் காட்டவும்.",
+  hintEnglish: "Use the <small> tag for smaller text.",
+  hintTamil: "சிறிய உரைக்கு <small> tag-ஐ பயன்படுத்தவும்.",
+  expectedOutput: "HTML Basics\nBeginner Level (smaller text)",
+  expectedOutputTamil: "HTML Basics\nBeginner Level (சிறிய உரை)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>HTML Basics</p>
+  <small>Beginner Level</small>
+</body>
+</html>`
+},
+
+{
+  id: 7,
+  topicId: 4,
+  title: "Deleted and Inserted Text",
+  questionEnglish: "Display the old price '₹1000' as deleted text and the new price '₹800' as inserted text.",
+  questionTamil: "பழைய விலையான '₹1000'-ஐ நீக்கப்பட்ட உரையாகவும், புதிய விலையான '₹800'-ஐ சேர்க்கப்பட்ட உரையாகவும் காட்டவும்.",
+  hintEnglish: "Use <del> for deleted text and <ins> for inserted text.",
+  hintTamil: "நீக்கப்பட்ட உரைக்கு <del>, சேர்க்கப்பட்ட உரைக்கு <ins> பயன்படுத்தவும்.",
+  expectedOutput: "₹1000 (deleted)\n₹800 (inserted)",
+  expectedOutputTamil: "₹1000 (நீக்கப்பட்ட உரை)\n₹800 (சேர்க்கப்பட்ட உரை)",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>Old Price: <del>₹1000</del></p>
+  <p>New Price: <ins>₹800</ins></p>
+</body>
+</html>`
+},
+
+{
+  id: 8,
+  topicId: 4,
+  title: "Subscript and Superscript",
+  questionEnglish: "Display the chemical formula H2O using subscript and the mathematical expression x2 using superscript.",
+  questionTamil: "H2O என்ற வேதியியல் சூத்திரத்தில் 2-ஐ கீழொட்டாகவும், x2 என்ற கணிதக் குறியீட்டில் 2-ஐ மேலொட்டாகவும் காட்டவும்.",
+  hintEnglish: "Use <sub> for subscript and <sup> for superscript.",
+  hintTamil: "கீழொட்டிற்கு <sub>, மேலொட்டிற்கு <sup> பயன்படுத்தவும்.",
+  expectedOutput: "H₂O and x²",
+  expectedOutputTamil: "H₂O மற்றும் x²",
+  challenge: false,
+  solution: `<!DOCTYPE html>
+<html>
+<body>
+  <p>H<sub>2</sub>O</p>
+  <p>x<sup>2</sup></p>
+</body>
+</html>`
+},
+
+{
+  id: 9,
+  topicId: 4,
+  title: "Student Introduction",
+  questionEnglish: "Create a student introduction using at least three paragraphs. Use bold, italic, and underline formatting for suitable words.",
+  questionTamil: "குறைந்தது மூன்று paragraphs பயன்படுத்தி ஒரு மாணவர் அறிமுகத்தை உருவாக்கவும். பொருத்தமான வார்த்தைகளுக்கு bold, italic மற்றும் underline formatting பயன்படுத்தவும்.",
+  hintEnglish: "Combine <p>, <strong>, <em>, and <u> tags.",
+  hintTamil: "<p>, <strong>, <em>, <u> ஆகிய tags-ஐ இணைத்துப் பயன்படுத்தவும்.",
+  expectedOutput: "A student introduction with at least three paragraphs and different text formatting.",
+  expectedOutputTamil: "குறைந்தது மூன்று paragraphs மற்றும் பல்வேறு text formatting கொண்ட மாணவர் அறிமுகம்.",
+  challenge: true
+},
+
+{
+  id: 10,
+  topicId: 4,
+  title: "Course Information Page",
+  questionEnglish: "Create a course information section for a Cybersecurity course. Include a course description, important topics, a highlighted notice, and a line showing the course duration. Use suitable text formatting tags.",
+  questionTamil: "Cybersecurity course-க்கான தகவல் பகுதியை உருவாக்கவும். Course விளக்கம், முக்கியமான தலைப்புகள், சிறப்பாகக் காட்டப்படும் அறிவிப்பு மற்றும் course கால அளவை தனி வரியில் சேர்க்கவும். பொருத்தமான text formatting tags-ஐ பயன்படுத்தவும்.",
+  hintEnglish: "Combine paragraphs, bold, italic, underline, small text, and line breaks where appropriate.",
+  hintTamil: "தேவையான இடங்களில் paragraphs, bold, italic, underline, small text மற்றும் line breaks ஆகியவற்றைப் பயன்படுத்தவும்.",
+  expectedOutput: "A formatted Cybersecurity course information section containing all requested details.",
+  expectedOutputTamil: "கேட்கப்பட்ட அனைத்து விவரங்களையும் கொண்ட formatting செய்யப்பட்ட Cybersecurity course தகவல் பகுதி.",
+  challenge: true
+},
+
+
+
 ];
 
 
