@@ -68,7 +68,7 @@ function WebDevelopment() {
 
               <button
                 onClick={() =>
-                  navigate(`/web-development/${technology.id}`)
+                  navigate(`/web-home/${technology.id}`)
                 }
               >
                 Start Learning →
