@@ -679,7 +679,770 @@ console.log(typeof isStudent);`
     expectedOutputTamil: "மாணவர் தகவல்களின் அனைத்து values-ன் data types.",
     challenge: true
   },
-  
+
+  // ==========================================
+  // TOPIC 6: JAVASCRIPT OPERATORS
+  // ==========================================
+  {
+    id: 1, topicId: 6, title: "Addition Operator",
+    questionEnglish: "Create two variables with the values 10 and 20. Display their sum.",
+    questionTamil: "10 மற்றும் 20 values கொண்ட இரண்டு variables உருவாக்கி அவற்றின் கூட்டுத்தொகையைக் காட்டவும்.",
+    hintEnglish: "Use the + operator.",
+    hintTamil: "+ operator பயன்படுத்தவும்.",
+    expectedOutput: "30",
+    expectedOutputTamil: "30",
+    challenge: false,
+    solution: `let a = 10;
+let b = 20;
+console.log(a + b);`
+  },
+  {
+    id: 2, topicId: 6, title: "Subtraction Operator",
+    questionEnglish: "Create two variables with the values 50 and 15. Display the difference.",
+    questionTamil: "50 மற்றும் 15 values கொண்ட இரண்டு variables உருவாக்கி அவற்றின் வித்தியாசத்தைக் காட்டவும்.",
+    hintEnglish: "Use the - operator.",
+    hintTamil: "- operator பயன்படுத்தவும்.",
+    expectedOutput: "35",
+    expectedOutputTamil: "35",
+    challenge: false,
+    solution: `let a = 50;
+let b = 15;
+console.log(a - b);`
+  },
+  {
+    id: 3, topicId: 6, title: "Multiplication Operator",
+    questionEnglish: "Calculate the total cost of 4 notebooks, each costing 25.",
+    questionTamil: "ஒவ்வொன்றும் 25 ரூபாய் விலை கொண்ட 4 notebooks-ன் மொத்த விலையைக் கணக்கிடவும்.",
+    hintEnglish: "Multiply the price by the quantity.",
+    hintTamil: "Price-ஐ quantity-யுடன் பெருக்கவும்.",
+    expectedOutput: "100",
+    expectedOutputTamil: "100",
+    challenge: false,
+    solution: `let price = 25;
+let quantity = 4;
+console.log(price * quantity);`
+  },
+  {
+    id: 4, topicId: 6, title: "Division Operator",
+    questionEnglish: "Divide 100 by 5 and display the result.",
+    questionTamil: "100-ஐ 5-ஆல் வகுத்து முடிவைக் காட்டவும்.",
+    hintEnglish: "Use the / operator.",
+    hintTamil: "/ operator பயன்படுத்தவும்.",
+    expectedOutput: "20",
+    expectedOutputTamil: "20",
+    challenge: false,
+    solution: `console.log(100 / 5);`
+  },
+  {
+    id: 5, topicId: 6, title: "Remainder Operator",
+    questionEnglish: "Find the remainder when 17 is divided by 5.",
+    questionTamil: "17-ஐ 5-ஆல் வகுக்கும்போது கிடைக்கும் remainder-ஐக் கண்டறியவும்.",
+    hintEnglish: "Use the % operator.",
+    hintTamil: "% operator பயன்படுத்தவும்.",
+    expectedOutput: "2",
+    expectedOutputTamil: "2",
+    challenge: false,
+    solution: `console.log(17 % 5);`
+  },
+  {
+    id: 6, topicId: 6, title: "Comparison Operator",
+    questionEnglish: "Compare whether 25 is greater than 10 using a comparison operator.",
+    questionTamil: "Comparison operator பயன்படுத்தி 25 என்பது 10-ஐ விட அதிகமா எனச் சரிபார்க்கவும்.",
+    hintEnglish: "Use the > operator.",
+    hintTamil: "> operator பயன்படுத்தவும்.",
+    expectedOutput: "true",
+    expectedOutputTamil: "true",
+    challenge: false,
+    solution: `console.log(25 > 10);`
+  },
+  {
+    id: 7, topicId: 6, title: "Strict Equality Operator",
+    questionEnglish: "Check whether the number 10 is strictly equal to the number 10.",
+    questionTamil: "10 என்ற number, மற்றொரு 10 என்ற number-க்கு strict equality உள்ளதா எனச் சரிபார்க்கவும்.",
+    hintEnglish: "Use the === operator.",
+    hintTamil: "=== operator பயன்படுத்தவும்.",
+    expectedOutput: "true",
+    expectedOutputTamil: "true",
+    challenge: false,
+    solution: `console.log(10 === 10);`
+  },
+  {
+    id: 8, topicId: 6, title: "Logical AND Operator",
+    questionEnglish: "Check whether 20 is greater than 10 AND 20 is less than 30 using a logical operator.",
+    questionTamil: "Logical operator பயன்படுத்தி 20 என்பது 10-ஐ விட அதிகமாகவும் 30-ஐ விட குறைவாகவும் உள்ளதா எனச் சரிபார்க்கவும்.",
+    hintEnglish: "Use the && operator.",
+    hintTamil: "&& operator பயன்படுத்தவும்.",
+    expectedOutput: "true",
+    expectedOutputTamil: "true",
+    challenge: false,
+    solution: `console.log(20 > 10 && 20 < 30);`
+  },
+  {
+    id: 9, topicId: 6, title: "Challenge: Shopping Calculator",
+    questionEnglish: "Calculate the total price of three different products, apply a discount using arithmetic operators, and display the final amount.",
+    questionTamil: "மூன்று வெவ்வேறு products-ன் மொத்த விலையைக் கணக்கிட்டு arithmetic operators பயன்படுத்தி discount வழங்கி இறுதி தொகையைக் காட்டவும்.",
+    hintEnglish: "Use variables, arithmetic operators, and reassignment where appropriate.",
+    hintTamil: "Variables, arithmetic operators மற்றும் தேவையான இடங்களில் reassignment பயன்படுத்தவும்.",
+    expectedOutput: "A total price and discounted final amount.",
+    expectedOutputTamil: "மொத்த விலை மற்றும் discount செய்யப்பட்ட இறுதி தொகை.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 6, title: "Challenge: Comparison Explorer",
+    questionEnglish: "Create two numbers and display the results of at least five different comparison operations between them.",
+    questionTamil: "இரண்டு numbers உருவாக்கி அவற்றுக்கு இடையே குறைந்தது ஐந்து வெவ்வேறு comparison operations-ன் முடிவுகளைக் காட்டவும்.",
+    hintEnglish: "Explore >, <, >=, <=, === and !==.",
+    hintTamil: ">, <, >=, <=, === மற்றும் !== ஆகியவற்றை ஆராயவும்.",
+    expectedOutput: "Five or more boolean comparison results.",
+    expectedOutputTamil: "ஐந்து அல்லது அதற்கு மேற்பட்ட boolean comparison முடிவுகள்.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 7: TYPE CONVERSION AND TYPE COERCION
+  // ==========================================
+  {
+    id: 1, topicId: 7, title: "Convert String to Number",
+    questionEnglish: "Convert the string '25' into a number using Number() and display it.",
+    questionTamil: "'25' என்ற string-ஐ Number() பயன்படுத்தி number-ஆக மாற்றி காட்டவும்.",
+    hintEnglish: "Use Number() to convert the string.",
+    hintTamil: "String-ஐ மாற்ற Number() பயன்படுத்தவும்.",
+    expectedOutput: "25",
+    expectedOutputTamil: "25",
+    challenge: false,
+    solution: `let value = "25";
+let numberValue = Number(value);
+console.log(numberValue);`
+  },
+  {
+    id: 2, topicId: 7, title: "Convert Number to String",
+    questionEnglish: "Convert the number 100 into a string using String() and display it.",
+    questionTamil: "100 என்ற number-ஐ String() பயன்படுத்தி string-ஆக மாற்றி காட்டவும்.",
+    hintEnglish: "Use String().",
+    hintTamil: "String() பயன்படுத்தவும்.",
+    expectedOutput: "100",
+    expectedOutputTamil: "100",
+    challenge: false,
+    solution: `let value = 100;
+let textValue = String(value);
+console.log(textValue);`
+  },
+  {
+    id: 3, topicId: 7, title: "Convert to Boolean",
+    questionEnglish: "Convert the number 1 into a boolean using Boolean() and display the result.",
+    questionTamil: "1 என்ற number-ஐ Boolean() பயன்படுத்தி boolean-ஆக மாற்றி முடிவைக் காட்டவும்.",
+    hintEnglish: "Use Boolean(1).",
+    hintTamil: "Boolean(1) பயன்படுத்தவும்.",
+    expectedOutput: "true",
+    expectedOutputTamil: "true",
+    challenge: false,
+    solution: `console.log(Boolean(1));`
+  },
+  {
+    id: 4, topicId: 7, title: "Convert a Numeric String",
+    questionEnglish: "Convert the string '50' into a number and add 10.",
+    questionTamil: "'50' என்ற string-ஐ number-ஆக மாற்றி அதனுடன் 10 சேர்க்கவும்.",
+    hintEnglish: "Convert the string first using Number().",
+    hintTamil: "முதலில் Number() பயன்படுத்தி string-ஐ மாற்றவும்.",
+    expectedOutput: "60",
+    expectedOutputTamil: "60",
+    challenge: false,
+    solution: `let value = "50";
+let numberValue = Number(value);
+console.log(numberValue + 10);`
+  },
+  {
+    id: 5, topicId: 7, title: "Understand String Concatenation",
+    questionEnglish: "Display the result of adding the string '10' and the number 5.",
+    questionTamil: "'10' என்ற string மற்றும் 5 என்ற number-ஐ கூட்டும்போது கிடைக்கும் முடிவைக் காட்டவும்.",
+    hintEnglish: "Use the + operator without converting the string.",
+    hintTamil: "String-ஐ மாற்றாமல் + operator பயன்படுத்தவும்.",
+    expectedOutput: "105",
+    expectedOutputTamil: "105",
+    challenge: false,
+    solution: `console.log("10" + 5);`
+  },
+  {
+    id: 6, topicId: 7, title: "Understand Numeric Coercion",
+    questionEnglish: "Display the result of subtracting 5 from the string '10'.",
+    questionTamil: "'10' என்ற string-லிருந்து 5-ஐ கழிக்கும்போது கிடைக்கும் முடிவைக் காட்டவும்.",
+    hintEnglish: "Use the - operator.",
+    hintTamil: "- operator பயன்படுத்தவும்.",
+    expectedOutput: "5",
+    expectedOutputTamil: "5",
+    challenge: false,
+    solution: `console.log("10" - 5);`
+  },
+  {
+    id: 7, topicId: 7, title: "Convert a String to Integer",
+    questionEnglish: "Use parseInt() to convert the string '45' into an integer and display it.",
+    questionTamil: "parseInt() பயன்படுத்தி '45' என்ற string-ஐ integer-ஆக மாற்றி காட்டவும்.",
+    hintEnglish: "Use parseInt().",
+    hintTamil: "parseInt() பயன்படுத்தவும்.",
+    expectedOutput: "45",
+    expectedOutputTamil: "45",
+    challenge: false,
+    solution: `let value = "45";
+console.log(parseInt(value));`
+  },
+  {
+    id: 8, topicId: 7, title: "Convert a String to Float",
+    questionEnglish: "Use parseFloat() to convert the string '12.5' into a floating-point number and display it.",
+    questionTamil: "parseFloat() பயன்படுத்தி '12.5' என்ற string-ஐ floating-point number-ஆக மாற்றி காட்டவும்.",
+    hintEnglish: "Use parseFloat().",
+    hintTamil: "parseFloat() பயன்படுத்தவும்.",
+    expectedOutput: "12.5",
+    expectedOutputTamil: "12.5",
+    challenge: false,
+    solution: `let value = "12.5";
+console.log(parseFloat(value));`
+  },
+  {
+    id: 9, topicId: 7, title: "Challenge: Conversion Explorer",
+    questionEnglish: "Convert different values into numbers and booleans. Display the converted results and their data types.",
+    questionTamil: "வெவ்வேறு values-ஐ numbers மற்றும் booleans-ஆக மாற்றி converted results மற்றும் அவற்றின் data types-ஐக் காட்டவும்.",
+    hintEnglish: "Explore Number(), Boolean(), and typeof.",
+    hintTamil: "Number(), Boolean() மற்றும் typeof ஆகியவற்றை ஆராயவும்.",
+    expectedOutput: "Converted values and their data types.",
+    expectedOutputTamil: "மாற்றப்பட்ட values மற்றும் அவற்றின் data types.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 7, title: "Challenge: User Input Simulation",
+    questionEnglish: "Create two numeric strings, convert them into numbers, and perform addition, subtraction, multiplication, and division.",
+    questionTamil: "இரண்டு numeric strings உருவாக்கி அவற்றை numbers-ஆக மாற்றி addition, subtraction, multiplication மற்றும் division செய்யவும்.",
+    hintEnglish: "Convert both values before performing arithmetic.",
+    hintTamil: "Arithmetic செய்வதற்கு முன்பு இரண்டு values-ஐயும் மாற்றவும்.",
+    expectedOutput: "Results of four arithmetic operations.",
+    expectedOutputTamil: "நான்கு arithmetic operations-ன் முடிவுகள்.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 8: CONDITIONAL STATEMENTS
+  // ==========================================
+  {
+    id: 1, topicId: 8, title: "Check Positive Number",
+    questionEnglish: "Check whether the number 10 is greater than zero. Display Positive if true.",
+    questionTamil: "10 என்ற number பூஜ்ஜியத்தை விட அதிகமா எனச் சரிபார்த்து true என்றால் Positive காட்டவும்.",
+    hintEnglish: "Use an if statement.",
+    hintTamil: "if statement பயன்படுத்தவும்.",
+    expectedOutput: "Positive",
+    expectedOutputTamil: "Positive",
+    challenge: false,
+    solution: `let number = 10;
+
+if (number > 0) {
+  console.log("Positive");
+}`
+  },
+  {
+    id: 2, topicId: 8, title: "Check Negative Number",
+    questionEnglish: "Check whether -5 is a negative number using an if statement.",
+    questionTamil: "if statement பயன்படுத்தி -5 negative number-ஆ எனச் சரிபார்க்கவும்.",
+    hintEnglish: "Check whether the number is less than zero.",
+    hintTamil: "Number பூஜ்ஜியத்தை விட குறைவாக உள்ளதா எனச் சரிபார்க்கவும்.",
+    expectedOutput: "Negative",
+    expectedOutputTamil: "Negative",
+    challenge: false,
+    solution: `let number = -5;
+
+if (number < 0) {
+  console.log("Negative");
+}`
+  },
+  {
+    id: 3, topicId: 8, title: "Check Even Number",
+    questionEnglish: "Check whether 8 is even using an if statement and the remainder operator.",
+    questionTamil: "if statement மற்றும் remainder operator பயன்படுத்தி 8 even number-ஆ எனச் சரிபார்க்கவும்.",
+    hintEnglish: "A number is even when its remainder after division by 2 is zero.",
+    hintTamil: "2-ஆல் வகுக்கும்போது remainder 0 இருந்தால் அந்த number even ஆகும்.",
+    expectedOutput: "Even",
+    expectedOutputTamil: "Even",
+    challenge: false,
+    solution: `let number = 8;
+
+if (number % 2 === 0) {
+  console.log("Even");
+}`
+  },
+  {
+    id: 4, topicId: 8, title: "Check Voting Eligibility",
+    questionEnglish: "Check whether a person aged 20 is eligible to vote. Display Eligible if the age is at least 18.",
+    questionTamil: "20 வயதுடைய ஒருவர் வாக்களிக்க தகுதியானவரா எனச் சரிபார்க்கவும். வயது குறைந்தது 18 என்றால் Eligible காட்டவும்.",
+    hintEnglish: "Use an if statement with >=.",
+    hintTamil: ">= உடன் if statement பயன்படுத்தவும்.",
+    expectedOutput: "Eligible",
+    expectedOutputTamil: "Eligible",
+    challenge: false,
+    solution: `let age = 20;
+
+if (age >= 18) {
+  console.log("Eligible");
+}`
+  },
+  {
+    id: 5, topicId: 8, title: "Check Pass or Fail",
+    questionEnglish: "If a student scores 50 or more, display Pass. Otherwise display Fail.",
+    questionTamil: "ஒரு மாணவர் 50 அல்லது அதற்கு மேல் மதிப்பெண் பெற்றால் Pass காட்டவும். இல்லையெனில் Fail காட்டவும்.",
+    hintEnglish: "Use if and else.",
+    hintTamil: "if மற்றும் else பயன்படுத்தவும்.",
+    expectedOutput: "Pass",
+    expectedOutputTamil: "Pass",
+    challenge: false,
+    solution: `let mark = 50;
+
+if (mark >= 50) {
+  console.log("Pass");
+} else {
+  console.log("Fail");
+}`
+  },
+  {
+    id: 6, topicId: 8, title: "Find Grade",
+    questionEnglish: "Display Grade A if marks are 90 or more, Grade B if marks are 75 or more, otherwise display Grade C. Use 80 as the mark.",
+    questionTamil: "90 அல்லது அதற்கு மேல் Grade A, 75 அல்லது அதற்கு மேல் Grade B, இல்லையெனில் Grade C காட்டவும். Mark 80 ஆக இருக்க வேண்டும்.",
+    hintEnglish: "Use if and else if.",
+    hintTamil: "if மற்றும் else if பயன்படுத்தவும்.",
+    expectedOutput: "Grade B",
+    expectedOutputTamil: "Grade B",
+    challenge: false,
+    solution: `let mark = 80;
+
+if (mark >= 90) {
+  console.log("Grade A");
+} else if (mark >= 75) {
+  console.log("Grade B");
+} else {
+  console.log("Grade C");
+}`
+  },
+  {
+    id: 7, topicId: 8, title: "Check Password Length",
+    questionEnglish: "If a password length is at least 8 characters, display Strong Password. Otherwise display Weak Password. Use a password of 10 characters.",
+    questionTamil: "Password குறைந்தது 8 characters கொண்டிருந்தால் Strong Password காட்டவும். இல்லையெனில் Weak Password காட்டவும். 10 characters கொண்ட password பயன்படுத்தவும்.",
+    hintEnglish: "Use the length property and an if...else statement.",
+    hintTamil: "length property மற்றும் if...else statement பயன்படுத்தவும்.",
+    expectedOutput: "Strong Password",
+    expectedOutputTamil: "Strong Password",
+    challenge: false,
+    solution: `let password = "secure1234";
+
+if (password.length >= 8) {
+  console.log("Strong Password");
+} else {
+  console.log("Weak Password");
+}`
+  },
+  {
+    id: 8, topicId: 8, title: "Check Age Category",
+    questionEnglish: "Display Child if age is below 13, Teenager if age is below 20, otherwise Adult. Use age 15.",
+    questionTamil: "வயது 13-க்கு குறைவாக இருந்தால் Child, 20-க்கு குறைவாக இருந்தால் Teenager, இல்லையெனில் Adult காட்டவும். வயது 15 பயன்படுத்தவும்.",
+    hintEnglish: "Use if, else if, and else.",
+    hintTamil: "if, else if மற்றும் else பயன்படுத்தவும்.",
+    expectedOutput: "Teenager",
+    expectedOutputTamil: "Teenager",
+    challenge: false,
+    solution: `let age = 15;
+
+if (age < 13) {
+  console.log("Child");
+} else if (age < 20) {
+  console.log("Teenager");
+} else {
+  console.log("Adult");
+}`
+  },
+  {
+    id: 9, topicId: 8, title: "Challenge: Number Analyzer",
+    questionEnglish: "Create a program that checks whether a number is positive, negative, or zero and whether it is even or odd.",
+    questionTamil: "ஒரு number positive, negative அல்லது zero-ஆ என்றும் even அல்லது odd-ஆ என்றும் சரிபார்க்கும் program உருவாக்கவும்.",
+    hintEnglish: "Use conditions and the remainder operator.",
+    hintTamil: "Conditions மற்றும் remainder operator பயன்படுத்தவும்.",
+    expectedOutput: "Number classification and even/odd result.",
+    expectedOutputTamil: "Number வகைப்பாடு மற்றும் even/odd முடிவு.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 8, title: "Challenge: Login Decision",
+    questionEnglish: "Create a simple login decision program that checks a username and password using conditional statements and displays an appropriate message.",
+    questionTamil: "Username மற்றும் password-ஐ conditional statements பயன்படுத்தி சரிபார்த்து பொருத்தமான message காட்டும் simple login decision program உருவாக்கவும்.",
+    hintEnglish: "Use conditions to compare the stored username and password.",
+    hintTamil: "Stored username மற்றும் password-ஐ ஒப்பிட conditions பயன்படுத்தவும்.",
+    expectedOutput: "Login success or login failure message.",
+    expectedOutputTamil: "Login வெற்றி அல்லது login தோல்வி message.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 9: SWITCH STATEMENT
+  // ==========================================
+  {
+    id: 1, topicId: 9, title: "Display a Day",
+    questionEnglish: "Use a switch statement to display Monday when day is 1.",
+    questionTamil: "day value 1 ஆக இருக்கும்போது switch statement பயன்படுத்தி Monday காட்டவும்.",
+    hintEnglish: "Create a case for 1.",
+    hintTamil: "1-க்கு ஒரு case உருவாக்கவும்.",
+    expectedOutput: "Monday",
+    expectedOutputTamil: "Monday",
+    challenge: false,
+    solution: `let day = 1;
+
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+}`
+  },
+  {
+    id: 2, topicId: 9, title: "Display a Month",
+    questionEnglish: "Use a switch statement to display January when month is 1.",
+    questionTamil: "month value 1 ஆக இருக்கும்போது switch statement பயன்படுத்தி January காட்டவும்.",
+    hintEnglish: "Use case 1.",
+    hintTamil: "case 1 பயன்படுத்தவும்.",
+    expectedOutput: "January",
+    expectedOutputTamil: "January",
+    challenge: false,
+    solution: `let month = 1;
+
+switch (month) {
+  case 1:
+    console.log("January");
+    break;
+}`
+  },
+  {
+    id: 3, topicId: 9, title: "Choose a Browser",
+    questionEnglish: "Use a switch statement to display Chrome when browser is 'Chrome'.",
+    questionTamil: "browser value 'Chrome' ஆக இருக்கும்போது switch statement பயன்படுத்தி Chrome Browser காட்டவும்.",
+    hintEnglish: "Compare the string using a case.",
+    hintTamil: "String-ஐ case மூலம் ஒப்பிடவும்.",
+    expectedOutput: "Chrome Browser",
+    expectedOutputTamil: "Chrome Browser",
+    challenge: false,
+    solution: `let browser = "Chrome";
+
+switch (browser) {
+  case "Chrome":
+    console.log("Chrome Browser");
+    break;
+}`
+  },
+  {
+    id: 4, topicId: 9, title: "Handle a Default Case",
+    questionEnglish: "Use a switch statement with a default case to display Invalid Option when option is 5.",
+    questionTamil: "option value 5 ஆக இருக்கும்போது default case பயன்படுத்தி Invalid Option காட்டவும்.",
+    hintEnglish: "Use default for unmatched values.",
+    hintTamil: "பொருந்தாத values-க்கு default பயன்படுத்தவும்.",
+    expectedOutput: "Invalid Option",
+    expectedOutputTamil: "Invalid Option",
+    challenge: false,
+    solution: `let option = 5;
+
+switch (option) {
+  case 1:
+    console.log("Option 1");
+    break;
+  default:
+    console.log("Invalid Option");
+}`
+  },
+  {
+    id: 5, topicId: 9, title: "Select a Language",
+    questionEnglish: "Use a switch statement to display Java when language is 1 and Python when language is 2. Use language 2.",
+    questionTamil: "language value 1 ஆக இருந்தால் Java, 2 ஆக இருந்தால் Python காட்டும் switch statement எழுதவும். Language value 2 பயன்படுத்தவும்.",
+    hintEnglish: "Create two cases.",
+    hintTamil: "இரண்டு cases உருவாக்கவும்.",
+    expectedOutput: "Python",
+    expectedOutputTamil: "Python",
+    challenge: false,
+    solution: `let language = 2;
+
+switch (language) {
+  case 1:
+    console.log("Java");
+    break;
+  case 2:
+    console.log("Python");
+    break;
+}`
+  },
+  {
+    id: 6, topicId: 9, title: "Simple Calculator Switch",
+    questionEnglish: "Use a switch statement to perform addition when the operator is '+'. Use 10 and 5 as operands.",
+    questionTamil: "Operator '+' ஆக இருக்கும்போது switch statement பயன்படுத்தி addition செய்யவும். 10 மற்றும் 5 operands பயன்படுத்தவும்.",
+    hintEnglish: "Create a case for the + operator.",
+    hintTamil: "+ operator-க்கு case உருவாக்கவும்.",
+    expectedOutput: "15",
+    expectedOutputTamil: "15",
+    challenge: false,
+    solution: `let a = 10;
+let b = 5;
+let operator = "+";
+
+switch (operator) {
+  case "+":
+    console.log(a + b);
+    break;
+}`
+  },
+  {
+    id: 7, topicId: 9, title: "Display a Weekend",
+    questionEnglish: "Use a switch statement to display Weekend when day is Saturday or Sunday.",
+    questionTamil: "day value Saturday அல்லது Sunday ஆக இருக்கும்போது switch statement பயன்படுத்தி Weekend காட்டவும்.",
+    hintEnglish: "Multiple cases can share the same code.",
+    hintTamil: "பல cases ஒரே code-ஐப் பகிர்ந்து பயன்படுத்தலாம்.",
+    expectedOutput: "Weekend",
+    expectedOutputTamil: "Weekend",
+    challenge: false,
+    solution: `let day = "Sunday";
+
+switch (day) {
+  case "Saturday":
+  case "Sunday":
+    console.log("Weekend");
+    break;
+  default:
+    console.log("Weekday");
+}`
+  },
+  {
+    id: 8, topicId: 9, title: "Menu Selection",
+    questionEnglish: "Create a switch statement that displays Start Game when option is 1, Settings when option is 2, and Exit when option is 3. Use option 2.",
+    questionTamil: "Option 1-க்கு Start Game, 2-க்கு Settings, 3-க்கு Exit காட்டும் switch statement உருவாக்கவும். Option 2 பயன்படுத்தவும்.",
+    hintEnglish: "Create three cases.",
+    hintTamil: "மூன்று cases உருவாக்கவும்.",
+    expectedOutput: "Settings",
+    expectedOutputTamil: "Settings",
+    challenge: false,
+    solution: `let option = 2;
+
+switch (option) {
+  case 1:
+    console.log("Start Game");
+    break;
+  case 2:
+    console.log("Settings");
+    break;
+  case 3:
+    console.log("Exit");
+    break;
+}`
+  },
+  {
+    id: 9, topicId: 9, title: "Challenge: Calculator Menu",
+    questionEnglish: "Create a calculator using a switch statement that supports addition, subtraction, multiplication, and division.",
+    questionTamil: "Addition, subtraction, multiplication மற்றும் division ஆதரிக்கும் calculator-ஐ switch statement பயன்படுத்தி உருவாக்கவும்.",
+    hintEnglish: "Use an operator variable and separate cases.",
+    hintTamil: "Operator variable மற்றும் தனித்தனி cases பயன்படுத்தவும்.",
+    expectedOutput: "The result of the selected arithmetic operation.",
+    expectedOutputTamil: "தேர்ந்தெடுக்கப்பட்ட arithmetic operation-ன் முடிவு.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 9, title: "Challenge: Command Menu",
+    questionEnglish: "Create a switch-based menu for a cybersecurity learning application with at least four options and a default case.",
+    questionTamil: "குறைந்தது நான்கு options மற்றும் default case கொண்ட Cybersecurity learning application menu-ஐ switch பயன்படுத்தி உருவாக்கவும்.",
+    hintEnglish: "Choose meaningful menu options.",
+    hintTamil: "பொருத்தமான menu options தேர்ந்தெடுக்கவும்.",
+    expectedOutput: "A message corresponding to the selected option.",
+    expectedOutputTamil: "தேர்ந்தெடுக்கப்பட்ட option-க்கு பொருத்தமான message.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 10: LOOPS
+  // ==========================================
+  {
+    id: 1, topicId: 10, title: "Print Numbers 1 to 5",
+    questionEnglish: "Use a for loop to display numbers from 1 to 5.",
+    questionTamil: "for loop பயன்படுத்தி 1 முதல் 5 வரை numbers-ஐக் காட்டவும்.",
+    hintEnglish: "Start at 1 and stop when the value reaches 5.",
+    hintTamil: "1-ல் தொடங்கி value 5 வரை loop இயக்கவும்.",
+    expectedOutput: `1
+2
+3
+4
+5`,
+    expectedOutputTamil: `1
+2
+3
+4
+5`,
+    challenge: false,
+    solution: `for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}`
+  },
+  {
+    id: 2, topicId: 10, title: "Print Numbers 5 to 1",
+    questionEnglish: "Use a for loop to display numbers from 5 down to 1.",
+    questionTamil: "for loop பயன்படுத்தி 5 முதல் 1 வரை numbers-ஐக் காட்டவும்.",
+    hintEnglish: "Decrease the loop variable.",
+    hintTamil: "Loop variable-ஐ குறைக்கவும்.",
+    expectedOutput: `5
+4
+3
+2
+1`,
+    expectedOutputTamil: `5
+4
+3
+2
+1`,
+    challenge: false,
+    solution: `for (let i = 5; i >= 1; i--) {
+  console.log(i);
+}`
+  },
+  {
+    id: 3, topicId: 10, title: "Print Even Numbers",
+    questionEnglish: "Use a for loop to display even numbers from 2 to 10.",
+    questionTamil: "for loop பயன்படுத்தி 2 முதல் 10 வரை even numbers-ஐக் காட்டவும்.",
+    hintEnglish: "Increase the loop variable by 2.",
+    hintTamil: "Loop variable-ஐ 2-ஆல் அதிகரிக்கவும்.",
+    expectedOutput: `2
+4
+6
+8
+10`,
+    expectedOutputTamil: `2
+4
+6
+8
+10`,
+    challenge: false,
+    solution: `for (let i = 2; i <= 10; i += 2) {
+  console.log(i);
+}`
+  },
+  {
+    id: 4, topicId: 10, title: "Calculate a Sum",
+    questionEnglish: "Use a for loop to calculate the sum of numbers from 1 to 5.",
+    questionTamil: "for loop பயன்படுத்தி 1 முதல் 5 வரை உள்ள numbers-ன் கூட்டுத்தொகையைக் கணக்கிடவும்.",
+    hintEnglish: "Create a sum variable and update it during each iteration.",
+    hintTamil: "sum variable உருவாக்கி ஒவ்வொரு iteration-லும் update செய்யவும்.",
+    expectedOutput: "15",
+    expectedOutputTamil: "15",
+    challenge: false,
+    solution: `let sum = 0;
+
+for (let i = 1; i <= 5; i++) {
+  sum += i;
+}
+
+console.log(sum);`
+  },
+  {
+    id: 5, topicId: 10, title: "Use a While Loop",
+    questionEnglish: "Use a while loop to display numbers from 1 to 5.",
+    questionTamil: "while loop பயன்படுத்தி 1 முதல் 5 வரை numbers-ஐக் காட்டவும்.",
+    hintEnglish: "Initialize a variable and increase it inside the loop.",
+    hintTamil: "Variable-ஐ initialize செய்து loop-க்குள் அதிகரிக்கவும்.",
+    expectedOutput: `1
+2
+3
+4
+5`,
+    expectedOutputTamil: `1
+2
+3
+4
+5`,
+    challenge: false,
+    solution: `let i = 1;
+
+while (i <= 5) {
+  console.log(i);
+  i++;
+}`
+  },
+  {
+    id: 6, topicId: 10, title: "Use a Do While Loop",
+    questionEnglish: "Use a do...while loop to display numbers from 1 to 3.",
+    questionTamil: "do...while loop பயன்படுத்தி 1 முதல் 3 வரை numbers-ஐக் காட்டவும்.",
+    hintEnglish: "Place the increment inside the loop and check the condition at the end.",
+    hintTamil: "Loop-க்குள் increment செய்து இறுதியில் condition-ஐச் சரிபார்க்கவும்.",
+    expectedOutput: `1
+2
+3`,
+    expectedOutputTamil: `1
+2
+3`,
+    challenge: false,
+    solution: `let i = 1;
+
+do {
+  console.log(i);
+  i++;
+} while (i <= 3);`
+  },
+  {
+    id: 7, topicId: 10, title: "Calculate Multiplication Table",
+    questionEnglish: "Use a for loop to display the multiplication table of 2 from 1 to 5.",
+    questionTamil: "for loop பயன்படுத்தி 2-ன் multiplication table-ஐ 1 முதல் 5 வரை காட்டவும்.",
+    hintEnglish: "Multiply 2 by the loop variable.",
+    hintTamil: "2-ஐ loop variable-ஆல் பெருக்கவும்.",
+    expectedOutput: `2
+4
+6
+8
+10`,
+    expectedOutputTamil: `2
+4
+6
+8
+10`,
+    challenge: false,
+    solution: `for (let i = 1; i <= 5; i++) {
+  console.log(2 * i);
+}`
+  },
+  {
+    id: 8, topicId: 10, title: "Count Down",
+    questionEnglish: "Use a while loop to display Countdown: 5 through Countdown: 1.",
+    questionTamil: "while loop பயன்படுத்தி Countdown: 5 முதல் Countdown: 1 வரை காட்டவும்.",
+    hintEnglish: "Start at 5 and decrease the variable.",
+    hintTamil: "5-ல் தொடங்கி variable-ஐ குறைக்கவும்.",
+    expectedOutput: `Countdown: 5
+Countdown: 4
+Countdown: 3
+Countdown: 2
+Countdown: 1`,
+    expectedOutputTamil: `Countdown: 5
+Countdown: 4
+Countdown: 3
+Countdown: 2
+Countdown: 1`,
+    challenge: false,
+    solution: `let i = 5;
+
+while (i >= 1) {
+  console.log("Countdown: " + i);
+  i--;
+}`
+  },
+  {
+    id: 9, topicId: 10, title: "Challenge: Number Pattern",
+    questionEnglish: "Use a loop to display a sequence of numbers of your choice and calculate their total.",
+    questionTamil: "உங்களுக்கு விருப்பமான numbers sequence-ஐ loop பயன்படுத்தி காட்டி அவற்றின் மொத்தத்தைக் கணக்கிடவும்.",
+    hintEnglish: "Use a loop and a sum variable.",
+    hintTamil: "Loop மற்றும் sum variable பயன்படுத்தவும்.",
+    expectedOutput: "A number sequence and its total.",
+    expectedOutputTamil: "Numbers sequence மற்றும் அதன் மொத்தம்.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 10, title: "Challenge: Multiplication Tables",
+    questionEnglish: "Use loops to display multiplication tables for at least three different numbers.",
+    questionTamil: "Loops பயன்படுத்தி குறைந்தது மூன்று வெவ்வேறு numbers-ன் multiplication tables-ஐக் காட்டவும்.",
+    hintEnglish: "Use nested loops or separate loops.",
+    hintTamil: "Nested loops அல்லது தனித்தனி loops பயன்படுத்தவும்.",
+    expectedOutput: "Multiplication tables for three numbers.",
+    expectedOutputTamil: "மூன்று numbers-ன் multiplication tables.",
+    challenge: true
+  },
+
 ];
 
 export default questions;
