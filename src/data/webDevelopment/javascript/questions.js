@@ -1442,7 +1442,677 @@ while (i >= 1) {
     expectedOutputTamil: "மூன்று numbers-ன் multiplication tables.",
     challenge: true
   },
+     // ==========================================
+  // TOPIC 11: FUNCTIONS
+  // ==========================================
+  {
+    id: 1, topicId: 11, title: "Create a Simple Function",
+    questionEnglish: "Create a function named greet that displays Hello World. Call the function.",
+    questionTamil: "Hello World காட்டும் greet என்ற function உருவாக்கி அதை call செய்யவும்.",
+    hintEnglish: "Use the function keyword and call the function by its name.",
+    hintTamil: "function keyword பயன்படுத்தி function-ன் பெயரால் call செய்யவும்.",
+    expectedOutput: "Hello World",
+    expectedOutputTamil: "Hello World",
+    challenge: false,
+    solution: `function greet() {
+  console.log("Hello World");
+}
 
+greet();`
+  },
+  {
+    id: 2, topicId: 11, title: "Display a Welcome Message",
+    questionEnglish: "Create a function named welcome that displays Welcome to JavaScript.",
+    questionTamil: "Welcome to JavaScript காட்டும் welcome என்ற function உருவாக்கவும்.",
+    hintEnglish: "Write a function containing console.log().",
+    hintTamil: "console.log() கொண்ட function எழுதவும்.",
+    expectedOutput: "Welcome to JavaScript",
+    expectedOutputTamil: "Welcome to JavaScript",
+    challenge: false,
+    solution: `function welcome() {
+  console.log("Welcome to JavaScript");
+}
+
+welcome();`
+  },
+  {
+    id: 3, topicId: 11, title: "Call a Function Twice",
+    questionEnglish: "Create a function that displays Learning JavaScript and call it twice.",
+    questionTamil: "Learning JavaScript காட்டும் function உருவாக்கி அதை இரண்டு முறை call செய்யவும்.",
+    hintEnglish: "Call the same function two times.",
+    hintTamil: "அதே function-ஐ இரண்டு முறை call செய்யவும்.",
+    expectedOutput: `Learning JavaScript
+Learning JavaScript`,
+    expectedOutputTamil: `Learning JavaScript
+Learning JavaScript`,
+    challenge: false,
+    solution: `function learn() {
+  console.log("Learning JavaScript");
+}
+
+learn();
+learn();`
+  },
+  {
+    id: 4, topicId: 11, title: "Create a Personal Introduction",
+    questionEnglish: "Create a function named introduction that displays your name, age, and career goal.",
+    questionTamil: "உங்கள் பெயர், வயது மற்றும் career goal காட்டும் introduction என்ற function உருவாக்கவும்.",
+    hintEnglish: "Use multiple console.log() statements inside the function.",
+    hintTamil: "Function-க்குள் பல console.log() statements பயன்படுத்தவும்.",
+    expectedOutput: `Name: Deepak
+Age: 20
+Career Goal: Cyber Security`,
+    expectedOutputTamil: `Name: Deepak
+Age: 20
+Career Goal: Cyber Security`,
+    challenge: false,
+    solution: `function introduction() {
+  console.log("Name: Deepak");
+  console.log("Age: 20");
+  console.log("Career Goal: Cyber Security");
+}
+
+introduction();`
+  },
+  {
+    id: 5, topicId: 11, title: "Create a Function for Addition",
+    questionEnglish: "Create a function named addNumbers that adds 10 and 20 and displays the result.",
+    questionTamil: "10 மற்றும் 20-ஐ கூட்டி முடிவைக் காட்டும் addNumbers என்ற function உருவாக்கவும்.",
+    hintEnglish: "Perform the addition inside the function.",
+    hintTamil: "Function-க்குள் addition செய்யவும்.",
+    expectedOutput: "30",
+    expectedOutputTamil: "30",
+    challenge: false,
+    solution: `function addNumbers() {
+  console.log(10 + 20);
+}
+
+addNumbers();`
+  },
+  {
+    id: 6, topicId: 11, title: "Create a Function for Multiplication",
+    questionEnglish: "Create a function named multiply that multiplies 5 and 4 and displays the result.",
+    questionTamil: "5 மற்றும் 4-ஐ பெருக்கி முடிவைக் காட்டும் multiply என்ற function உருவாக்கவும்.",
+    hintEnglish: "Use the multiplication operator inside the function.",
+    hintTamil: "Function-க்குள் multiplication operator பயன்படுத்தவும்.",
+    expectedOutput: "20",
+    expectedOutputTamil: "20",
+    challenge: false,
+    solution: `function multiply() {
+  console.log(5 * 4);
+}
+
+multiply();`
+  },
+  {
+    id: 7, topicId: 11, title: "Create a Function for a Cybersecurity Message",
+    questionEnglish: "Create a function named securityTip that displays Never share your password.",
+    questionTamil: "Never share your password காட்டும் securityTip என்ற function உருவாக்கவும்.",
+    hintEnglish: "Create a function and call it.",
+    hintTamil: "Function உருவாக்கி call செய்யவும்.",
+    expectedOutput: "Never share your password.",
+    expectedOutputTamil: "Never share your password.",
+    challenge: false,
+    solution: `function securityTip() {
+  console.log("Never share your password.");
+}
+
+securityTip();`
+  },
+  {
+    id: 8, topicId: 11, title: "Create a Function for a Rectangle",
+    questionEnglish: "Create a function named calculateArea that displays the area of a rectangle with length 10 and width 5.",
+    questionTamil: "Length 10 மற்றும் width 5 கொண்ட rectangle-ன் area காட்டும் calculateArea என்ற function உருவாக்கவும்.",
+    hintEnglish: "Multiply length and width inside the function.",
+    hintTamil: "Function-க்குள் length மற்றும் width-ஐ பெருக்கவும்.",
+    expectedOutput: "50",
+    expectedOutputTamil: "50",
+    challenge: false,
+    solution: `function calculateArea() {
+  console.log(10 * 5);
+}
+
+calculateArea();`
+  },
+  {
+    id: 9, topicId: 11, title: "Challenge: Daily Task Function",
+    questionEnglish: "Create a function that displays at least three daily learning tasks. Call the function whenever needed.",
+    questionTamil: "குறைந்தது மூன்று தினசரி learning tasks காட்டும் function உருவாக்கவும். தேவையானபோது function-ஐ call செய்யவும்.",
+    hintEnglish: "Place multiple statements inside a reusable function.",
+    hintTamil: "Reusable function-க்குள் பல statements எழுதவும்.",
+    expectedOutput: "Three or more learning task messages.",
+    expectedOutputTamil: "மூன்று அல்லது அதற்கு மேற்பட்ட learning task messages.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 11, title: "Challenge: Calculator Functions",
+    questionEnglish: "Create separate functions for addition, subtraction, multiplication, and division. Call each function.",
+    questionTamil: "Addition, subtraction, multiplication மற்றும் division-க்கு தனித்தனி functions உருவாக்கி அவற்றை call செய்யவும்.",
+    hintEnglish: "Create one function for each operation.",
+    hintTamil: "ஒவ்வொரு operation-க்கும் ஒரு function உருவாக்கவும்.",
+    expectedOutput: "Results of four arithmetic operations.",
+    expectedOutputTamil: "நான்கு arithmetic operations-ன் முடிவுகள்.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 12: FUNCTION PARAMETERS AND RETURN VALUES
+  // ==========================================
+  {
+    id: 1, topicId: 12, title: "Function with One Parameter",
+    questionEnglish: "Create a function that accepts a name and displays Hello followed by that name. Use Deepak.",
+    questionTamil: "ஒரு name parameter பெற்று Hello மற்றும் அந்த name காட்டும் function உருவாக்கவும். Deepak பயன்படுத்தவும்.",
+    hintEnglish: "Pass a name as an argument.",
+    hintTamil: "Name-ஐ argument-ஆக அனுப்பவும்.",
+    expectedOutput: "Hello Deepak",
+    expectedOutputTamil: "Hello Deepak",
+    challenge: false,
+    solution: `function greet(name) {
+  console.log("Hello " + name);
+}
+
+greet("Deepak");`
+  },
+  {
+    id: 2, topicId: 12, title: "Function with Two Parameters",
+    questionEnglish: "Create a function that accepts two numbers and displays their sum. Use 10 and 20.",
+    questionTamil: "இரண்டு numbers parameters-ஆக பெற்று அவற்றின் கூட்டுத்தொகையைக் காட்டும் function உருவாக்கவும். 10 மற்றும் 20 பயன்படுத்தவும்.",
+    hintEnglish: "Use two parameters.",
+    hintTamil: "இரண்டு parameters பயன்படுத்தவும்.",
+    expectedOutput: "30",
+    expectedOutputTamil: "30",
+    challenge: false,
+    solution: `function add(a, b) {
+  console.log(a + b);
+}
+
+add(10, 20);`
+  },
+  {
+    id: 3, topicId: 12, title: "Return a Value",
+    questionEnglish: "Create a function that returns the sum of 5 and 10. Display the returned value.",
+    questionTamil: "5 மற்றும் 10-ன் கூட்டுத்தொகையை return செய்யும் function உருவாக்கி returned value-ஐ காட்டவும்.",
+    hintEnglish: "Use return and store the returned value.",
+    hintTamil: "return பயன்படுத்தி returned value-ஐ store செய்யவும்.",
+    expectedOutput: "15",
+    expectedOutputTamil: "15",
+    challenge: false,
+    solution: `function add(a, b) {
+  return a + b;
+}
+
+let result = add(5, 10);
+console.log(result);`
+  },
+  {
+    id: 4, topicId: 12, title: "Return a Square",
+    questionEnglish: "Create a function that accepts a number and returns its square. Use 6.",
+    questionTamil: "ஒரு number-ஐ பெற்று அதன் square-ஐ return செய்யும் function உருவாக்கவும். 6 பயன்படுத்தவும்.",
+    hintEnglish: "Multiply the number by itself and return it.",
+    hintTamil: "Number-ஐ அதே number-ஆல் பெருக்கி return செய்யவும்.",
+    expectedOutput: "36",
+    expectedOutputTamil: "36",
+    challenge: false,
+    solution: `function square(number) {
+  return number * number;
+}
+
+console.log(square(6));`
+  },
+  {
+    id: 5, topicId: 12, title: "Calculate Rectangle Area",
+    questionEnglish: "Create a function that accepts length and width and returns the rectangle's area. Use 8 and 4.",
+    questionTamil: "Length மற்றும் width பெற்று rectangle-ன் area-ஐ return செய்யும் function உருவாக்கவும். 8 மற்றும் 4 பயன்படுத்தவும்.",
+    hintEnglish: "Return the product of length and width.",
+    hintTamil: "Length மற்றும் width-ன் பெருக்கலை return செய்யவும்.",
+    expectedOutput: "32",
+    expectedOutputTamil: "32",
+    challenge: false,
+    solution: `function calculateArea(length, width) {
+  return length * width;
+}
+
+console.log(calculateArea(8, 4));`
+  },
+  {
+    id: 6, topicId: 12, title: "Return a Greeting",
+    questionEnglish: "Create a function that accepts a name and returns Welcome followed by the name. Use Deepak.",
+    questionTamil: "Name பெற்று Welcome மற்றும் name-ஐ return செய்யும் function உருவாக்கவும். Deepak பயன்படுத்தவும்.",
+    hintEnglish: "Return a string using concatenation.",
+    hintTamil: "String concatenation பயன்படுத்தி string-ஐ return செய்யவும்.",
+    expectedOutput: "Welcome Deepak",
+    expectedOutputTamil: "Welcome Deepak",
+    challenge: false,
+    solution: `function welcome(name) {
+  return "Welcome " + name;
+}
+
+console.log(welcome("Deepak"));`
+  },
+  {
+    id: 7, topicId: 12, title: "Check Even Number Using Return",
+    questionEnglish: "Create a function that accepts a number and returns true if it is even. Use 8.",
+    questionTamil: "ஒரு number பெற்று அது even என்றால் true return செய்யும் function உருவாக்கவும். 8 பயன்படுத்தவும்.",
+    hintEnglish: "Use the remainder operator and return a boolean.",
+    hintTamil: "Remainder operator பயன்படுத்தி boolean return செய்யவும்.",
+    expectedOutput: "true",
+    expectedOutputTamil: "true",
+    challenge: false,
+    solution: `function isEven(number) {
+  return number % 2 === 0;
+}
+
+console.log(isEven(8));`
+  },
+  {
+    id: 8, topicId: 12, title: "Calculate Total Price",
+    questionEnglish: "Create a function that accepts a product price and quantity and returns the total cost. Use price 100 and quantity 3.",
+    questionTamil: "Product price மற்றும் quantity பெற்று total cost-ஐ return செய்யும் function உருவாக்கவும். Price 100 மற்றும் quantity 3 பயன்படுத்தவும்.",
+    hintEnglish: "Multiply price by quantity and return the result.",
+    hintTamil: "Price மற்றும் quantity-ஐ பெருக்கி result-ஐ return செய்யவும்.",
+    expectedOutput: "300",
+    expectedOutputTamil: "300",
+    challenge: false,
+    solution: `function calculateTotal(price, quantity) {
+  return price * quantity;
+}
+
+console.log(calculateTotal(100, 3));`
+  },
+  {
+    id: 9, topicId: 12, title: "Challenge: Temperature Converter",
+    questionEnglish: "Create a function that accepts a Celsius temperature and returns the temperature in Fahrenheit.",
+    questionTamil: "Celsius temperature பெற்று Fahrenheit-ஆக மாற்றி return செய்யும் function உருவாக்கவும்.",
+    hintEnglish: "Use the formula (Celsius * 9 / 5) + 32.",
+    hintTamil: "(Celsius * 9 / 5) + 32 formula பயன்படுத்தவும்.",
+    expectedOutput: "A Fahrenheit temperature.",
+    expectedOutputTamil: "Fahrenheit temperature.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 12, title: "Challenge: Student Result Function",
+    questionEnglish: "Create a function that accepts a student's marks and returns a grade based on your own grading conditions.",
+    questionTamil: "ஒரு மாணவரின் marks பெற்று உங்கள் grading conditions அடிப்படையில் grade-ஐ return செய்யும் function உருவாக்கவும்.",
+    hintEnglish: "Use parameters, conditions, and return statements.",
+    hintTamil: "Parameters, conditions மற்றும் return statements பயன்படுத்தவும்.",
+    expectedOutput: "A grade based on the supplied marks.",
+    expectedOutputTamil: "கொடுக்கப்பட்ட marks-க்கு ஏற்ப grade.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 13: ARRAYS
+  // ==========================================
+  {
+    id: 1, topicId: 13, title: "Create an Array",
+    questionEnglish: "Create an array containing three programming languages and display it.",
+    questionTamil: "மூன்று programming languages கொண்ட array உருவாக்கி அதைக் காட்டவும்.",
+    hintEnglish: "Use square brackets.",
+    hintTamil: "Square brackets பயன்படுத்தவும்.",
+    expectedOutput: `["Java", "Python", "JavaScript"]`,
+    expectedOutputTamil: `["Java", "Python", "JavaScript"]`,
+    challenge: false,
+    solution: `let languages = ["Java", "Python", "JavaScript"];
+console.log(languages);`
+  },
+  {
+    id: 2, topicId: 13, title: "Access an Array Element",
+    questionEnglish: "Create an array containing Apple, Banana, and Orange. Display the second element.",
+    questionTamil: "Apple, Banana மற்றும் Orange கொண்ட array உருவாக்கி இரண்டாவது element-ஐக் காட்டவும்.",
+    hintEnglish: "Array indexing starts at zero.",
+    hintTamil: "Array indexing zero-ல் தொடங்கும்.",
+    expectedOutput: "Banana",
+    expectedOutputTamil: "Banana",
+    challenge: false,
+    solution: `let fruits = ["Apple", "Banana", "Orange"];
+console.log(fruits[1]);`
+  },
+  {
+    id: 3, topicId: 13, title: "Modify an Array Element",
+    questionEnglish: "Create an array containing 10, 20, and 30. Change the second element to 25 and display the array.",
+    questionTamil: "10, 20 மற்றும் 30 கொண்ட array உருவாக்கி இரண்டாவது element-ஐ 25-ஆக மாற்றிக் காட்டவும்.",
+    hintEnglish: "Assign a new value to the element at index 1.",
+    hintTamil: "Index 1-ல் உள்ள element-க்கு புதிய value assign செய்யவும்.",
+    expectedOutput: "[10, 25, 30]",
+    expectedOutputTamil: "[10, 25, 30]",
+    challenge: false,
+    solution: `let numbers = [10, 20, 30];
+numbers[1] = 25;
+console.log(numbers);`
+  },
+  {
+    id: 4, topicId: 13, title: "Find Array Length",
+    questionEnglish: "Create an array containing four subjects and display its length.",
+    questionTamil: "நான்கு subjects கொண்ட array உருவாக்கி அதன் length-ஐக் காட்டவும்.",
+    hintEnglish: "Use the length property.",
+    hintTamil: "length property பயன்படுத்தவும்.",
+    expectedOutput: "4",
+    expectedOutputTamil: "4",
+    challenge: false,
+    solution: `let subjects = ["Maths", "English", "Computer", "Science"];
+console.log(subjects.length);`
+  },
+  {
+    id: 5, topicId: 13, title: "Add an Element to an Array",
+    questionEnglish: "Create an array containing Java and Python. Add JavaScript at the end and display the array.",
+    questionTamil: "Java மற்றும் Python கொண்ட array உருவாக்கி இறுதியில் JavaScript சேர்த்து காட்டவும்.",
+    hintEnglish: "Use push().",
+    hintTamil: "push() பயன்படுத்தவும்.",
+    expectedOutput: `["Java", "Python", "JavaScript"]`,
+    expectedOutputTamil: `["Java", "Python", "JavaScript"]`,
+    challenge: false,
+    solution: `let languages = ["Java", "Python"];
+languages.push("JavaScript");
+console.log(languages);`
+  },
+  {
+    id: 6, topicId: 13, title: "Remove the Last Element",
+    questionEnglish: "Create an array containing Red, Green, and Blue. Remove the last element and display the array.",
+    questionTamil: "Red, Green மற்றும் Blue கொண்ட array உருவாக்கி கடைசி element-ஐ நீக்கிக் காட்டவும்.",
+    hintEnglish: "Use pop().",
+    hintTamil: "pop() பயன்படுத்தவும்.",
+    expectedOutput: `["Red", "Green"]`,
+    expectedOutputTamil: `["Red", "Green"]`,
+    challenge: false,
+    solution: `let colors = ["Red", "Green", "Blue"];
+colors.pop();
+console.log(colors);`
+  },
+  {
+    id: 7, topicId: 13, title: "Loop Through an Array",
+    questionEnglish: "Create an array containing three fruits and use a for loop to display each fruit.",
+    questionTamil: "மூன்று fruits கொண்ட array உருவாக்கி for loop பயன்படுத்தி ஒவ்வொரு fruit-ஐக் காட்டவும்.",
+    hintEnglish: "Use the array length as the loop condition.",
+    hintTamil: "Loop condition-க்கு array length பயன்படுத்தவும்.",
+    expectedOutput: `Apple
+Banana
+Orange`,
+    expectedOutputTamil: `Apple
+Banana
+Orange`,
+    challenge: false,
+    solution: `let fruits = ["Apple", "Banana", "Orange"];
+
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}`
+  },
+  {
+    id: 8, topicId: 13, title: "Find an Array Element",
+    questionEnglish: "Create an array containing four numbers and display the third element.",
+    questionTamil: "நான்கு numbers கொண்ட array உருவாக்கி மூன்றாவது element-ஐக் காட்டவும்.",
+    hintEnglish: "Use index 2.",
+    hintTamil: "Index 2 பயன்படுத்தவும்.",
+    expectedOutput: "30",
+    expectedOutputTamil: "30",
+    challenge: false,
+    solution: `let numbers = [10, 20, 30, 40];
+console.log(numbers[2]);`
+  },
+  {
+    id: 9, topicId: 13, title: "Challenge: Shopping Items",
+    questionEnglish: "Create an array of shopping items. Add two items, remove one item, and display the final array.",
+    questionTamil: "Shopping items கொண்ட array உருவாக்கி இரண்டு items சேர்த்து ஒரு item நீக்கி இறுதி array-ஐக் காட்டவும்.",
+    hintEnglish: "Use push() and pop() or another appropriate method.",
+    hintTamil: "push() மற்றும் pop() அல்லது பொருத்தமான method பயன்படுத்தவும்.",
+    expectedOutput: "A modified shopping items array.",
+    expectedOutputTamil: "மாற்றப்பட்ட shopping items array.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 13, title: "Challenge: Student Names",
+    questionEnglish: "Create an array containing at least five student names. Display all names and the total number of students.",
+    questionTamil: "குறைந்தது ஐந்து student names கொண்ட array உருவாக்கி அனைத்து names மற்றும் மாணவர்களின் எண்ணிக்கையைக் காட்டவும்.",
+    hintEnglish: "Use a loop and the length property.",
+    hintTamil: "Loop மற்றும் length property பயன்படுத்தவும்.",
+    expectedOutput: "All student names and the total count.",
+    expectedOutputTamil: "அனைத்து student names மற்றும் மொத்த எண்ணிக்கை.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 14: ARRAY METHODS
+  // ==========================================
+  {
+    id: 1, topicId: 14, title: "Use push()",
+    questionEnglish: "Add the number 40 to the end of an array containing 10, 20, and 30.",
+    questionTamil: "10, 20 மற்றும் 30 கொண்ட array-ன் இறுதியில் 40 சேர்க்கவும்.",
+    hintEnglish: "Use push().",
+    hintTamil: "push() பயன்படுத்தவும்.",
+    expectedOutput: "[10, 20, 30, 40]",
+    expectedOutputTamil: "[10, 20, 30, 40]",
+    challenge: false,
+    solution: `let numbers = [10, 20, 30];
+numbers.push(40);
+console.log(numbers);`
+  },
+  {
+    id: 2, topicId: 14, title: "Use pop()",
+    questionEnglish: "Remove the last element from an array containing 1, 2, and 3.",
+    questionTamil: "1, 2 மற்றும் 3 கொண்ட array-ன் கடைசி element-ஐ நீக்கவும்.",
+    hintEnglish: "Use pop().",
+    hintTamil: "pop() பயன்படுத்தவும்.",
+    expectedOutput: "[1, 2]",
+    expectedOutputTamil: "[1, 2]",
+    challenge: false,
+    solution: `let numbers = [1, 2, 3];
+numbers.pop();
+console.log(numbers);`
+  },
+  {
+    id: 3, topicId: 14, title: "Use unshift()",
+    questionEnglish: "Add the number 5 at the beginning of an array containing 10 and 20.",
+    questionTamil: "10 மற்றும் 20 கொண்ட array-ன் தொடக்கத்தில் 5 சேர்க்கவும்.",
+    hintEnglish: "Use unshift().",
+    hintTamil: "unshift() பயன்படுத்தவும்.",
+    expectedOutput: "[5, 10, 20]",
+    expectedOutputTamil: "[5, 10, 20]",
+    challenge: false,
+    solution: `let numbers = [10, 20];
+numbers.unshift(5);
+console.log(numbers);`
+  },
+  {
+    id: 4, topicId: 14, title: "Use shift()",
+    questionEnglish: "Remove the first element from an array containing Red, Green, and Blue.",
+    questionTamil: "Red, Green மற்றும் Blue கொண்ட array-ன் முதல் element-ஐ நீக்கவும்.",
+    hintEnglish: "Use shift().",
+    hintTamil: "shift() பயன்படுத்தவும்.",
+    expectedOutput: `["Green", "Blue"]`,
+    expectedOutputTamil: `["Green", "Blue"]`,
+    challenge: false,
+    solution: `let colors = ["Red", "Green", "Blue"];
+colors.shift();
+console.log(colors);`
+  },
+  {
+    id: 5, topicId: 14, title: "Use includes()",
+    questionEnglish: "Check whether JavaScript exists in an array containing Java, Python, and JavaScript.",
+    questionTamil: "Java, Python மற்றும் JavaScript கொண்ட array-ல் JavaScript உள்ளதா எனச் சரிபார்க்கவும்.",
+    hintEnglish: "Use includes().",
+    hintTamil: "includes() பயன்படுத்தவும்.",
+    expectedOutput: "true",
+    expectedOutputTamil: "true",
+    challenge: false,
+    solution: `let languages = ["Java", "Python", "JavaScript"];
+console.log(languages.includes("JavaScript"));`
+  },
+  {
+    id: 6, topicId: 14, title: "Use indexOf()",
+    questionEnglish: "Find the index of Python in an array containing Java, Python, and C++.",
+    questionTamil: "Java, Python மற்றும் C++ கொண்ட array-ல் Python-ன் index-ஐக் கண்டறியவும்.",
+    hintEnglish: "Use indexOf().",
+    hintTamil: "indexOf() பயன்படுத்தவும்.",
+    expectedOutput: "1",
+    expectedOutputTamil: "1",
+    challenge: false,
+    solution: `let languages = ["Java", "Python", "C++"];
+console.log(languages.indexOf("Python"));`
+  },
+  {
+    id: 7, topicId: 14, title: "Use join()",
+    questionEnglish: "Join the elements Java, Python, and JavaScript using a comma and display the result.",
+    questionTamil: "Java, Python மற்றும் JavaScript elements-ஐ comma பயன்படுத்தி join செய்து காட்டவும்.",
+    hintEnglish: "Use join().",
+    hintTamil: "join() பயன்படுத்தவும்.",
+    expectedOutput: "Java,Python,JavaScript",
+    expectedOutputTamil: "Java,Python,JavaScript",
+    challenge: false,
+    solution: `let languages = ["Java", "Python", "JavaScript"];
+console.log(languages.join(","));`
+  },
+  {
+    id: 8, topicId: 14, title: "Use slice()",
+    questionEnglish: "Extract the second and third elements from an array containing 10, 20, 30, and 40 using slice().",
+    questionTamil: "10, 20, 30 மற்றும் 40 கொண்ட array-ல் slice() பயன்படுத்தி இரண்டாவது மற்றும் மூன்றாவது elements-ஐ extract செய்யவும்.",
+    hintEnglish: "Remember that slice() uses a start index and an exclusive end index.",
+    hintTamil: "slice() start index மற்றும் exclusive end index பயன்படுத்தும் என்பதை நினைவில் கொள்ளவும்.",
+    expectedOutput: "[20, 30]",
+    expectedOutputTamil: "[20, 30]",
+    challenge: false,
+    solution: `let numbers = [10, 20, 30, 40];
+console.log(numbers.slice(1, 3));`
+  },
+  {
+    id: 9, topicId: 14, title: "Challenge: Array Modification",
+    questionEnglish: "Create an array of five items. Use multiple array methods to add, remove, and check items.",
+    questionTamil: "ஐந்து items கொண்ட array உருவாக்கி பல array methods பயன்படுத்தி items சேர்க்கவும், நீக்கவும், சரிபார்க்கவும்.",
+    hintEnglish: "Explore push(), pop(), includes(), shift(), and unshift().",
+    hintTamil: "push(), pop(), includes(), shift() மற்றும் unshift() ஆகியவற்றை ஆராயவும்.",
+    expectedOutput: "A modified array and a check result.",
+    expectedOutputTamil: "மாற்றப்பட்ட array மற்றும் check முடிவு.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 14, title: "Challenge: Array Organizer",
+    questionEnglish: "Create an array of programming languages and use different array methods to organize and display its contents.",
+    questionTamil: "Programming languages கொண்ட array உருவாக்கி வெவ்வேறு array methods பயன்படுத்தி அதன் contents-ஐ ஒழுங்குபடுத்திக் காட்டவும்.",
+    hintEnglish: "Combine several array methods in one program.",
+    hintTamil: "ஒரே program-ல் பல array methods-ஐ இணைத்து பயன்படுத்தவும்.",
+    expectedOutput: "An organized and modified array.",
+    expectedOutputTamil: "ஒழுங்குபடுத்தப்பட்ட மற்றும் மாற்றப்பட்ட array.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 15: STRINGS AND STRING METHODS
+  // ==========================================
+  {
+    id: 1, topicId: 15, title: "Find String Length",
+    questionEnglish: "Create a string containing JavaScript and display its length.",
+    questionTamil: "JavaScript கொண்ட string உருவாக்கி அதன் length-ஐக் காட்டவும்.",
+    hintEnglish: "Use the length property.",
+    hintTamil: "length property பயன்படுத்தவும்.",
+    expectedOutput: "10",
+    expectedOutputTamil: "10",
+    challenge: false,
+    solution: `let text = "JavaScript";
+console.log(text.length);`
+  },
+  {
+    id: 2, topicId: 15, title: "Convert to Uppercase",
+    questionEnglish: "Convert the string hello world into uppercase.",
+    questionTamil: "hello world என்ற string-ஐ uppercase-ஆக மாற்றவும்.",
+    hintEnglish: "Use toUpperCase().",
+    hintTamil: "toUpperCase() பயன்படுத்தவும்.",
+    expectedOutput: "HELLO WORLD",
+    expectedOutputTamil: "HELLO WORLD",
+    challenge: false,
+    solution: `let text = "hello world";
+console.log(text.toUpperCase());`
+  },
+  {
+    id: 3, topicId: 15, title: "Convert to Lowercase",
+    questionEnglish: "Convert the string JAVASCRIPT into lowercase.",
+    questionTamil: "JAVASCRIPT என்ற string-ஐ lowercase-ஆக மாற்றவும்.",
+    hintEnglish: "Use toLowerCase().",
+    hintTamil: "toLowerCase() பயன்படுத்தவும்.",
+    expectedOutput: "javascript",
+    expectedOutputTamil: "javascript",
+    challenge: false,
+    solution: `let text = "JAVASCRIPT";
+console.log(text.toLowerCase());`
+  },
+  {
+    id: 4, topicId: 15, title: "Remove Whitespace",
+    questionEnglish: "Remove the spaces at the beginning and end of the string ' JavaScript ' using trim().",
+    questionTamil: "' JavaScript ' string-ன் தொடக்கம் மற்றும் முடிவில் உள்ள spaces-ஐ trim() பயன்படுத்தி நீக்கவும்.",
+    hintEnglish: "Use trim().",
+    hintTamil: "trim() பயன்படுத்தவும்.",
+    expectedOutput: "JavaScript",
+    expectedOutputTamil: "JavaScript",
+    challenge: false,
+    solution: `let text = " JavaScript ";
+console.log(text.trim());`
+  },
+  {
+    id: 5, topicId: 15, title: "Use includes()",
+    questionEnglish: "Check whether the string Cyber Security contains the word Security.",
+    questionTamil: "Cyber Security என்ற string-ல் Security என்ற word உள்ளதா எனச் சரிபார்க்கவும்.",
+    hintEnglish: "Use includes().",
+    hintTamil: "includes() பயன்படுத்தவும்.",
+    expectedOutput: "true",
+    expectedOutputTamil: "true",
+    challenge: false,
+    solution: `let text = "Cyber Security";
+console.log(text.includes("Security"));`
+  },
+  {
+    id: 6, topicId: 15, title: "Use indexOf()",
+    questionEnglish: "Find the position of the word Java in the string I am learning Java.",
+    questionTamil: "I am learning Java என்ற string-ல் Java word-ன் position-ஐக் கண்டறியவும்.",
+    hintEnglish: "Use indexOf().",
+    hintTamil: "indexOf() பயன்படுத்தவும்.",
+    expectedOutput: "15",
+    expectedOutputTamil: "15",
+    challenge: false,
+    solution: `let text = "I am learning Java";
+console.log(text.indexOf("Java"));`
+  },
+  {
+    id: 7, topicId: 15, title: "Use replace()",
+    questionEnglish: "Replace the word Java with JavaScript in the string I am learning Java.",
+    questionTamil: "I am learning Java என்ற string-ல் Java word-ஐ JavaScript-ஆக replace செய்யவும்.",
+    hintEnglish: "Use replace().",
+    hintTamil: "replace() பயன்படுத்தவும்.",
+    expectedOutput: "I am learning JavaScript",
+    expectedOutputTamil: "I am learning JavaScript",
+    challenge: false,
+    solution: `let text = "I am learning Java";
+console.log(text.replace("Java", "JavaScript"));`
+  },
+  {
+    id: 8, topicId: 15, title: "Use slice() on a String",
+    questionEnglish: "Extract the word JavaScript from the string I am learning JavaScript using slice().",
+    questionTamil: "I am learning JavaScript என்ற string-ல் slice() பயன்படுத்தி JavaScript word-ஐ extract செய்யவும்.",
+    hintEnglish: "Find the starting and ending index of the word.",
+    hintTamil: "Word-ன் starting மற்றும் ending index-ஐக் கண்டறியவும்.",
+    expectedOutput: "JavaScript",
+    expectedOutputTamil: "JavaScript",
+    challenge: false,
+    solution: `let text = "I am learning JavaScript";
+console.log(text.slice(15, 25));`
+  },
+  {
+    id: 9, topicId: 15, title: "Challenge: String Analyzer",
+    questionEnglish: "Create a string and use at least four string methods to analyze or modify it.",
+    questionTamil: "ஒரு string உருவாக்கி குறைந்தது நான்கு string methods பயன்படுத்தி அதை analyze அல்லது modify செய்யவும்.",
+    hintEnglish: "Explore length, trim(), toUpperCase(), includes(), and replace().",
+    hintTamil: "length, trim(), toUpperCase(), includes() மற்றும் replace() ஆகியவற்றை ஆராயவும்.",
+    expectedOutput: "Multiple string analysis and modification results.",
+    expectedOutputTamil: "பல string analysis மற்றும் modification முடிவுகள்.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 15, title: "Challenge: Text Formatter",
+    questionEnglish: "Create a sentence and format it using multiple string methods. Display the original string and the formatted string.",
+    questionTamil: "ஒரு sentence உருவாக்கி பல string methods பயன்படுத்தி format செய்யவும். Original string மற்றும் formatted string-ஐக் காட்டவும்.",
+    hintEnglish: "Combine string methods to achieve your desired formatting.",
+    hintTamil: "உங்கள் formatting-க்கு பல string methods-ஐ இணைத்து பயன்படுத்தவும்.",
+    expectedOutput: "Original and formatted strings.",
+    expectedOutputTamil: "Original மற்றும் formatted strings.",
+    challenge: true
+  },
 ];
 
 export default questions;
