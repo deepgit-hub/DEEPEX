@@ -2113,6 +2113,703 @@ console.log(text.slice(15, 25));`
     expectedOutputTamil: "Original மற்றும் formatted strings.",
     challenge: true
   },
+    // ==========================================
+  // TOPIC 16: OBJECTS
+  // ==========================================
+  {
+    id: 1, topicId: 16, title: "Create an Object",
+    questionEnglish: "Create an object named student with name, age, and department properties. Display the object.",
+    questionTamil: "Name, age மற்றும் department properties கொண்ட student என்ற object உருவாக்கி காட்டவும்.",
+    hintEnglish: "Use curly braces to create an object.",
+    hintTamil: "Object உருவாக்க curly braces பயன்படுத்தவும்.",
+    expectedOutput: `{ name: "Deepak", age: 20, department: "Computer Science" }`,
+    expectedOutputTamil: `{ name: "Deepak", age: 20, department: "Computer Science" }`,
+    challenge: false,
+    solution: `let student = {
+  name: "Deepak",
+  age: 20,
+  department: "Computer Science"
+};
+
+console.log(student);`
+  },
+  {
+    id: 2, topicId: 16, title: "Access Object Properties",
+    questionEnglish: "Create a student object and display its name using dot notation.",
+    questionTamil: "Student object உருவாக்கி dot notation பயன்படுத்தி அதன் name-ஐ காட்டவும்.",
+    hintEnglish: "Use object.propertyName.",
+    hintTamil: "object.propertyName பயன்படுத்தவும்.",
+    expectedOutput: "Deepak",
+    expectedOutputTamil: "Deepak",
+    challenge: false,
+    solution: `let student = {
+  name: "Deepak",
+  age: 20
+};
+
+console.log(student.name);`
+  },
+  {
+    id: 3, topicId: 16, title: "Access Properties Using Brackets",
+    questionEnglish: "Create a laptop object with brand and price. Display the brand using bracket notation.",
+    questionTamil: "Brand மற்றும் price கொண்ட laptop object உருவாக்கி bracket notation மூலம் brand-ஐ காட்டவும்.",
+    hintEnglish: "Use object['propertyName'].",
+    hintTamil: "object['propertyName'] பயன்படுத்தவும்.",
+    expectedOutput: "Lenovo",
+    expectedOutputTamil: "Lenovo",
+    challenge: false,
+    solution: `let laptop = {
+  brand: "Lenovo",
+  price: 45000
+};
+
+console.log(laptop["brand"]);`
+  },
+  {
+    id: 4, topicId: 16, title: "Modify an Object Property",
+    questionEnglish: "Create a student object and change its age to 21.",
+    questionTamil: "Student object உருவாக்கி அதன் age-ஐ 21-ஆக மாற்றவும்.",
+    hintEnglish: "Assign a new value to the existing property.",
+    hintTamil: "Existing property-க்கு புதிய value assign செய்யவும்.",
+    expectedOutput: "21",
+    expectedOutputTamil: "21",
+    challenge: false,
+    solution: `let student = {
+  name: "Deepak",
+  age: 20
+};
+
+student.age = 21;
+console.log(student.age);`
+  },
+  {
+    id: 5, topicId: 16, title: "Add a New Property",
+    questionEnglish: "Create a user object with a name. Add a role property and display the object.",
+    questionTamil: "Name கொண்ட user object உருவாக்கி role property சேர்த்து object-ஐக் காட்டவும்.",
+    hintEnglish: "Assign a new property to the object.",
+    hintTamil: "Object-க்கு புதிய property assign செய்யவும்.",
+    expectedOutput: `{ name: "Deepak", role: "Student" }`,
+    expectedOutputTamil: `{ name: "Deepak", role: "Student" }`,
+    challenge: false,
+    solution: `let user = {
+  name: "Deepak"
+};
+
+user.role = "Student";
+console.log(user);`
+  },
+  {
+    id: 6, topicId: 16, title: "Delete an Object Property",
+    questionEnglish: "Create a person object with name and age. Delete the age property and display the object.",
+    questionTamil: "Name மற்றும் age கொண்ட person object உருவாக்கி age property-ஐ delete செய்து காட்டவும்.",
+    hintEnglish: "Use the delete operator.",
+    hintTamil: "delete operator பயன்படுத்தவும்.",
+    expectedOutput: `{ name: "Deepak" }`,
+    expectedOutputTamil: `{ name: "Deepak" }`,
+    challenge: false,
+    solution: `let person = {
+  name: "Deepak",
+  age: 20
+};
+
+delete person.age;
+console.log(person);`
+  },
+  {
+    id: 7, topicId: 16, title: "Create an Object Method",
+    questionEnglish: "Create a user object containing a greet method that displays Hello Deepak.",
+    questionTamil: "Hello Deepak காட்டும் greet method கொண்ட user object உருவாக்கவும்.",
+    hintEnglish: "A method is a function stored inside an object.",
+    hintTamil: "Object-க்குள் store செய்யப்பட்ட function ஒரு method ஆகும்.",
+    expectedOutput: "Hello Deepak",
+    expectedOutputTamil: "Hello Deepak",
+    challenge: false,
+    solution: `let user = {
+  name: "Deepak",
+  greet: function() {
+    console.log("Hello " + this.name);
+  }
+};
+
+user.greet();`
+  },
+  {
+    id: 8, topicId: 16, title: "Access Multiple Object Properties",
+    questionEnglish: "Create a computer object with brand, RAM, and storage properties. Display all three properties.",
+    questionTamil: "Brand, RAM மற்றும் storage properties கொண்ட computer object உருவாக்கி அனைத்தையும் காட்டவும்.",
+    hintEnglish: "Access each property individually.",
+    hintTamil: "ஒவ்வொரு property-யையும் தனித்தனியாக access செய்யவும்.",
+    expectedOutput: `Brand: Dell
+RAM: 16GB
+Storage: 512GB`,
+    expectedOutputTamil: `Brand: Dell
+RAM: 16GB
+Storage: 512GB`,
+    challenge: false,
+    solution: `let computer = {
+  brand: "Dell",
+  ram: "16GB",
+  storage: "512GB"
+};
+
+console.log("Brand:", computer.brand);
+console.log("RAM:", computer.ram);
+console.log("Storage:", computer.storage);`
+  },
+  {
+    id: 9, topicId: 16, title: "Challenge: Student Profile",
+    questionEnglish: "Create a student object containing at least five properties and one method. Display the properties and call the method.",
+    questionTamil: "குறைந்தது ஐந்து properties மற்றும் ஒரு method கொண்ட student object உருவாக்கி properties-ஐக் காட்டி method-ஐ call செய்யவும்.",
+    hintEnglish: "Combine object properties and a method.",
+    hintTamil: "Object properties மற்றும் method-ஐ இணைத்து பயன்படுத்தவும்.",
+    expectedOutput: "A student profile and method result.",
+    expectedOutputTamil: "Student profile மற்றும் method முடிவு.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 16, title: "Challenge: Security Device",
+    questionEnglish: "Create a security device object with device name, status, and location. Add a method that displays a device status message.",
+    questionTamil: "Device name, status மற்றும் location கொண்ட security device object உருவாக்கி device status message காட்டும் method சேர்க்கவும்.",
+    hintEnglish: "Use object properties and this inside a method.",
+    hintTamil: "Object properties மற்றும் method-க்குள் this பயன்படுத்தவும்.",
+    expectedOutput: "Device details and a status message.",
+    expectedOutputTamil: "Device details மற்றும் status message.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 17: DOM INTRODUCTION AND SELECTION
+  // ==========================================
+  {
+    id: 1, topicId: 17, title: "Select an Element Using getElementById",
+    questionEnglish: "Select an element with the ID heading and display the selected element in the console. Assume the HTML element exists.",
+    questionTamil: "heading ID கொண்ட HTML element-ஐ select செய்து console-ல் காட்டவும். HTML element ஏற்கனவே இருப்பதாக கருதவும்.",
+    hintEnglish: "Use document.getElementById().",
+    hintTamil: "document.getElementById() பயன்படுத்தவும்.",
+    expectedOutput: "The selected HTML element in the console.",
+    expectedOutputTamil: "Console-ல் selected HTML element.",
+    challenge: false,
+    solution: `let heading = document.getElementById("heading");
+console.log(heading);`
+  },
+  {
+    id: 2, topicId: 17, title: "Select an Element Using querySelector",
+    questionEnglish: "Select the first paragraph element using querySelector() and display it.",
+    questionTamil: "querySelector() பயன்படுத்தி முதல் paragraph element-ஐ select செய்து காட்டவும்.",
+    hintEnglish: "Use document.querySelector('p').",
+    hintTamil: "document.querySelector('p') பயன்படுத்தவும்.",
+    expectedOutput: "The first paragraph element.",
+    expectedOutputTamil: "முதல் paragraph element.",
+    challenge: false,
+    solution: `let paragraph = document.querySelector("p");
+console.log(paragraph);`
+  },
+  {
+    id: 3, topicId: 17, title: "Select an Element by Class",
+    questionEnglish: "Select the element with the class message using querySelector() and display it.",
+    questionTamil: "message class கொண்ட element-ஐ querySelector() மூலம் select செய்து காட்டவும்.",
+    hintEnglish: "Use a dot before the class name.",
+    hintTamil: "Class name-க்கு முன் dot பயன்படுத்தவும்.",
+    expectedOutput: "The selected element.",
+    expectedOutputTamil: "Selected element.",
+    challenge: false,
+    solution: `let message = document.querySelector(".message");
+console.log(message);`
+  },
+  {
+    id: 4, topicId: 17, title: "Select Multiple Elements",
+    questionEnglish: "Select all paragraph elements using querySelectorAll() and display the collection.",
+    questionTamil: "querySelectorAll() பயன்படுத்தி அனைத்து paragraph elements-ஐ select செய்து collection-ஐ காட்டவும்.",
+    hintEnglish: "Use document.querySelectorAll('p').",
+    hintTamil: "document.querySelectorAll('p') பயன்படுத்தவும்.",
+    expectedOutput: "A NodeList containing the paragraph elements.",
+    expectedOutputTamil: "Paragraph elements கொண்ட NodeList.",
+    challenge: false,
+    solution: `let paragraphs = document.querySelectorAll("p");
+console.log(paragraphs);`
+  },
+  {
+    id: 5, topicId: 17, title: "Select Elements by Tag",
+    questionEnglish: "Select all div elements using getElementsByTagName() and display them.",
+    questionTamil: "getElementsByTagName() பயன்படுத்தி அனைத்து div elements-ஐ select செய்து காட்டவும்.",
+    hintEnglish: "Use document.getElementsByTagName().",
+    hintTamil: "document.getElementsByTagName() பயன்படுத்தவும்.",
+    expectedOutput: "A collection of div elements.",
+    expectedOutputTamil: "Div elements கொண்ட collection.",
+    challenge: false,
+    solution: `let divs = document.getElementsByTagName("div");
+console.log(divs);`
+  },
+  {
+    id: 6, topicId: 17, title: "Select Elements by Class Name",
+    questionEnglish: "Select all elements with the class card using getElementsByClassName() and display them.",
+    questionTamil: "getElementsByClassName() பயன்படுத்தி card class கொண்ட elements-ஐ select செய்து காட்டவும்.",
+    hintEnglish: "Use document.getElementsByClassName().",
+    hintTamil: "document.getElementsByClassName() பயன்படுத்தவும்.",
+    expectedOutput: "A collection of elements with the card class.",
+    expectedOutputTamil: "Card class கொண்ட elements collection.",
+    challenge: false,
+    solution: `let cards = document.getElementsByClassName("card");
+console.log(cards);`
+  },
+  {
+    id: 7, topicId: 17, title: "Display Element Content",
+    questionEnglish: "Select the element with ID message and display its textContent. Assume the element exists.",
+    questionTamil: "message ID கொண்ட element-ஐ select செய்து அதன் textContent-ஐ காட்டவும்.",
+    hintEnglish: "Access the textContent property.",
+    hintTamil: "textContent property access செய்யவும்.",
+    expectedOutput: "The text inside the element.",
+    expectedOutputTamil: "Element-க்குள் உள்ள text.",
+    challenge: false,
+    solution: `let message = document.getElementById("message");
+console.log(message.textContent);`
+  },
+  {
+    id: 8, topicId: 17, title: "Count Selected Elements",
+    questionEnglish: "Select all elements with the class item using querySelectorAll() and display how many elements were selected.",
+    questionTamil: "item class கொண்ட அனைத்து elements-ஐ querySelectorAll() மூலம் select செய்து எத்தனை elements select செய்யப்பட்டன எனக் காட்டவும்.",
+    hintEnglish: "Use the length property of the NodeList.",
+    hintTamil: "NodeList-ன் length property பயன்படுத்தவும்.",
+    expectedOutput: "The number of selected elements.",
+    expectedOutputTamil: "Select செய்யப்பட்ட elements எண்ணிக்கை.",
+    challenge: false,
+    solution: `let items = document.querySelectorAll(".item");
+console.log(items.length);`
+  },
+  {
+    id: 9, topicId: 17, title: "Challenge: DOM Explorer",
+    questionEnglish: "Create an HTML page containing multiple elements with different IDs, classes, and tags. Select them using different DOM selection methods.",
+    questionTamil: "வெவ்வேறு IDs, classes மற்றும் tags கொண்ட HTML page உருவாக்கி பல DOM selection methods பயன்படுத்தி elements-ஐ select செய்யவும்.",
+    hintEnglish: "Experiment with getElementById(), querySelector(), and querySelectorAll().",
+    hintTamil: "getElementById(), querySelector() மற்றும் querySelectorAll() ஆகியவற்றை முயற்சிக்கவும்.",
+    expectedOutput: "Different selected HTML elements.",
+    expectedOutputTamil: "வெவ்வேறு selected HTML elements.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 17, title: "Challenge: DOM Selection Report",
+    questionEnglish: "Create a page containing headings, paragraphs, and cards. Select the elements and display the number of each element type.",
+    questionTamil: "Headings, paragraphs மற்றும் cards கொண்ட page உருவாக்கி அவற்றை select செய்து ஒவ்வொரு element வகையின் எண்ணிக்கையைக் காட்டவும்.",
+    hintEnglish: "Use querySelectorAll() and length.",
+    hintTamil: "querySelectorAll() மற்றும் length பயன்படுத்தவும்.",
+    expectedOutput: "Counts of the selected element types.",
+    expectedOutputTamil: "Selected element types-ன் எண்ணிக்கைகள்.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 18: DOM MANIPULATION AND EVENTS
+  // ==========================================
+  {
+    id: 1, topicId: 18, title: "Change Text Using textContent",
+    questionEnglish: "Select the element with ID message and change its text to Hello JavaScript. Assume the element exists.",
+    questionTamil: "message ID கொண்ட element-ஐ select செய்து text-ஐ Hello JavaScript-ஆக மாற்றவும்.",
+    hintEnglish: "Assign a new value to textContent.",
+    hintTamil: "textContent-க்கு புதிய value assign செய்யவும்.",
+    expectedOutput: "Hello JavaScript displayed inside the element.",
+    expectedOutputTamil: "Element-க்குள் Hello JavaScript காட்டப்படும்.",
+    challenge: false,
+    solution: `let message = document.getElementById("message");
+message.textContent = "Hello JavaScript";`
+  },
+  {
+    id: 2, topicId: 18, title: "Change HTML Content",
+    questionEnglish: "Select the element with ID container and insert a bold Welcome message using innerHTML.",
+    questionTamil: "container ID கொண்ட element-ஐ select செய்து innerHTML மூலம் bold Welcome message சேர்க்கவும்.",
+    hintEnglish: "Use innerHTML to insert HTML markup.",
+    hintTamil: "HTML markup சேர்க்க innerHTML பயன்படுத்தவும்.",
+    expectedOutput: "A bold Welcome message.",
+    expectedOutputTamil: "Bold Welcome message.",
+    challenge: false,
+    solution: `let container = document.getElementById("container");
+container.innerHTML = "<strong>Welcome</strong>";`
+  },
+  {
+    id: 3, topicId: 18, title: "Change Text Color",
+    questionEnglish: "Select the element with ID heading and change its text color to blue.",
+    questionTamil: "heading ID கொண்ட element-ஐ select செய்து அதன் text color-ஐ blue-ஆக மாற்றவும்.",
+    hintEnglish: "Use the style.color property.",
+    hintTamil: "style.color property பயன்படுத்தவும்.",
+    expectedOutput: "The heading text appears blue.",
+    expectedOutputTamil: "Heading text blue நிறத்தில் தோன்றும்.",
+    challenge: false,
+    solution: `let heading = document.getElementById("heading");
+heading.style.color = "blue";`
+  },
+  {
+    id: 4, topicId: 18, title: "Change Background Color",
+    questionEnglish: "Select the element with ID box and change its background color to yellow.",
+    questionTamil: "box ID கொண்ட element-ஐ select செய்து அதன் background color-ஐ yellow-ஆக மாற்றவும்.",
+    hintEnglish: "Use style.backgroundColor.",
+    hintTamil: "style.backgroundColor பயன்படுத்தவும்.",
+    expectedOutput: "The element has a yellow background.",
+    expectedOutputTamil: "Element-க்கு yellow background இருக்கும்.",
+    challenge: false,
+    solution: `let box = document.getElementById("box");
+box.style.backgroundColor = "yellow";`
+  },
+  {
+    id: 5, topicId: 18, title: "Create an Element",
+    questionEnglish: "Create a new paragraph element, set its text to JavaScript is powerful, and append it to the body.",
+    questionTamil: "புதிய paragraph element உருவாக்கி அதன் text-ஐ JavaScript is powerful-ஆக அமைத்து body-ல் append செய்யவும்.",
+    hintEnglish: "Use createElement() and appendChild().",
+    hintTamil: "createElement() மற்றும் appendChild() பயன்படுத்தவும்.",
+    expectedOutput: "A new paragraph displayed on the page.",
+    expectedOutputTamil: "Page-ல் புதிய paragraph காட்டப்படும்.",
+    challenge: false,
+    solution: `let paragraph = document.createElement("p");
+paragraph.textContent = "JavaScript is powerful";
+document.body.appendChild(paragraph);`
+  },
+  {
+    id: 6, topicId: 18, title: "Handle a Click Event",
+    questionEnglish: "Select a button with ID btn and display Button Clicked in the console when it is clicked.",
+    questionTamil: "btn ID கொண்ட button-ஐ select செய்து click செய்தால் console-ல் Button Clicked காட்டவும்.",
+    hintEnglish: "Use addEventListener() with click.",
+    hintTamil: "click மற்றும் addEventListener() பயன்படுத்தவும்.",
+    expectedOutput: "Button Clicked when the button is clicked.",
+    expectedOutputTamil: "Button click செய்தால் Button Clicked காட்டப்படும்.",
+    challenge: false,
+    solution: `let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+  console.log("Button Clicked");
+});`
+  },
+  {
+    id: 7, topicId: 18, title: "Toggle a Class",
+    questionEnglish: "Select the element with ID box and toggle the active class when a button with ID btn is clicked.",
+    questionTamil: "box ID கொண்ட element-ஐ select செய்து btn click செய்தால் active class-ஐ toggle செய்யவும்.",
+    hintEnglish: "Use classList.toggle().",
+    hintTamil: "classList.toggle() பயன்படுத்தவும்.",
+    expectedOutput: "The active class toggles on and off.",
+    expectedOutputTamil: "Active class on மற்றும் off ஆக toggle ஆகும்.",
+    challenge: false,
+    solution: `let box = document.getElementById("box");
+let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+  box.classList.toggle("active");
+});`
+  },
+  {
+    id: 8, topicId: 18, title: "Remove an Element",
+    questionEnglish: "Select the element with ID message and remove it when the button with ID btn is clicked.",
+    questionTamil: "message ID கொண்ட element-ஐ select செய்து btn click செய்தால் அதை remove செய்யவும்.",
+    hintEnglish: "Use remove() inside the click event.",
+    hintTamil: "Click event-க்குள் remove() பயன்படுத்தவும்.",
+    expectedOutput: "The message element disappears.",
+    expectedOutputTamil: "Message element நீக்கப்படும்.",
+    challenge: false,
+    solution: `let message = document.getElementById("message");
+let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+  message.remove();
+});`
+  },
+  {
+    id: 9, topicId: 18, title: "Challenge: Interactive Counter",
+    questionEnglish: "Create a webpage with buttons to increase, decrease, and reset a counter. Update the displayed number whenever a button is clicked.",
+    questionTamil: "Counter increase, decrease மற்றும் reset செய்ய buttons கொண்ட webpage உருவாக்கவும். Button click செய்யும்போது displayed number-ஐ update செய்யவும்.",
+    hintEnglish: "Use event listeners and a variable to store the counter value.",
+    hintTamil: "Event listeners மற்றும் counter value store செய்ய variable பயன்படுத்தவும்.",
+    expectedOutput: "An interactive counter.",
+    expectedOutputTamil: "Interactive counter.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 18, title: "Challenge: Theme Toggle",
+    questionEnglish: "Create a button that toggles a webpage between light and dark themes using CSS classes.",
+    questionTamil: "CSS classes பயன்படுத்தி webpage-ஐ light மற்றும் dark themes இடையே toggle செய்யும் button உருவாக்கவும்.",
+    hintEnglish: "Use addEventListener() and classList.toggle().",
+    hintTamil: "addEventListener() மற்றும் classList.toggle() பயன்படுத்தவும்.",
+    expectedOutput: "The webpage changes between light and dark themes.",
+    expectedOutputTamil: "Webpage light மற்றும் dark themes இடையே மாறும்.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 19: FORM HANDLING AND VALIDATION
+  // ==========================================
+  {
+    id: 1, topicId: 19, title: "Read Input Value",
+    questionEnglish: "Select an input with ID username and display its value in the console. Assume the input exists.",
+    questionTamil: "username ID கொண்ட input-ஐ select செய்து அதன் value-ஐ console-ல் காட்டவும்.",
+    hintEnglish: "Use the value property.",
+    hintTamil: "value property பயன்படுத்தவும்.",
+    expectedOutput: "The value entered by the user.",
+    expectedOutputTamil: "User enter செய்த value.",
+    challenge: false,
+    solution: `let input = document.getElementById("username");
+console.log(input.value);`
+  },
+  {
+    id: 2, topicId: 19, title: "Check Empty Input",
+    questionEnglish: "Check whether an input with ID username is empty. Display Enter your name if it is empty, otherwise display the entered name.",
+    questionTamil: "username ID கொண்ட input காலியாக உள்ளதா எனச் சரிபார்த்து காலியாக இருந்தால் Enter your name, இல்லையெனில் entered name காட்டவும்.",
+    hintEnglish: "Use an if...else statement.",
+    hintTamil: "if...else statement பயன்படுத்தவும்.",
+    expectedOutput: "Enter your name or the entered name.",
+    expectedOutputTamil: "Enter your name அல்லது entered name.",
+    challenge: false,
+    solution: `let input = document.getElementById("username");
+
+if (input.value === "") {
+  console.log("Enter your name");
+} else {
+  console.log(input.value);
+}`
+  },
+  {
+    id: 3, topicId: 19, title: "Validate Email Presence",
+    questionEnglish: "Check whether an input with ID email contains a value. Display Email required if it is empty.",
+    questionTamil: "email ID கொண்ட input-ல் value உள்ளதா எனச் சரிபார்த்து காலியாக இருந்தால் Email required காட்டவும்.",
+    hintEnglish: "Check whether the input value is empty.",
+    hintTamil: "Input value காலியாக உள்ளதா எனச் சரிபார்க்கவும்.",
+    expectedOutput: "Email required when the input is empty.",
+    expectedOutputTamil: "Input காலியாக இருந்தால் Email required.",
+    challenge: false,
+    solution: `let email = document.getElementById("email");
+
+if (email.value === "") {
+  console.log("Email required");
+} else {
+  console.log("Email entered");
+}`
+  },
+  {
+    id: 4, topicId: 19, title: "Validate Password Length",
+    questionEnglish: "Check whether the password entered in an input with ID password contains at least 8 characters.",
+    questionTamil: "password ID கொண்ட input-ல் enter செய்யப்பட்ட password குறைந்தது 8 characters கொண்டதா எனச் சரிபார்க்கவும்.",
+    hintEnglish: "Use the length property and an if...else statement.",
+    hintTamil: "length property மற்றும் if...else statement பயன்படுத்தவும்.",
+    expectedOutput: "Strong password or Password too short.",
+    expectedOutputTamil: "Strong password அல்லது Password too short.",
+    challenge: false,
+    solution: `let password = document.getElementById("password");
+
+if (password.value.length >= 8) {
+  console.log("Strong password");
+} else {
+  console.log("Password too short");
+}`
+  },
+  {
+    id: 5, topicId: 19, title: "Display Form Input",
+    questionEnglish: "Read the value of an input with ID name and display it inside an element with ID result.",
+    questionTamil: "name ID கொண்ட input-ன் value-ஐ read செய்து result ID கொண்ட element-ல் காட்டவும்.",
+    hintEnglish: "Assign the input value to the result element's textContent.",
+    hintTamil: "Input value-ஐ result element-ன் textContent-க்கு assign செய்யவும்.",
+    expectedOutput: "The entered name displayed in the result element.",
+    expectedOutputTamil: "Entered name result element-ல் காட்டப்படும்.",
+    challenge: false,
+    solution: `let nameInput = document.getElementById("name");
+let result = document.getElementById("result");
+
+result.textContent = nameInput.value;`
+  },
+  {
+    id: 6, topicId: 19, title: "Handle Form Submission",
+    questionEnglish: "Select a form with ID myForm and prevent its default submission behavior when submitted.",
+    questionTamil: "myForm ID கொண்ட form-ஐ select செய்து submit செய்யும்போது default submission behavior-ஐ prevent செய்யவும்.",
+    hintEnglish: "Use submit and preventDefault().",
+    hintTamil: "submit event மற்றும் preventDefault() பயன்படுத்தவும்.",
+    expectedOutput: "The form submission is prevented.",
+    expectedOutputTamil: "Form submission prevent செய்யப்படும்.",
+    challenge: false,
+    solution: `let form = document.getElementById("myForm");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  console.log("Form submission prevented");
+});`
+  },
+  {
+    id: 7, topicId: 19, title: "Validate a Number",
+    questionEnglish: "Read the value from an input with ID age. Display Eligible if the age is 18 or above, otherwise display Not Eligible.",
+    questionTamil: "age ID கொண்ட input-ல் value read செய்து age 18 அல்லது அதற்கு மேல் இருந்தால் Eligible இல்லையெனில் Not Eligible காட்டவும்.",
+    hintEnglish: "Convert the input value to a number before comparing.",
+    hintTamil: "Compare செய்வதற்கு முன் input value-ஐ number-ஆக மாற்றவும்.",
+    expectedOutput: "Eligible or Not Eligible.",
+    expectedOutputTamil: "Eligible அல்லது Not Eligible.",
+    challenge: false,
+    solution: `let age = Number(document.getElementById("age").value);
+
+if (age >= 18) {
+  console.log("Eligible");
+} else {
+  console.log("Not Eligible");
+}`
+  },
+  {
+    id: 8, topicId: 19, title: "Display Validation Message",
+    questionEnglish: "Check whether an input with ID username is empty and display an appropriate message inside an element with ID error.",
+    questionTamil: "username ID கொண்ட input காலியாக உள்ளதா எனச் சரிபார்த்து error ID கொண்ட element-ல் பொருத்தமான message காட்டவும்.",
+    hintEnglish: "Assign a message to the error element's textContent.",
+    hintTamil: "Error element-ன் textContent-க்கு message assign செய்யவும்.",
+    expectedOutput: "Please enter your username or Username entered.",
+    expectedOutputTamil: "Please enter your username அல்லது Username entered.",
+    challenge: false,
+    solution: `let username = document.getElementById("username");
+let error = document.getElementById("error");
+
+if (username.value.trim() === "") {
+  error.textContent = "Please enter your username";
+} else {
+  error.textContent = "Username entered";
+}`
+  },
+  {
+    id: 9, topicId: 19, title: "Challenge: Registration Form",
+    questionEnglish: "Create a registration form with name, email, and password fields. Validate that all fields are filled and the password contains at least 8 characters.",
+    questionTamil: "Name, email மற்றும் password fields கொண்ட registration form உருவாக்கவும். அனைத்து fields நிரப்பப்பட்டுள்ளனவா மற்றும் password குறைந்தது 8 characters கொண்டதா என validate செய்யவும்.",
+    hintEnglish: "Use form submission handling, trim(), and length.",
+    hintTamil: "Form submission handling, trim() மற்றும் length பயன்படுத்தவும்.",
+    expectedOutput: "Validation messages based on the form values.",
+    expectedOutputTamil: "Form values அடிப்படையில் validation messages.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 19, title: "Challenge: Login Validation",
+    questionEnglish: "Create a login form with username and password fields. Validate both fields and display appropriate messages.",
+    questionTamil: "Username மற்றும் password fields கொண்ட login form உருவாக்கி இரண்டு fields-ஐ validate செய்து பொருத்தமான messages காட்டவும்.",
+    hintEnglish: "Handle the submit event and check both values.",
+    hintTamil: "Submit event handle செய்து இரண்டு values-ஐ check செய்யவும்.",
+    expectedOutput: "Login validation messages.",
+    expectedOutputTamil: "Login validation messages.",
+    challenge: true
+  },
+
+  // ==========================================
+  // TOPIC 20: JSON, LOCAL STORAGE AND ES6 FEATURES
+  // ==========================================
+  {
+    id: 1, topicId: 20, title: "Create JSON Data",
+    questionEnglish: "Create a JavaScript object containing name and age. Convert it into a JSON string using JSON.stringify() and display it.",
+    questionTamil: "Name மற்றும் age கொண்ட JavaScript object உருவாக்கி JSON.stringify() பயன்படுத்தி JSON string-ஆக மாற்றிக் காட்டவும்.",
+    hintEnglish: "Use JSON.stringify().",
+    hintTamil: "JSON.stringify() பயன்படுத்தவும்.",
+    expectedOutput: `{"name":"Deepak","age":20}`,
+    expectedOutputTamil: `{"name":"Deepak","age":20}`,
+    challenge: false,
+    solution: `let student = {
+  name: "Deepak",
+  age: 20
+};
+
+let jsonData = JSON.stringify(student);
+console.log(jsonData);`
+  },
+  {
+    id: 2, topicId: 20, title: "Convert JSON into an Object",
+    questionEnglish: "Convert the JSON string containing name Deepak and age 20 into a JavaScript object using JSON.parse(). Display the name.",
+    questionTamil: "Deepak name மற்றும் age 20 கொண்ட JSON string-ஐ JSON.parse() பயன்படுத்தி JavaScript object-ஆக மாற்றி name-ஐக் காட்டவும்.",
+    hintEnglish: "Use JSON.parse().",
+    hintTamil: "JSON.parse() பயன்படுத்தவும்.",
+    expectedOutput: "Deepak",
+    expectedOutputTamil: "Deepak",
+    challenge: false,
+    solution: `let jsonData = '{"name":"Deepak","age":20}';
+
+let student = JSON.parse(jsonData);
+console.log(student.name);`
+  },
+  {
+    id: 3, topicId: 20, title: "Store Data in Local Storage",
+    questionEnglish: "Store the username Deepak in localStorage using the key username.",
+    questionTamil: "Username என்ற key பயன்படுத்தி Deepak-ஐ localStorage-ல் store செய்யவும்.",
+    hintEnglish: "Use localStorage.setItem().",
+    hintTamil: "localStorage.setItem() பயன்படுத்தவும்.",
+    expectedOutput: "The username is stored in localStorage.",
+    expectedOutputTamil: "Username localStorage-ல் store செய்யப்படும்.",
+    challenge: false,
+    solution: `localStorage.setItem("username", "Deepak");`
+  },
+  {
+    id: 4, topicId: 20, title: "Retrieve Data from Local Storage",
+    questionEnglish: "Retrieve the value stored under the key username in localStorage and display it.",
+    questionTamil: "LocalStorage-ல் username key-ன் கீழ் store செய்யப்பட்ட value-ஐ retrieve செய்து காட்டவும்.",
+    hintEnglish: "Use localStorage.getItem().",
+    hintTamil: "localStorage.getItem() பயன்படுத்தவும்.",
+    expectedOutput: "The stored username.",
+    expectedOutputTamil: "Store செய்யப்பட்ட username.",
+    challenge: false,
+    solution: `let username = localStorage.getItem("username");
+console.log(username);`
+  },
+  {
+    id: 5, topicId: 20, title: "Remove Data from Local Storage",
+    questionEnglish: "Remove the username item from localStorage.",
+    questionTamil: "LocalStorage-ல் உள்ள username item-ஐ remove செய்யவும்.",
+    hintEnglish: "Use localStorage.removeItem().",
+    hintTamil: "localStorage.removeItem() பயன்படுத்தவும்.",
+    expectedOutput: "The username item is removed.",
+    expectedOutputTamil: "Username item remove செய்யப்படும்.",
+    challenge: false,
+    solution: `localStorage.removeItem("username");`
+  },
+  {
+    id: 6, topicId: 20, title: "Use Arrow Functions",
+    questionEnglish: "Create an arrow function that adds two numbers and display the result of 10 and 20.",
+    questionTamil: "இரண்டு numbers-ஐ கூட்டும் arrow function உருவாக்கி 10 மற்றும் 20-ன் முடிவைக் காட்டவும்.",
+    hintEnglish: "Use the arrow function syntax.",
+    hintTamil: "Arrow function syntax பயன்படுத்தவும்.",
+    expectedOutput: "30",
+    expectedOutputTamil: "30",
+    challenge: false,
+    solution: `const add = (a, b) => a + b;
+
+console.log(add(10, 20));`
+  },
+  {
+    id: 7, topicId: 20, title: "Use Template Literals",
+    questionEnglish: "Create variables name and age. Use a template literal to display a sentence containing both values.",
+    questionTamil: "Name மற்றும் age variables உருவாக்கி template literal பயன்படுத்தி இரண்டையும் கொண்ட sentence காட்டவும்.",
+    hintEnglish: "Use backticks and ${} syntax.",
+    hintTamil: "Backticks மற்றும் ${} syntax பயன்படுத்தவும்.",
+    expectedOutput: "My name is Deepak and I am 20 years old.",
+    expectedOutputTamil: "My name is Deepak and I am 20 years old.",
+    challenge: false,
+    solution: `let name = "Deepak";
+let age = 20;
+
+console.log(\`My name is \${name} and I am \${age} years old.\`);`
+  },
+  {
+    id: 8, topicId: 20, title: "Use the Spread Operator",
+    questionEnglish: "Create an array containing Java and Python. Use the spread operator to create a new array that also contains JavaScript.",
+    questionTamil: "Java மற்றும் Python கொண்ட array உருவாக்கி spread operator பயன்படுத்தி JavaScript-ஐ கொண்ட புதிய array உருவாக்கவும்.",
+    hintEnglish: "Use ... to copy and expand array elements.",
+    hintTamil: "Array elements-ஐ copy மற்றும் expand செய்ய ... பயன்படுத்தவும்.",
+    expectedOutput: `["Java", "Python", "JavaScript"]`,
+    expectedOutputTamil: `["Java", "Python", "JavaScript"]`,
+    challenge: false,
+    solution: `let languages = ["Java", "Python"];
+let newLanguages = [...languages, "JavaScript"];
+
+console.log(newLanguages);`
+  },
+  {
+    id: 9, topicId: 20, title: "Challenge: Persistent User Profile",
+    questionEnglish: "Create a user profile object, convert it into JSON, store it in localStorage, retrieve it, convert it back into an object, and display its properties.",
+    questionTamil: "User profile object உருவாக்கி JSON-ஆக மாற்றி localStorage-ல் store செய்து retrieve செய்து object-ஆக மாற்றி அதன் properties-ஐக் காட்டவும்.",
+    hintEnglish: "Combine JSON.stringify(), localStorage, and JSON.parse().",
+    hintTamil: "JSON.stringify(), localStorage மற்றும் JSON.parse() ஆகியவற்றை இணைத்து பயன்படுத்தவும்.",
+    expectedOutput: "The retrieved user profile properties.",
+    expectedOutputTamil: "Retrieve செய்யப்பட்ட user profile properties.",
+    challenge: true
+  },
+  {
+    id: 10, topicId: 20, title: "Challenge: JavaScript Feature Explorer",
+    questionEnglish: "Create a program using at least three ES6 features. Combine them with an object or array and display the results.",
+    questionTamil: "குறைந்தது மூன்று ES6 features பயன்படுத்தும் program உருவாக்கவும். அவற்றை object அல்லது array-உடன் இணைத்து results காட்டவும்.",
+    hintEnglish: "Explore arrow functions, template literals, destructuring, and the spread operator.",
+    hintTamil: "Arrow functions, template literals, destructuring மற்றும் spread operator ஆகியவற்றை ஆராயவும்.",
+    expectedOutput: "Results demonstrating multiple ES6 features.",
+    expectedOutputTamil: "பல ES6 features-ஐ விளக்கும் results.",
+    challenge: true
+  },
 ];
 
 export default questions;
